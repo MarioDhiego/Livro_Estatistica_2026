@@ -645,7 +645,7 @@ Por exemplo, suponha que temos os seguintes tempos de viagem em minutos para o d
 \begin{table}
     \centering
     \begin{tabular}{c|c|c|c|c}
-    \hline 
+    \hline \hline
         15 & 18 & 20 & 22 & 25 \\
         \hline
         27 & 30 & 35 & 40 & 45 \\
@@ -653,7 +653,7 @@ Por exemplo, suponha que temos os seguintes tempos de viagem em minutos para o d
         50 & 55 & 60 & 65 & 70 \\
         \hline
         75 & 80 & 85 & 90 & 95 \\
-        \hline 
+    \hline \hline
     \end{tabular}
     \caption{Tempos de Viagens coletados na Rodovia PA-150, no mês de fevereiro de 2023 no Pará.}
     \label{tab:my_label}
@@ -664,11 +664,11 @@ Para calcular a média aparada, removeríamos os dois tempos mais baixos (15 e 1
 Agora, calculamos a média desses valores:
 
 $$
-Media = \frac{20+22+25+27+30+35+40+45+50+55+60+65+70+75+80+85}{16}
+Media = \left[\frac{20+22+25+27+30+35+40+45+50+55+60+65+70+75+80+85}{16} \right]
 $$
 
 $$
-Media = \frac{900}{16} = 56,25
+Media =  \left[\frac{900}{16}  \right]= 56,25
 $$
 
 Portanto, a média aparada para os tempos de viagem é de aproximadamente 56,25 minutos. Isso nos dá uma medida mais estável do tempo médio de viagem, desconsiderando os valores extremos que podem ter sido causados por eventos excepcionais de trânsito.\vskip0.3cm
