@@ -62,6 +62,9 @@ Um gráfico geralmente assume a forma de uma figura uni ou bidimensional, como u
 
 Embora os gráficos fornecam menor grau de detalhes que as tabelas, estes apresentam um ganho na compreenção global dos dados, permitindo que se perceba imediatamente da sua forma geral sem deixar de evidenciar alhuns aspectos particulares que sejam de interesse do pesquisador, colocando em evidência as tendências, as ocorrências ocasionais, os valores mínimos e máximos e também as ordens de grandeza dos fenômenos que estão sendo observados.\vskip0.3cm
 
+
+
+\newpage
 Os gráficos podem ser usados para ilustrar padrões em uma grande quantidade de dados ou para comunicar uma descoberta ou mensagem chave. Você deve considerar o uso de gráficos se quiser mostrar:
 
 \begin{itemize}
@@ -153,7 +156,7 @@ informar o leitor e obrigar quem faz o gráfico a estruturar a informação (CLE
 \item \textbf{Escalas}: Em um gráfico, as informações que possuem uma escala devem ser apresentadas com clareza. Os números da escala devem estar na posição horizontal e na região externa dos eixos. A unidade de medida deve aparecer no final de cada linha do gráfico. Caso não seja possível apresentar a escala por completo, pode-se fazer um corte no eixo correspondente para informar que a escala não está completa.
 
 \newpage
-\item \textbf{Linhas Auxiliares}: um dos elementos gráficos visualmente mais monótonos são as linhas auxiliares. devem, por isso ser suprimidas ou abafadas de tal forma que sua presença se torne implícita. Ainda que possam auxiliar a leitura dos dados, a maioria das linhas auxiliares escuras tem um grande peso visual, encobrindo muitas vezes, o mais importante do gráfico: a informação. Quando foram realmente necessárias deve-se optar por usar uma cor neutra e, no caso particular de um fundo branco, a cor cinzenta. Em certos caos em particular nas séries temporais, pode ser considerado importante incluir linhas auxiliares verticais como auxilio a leitura de valores por forma a complementar a leitura evolutiva da série com a leitura de valores em particular. Na maioria dos gráficos de séries temporais, os dados mais recentes estão situados à direita e longe das identificações do eixo dos valores, normalmente localizados à esquerda, fazendo com que o olho humano tenha que se movimentar alternadamente entre os dados e os valores ao longo das margens do gráfico. Esta imprecisão na leitura pode ser atenuada posicionando o eixo à direita junto dos dados mais recentes, duplicando o eixo, ou posicionando os valores junto das coordenadas respectivas (TUFTE, 1983).\vskip0.3cm
+\item \textbf{Linhas Auxiliares}: um dos elementos gráficos visualmente mais mo\-nó\-to\-nos são as linhas auxiliares. devem, por isso ser suprimidas ou abafadas de tal forma que sua presença se torne implícita. Ainda que possam auxiliar a leitura dos dados, a maioria das linhas auxiliares escuras tem um grande peso visual, encobrindo muitas vezes, o mais importante do gráfico: a informação. Quando foram realmente necessárias deve-se optar por usar uma cor neutra e, no caso particular de um fundo branco, a cor cinzenta. Em certos caos em particular nas séries temporais, pode ser considerado importante incluir linhas auxiliares verticais como auxilio a leitura de valores por forma a complementar a leitura evolutiva da série com a leitura de valores em particular. Na maioria dos gráficos de séries temporais, os dados mais recentes estão situados à direita e longe das identificações do eixo dos valores, normalmente localizados à esquerda, fazendo com que o olho humano tenha que se movimentar alternadamente entre os dados e os valores ao longo das margens do gráfico. Esta imprecisão na leitura pode ser atenuada posicionando o eixo à direita junto dos dados mais recentes, duplicando o eixo, ou posicionando os valores junto das coordenadas respectivas (TUFTE, 1983).\vskip0.3cm
 
 Os gráficos com dois eixos distintos são normalmente utilizados quando se têm diferentes unidades de medida ou existem diferenças consideráveis de valores nas categorias de uma variável. Este tipo de gráficos deve ser evitado dado que é normalmente de difícil interpretação e, em muitos casos, bastante confuso (SCHMID, 1992). Por princípio, deve privilegiar-se a escala completa (com início em zero ou noutro valor de referência) em nome da honestidade na apresentação. Contudo, essa quebra é admissível nos casos em que a informação apresenta pequenas variações, desde que acompanhada por uma simbologia perceptível ao leitor. Para melhor compreender os dados na fase da análise exploratória não existe qualquer problema em manipular as escalas e extrapolar eventuais variações, mas na fase da divulgação, deve existir algum cuidado para não evidenciar graficamente alterações nos dados que na verdade não ocorreram. A quebra de escala é um exemplo de como se pode distorcer a mensagem transmitida. Quando o efeito nos dados é significativamente. 
 \end{itemize}
@@ -323,25 +326,17 @@ Para a construção de um diagrama ramo-e-folhas, não há regras fixas para con
 
 \subsection{Histogramas}
 
-\inic O histograma é um gráfico de barras no qual a escala horizontal representa classes de valores de dados e a escala vertical representa frequências. As alturas dos barras correspondem aos valores das frequências, e as barras são desenhadas adjascente uma às outras (sem separação).
+O histograma é um gráfico de barras no qual a escala horizontal representa classes de valores de dados e a escala vertical representa frequências. As alturas dos barras correspondem aos valores das frequências, e as barras são desenhadas adjascente uma às outras (sem separação).
  \vskip0.3cm
  
-\inic O histograma é formado por um conjunto de retangulos justapostos
-que tem as bases sobre um eixo horizontal, com centro no ponto
-médio. As bases coincidem com as amplitudes de classe, e as
-alturas devem ser proporcionais as frequências das
-classes.
+O histograma é formado por um conjunto de retangulos justapostos que tem as bases sobre um eixo horizontal, com centro no ponto médio. As bases coincidem com as amplitudes de classe, e as alturas deve ser proporcionais as frequências das classes.
 \vskip0.3cm 
  
 
-\inic Os histogramas em geral apresentam a medição de interesse no eixo
-x e o número ou percentagem de observações no eixo y, embora
-alguns programas de computador façam o oposto. 
+Os histogramas em geral apresentam a medição de interesse no eixo x e o número ou percentagem de observações no eixo y, embora alguns programas de computador façam o oposto. 
 \vskip0.3cm
 
-Se todos os intervalos tiverem a mesma amplitude, as alturas serão
-proporcionais as frequências das classes, tornando-se então as
-alturas numericamente iguais a essas frequências.\vskip0.3cm
+Se todos os intervalos tiverem a mesma amplitude, as alturas serão proporcionais as frequências das classes, tornando-se então as alturas numericamente iguais a essas frequências.\vskip0.3cm
 
 ou seja,\vskip0.3cm
 
@@ -598,8 +593,6 @@ Ao explorar um conjunto de dados de forma gráfica, deve-se considerar os valore
     \caption{\textbf{BoxPlot Tradicional}: Dosagem Alcoólica de Vítimas Fatais por Acidentes de Trânsito, Região Metropolitrana de Belém em 2022.}
     \label{fig:my_label25}
 \end{figure}
-
-\\
 
 \vspace{-0.7cm}
 \begin{figure}[H]
