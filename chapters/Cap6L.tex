@@ -14,7 +14,7 @@ As letras do meio do alfabeto são geralmente usadas como índices, letras do fi
 
 As principais representações dos somatórios são:
 
-
+\newpage
 $$\sum_{i=1}^{n}x_{i} = (x_{1}+x_{2}+\ldots+x_{n}) \ \ Soma \ \ Simples $$
 
 $$\sum_{i=1}^{n}x_{i}^{2} = (x_{1}^{2}+x_{2}^{2}+\ldots+x_{n}^{2}) \ \ Soma \ de \ Quadrados$$
@@ -27,7 +27,7 @@ $$ \sum_{i=1}^{n}x_{i}y_{j}= \left( (x_{1}y_{1})+(x_{2}y_{2})+\ldots+(x_{n}y_{n}
 $$ \sum_{i=1}^{n}x_{i} \sum_{j=1}^{m}y_{j}= (x_{1}+x_{2}+\ldots+x_{n})(y_{1}+y_{2}+\ldots+y_{n}) \ \ Produto \ da \ Soma$$
 
 
-\subsection{Proriedades do Somatório}
+\subsubsection{Proriedades do Somatório Simples}
 
 \begin{enumerate}
   \item [{a})] O número de termos (NT) de um somatório refere-se à diferença entre os limites superior (ls) e inferior (li) acrescido da unidade, ou adicionalmente decrescido de r, quando o somatório estiver sujeito a r restrições.
@@ -39,7 +39,7 @@ $$\sum_{i=1}^{n}k=[(n-1)+1]k = nk $$
 ou
 $$ \sum_{i=1}^{n}k = (k+k+\ldots+k) = nk $$
   \item [{c})] O Somatório do produto de uma constante por uma variável que depende do somatório é igual ao produto da constate pelo somatório da variável, ou seja,
-$$ \sum_{i=1}^{n}(kx_{i}) = (kx_{1}+kx_{2}+\ldots+kx_{n}) = k \left( \sum_{i=1}^{n} \right)$$
+$$ \sum_{i=1}^{n}(kx_{i}) = (kx_{1}+kx_{2}+\ldots+kx_{n}) = k \left( \sum_{i=1}^{n}x_{i} \right)$$
       \item [{d})] Propriedade Distributiva com relação à adição, isto é
 $$ \sum_{i=1}^{n}(x_{i}+y_{j}) = \left( \sum_{i=1}^{n}x_{i} \right) + \left( \sum_{i=1}^{n}y_{i} \right) $$
   \item [{e})] Propriedade Distributiva com relação à subtração, isto é
@@ -50,29 +50,87 @@ $$ \sum_{i=1}^{n}(x_{i}-y_{j}) = \left( \sum_{i=1}^{n}x_{i}\right) - \left( \sum
   $$ \left[ \left(\sum_{i=1}^{n}x_{i} \right) \times \left(\sum_{i=1}^{n}y_{i} \right) \right] \neq  \left( \sum_{i=1}^{n} (x_{i} \times y_{i})\right) $$
   \item [{h})] O somatório de um quociente é diferente do quociente de duas somas.
 $$  \left( \sum_{i=1}^{n} \frac{x_{i}}{y_{i}} \right) \neq \left( \frac{\sum_{i=1}^{n}x_{i}}{\sum_{i=1}^{n}y_{i}} \right) $$
-  \item [{i})] O somatório duplo de um produto é igual ao produto dos somatórios tomados separadamente.
-  $$   \left( \sum_{i=1}^{n} \sum_{j=1}^{m}x_{i}y_{j} \right)  =  \left( \sum_{i=1}^{n}x_{i} \times \sum_{j=1}^{m}y_{i} \right) $$
+  %\item [{i})] O somatório duplo de um produto é igual ao produto dos somatórios tomados separadamente.
+  %$$   \left( \sum_{i=1}^{n} \sum_{j=1}^{m}x_{i}y_{j} \right)  =  \left( \sum_{i=1}^{n}x_{i} \times \sum_{j=1}^{m}y_{i} %\right) $$
 \end{enumerate}
 
 \newpage
 \subsection{Somatório Duplo}
 
-Acontece com muita freqüência, na apresentação de dados estatísticos, o emprego de tabelas de dupla entrada, nas quais os valores são expressos em função de duas variáveis: uma variável linha e uma coluna. Desta maneira pode-se representar: estado civil (solteiro, casado, outros) versus o gênero (masculinoe feminino), as faixas etárias versus suas rendas, componentes versus modelos, etc. Assim, a indicação da soma dos elementos das tabelas de dupla entrada pode ser feita mediante o emprego do somatório duplo.\vskip0.3cm
+É muito comum quando trabalhamos com matrizes ou tabelas de dupla entrada necessitarmos calcular somatórios em relação as suas linhas e/ou colunas. Surgem então dois índices, um para linha e outro para coluna, com isso vem a noção de somatório duplo. A representação de somatório duplo é:
+
+\begin{equation}
+    \sum_{i=1}^{n} \sum_{j=1}^{m} x_{i}
+\end{equation}
+
+%Acontece com muita freqüência, na apresentação de dados estatísticos, o emprego de tabelas de dupla entrada, %nas quais os valores são expressos em função de duas variáveis: uma variável linha e uma coluna. Desta maneira %pode-se representar: estado civil (solteiro, casado, outros) versus o gênero (masculinoe feminino), as faixas %etárias versus suas rendas, componentes versus modelos, etc. Assim, a indicação da soma dos elementos das %tabelas de dupla entrada pode ser feita mediante o emprego do somatório duplo.\vskip0.3cm
+
+\textbf{Exercícios de Somatório:}
+
+\begin{enumerate}
+\item [{1)}] Sabe-se que: \\
+$X_{1}=3$ $X_{2}=4$ $X_{3}=8$ $X_{4}=7$ $X_{5}=6$ \\
+$Y_{1}=3$ $Y_{2}=8$ $Y_{3}=2$ $Y_{4}=5$ $Y_{5}=6$ \\
+ Calcule:
+\begin{enumerate}
+\item [{a)}] $\sum_{i=1}^{5}X_{i}$
+\item [{b)}] $\sum_{i=1}^{5} 4 X_{i}$
+\item [{c)}] $\sum_{i=3}^{5} (X_{i}+6)$
+\item [{d)}] $\sum_{i=2}^{4} (2X_{i}-3)$
+\item [{e)}] $\sum_{i=1}^{5}X_{i}Y_{i}$
+\item [{f)}] $\sum_{i=1}^{5}(X_{i}+Y_{i})$
+\end{enumerate}
+\item [{2)}] Se o $\sum_{i=1}^{6}X_{i}=-4$ e $\sum_{i=1}^{6}X_{i}^{2}=10$, calcular as seguintes expressões
+\begin{enumerate}
+\item [{a)}] $\sum_{i=1}^{6}(2X_{i}+3)$
+\item [{b)}] $\sum_{i=1}^{6}(X_{i}-1)$
+\item [{c)}] $\sum_{i=1}^{6}(X_{i}-5)^{2}$
+\end{enumerate}
+\item [{3)}] Dados $\sum_{i=1}^{4}X_{i}=7$, $\sum_{i=1}^{4}Y_{i}=-3$ e $\sum_{i=1}^{4}X_{i}Y_{i}=5$, determinar:
+\begin{enumerate}
+\item [{a)}] $\sum_{i=1}^{4}(2X_{i}+5X_{i})$
+\item [{b)}] $\sum_{i=1}^{4}(X_{i}-3)(2Y_{i}+1)$
+\end{enumerate}
+\item [{4)}] Desenvolver os termos de cada uma das seguintes somas indicadas:
+\begin{enumerate}
+\item [{a)}] $\sum_{i=1}^{n}a$
+\item [{b)}] $ \sum_{i-1}^{6}X_{i}^{2}$
+\item [{c)}] $\sum_{i=1}^{4}(Y_{1}-3)^{2} $
+\item [{d)}] $\sum_{i=1}^{5}F_{i}X_{i} $
+\item [{e)}] $\sum_{i=1}^{4}(X_{i}+Y_{i}) $
+\item [{f)}] $\sum_{i=1}^{4}(\frac{X_{1}}{Y_{i}}-1)^{2} $
+\item [{g)}] $\sum_{i=1}^{3}(X_{i}-a)$
+\item [{h)}] $\sum_{i=1}^{5}f_{1}(Y_{i}-a)^{2}$
+\end{enumerate}
+\item [{5)}] Se $Z_{1}=X_{1}+Y_{1}$ e $Z_{2}=X_{2}+Y_{2} \ldots Z_{n}=X_{n}+Y_{n}$, Provar que $\bar{Z}=\bar{X}+\bar{Y}$
+\item [{6)}] Demonstrar que:
+\begin{enumerate}
+\item [{a)}] $\sum_{i=1}^{n}(X_{i}-\bar{X})=0$
+\item [{b)}] $\sum_{i=1}^{n}(X_{i}-a)= Minimo$
+\item [{c)}] $\sum_{i=1}^{n}X_{i}(X_{i}-\bar{X})=\sum_{i=1}^{n}(X_{i}-\bar{X})^{2}$
+\item [{d)}] $\sum_{i=1}^{n}[X_{1}(X_{i}+\bar{X})-\bar{X}^{2}]=\sum_{i=1}^{n}X_{i=1}^{2}$
+\item [{e)}] $\sum_{i=1}^{n}\sum_{j=1}^{n}(X_{i}-\bar{X})
+(Y_{j}-\bar{Y})=0$
+\item [{f)}] $\sum_{i=1}^{n}[X_{i}(X_{i}+\bar{X})+(X_{i}-\bar{X})^{2}]=2\sum_{j=1}^{n}X_{j}^{2}$
+\item [{g)}] $\sum_{i=1}^{N}
+(X_{i}-1)^{2}=\sum_{i=1}^{N}X_{i}^{2}-2\sum_{i=1}^{N}+N$
+\item [{h)}] $\sum f_{i}(x_{i}-\bar{x})^{2}= \sum f_{i}x_{i}^{2}- \frac{(\sum f_{i}x_{i})^{2}}{\sum f_{i}}$
+\end{enumerate}
+\end{enumerate}
 
 
+\newpage
 \subsection{Produtório}
 
 O símbolo produtório foi proposto para simplificar e facilitar a representação dos produtos nas expressões algébricas. Representado pela letra grega $pi$ maiúscula ($\Pi$).
 
 
 \begin{equation}\label{}
-\prod_{i=1}^{n}x_{i} = (x_{1} \times x_{2} \times  \ldots \times x_{n})
+\prod_{i=1}^{n}x_{i} 
 \end{equation}
 
 
-Lê-se: produtório de X índice i, com i variando de 1 a n.
-
-\vskip0.3cm
+Lê-se: produtório de X índice i, com i variando de 1 a n.\vskip0.3cm
 
 ou seja,
 
@@ -80,13 +138,28 @@ ou seja,
 \underbrace{x_{1} \times x_{2} \times  \ldots \times x_{n}}_{n fatores}= \prod_{i=1}^{n}x_{i}= x^{n}
 \end{equation}
 
+\subsubsection{Proriedades do Produtório}
+
+\begin{enumerate}
+\item [{a})]  Produto Simples.
+$$ \prod_{i=1}^{n}x_{i} = x_{1} \times x_{2} \times  \ldots \times x_{n} $$
+\item [{b})] Produto de uma constante k.
+$$ \prod_{i=1}^{n}k = k_{1} \times k_{2} \times  \ldots \times k_{n} =  k^{n}$$
+\item [{c})] Produto de uma constante por uma variável.
+$$ \prod_{i=1}^{n} kx_{i} = kx_{1} \times kx_{2} \times  \ldots \times  kx_{n} = k^{n} \prod_{i=1}^{n} x_{i}$$
+
+\newpage
+\item [{d})] Produto de duas variáveis.
+$$ \prod_{i=1}^{n} x_{i}y_{i} = x_{1}y_{1} \times x_{2}y_{2} \times \ldots \times x_{n}y_{n} = \prod_{i=1}^{n} x_{i}\prod_{i=1}^{n} y_{i}$$
+\item [{e})] Logarítmo do Produto.
+$$ log \prod_{i=1}^{n} x_{i} = \sum_{i=1}^{n} log x_{i} , \ \ \forall \ \ x_{i} > 0$$
+
+\end{enumerate}
 
 
 \subsection{Proporções e Percentagens}
 
-
 Uma proporção é o número, $a$, de observações com determinada caracteristica (como por exemplo aqueles que sofreram um acidente de trânsito) dividido pelo número total de observações, $a+b$, num determinado grupo (como aqueles que estão na condição de Motociclistas). Isto é,
-
 
 $$ 
 \mbox{Proporção} = \left( \frac{a}{a+b} \right)
@@ -94,9 +167,7 @@ $$
 
 Uma proporção sempre é definida como uma parte dividida pelo total e é útil para dados ordinais e números assim como para dados nominais, especialmente quando as observações forem colocadas numa tabela de frequência. Uma \textbf{Percentagem} é a proporção multiplicada por $100\%$.\vskip0.3cm
 
-
 $$ \mbox{Proporção} = \left( \frac{a}{a+b} \right) \times 100\% $$
-
 
 \subsection{Razões}
 
@@ -110,6 +181,7 @@ $$
 
 Uma razão sempre é definida como uma parte dividida por uma outra parte.\vskip0.3cm
 
+\newpage
 \subsection{Taxas}
 
 As Taxas são semelhantes as proporções exceto pelo fato de que é usado um multiplicador ($1.000 , 10.000 , ou 100.000$) e são calculados durante um período específico. O multiplicador é chamado de base e a fórmula é
@@ -898,107 +970,102 @@ de cálculo da moda de uma distribuição pela fórmula de czuber.
 
 
 
-%\newpage
+\newpage
 
-%\subsection{Exercícios Aplicados em Concursos (média-moda-mediana)}
-
-
-%\begin{enumerate}
-%  \item [{1)}] (\textbf{BACEN-1994}) Em certa Empresa W, o salário %médio era de R\$9.000,00 e o desvio-padrão dos salários era de
-%  R\$ 1.000,00. Todos os salários receberam um aumento de 10\%. O %salário médio passou a ser de:\vskip0.3cm
-%  \begin{itemize}
-%    \item [{a)}] R\$ 9.000,00
-%    \item [{b)}] R\$ 9.100,00
-%    \item [{c)}] R\$ 9.500,00
-%    \item [{d)}] R\$ 9.900,00
-%    \item [{e)}] R\$ 10.000,00
-%  \end{itemize}
-%  \item [{2)}] Em um concurso realizado simultaneamente nas cidades %A, B e C, as médias aritméticas foram respectivamente 70, 60 e 45 %pontos, obtidas por 30, 40 e 30 candidatos, na mesma prdem. Qual foi %então a média aritmética geral do concurso?
-%      \begin{itemize}
-%    \item [{a)}] 60,0
-%    \item [{b)}] 75,5
-%    \item [{c)}] 58,5
-%    \item [{d)}] 180
-%    \item [{e)}] 682
-%  \end{itemize}
-%  \item [{3)}] Sabe-se que a média aritimética de 5 números inteiros %distintos, estritamente positivos, é 16. O maior valor que um desses %inteiros pode assumir é:
-%  \begin{itemize}
-%    \item [{a)}] 16
-%    \item [{b)}] 20
-%    \item [{c)}] 50
-%    \item [{d)}] 70
-%   \item [{e)}] 100
-%  \end{itemize}
-%  \item [{4)}](\textbf{GDF-1995}) Os preços do $m^{2}$ das ultimas %cinco obras realizadas por uma instituição pública foram %respectivamente: 800, 810, 810, 750 e 780 URV'S. Pode-se afirmar que %a média dos preços do $m^{2}$ obtido é:
-%  \begin{itemize}
-%    \item [{a)}] 780
-%    \item [{b)}] 790
-%    \item [{c)}] 800
-%    \item [{d)}] 810
-%  \end{itemize}
-%  \item [{5)}](\textbf{TTN-1985}) Assinale a alternativa correta, %considerando a série;8;5;14;10;8 e 15
-%  \begin{itemize}
-%    \item [{a)}] A média aritmética é 10 e a mediana é 12;
-%    \item [{b)}] A amplitude total é 7 e a moda é 8;
-%    \item [{c)}] A mediana é 9 e a amplitude total é 10;
-%    \item [{d)}] A média aritmética é 1 e a amplitude total é 7;
-%    \item [{e)}] A mediana é 12 e a amplitude total é 7;
-%  \end{itemize}
-%  \item [{6)}](\textbf{TTN-1994}) A distribuição dos salários de uma %Empresa Y é dada na tabela abaixo:
-%  \begin{table}[!htb]
-%    \centering
-%    {
-%    \caption{Distribuição Salarial dos funcionários da empresa Y em %1994}
-%    \label{}
-%    \vspace{0.1cm}
-%\begin{tabular}{l|c}
-%  \hline\hline
-%  Salário (em R\$) & Número de Empregados \\
-%  \hline\hline
-%   500,00    & 10 \\
-%   1.000,00  & 5 \\
-%   1.500,00  & 1 \\
-%   2.000,00  & 10 \\
-%   5.000,00  & 4 \\
-%   10.500,00 & 1 \\
-%  \hline\hline
-%  Total & 31 \\
-%    \hline\hline
-%\end{tabular}}
-%\end{table}
-%\inic O salário modal, a média e a mediana dos salários dessa %empresa valem, respectivamente:
-%  \begin{itemize}
-%    \item [{a)}] 2.000,00 e 1.500,00; 500,00 e 1.000,00
-%    \item [{b)}] 1.500,00 e 2.000,00; 1.500,00 e 2.000,00
-%    \item [{c)}] 2.000,00 e 2.000,00; 2.000,00 e 2.000,00
-%    \item [{d)}] 1.500,00 e 1.500,00; 1.500,00 e 1.500,00
-%    \item [{e)}] 500,00 e 2.000,00; 2.000,00 e 1.500,00
-%  \end{itemize}
-%  \newpage
-%  \item [{7)}] (ESAF-1996) A moda e a frequência modal de: %2;3;4;2;5;9;4;5;5 são, respectivamente:
-%  \begin{itemize}
-%    \item [{a)}] 2;3
-%    \item [{b)}] 3;2
-%    \item [{c)}] 9;1
-%    \item [{d)}] 5;3
-%    \item [{e)}] 2;4
-%  \end{itemize}
-%  \item [{8)}] (\textbf{TTN-1994}) Assinale a opção correta:
-%  \begin{itemize}
-%    \item [{a)}] A média harmônica é a media dos inversos das %determinações da variável;
-%    \item [{b)}] A média aritmética não é influênciada pelos valores %extremos da distribuição;
-%   \item [{c)}] A moda e a mediana são influenciadas pelos valores %extremos da distribuição;
-%    \item [{d)}] A moda, a mediana e a média aritmética são %expressas na mesma unidade de medida da variável a que se referem;
-%    \item [{e)}] A moda é uma medida de posição que permite dividir %a distribuição em duas partes de igual frequência.
-%   \end{itemize}
-%\end{enumerate}
+\subsection{Exercícios Aplicados em Concursos (média-moda-mediana)}
 
 
+\begin{enumerate}
+\item [{1)}] (\textbf{BACEN-1994}) Em certa Empresa W, o salário médio era de R\$9.000,00 e o desvio-padrão dos salários era de R\$ 1.000,00. Todos os salários receberam um aumento de 10\%. O salário médio passou a ser de:\vskip0.3cm
+  \begin{itemize}
+    \item [{a)}] R\$ 9.000,00
+    \item [{b)}] R\$ 9.100,00
+    \item [{c)}] R\$ 9.500,00
+    \item [{d)}] R\$ 9.900,00
+    \item [{e)}] R\$ 10.000,00
+  \end{itemize}
+\item [{2)}] Em um concurso realizado simultaneamente nas cidades A, B e C, as médias aritméticas foram respectivamente 70, 60 e 45 pontos, obtidas por 30, 40 e 30 candidatos, na mesma prdem. Qual foi então a média aritmética geral do concurso?
+\begin{itemize}
+\item [{a)}] 60,0
+\item [{b)}] 75,5
+\item [{c)}] 58,5
+\item [{d)}] 180
+\item [{e)}] 682
+\end{itemize}
+\item [{3)}] Sabe-se que a média aritimética de 5 números inteiros distintos, estritamente positivos, é 16. O maior valor que um desses inteiros pode assumir é:
+\begin{itemize}
+\item [{a)}] 16
+\item [{b)}] 20
+\item [{c)}] 50
+\item [{d)}] 70
+\item [{e)}] 100
+\end{itemize}
+\item [{4)}](\textbf{GDF-1995}) Os preços do $m^{2}$ das ultimas cinco obras realizadas por uma instituição pública foram respectivamente: 800, 810, 810, 750 e 780 URV'S. Pode-se afirmar que a média dos preços do $m^{2}$ obtido é:
+\begin{itemize}
+\item [{a)}] 780
+\item [{b)}] 790
+\item [{c)}] 800
+\item [{d)}] 810
+\end{itemize}
+\item [{5)}](\textbf{TTN-1985}) Assinale a alternativa correta, considerando a série;8;5;14;10;8 e 15
+\begin{itemize}
+\item [{a)}] A média aritmética é 10 e a mediana é 12;
+\item [{b)}] A amplitude total é 7 e a moda é 8;
+\item [{c)}] A mediana é 9 e a amplitude total é 10;
+\item [{d)}] A média aritmética é 1 e a amplitude total é 7;
+\item [{e)}] A mediana é 12 e a amplitude total é 7;\end{itemize}
+\item [{6)}](\textbf{TTN-1994}) A distribuição dos salários de uma Empresa Y é dada na tabela abaixo:
+\begin{table}[!htb]
+\centering
+{
+\caption{Distribuição Salarial dos funcionários da empresa Y em 1994}
+\label{}
+\vspace{0.1cm}
+\begin{tabular}{l|c}
+\hline\hline
+Salário (em R\$) & Número de Empregados \\
+\hline\hline
+500,00    & 10 \\
+1.000,00  & 5 \\
+1.500,00  & 1 \\
+2.000,00  & 10 \\
+5.000,00  & 4 \\
+10.500,00 & 1 \\
+\hline\hline
+Total & 31 \\
+\hline\hline
+\end{tabular}}
+\end{table}
+O salário modal, a média e a mediana dos salários dessa empresa valem, respectivamente:
+\begin{itemize}
+\item [{a)}] 2.000,00 e 1.500,00; 500,00 e 1.000,00
+\item [{b)}] 1.500,00 e 2.000,00; 1.500,00 e 2.000,00
+\item [{c)}] 2.000,00 e 2.000,00; 2.000,00 e 2.000,00
+\item [{d)}] 1.500,00 e 1.500,00; 1.500,00 e 1.500,00
+\item [{e)}] 500,00 e 2.000,00; 2.000,00 e 1.500,00
+\end{itemize}
+\newpage
+\item [{7)}] (ESAF-1996) A moda e a frequência modal de: 2;3;4;2;5;9;4;5;5 são, respectivamente:
+\begin{itemize}
+\item [{a)}] 2;3
+\item [{b)}] 3;2
+\item [{c)}] 9;1
+\item [{d)}] 5;3
+\item [{e)}] 2;4
+\end{itemize}
+\item [{8)}] (\textbf{TTN-1994}) Assinale a opção correta:
+\begin{itemize}
+\item [{a)}] A média harmônica é a media dos inversos das determinações da variável;
+\item [{b)}] A média aritmética não é influênciada pelos valores extremos da distribuição;
+\item [{c)}] A moda e a mediana são influenciadas pelos valores extremos da distribuição;
+\item [{d)}] A moda, a mediana e a média aritmética são expressas na mesma unidade de medida da variável a que se referem;
+\item [{e)}] A moda é uma medida de posição que permite dividir a distribuição em duas partes de igual frequência.
+\end{itemize}
+\end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%% TABELA2  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-
+\newpage
 \subsection{Comparação de Medidas Estatísticas Básicas}
 
 Após apresentação das principais medidas estatísticas de tendência central, serão resumidas as vantagens e desvantagens.\vskip0.3cm
@@ -1024,10 +1091,8 @@ No que tange a existência dessas medidas, a maioria sempre vão existir ou pode
 Ponto Médio & Raramente         & Sempre            & Não              & Sim              & Muito Sensível  \\  
    \hline\hline 
 \end{tabular}} 
-\begin{flushleft}
 \vspace{0.05cm}
 \textbf{Fonte}: (IBGE, 1993). 
-\end{flushright}
 \end{sidewaystable}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
