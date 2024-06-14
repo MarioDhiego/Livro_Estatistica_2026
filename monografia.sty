@@ -65,7 +65,7 @@
   \vspace*{-17pt}%
   \vbox{\thin@rule\par
     \parindent 0pt \centering
-    \vskip 17pt%
+    \vskip 22pt%
     \ifnum \c@secnumdepth >\m@ne
       \normalfont PART \thepart\par
     \else
@@ -278,7 +278,7 @@
 %
 \def\listoffigures{\@restonecolfalse
  \if@twocolumn \@restonecoltrue\onecolumn \fi
- \chapter*{LISTA DE FIGURAS}
+ \chapter*{Lista de Figuras}
 % \@mkboth{LISTA DE FIGURAS}{LISTA DE FIGURAS}
  \@starttoc{lof}
  \if@restonecol \twocolumn \fi
@@ -289,7 +289,7 @@
 %
 \def\listoftables{\@restonecolfalse
  \if@twocolumn \@restonecoltrue \onecolumn \fi
- \chapter*{LISTA DE TABELAS}
+ \chapter*{Lista de Tabelas}
 % \@mkboth{LISTA DE TABELAS}{LISTA DE TABELAS}
  \@starttoc{lot}
  \if@restonecol \twocolumn\fi
@@ -303,7 +303,7 @@
 \newcounter{dummy}
 %
 \def\thebibliography#1{%
-  \chapter*{BIBLIOGRAFIA}
+  \chapter*{Bibliografia}
 % \@mkboth{BIBLIOGRAFIA}{BIBLIOGRAFIA}
   \typeout{References.}
   \list{}{\labelwidth\z@
