@@ -1,6 +1,6 @@
 \chapter{MÉTODOS DE AMOSTRAGEM}
 
-\textbf{"A amostragem é a Mãe da Precisão, pois nos Permite Fazer Grandes Descobertas a Partir de Pequenas Porções de Dados.” - William Sealy Gosset} \vskip0.3cm
+\textbf{"A amostragem é a Mãe da Precisão, pois nos Permite Fazer Grandes Des\-co\-ber\-tas a Partir de Pequenas Porções de Dados.” - William Sealy Gosset} \vskip0.3cm
 
 \section{Introdução}
 
@@ -41,7 +41,7 @@ aumentar as explicações para o objeto pesquisado (SILVA,
 
 Existem alguns tipos de levantamentos, técnicas ou métodos recomendados para a extração de uma amostra, a fim de que esta possa ser considerada suficientemente representativa da população. Essas técnicas chamadas de amostragem podem ser classificadas em duas categorias: as Probabilísticas e Não Probabilísticas.\vskip0.3cm
 
-A amostragem é dita Probabilística ou Casual quando se conhece a probabilidade (diferente de zero) que cada elemento da população tem em fazer parte da amostra. Portanto, para obtenção de uma amostragem probabilística é necessário que a população seja finita e que todos os elementos sejam acessíveis. As principais técnicas de amostragem probabilísticas são: \textbf{amostragem casual ou aleatória simples}, \textbf{amostragem sistemática}, \textbf{amostragem estratificada} e \textbf{amostragem por conglomerados} (MATTAR, 2001).\vskip0.3cm
+A amostragem é dita Probabilística ou Casual quando se conhece a probabilidade (diferente de zero) que cada elemento da população tem em fazer parte da amostra. Portanto, para obtenção de uma amostragem probabilística é necessário que a população seja finita e que todos os elementos sejam acessíveis. As principais técnicas de amostragem probabilísticas são: \textbf{amostragem casual ou aleatória simples}, \textbf{amostragem sistemática}, \textbf{amostragem estratificada} e por \textbf{conglomerados} (MATTAR, 2001).\vskip0.3cm
 
 A amostragem é dita \textbf{Não-Probabilística} ou \textbf{Não Casual} quando nem todos os elementos da população têm probabilidade conhecida, e diferente de zero, de pertencer à amostra. Apesar das vantagens do uso da amostragem probabilística, existem situações onde sua utilização é praticamente impossível.
 Isso ocorre principalmente nas situações onde não se tem acesso a toda população e nos casos em que a população é formada por material contínuo, tornando impraticável um sorteio rigoroso. Existem basicamente três tipos de amostragem não-probabilística: \textbf{amostragem por conveniência}, \textbf{amostragem intencional} e \textbf{amostragem por quotas} (MATTAR, 2001).\vskip0.3cm
@@ -123,12 +123,11 @@ que seja o valor da proporção, este dá origem a uma variabilidade
 menor que aquela vinculada à proporção 0,5. Observa-se que, neste
 caso é preciso maior cuidado com a determinação da amostra e,
 conseqüentemente, a quantidade de elementos que a
-comporão.\vskip0.3cm
-
-Uma segunda situação na qual o valor de uma estimativa preliminar para a proporção do evento estudado é igual a 0,5 e, uma última, na qual o estudo destina-se à estimação da proporção de vários eventos da população, com pelo menos um dos eventos sem presença de uma estimativa anterior de sua proporção na população.\vskip0.3cm
-
+comporão.%\vskip0.3cm
 
 \newpage
+Uma segunda situação na qual o valor de uma estimativa preliminar para a proporção do evento estudado é igual a 0,5 e, uma última, na qual o estudo destina-se à estimação da proporção de vários eventos da população, com pelo menos um dos eventos sem presença de uma estimativa anterior de sua proporção na população.\vskip0.3cm
+
 A seguir, apresenta-se uma tabela com aplicações da fórmula acima para alguns valores de erro amostral tolerável, a fim de se exemplificar a relação entre $\epsilon_{0}$ e uma primeira estimativa para o tamanho da amostra ($n_{0}$).
 
 
@@ -138,7 +137,7 @@ A seguir, apresenta-se uma tabela com aplicações da fórmula acima para alguns
     \caption{Exemplos de tamanho de amostra ($n_{0}$) em função do erro amostral tolerável, variando de 1 a 5\%}
     \label{amostras}
     \vspace{0.1cm}
-\begin{tabular}{c|c}
+\begin{tabular}{c||c}
   \hline\hline
   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
   Erro Amostral $(\varepsilon_{(0)})$   & Tamanho Amostral ($n_{(0)})$ \\
@@ -174,10 +173,7 @@ precisão da estatística.\vskip0.3cm
 
 Assim, por exemplo, se o pesquisador tolerar no máximo um erro de 2\%, i.e., que o verdadeiro valor do parâmetro seja no máximo 2\% menor ou 2\% maior que o valor que a estatística acusa na amostra, ele terá que trabalhar com uma amostra aleatória composta por 2.500 indivíduos da população, ao passo que, se o pesquisador tolerar um erro amostral de 2,5\%, ele terá que trabalhar com uma amostra aleatória composta por 1.600 indivíduos da população e o verdadeiro valor do parâmetro da população estará no intervalo entre 2,5\% a menos até 2,5\% a mais do valor que a estatística acusa na amostra, com 95\% de probabilidde. Portanto, quanto maior a precisão que se deseja associar à estimativa estatística, maior o tamanho amostral necessário para atendê-la.\vskip0.3cm
 
-
-\newpage
 Conhecendo-se o tamanho da população N, pode-se corrigir o cálculo de $n_{0}$, obtido por \ref{nzero}, para se ter o tamanho da amostra aleatória simples, n, através da expressão:
-
 
 \begin{equation}\label{nzero2}
     n= \left[ \frac{\left(N \times n_{0}\right)}{\left(N + n_{0}\right)} \right]
@@ -331,6 +327,7 @@ onde,
 
 Em relação à aplicação da amostragem, uma população pode ser classificada como finita ou infinita. Determinadas populações finitas podem ser consideradas infinitas desde que o tamanho da amostra seja no máximo 5\% da áream ou seja:
 
+\newpage
 \begin{itemize}
     \item 1) Se $\frac{(N_{h}-n_{h})}{N_{h}} \geqslant 0,95$, a população é definida como Infinita; 
     \item 2) Para $\frac{((N_{h}-n_{h}))}{N_{h}} < 0,95$, a população é definida como Finita;
@@ -355,14 +352,14 @@ Conforme Cochran (1965), existem diversos critérios para se utilizar o método 
   principalmente caracterizar peculiaridades locais e regionais;
 \end{enumerate}
 
-
 \textbf{Exemplo de Amostragem Estratificada}
 \vskip0.3cm
 
-Castro et al (2016), realizou um estudo com informações retiradas de processos judiciais de homens e mulheres adultos, que foram acusados de praticar agressão sexual contra as crianças e adolescentes entre os anos de 2012 a 2014, período esse escolhido por concentrar um maior número de processos no Sistema de Gestão de Processos Judiciais - LIBRA, do Tribunal de Justiça do Estado do Pará. Nos quais, foram escolhidos três municípios como população alvo, que supriam e respondiam aos objetivos do trabalho.\vskip0.3cm
-
+Castro et al (2016), realizou um estudo com informações retiradas de processos judiciais de homens e mulheres adultos, que foram acusados de praticar agressão sexual contra as crianças e adolescentes entre os anos de 2012 a 2014, período esse escolhido por concentrar um maior número de processos no Sistema de Gestão de Processos Judiciais - LIBRA, do Tribunal de Justiça do Estado do Pará. 
 
 \newpage
+Nos quais, foram escolhidos três municípios como população alvo, que supriam e respondiam aos objetivos do trabalho. %\vskip0.3cm
+
 \begin{table}[!htb]
     \centering
     {
@@ -410,8 +407,8 @@ Em seguida, substituindo o resultado na formula 2.2,
 
 Assim, faz-se necessário, apenas um amostra de 251 processos judiciais sobre
 agressão sexual, sendo esta, estatiscamente representativa da população de 675.
-\vskip0.3cm
 
+\newpage
 Contudo, a população alvo está dividida em três municípios com quantidades
 de processos diferentes em cada. Havendo a necessidade de levantar o tamanho da
 amostra levando-se em conta que, o número de elementos sorteados em cada estrato
@@ -447,13 +444,13 @@ de um determinado valor $k=\frac{N}{n}$ pré-estabelecido, onde N é o número d
 No processo de amostragem sistemática a primeira unidade é escolhida ao acaso e as demais, a partir da inicial, selecionadas de modo sistemático a intervalos iguais e definidas, até atingir o tamanho da amostra desejada. O intervalo é estabelecido pela razão entre o tamanho da população e o tamanho da amostran (AYRES, 2010).\vskip0.3cm
 
 De acordo com Loetsch et al (1973) a amostragem sistemática consiste em selecionar unidade de amostras a partir
-de um esquema rígido e preestabelecido de sistematização segundo uma distribuição espacial equitativa ou mecânica, com os propósitos de cobrir a população em toda a sua extensão, e obter um modelo sistemático simples e uniforme.\vskip0.3cm
+de um esquema rígido e preestabelecido de sistematização segundo uma distribuição espacial equitativa ou mecânica, com os propósitos de cobrir a população em toda a sua extensão, e obter um modelo sistemático simples e uniforme. %\vskip0.3cm
 
+\newpage
 A amostragem sistemática apresenta uma diferença marcante com relação a amostragem aleatória simples, no que tange
 ao número de amostras possíveis. Sendo recomendada para utilização quando os elementos da população encontram-se
 ordenados (MARQUES, 2002).\vskip0.3cm
 
-\newpage
 Seja uma população composta por N unidades, e n represente o tamanho da amostra, sendo $N=kn$. Se a amostragem for sistematica, o número de amostras possíveis é igual a $k =\left[ \frac{N}{n} \right] $, enquanto que, em se tratando de uma amostra simples ao acaso sem reposição, o número de amostras possíveis (nap) será de acordo com a equação \ref{nap}. Então, teoricamente, uma amostra sistemática não pode ser analisada como se fosse uma amostra aleatória simples. \vskip0.3cm
 
 De forma geral, na amostragem sistematica, utiliza-se a ordenação
@@ -651,6 +648,9 @@ A amostra por quotas constitui um tipo especial de amostra intencional, em que o
 
 A seleção de amostra por quotas é a forma mais usual de amostragem não probabilística. Neste caso, são consideradas várias características da população como gênero, idade, raça e renda familiar, incluindo proporções similares de pessoas com as mesmas características.\vskip0.3cm
 
-A idéia de amostragem por quotas sugere que se as pessoas são representativas em termos de características, elas também poderão ser representativas em termos da informação procurada pela pesquisa. Depois de serem identificadas as proporções de cada tipo a ser incluído na amostra, o pesquisador estabelece um número ou quota de pessoas que possuem as características determinadas e que serão contatadas pela pesquisa. O entrevistador recebe instruções para continuar a amostragem até que a quota necessária tenha sido atingida em cada estrato.\vskip0.3cm
+A idéia de amostragem por quotas sugere que se as pessoas são representativas em termos de características, elas também poderão ser representativas em termos da informação procurada pela pesquisa. Depois de serem identificadas as proporções de cada tipo a ser incluído na amostra, o pesquisador estabelece um número ou quota de pessoas que possuem as características determinadas e que serão contatadas pela pesquisa. 
+
+\newpage
+O entrevistador recebe instruções para continuar a amostragem até que a quota necessária tenha sido atingida em cada estrato.\vskip0.3cm
 
 Uma pesquisa com amostragem por quotas poderá ser utilizado e trazer bons resultados quando as características relevantes para controle e delineamento da amostra forem conhecidas, estiverem disponíveis ao pesquisador, estiverem relacionadas ao objeto de estudo e se constituírem em poucas categorias.
