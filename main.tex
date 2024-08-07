@@ -34,10 +34,12 @@
 \usepackage{scrlayer-scrpage}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+%\usepackage[portuguese]{babel}
 \usepackage[brazil]{babel}
 %\usepackage{hyperref} 
 \usepackage{diego}
 %\usepackage{monografia}
+
 
 %\renewcommand{\contentsname}{Índice}
 
@@ -53,15 +55,13 @@
 
 
 \begin{document}
+%\renewcommand{\chapter}{Capitulo}
+%\selectlanguage{portuguese}
 \input{localcommands.tex} 
 \maketitle
 \frontmatter
-% %% uncomment if you have preface and/or acknowledgements
-
-
 \currentpdfbookmark{Contents}{name} % adds a PDF bookmark
 {\tableofcontents}
-
 \listoftables
 \listoffigures
 \include{chapters/prefaceEd}
