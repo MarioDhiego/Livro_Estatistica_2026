@@ -1,7 +1,8 @@
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%     Language Science Press Master File       %%%
-%%%              edited volumes                  %%%
-%%%         follow the instructions below        %%%
+%%%  Language Science Press Master File          %%%
+%%%         Edited Volumes                       %%%
+%%%     Follow the instructions below            %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Everything following a % is ignored
@@ -9,14 +10,10 @@
 \RequirePackage{scrlfile}
 \ReplacePackage{scrpage2}{scrlayer-scrpage}
 
-\documentclass[output=book,collection,colorlinks, citecolor=green]{langscibook}
+\documentclass[output=book,collection,colorlinks,citecolor=green]{langscibook}
 
-%\documentclass[output=book,modfonts]{langscibook}   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% put all additional commands you need in the
-% following files. If you do not know what this might
-% mean, you can safely ignore this section
+% Include all additional packages and commands here
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{graphicx}
@@ -35,13 +32,15 @@
 \usepackage{scrlayer-scrpage}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[portuguese]{babel}
-%\usepackage[brazil]{babel}
-%\usepackage{hyperref} 
+%\usepackage[portuguese]{babel}
+\usepackage{hyperref} 
 \usepackage{diego}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+
+
 %\usepackage{monografia}
 %\renewcommand{\chapter}{Capitulo}
-
 %\renewcommand{\contentsname}{Índice}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -54,15 +53,13 @@
 \renewcommand{\listquadroname}{Lista de Quadros} % Forçar texto na Lista de Quadros
 \setcounter{tocdepth}{2}
 
-
 \begin{document}
 
-%\selectlanguage{portuguese}
 \input{localcommands.tex} 
 \maketitle
 \frontmatter
 \currentpdfbookmark{Contents}{name} % adds a PDF bookmark
-{\tableofcontents}
+\tableofcontents
 \listoftables
 \listoffigures
 \include{chapters/prefaceEd}
@@ -73,16 +70,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%             Chapters                         %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\includepaper{chapters/Cap1L}
-%\includepaper{chapters/Cap2L}
-%\includepaper{chapters/Cap3L}
-%\includepaper{chapters/Cap4L}
-%\includepaper{chapters/Cap5L}
-%\includepaper{chapters/Cap6L}
-%\includepaper{chapters/Cap7L}
-
-
 
 \setcounter{chapter}{0} \include{chapters/Cap1L}  
 \setcounter{chapter}{1} \include{chapters/Cap2L}
