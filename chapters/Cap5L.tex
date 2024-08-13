@@ -402,15 +402,27 @@ A representação de valores negativos é desaconselhada em gráficos de barras,
 
 Nos gráficos de barras não é admissível a quebra de escala por deixar de ser possível efectuar comparações verticais entre categorias. Uma quebra de escala é enganadora, porque mostra visualmente a existência de grandes variações nos dados que de fato, não existem.\vskip0.3cm 
 
-Na representação da informação, por vezes, é importante organizar as categorias por ordem crescente ou decrescente para melhor compreender certos fenómenos implícitos. É igualmente comum ordenar alfabeticamente (ou geograficamente) as designações das categorias, nomeadamente nos casos em que se representam países ou outro tipo de unidades administrativas, mas tal nem sempre é a melhor opção. Se o mesmo conjunto de categorias é apresentado em mais do que um gráfico, então a posição relativa de cada categoria deve manter-se, ou seja, as categorias devem aparecer na mesma ordem em todos os gráficos. Da mesma forma, o tamanho e a escala dos gráficos deve ser o mesmo, se o objectivo for a comparação entre eles. 
-
+Na representação da informação, por vezes, é importante organizar as categorias por ordem crescente ou decrescente para melhor compreender certos fenómenos implícitos. É igualmente comum ordenar alfabeticamente (ou geograficamente) as designações das categorias, nomeadamente nos casos em que se representam países ou outro tipo de unidades administrativas, mas tal nem sempre é a melhor opção. \vskip0.3cm 
 
 \newpage
+Se o mesmo conjunto de categorias é apresentado em mais do que um gráfico, então a posição relativa de cada categoria deve manter-se, ou seja, as categorias devem aparecer na mesma ordem em todos os gráficos. Da mesma forma, o tamanho e a escala dos gráficos deve ser o mesmo, se o objectivo for a comparação entre eles.\vskip0.3cm  
+
+
 Quando as categorias não são todas discriminadas, existindo, por exemplo, uma que reúne as restantes categorias sob a designação de ‘Outros’, é aconselhável não a incluir na ordenação e reservar-lhe o último lugar (WALLGREN, 1996; SCHMID, 1992). Caso se utilizem cores para diferenciar as categorias, a categoria ‘Outros’, por ser a menos importante, deve ter uma cor que não se destaque (ex: cinzento). \vskip0.3cm
 
 O primeiro passo na construção do gráfico é ter os dados armazenados em objetos apropriados. No caso do gráfico de barras é necessário que os dados estejam armazenados em um vetor ou matriz.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+    \centering
+\includegraphics[scale=0.5,height=200pt,width=14cm]{figures/plot_barra1.jpg}
+    \caption{\textbf{(Gráfico de Barra):} Faixa Etária das Vítimas Fatais de Belém em 2023.}
+    \label{fig:my_label600}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+\newpage
 \subsection{Gráfico de Linhas, Curvas ou Segmentos}
 
 Este tipo de gráfico representa a série histórica, exclusivamente, indicado para mostrar tendências e evolução de uma variável contínua por outra variável contínua. Requer, entretanto, que tal série apresente um número significativo de informações (5 ou mais), ou melhor, para 5 ou número menor de ocorrências, outro gráfico deve ser construído, o gráfico de colunas.\vskip0.3cm
@@ -419,8 +431,25 @@ O primeiro gráfico data do séc. X ou XI, mas só no fim do séc. XVIII surgiu 
 
 A leitura dos dados em gráficos de séries temporais obedece a duas lógicas preferenciais: avaliação da tendência, crescente ou decrescente, da série de dados, e responder a perguntas do tipo: Em que período se localizou o maior aumento ou a maior diminuição? Quais foram os pontos de inflexão ou de inversão pontual da tendência? A escala logarítmica possibilita a comparação de séries cujos valores apresentam dimensões muito diferentes (ainda que os valores da escala deixem de poder ser lidos de forma direta). Em certas circunstâncias, deve ser equacionada a substituição destes formatos pelos gráficos de barras e gráficos de área.
 
-
 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+    \centering
+\includegraphics[scale=0.5,height=200pt,width=14cm]{figures/newplot.png}
+    \caption{\textbf{(Gráfico de Linha 1):} Taxa de Motorização do Tipo Motocicleta em Belém, Pará, Brasil, no período de 2003 a 2020.}
+    \label{fig:my_label500}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+\includegraphics[scale=0.5,height=200pt,width=14cm]{figures/newplot(1).png}
+    \caption{\textbf{(Gráfico de Linha 2):} Taxa de Mortalidade na condição de Motociclista em Belém, Pará, Brasil, no período de 2002 a 2021.}
+    \label{fig:my_label500}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \subsection{Gráfico Circular, Setorial ou Pizza (\textit{Pie Chart})}
 
 O gráfico circular, setorial ou também chamado de Pizza, é utilizado para comparar os valores de cada parcela de um conjunto de dados com o total. É feito tomando por base a figura de um círculo dividido em setores de tamanhos proporcionais aos valores que representam. Os valores são expressos em números ou em percentuais. \vskip0.3cm
