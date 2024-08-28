@@ -197,7 +197,7 @@ embora ele possa ser quantificado;
 a fim de evitar a individualização das
 informações, nos casos onde existem
 apenas um ou dois informante;
-\item Caso os dados sejam secundários, as fontes são obrigatórias.
+\item Caso os dados sejam secundários, as fontes são \textbf{Obrigatórias}.
 \item Devem preferencialmente ser apresentadas no mesmo tipo e tamanho de letras adotados no texto ou reduzidas até um limite que não prejudique a sua leitura. Nunca em tamanho maior que o texto;
 \item Não utilizar mais casas decimais do que o necessário para
 não mascarar as comparações de interesse. 
@@ -237,7 +237,6 @@ seções, estas dispostas umas abaixo das outras e separadas por um traço horiz
 colunas e muitas linhas, poderá ser disposta em duas ou mais
 partes, lado a lado, separando-se as partes por um traço vertical
 duplo.
-\newpage
 \item As expressões que totalizam os dados devem ser destacadas em negrito ou letras maiúsculas. Ex: Total, Subtotal, TOTAL;
 \item Nenhuma casa da tabela deve ficar em branco, apresentando sempre um número ou sinal.
 \item Deve ser evitado o uso de siglas e abreviaturas que não sejam de uso corrente; quando necessárias devem ser grafadas por extenso como nota na tabela;
@@ -253,6 +252,7 @@ duplo.
 \end{flushleft}
 \label{tabelarotacionada}
     \vspace{0.2cm}
+\begin{table}[H]
 \begin{tabular}{l|c|c|c|c|c|c|c|c}
 \hline\hline
 Municípios & Automóvel & Motocicleta & Caminhonete  & Camioneta & Caminhão  & ônibus & Trator & Total     \\
@@ -270,6 +270,7 @@ Altamira   & 10.693   & 37.980       & 4.795        & 752    & 2.032     & 689  
   Total    & 387.820  & 383.294      & 69.475      & 28.588  & 27.997    & 8.678    & 4.002   &  909.854  \\
 \hline\hline 
 \end{tabular}
+\end{table}
 \begin{flushleft}
 \hspace{0.2cm}
 \textbf{Fonte}: DETRAN-PA, 2023. 
@@ -514,6 +515,58 @@ respectivos Cabeçalhos;
 \item [d)] O traço horizontal da moldura que· separa o rodapé deve ser apresentado somente em cada página que contenha a última linha da tabela;
 \item [e)] O conteúdo do rodapé só deve ser apresentado na página de conclusão.
 \end{itemize}
+
+\newpage
+\subsection{Arrendondamento e Decimais}
+
+
+
+
+
+Muitos usuários não estatísticos acham difícil ver a diferença entre os números quando três ou mais dígitos variam. Você pode ajudá-los arredondando os valores apresentados em suas tabelas.
+O arredondamento também pode ser utilizado quando os dados não possuem um alto grau de precisão.\vskip0.3cm 
+
+Em alguns casos, apenas os dados arredondados são fiáveis e devem, portanto, ser apresentados em tabelas. Você deve, no entanto, tomar cuidado para não perder muita informação ao arredondar seus dados
+
+
+\begin{table}
+    \centering
+    \begin{tabular}{r|r}
+    \hline \hline
+       \textbf{Bom Exemplo}  & \textbf{Mau Exemplo}\\
+    \hline
+      5 760 000              &   5760000\\
+      2 680 000              &   2680000\\
+      1 390 000              &   1390000\\
+    \hline \hline
+    \end{tabular}
+    \caption{Exemplo de Tabela com Tipo de Arrendondamento por Espaço}
+    \label{tab:my_label}
+\end{table}
+
+No exemplo acima, os números arredondados à esquerda são mais fáceis de entender e memorizar do que os números exatos à direita. O uso de um espaço como separador de milhar também é ilustrado neste exemplo.\vskip0.3cm
+
+
+Para facilitar a leitura de números com diferentes quantidades de casas decimais, é importante alinhá-los pelo separador decimal (a vírgula, no caso do Brasil), em vez de simplesmente alinhá-los à direita. Isso torna a comparação entre os valores mais fácil e rápida. Veja o exemplo abaixo, onde os valores à esquerda estão alinhados pela vírgula e, portanto, mais fáceis de ler em comparação com os da direita. Além disso, é recomendável exibir o mesmo número de casas decimais para todos os valores.
+
+
+\begin{table}
+    \centering
+    \begin{tabular}{r|l}
+    \hline \hline
+       \textbf{Bom Exemplo}  & \textbf{Mau Exemplo}\\
+    \hline
+        63.2                 &   63.2\\
+      1053.0                 &   1053\\
+       458.3                 &   458.3\\
+    \hline \hline
+    \end{tabular}
+    \caption{Exemplo de Tabela com Tipo de Alinhamento pela Vírgula.}
+    \label{tab:my_label2}
+\end{table}
+
+
+
 
 \newpage
 \section{Séries Estatísticas}
