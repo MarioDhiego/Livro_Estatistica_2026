@@ -497,7 +497,7 @@ Altamira   & 10.693   & 37.980       & 4.795        & 752    & 2.032     & 689  
 \end{tabular}}
 \\
 \hspace{-7.5cm}
-\textbf{Fonte}: IBGE/FAPESPA, 2019. \\
+\textbf{Fonte}: IBGE/2019. \\
 \hspace{-7.5cm}
 \textbf{Elaboração}: FAPESPA, 2020.
 \end{table}
@@ -517,23 +517,20 @@ respectivos Cabeçalhos;
 \end{itemize}
 
 \newpage
-\subsection{Arrendondamento e Decimais}
+\section{Arrendondamento e Decimais}
 
+Muitos usuários que não têm familiaridade com estatística encontram dificuldades para diferenciar números quando há variação em três ou mais dígitos decimais. Para facilitar a interpretação dos dados, uma solução eficaz é arredondar os valores apresentados em tabelas. Isso simplifica a leitura e a comparação entre os números.\vskip0.3cm 
 
+Além disso, o arredondamento é particularmente útil quando os dados não exigem um alto grau de precisão, como em casos onde pequenos detalhes não afetam significativamente a análise ou as conclusões. Ao fazer isso, você melhora a acessibilidade das informações e garante que os usuários possam interpretar os dados com mais facilidade e confiança.\vskip0.3cm
 
+É importante ter cautela ao arredondar seus dados para não comprometer a qualidade da informação. Embora o arredondamento possa facilitar a análise e a apresentação, ele também pode levar à perda de detalhes cruciais. O ideal é encontrar um equilíbrio, mantendo a precisão necessária sem sacrificar a clareza. Em casos de dados sensíveis ou de alta precisão, é recomendável manter o maior número de casas decimais possível, ajustando o arredondamento apenas na apresentação final, se necessário.
 
-
-Muitos usuários não estatísticos acham difícil ver a diferença entre os números quando três ou mais dígitos variam. Você pode ajudá-los arredondando os valores apresentados em suas tabelas.
-O arredondamento também pode ser utilizado quando os dados não possuem um alto grau de precisão.\vskip0.3cm 
-
-Em alguns casos, apenas os dados arredondados são fiáveis e devem, portanto, ser apresentados em tabelas. Você deve, no entanto, tomar cuidado para não perder muita informação ao arredondar seus dados
-
-
+%----------------------------------------------------------------------------------
 \begin{table}
     \centering
     \begin{tabular}{r|r}
     \hline \hline
-       \textbf{Bom Exemplo}  & \textbf{Mau Exemplo}\\
+  \fcolorbox{green}{white}{Bom Exemplo}  &\fcolorbox{red}{white}{Mau Exemplo}\\
     \hline
       5 760 000              &   5760000\\
       2 680 000              &   2680000\\
@@ -543,29 +540,52 @@ Em alguns casos, apenas os dados arredondados são fiáveis e devem, portanto, s
     \caption{Exemplo de Tabela com Tipo de Arrendondamento por Espaço}
     \label{tab:my_label}
 \end{table}
+%----------------------------------------------------------------------------------
 
 No exemplo acima, os números arredondados à esquerda são mais fáceis de entender e memorizar do que os números exatos à direita. O uso de um espaço como separador de milhar também é ilustrado neste exemplo.\vskip0.3cm
 
+\newpage
+Para facilitar a leitura de números com diferentes quantidades de casas decimais, é importante alinhá-los pelo separador decimal (a vírgula, no caso do Brasil), em vez de simplesmente alinhá-los à direita. \vskip0.3cm
 
-Para facilitar a leitura de números com diferentes quantidades de casas decimais, é importante alinhá-los pelo separador decimal (a vírgula, no caso do Brasil), em vez de simplesmente alinhá-los à direita. Isso torna a comparação entre os valores mais fácil e rápida. Veja o exemplo abaixo, onde os valores à esquerda estão alinhados pela vírgula e, portanto, mais fáceis de ler em comparação com os da direita. Além disso, é recomendável exibir o mesmo número de casas decimais para todos os valores.
+Isso torna a comparação entre os valores mais fácil e rápida. Veja o exemplo abaixo, onde os valores à esquerda estão alinhados pela vírgula e, portanto, mais fáceis de ler em comparação com os da direita. Além disso, é recomendável exibir o mesmo número de casas decimais para todos os valores.
 
-
+%----------------------------------------------------------------------------------
 \begin{table}
     \centering
-    \begin{tabular}{r|l}
+    \begin{tabular}{r|r}
     \hline \hline
-       \textbf{Bom Exemplo}  & \textbf{Mau Exemplo}\\
+\fcolorbox{green}{white}{Bom Exemplo}  &\fcolorbox{red}{white}{Mau Exemplo}\\
     \hline
-        63.2                 &   63.2\\
-      1053.0                 &   1053\\
-       458.3                 &   458.3\\
+        63,2                 &   63,2\\
+      1053,0                 &   1053\\
+       458,3                 &   458,3\\
     \hline \hline
     \end{tabular}
     \caption{Exemplo de Tabela com Tipo de Alinhamento pela Vírgula.}
     \label{tab:my_label2}
 \end{table}
+%----------------------------------------------------------------------------------
 
 
+Os valores numéricos devem ser justificados à direita. Usando outro exemplo, observe como é difícil ler os valores quando os números estão justificados na margem esquerda conforme mostrado abaixo.
+
+
+%----------------------------------------------------------------------------------
+\begin{table}
+    \centering
+    \begin{tabular}{r|l}
+    \hline \hline
+ \fcolorbox{green}{white}{Bom Exemplo}  &\fcolorbox{red}{white}{Mau Exemplo}\\
+    \hline
+        185,4                &   185,4\\
+      5291,2                 &   52912\\
+       231,0                 &   231,0\\
+    \hline \hline
+    \end{tabular}
+    \caption{Exemplo de Tabela com Tipo de Justificado à Esquerda.}
+    \label{tab:my_label3}
+\end{table}
+%----------------------------------------------------------------------------------
 
 
 \newpage
