@@ -74,7 +74,10 @@ O uso de amostras pode proporcionar maior rapidez no trabalho, porém exige dete
 
 \newpage
 \subsection{Fatores que Afetam o Tamanho da Amostra} 
-Existem alguns fatores que afetam o tamanho da amostra em projetos de pesquisas científicas nas diversas áreas.
+
+O tamanho da amostra em uma pesquisa ou estudo depende de vários fatores que influenciam a precisão, a confiabilidade dos resultados e os recursos disponíveis. Aqui estão os principais fatores que afetam o tamanho da amostra:
+
+
 
 \begin{itemize}
 \item \textbf{Objetivo da Amostra}: estudos descritivos costumam exigir amostra com menror número de particpantes;
@@ -168,22 +171,35 @@ intervalo em torno do valor que a estatística acusa, dentro do
 qual encontra-se o verdadeiro valor do paramêtro que se deseja
 estimar, quanto menor o erro amostral tolerado pelo pesquisador,
 maior será o tamanho da amostra para que se possa obter essa maior
-precisão da estatística.\vskip0.3cm
+precisão da estatística.
+
+\newpage
+Assim, por exemplo, se o pesquisador tolerar no máximo um erro de 2\%, i.e., que o verdadeiro valor do parâmetro seja no máximo 2\% menor ou 2\% maior que o valor que a estatística acusa na amostra, ele terá que trabalhar com uma amostra aleatória composta por 2.500 indivíduos da população, ao passo que, se o pesquisador tolerar um erro amostral de 2,5\%, ele terá que trabalhar com uma amostra aleatória composta por 1.600 indivíduos da população e o verdadeiro valor do parâmetro da população estará no intervalo entre 2,5\% a menos até 2,5\% a mais do valor que a estatística acusa na amostra, com 95\% de probabilidde. \vskip0.3cm
 
 
-Assim, por exemplo, se o pesquisador tolerar no máximo um erro de 2\%, i.e., que o verdadeiro valor do parâmetro seja no máximo 2\% menor ou 2\% maior que o valor que a estatística acusa na amostra, ele terá que trabalhar com uma amostra aleatória composta por 2.500 indivíduos da população, ao passo que, se o pesquisador tolerar um erro amostral de 2,5\%, ele terá que trabalhar com uma amostra aleatória composta por 1.600 indivíduos da população e o verdadeiro valor do parâmetro da população estará no intervalo entre 2,5\% a menos até 2,5\% a mais do valor que a estatística acusa na amostra, com 95\% de probabilidde. Portanto, quanto maior a precisão que se deseja associar à estimativa estatística, maior o tamanho amostral necessário para atendê-la.\vskip0.3cm
+Portanto, quanto maior a precisão que se deseja associar à estimativa estatística, maior o tamanho amostral necessário para atendê-la.\vskip0.3cm
 
 Conhecendo-se o tamanho da população N, pode-se corrigir o cálculo de $n_{0}$, obtido por \ref{nzero}, para se ter o tamanho da amostra aleatória simples, n, através da expressão:
 
 \begin{equation}\label{nzero2}
-    n= \left[ \frac{\left(N \times n_{0}\right)}{\left(N + n_{0}\right)} \right]
+n= \left[ \frac{\left(N \times n_{0}\right)}{\left(N + n_{0}\right)} \right] 
+\end{equation}
+
+ou 
+
+\begin{equation}\label{nzero2}
+n=  \left[ \frac{N \times \frac{1}{(\epsilon_{0})^{2}}}{N + \frac{1}{(\epsilon_{0})^{2}}} \right]
 \end{equation}
 
 
-Para exemplificar, Rocha (2013) fez um levantamento junto a Delegacia de Crimes contra a Mulher de Macapá (AP) no  período de agosto de 2011 a junho de 2012, do universo das ocorrências registradas, há um total de 1.735 de ocorrências consideradas por
-aquele órgão estatal como solucionadas. Desse total, 994 são relativos à violência conjugal distribuídos da seguinte forma: 546 solucionadas, de agosto a dezembro de 2011 e 448 solucionadas, de janeiro a junho de 2012. Para a realização do estudo optou-se em retirar uma amostra representativa do total referente à violência conjugal, por meio das fórmulas demonstradas anteriormente. \vskip0.3cm
+Para exemplificar, Rocha (2013) fez um levantamento junto a Delegacia de Crimes contra a Mulher de Macapá (AP) no  período de agosto de 2011 a junho de 2012, do universo das ocorrências registradas, há um total de 1.735 de ocorrências consideradas por aquele órgão estatal como solucionadas. \vskip0.3cm 
+
+Desse total, 994 são relativos à violência conjugal distribuídos da seguinte forma: 546 solucionadas, de agosto a dezembro de 2011 e 448 solucionadas, de janeiro a junho de 2012.\vskip0.3cm 
 
 
+Para a realização do estudo optou-se em retirar uma amostra representativa do total referente à violência conjugal, por meio das fórmulas demonstradas anteriormente. \vskip0.3cm
+
+\newpage
 O valor do $\varepsilon_{0}=erro$ a ser adotado será de 5\%.
 Portanto, substituindo o valor do erro na expressao 2.1
 
@@ -205,7 +221,6 @@ estatísticamente representativa da população de 994.
 
 
 
-\newpage
 \section{Amostragem Probabilística}
 Os Principais métodos de amostragem probabilísticas são: Aleatória Simples, Sistemática, Estratificada e Conglomerado.
 
@@ -228,6 +243,7 @@ são pode entrar uma vez na amostra).\vskip0.3cm
 
 Na amostra simples ao acaso sem reposição, as unidades são selecionadas independentemente entre si, e o número de amostras possíveis (nap) de tamanho igual a n é dada pela relação:
 
+\newpage
 
 \begin{equation}\label{nap}
     nap=  \mathcal{C}_{N}^{n}= \left[\frac{N!}{n!(N-n)!} \right] = \left[\frac{N}{n}\right]^{-1}
@@ -236,7 +252,7 @@ Na amostra simples ao acaso sem reposição, as unidades são selecionadas indep
 A amostra simples é um processo congruente, ou seja, quando n=N, as estimativas coincidem com os valores populacionais, recomendada para pequenas àreas com caracteristicas homogêneas com respeito as variáveis de interesse e com fácil estrutura de acessibilidade.
 
 
-\newpage
+
 \subsection{Amostragem Estratificada (AE)}
 
 Muitas vezes a população se divide, em sub-populações,
@@ -288,6 +304,8 @@ estratificação da amostra levando em conta faixas etárias (já que
 dispomos de informação detalhada da distribuição dos indivíduos
 por faixa etária nos censos de população)\vskip0.3cm
 
+
+\newpage
 É importante observar, entretanto, que a precisão de uma amostra
 não depende de unicamente da dimensão da população, mas também da
 respectiva variabilidade. A variabilidade de um estrato é elevada,
@@ -397,14 +415,18 @@ adolescentes julgados pelo TJE em três municípios Paraenses no período de 201
 \hspace{-1.0cm}
 \end{table}
 
-
+\newpage
 De acordo com a tabela 2.3, vericou-se que, as maiorias dos processos estão
 concentradas no município de Belém (82,2\%), 10,8\% em Parauapebas e apenas 6,9\%
 em Abaetetuba. Porém, os processos não são digitalizados, contendo muitas páginas
 cada um, e tendo que ser acessado em horários restritos no TJE, não podendo fazer
-cópias dos mesmos. Dificultando, assim, o trabalho de catalogação de todos os 675
+cópias dos mesmos.\vskip0.3cm 
+
+Dificultando, assim, o trabalho de catalogação de todos os 675
 processos de agressão sexual, levando-se em conta, as caracteríssticas dos autores, das
-vitimas e a tipificação das agressões. Com isso, devido a diversos fatores, optou-se
+vitimas e a tipificação das agressões. \vskip0.3cm 
+
+Com isso, devido a diversos fatores, optou-se
 em trabalhar com uma amostra estatisticamente representativa da população em estudo.
 \vskip0.3cm
 
@@ -430,16 +452,12 @@ Contudo, a população alvo está dividida em três municípios com quantidades
 de processos diferentes em cada. Havendo a necessidade de levantar o tamanho da
 amostra levando-se em conta que, o número de elementos sorteados em cada estrato
 é proporcional ao numero de elementos no estrato, chamado Método de Amostragem
-Estratificada Proporcional.\vskip0.3cm
+Estratificada Proporcional.
 
-
+\newpage
 Assim, para se calcular o tamanho de amostra estratificada proprocional a cada
 município (estrato) da população, utiliza-se a fórmula abaixo,
 
-
-
-%\begin{equation}
-%\end{equation}
 
 $$
 n_{(h_{1)}}= n \times  \left[\frac{N_{(h_{1})}}{N} \right]= 251 \times \left[\frac{47}{675}\right]= 18
@@ -452,7 +470,7 @@ $$ 	n_{(h_{3)}}= n \times \left[\frac{N_{(h_{3})}}{N} \right]= 251 \times \left[
 $$ n = \left[ n_{(h_{1})} + n_{(h_{2})} + n_{(h_{3})}\right]= 18+206+27 = 251
 $$
 
-\newpage
+
 \subsection{Amostragem Sistemática (AS)}
 
 A amostragem sistemática consiste em sortear uma unidade da população e, a partir dela, para constituir
@@ -465,7 +483,7 @@ De acordo com Loetsch et al (1973) a amostragem sistemática consiste em selecio
 de um esquema rígido e preestabelecido de sistematização segundo uma distribuição espacial equitativa ou mecânica, com os propósitos de cobrir a população em toda a sua extensão, e obter um modelo sistemático simples e uniforme. \vskip0.3cm
 
 
-\begin{figure}
+\begin{figure}[H]
     \centering
 \includegraphics[scale=0.26]{figures/sistematica1.png}
     \caption{Exemplo de Amostragem Sistemática Geral.}
@@ -473,7 +491,7 @@ de um esquema rígido e preestabelecido de sistematização segundo uma distribu
 \end{figure}
 
 
-\newpage
+
 A amostragem sistemática apresenta uma diferença marcante com relação a amostragem aleatória simples, no que tange
 ao número de amostras possíveis. Sendo recomendada para utilização quando os elementos da população encontram-se
 ordenados (MARQUES, 2002).\vskip0.3cm
@@ -492,9 +510,8 @@ sendo $0 < i \leq k$. Esse numero i será o primeiro elemento da
 amostra. O segundo elemento da amostra será $i+k$, o terceiro
 elemento será $i+2k$, e assim sucessivamente, de forma sistematica
 até $i+(n-1)k$, ou seja, até completar o valor de n.
-\vskip0.3cm
 
-
+\newpage
 \textbf{Vantagens da Amostragem Sistemática}
 \vskip0.3cm
 
@@ -589,7 +606,7 @@ Assim calcula-se o k, verifica-se que sorteando um número entre 1 e k=3, tem-se
 \end{table}
 
 
-\newpage
+
 \subsection{Amostragem Por Conglomerados ou Clusters}
 
 A amostragem por conglomerados ou grupos é uma variação de qualquer processo de amostragem que, em vez de utilizar unidades de amostras individuais, usa um grupo ou conglomerado de pequenas subparcelas ou unidades secundárias (QUEIROZ, 2012).\vskip0.3cm
@@ -619,8 +636,10 @@ Totais                       &  $y_{1.}$ & $y_{2.}$ &  $y_{3.}$ &   $\cdots$    
 
 Apesar de a amostragem estratificada apresentar resultados
 satisfatórios, a sua implementação é dificultada pela falta
-de informações sobre a população para fazer a estratificação.\vskip0.3cm
+de informações sobre a população para fazer a estratificação.
 
+
+\newpage
 Para poder contornar esse problema, pode-se trabalhar com o
 esquema de levantamento chamado amostragem por conglomerados.\vskip0.3cm
 
@@ -633,7 +652,7 @@ redução significativa do custo no processo de amostragem.\vskip0.3cm
 A amostragem por conglomerados ou também chamada de clusters, é usada quando a população
 pode ser dividida em subpopulações heterogêneas.\vskip0.3cm
 
-\newpage
+
 Uma amostragem por conglomerado é indicada quando:
 
 \begin{itemize}
@@ -655,7 +674,7 @@ Uma amostragem por conglomerado é indicada quando:
 
 
 
-
+\newpage
 As unidades de amostragem ou grupos podem ser espaçadas como ocorre naturalmente em unidades geográficas ou físicas (por exemplo, estados, delegações ou distritos); em base  a uma organização como escolas, grau escolar; ou serviço telefônico, tais como códigos de área ou alterar o código de área do serviço dos números de telefone.\vskip0.3cm
 
 Duas grandes dimensões são utilizadas para classificar os diferentes tipos de amostragem por conglomerados. Uma baseia-se no número de fases do projeto da amostra, e o outra na representação proporcional de grupos na amostra total.\vskip0.3cm
@@ -691,13 +710,17 @@ A abordagem da amostragem por julgamento pode ser útil quando é necessário in
 
 \subsection{Amostragem por Quotas ou Proporcional}
 
-A amostra por quotas constitui um tipo especial de amostra intencional, em que o pesquisador procura obter uma amostra que seja similar à população sob algum aspecto.\vskip0.3cm
-
-A seleção de amostra por quotas é a forma mais usual de amostragem não probabilística. Neste caso, são consideradas várias características da população como gênero, idade, raça e renda familiar, incluindo proporções similares de pessoas com as mesmas características.\vskip0.3cm
-
-A idéia de amostragem por quotas sugere que se as pessoas são representativas em termos de características, elas também poderão ser representativas em termos da informação procurada pela pesquisa. Depois de serem identificadas as proporções de cada tipo a ser incluído na amostra, o pesquisador estabelece um número ou quota de pessoas que possuem as características determinadas e que serão contatadas pela pesquisa. \vskip0.3cm
+A amostragem por quotas ou proporcional é uma abordagem muito utilizada em pesquisas quando o objetivo é garantir que a amostra reflita, de maneira aproximada, as características da população em estudo. Aqui estão os pontos mais relevantes sobre este método:
 
 
-O entrevistador recebe instruções para continuar a amostragem até que a quota necessária tenha sido atingida em cada estrato.\vskip0.3cm
+\begin{itemize}
+    \item \textbf{Definição e Objetivo}:
+A amostragem por quotas é um tipo de amostragem não probabilística em que o pesquisador busca obter uma amostra semelhante à população com base em características específicas, como gênero, idade, raça ou renda. Isso é feito para assegurar que a amostra represente a diversidade da população em relação a essas variáveis;
+\item \textbf{Processo de Seleção}: Primeiro, são identificadas as características relevantes da população que precisam estar representadas na amostra. Em seguida, calcula-se a proporção de cada grupo na população. Com base nessas proporções, o pesquisador estabelece quotas (número de participantes por grupo) que devem ser preenchidas;
+\item \textbf{Instruções aos Entrevistadores}:
+Os entrevistadores são orientados a buscar pessoas que se encaixem nas características definidas até que a quota de cada grupo seja atingida.
+\item \textbf{Vantagens}: É um método rápido e de baixo custo, já que dispensa a necessidade de uma seleção aleatória complexa. Permite um controle maior sobre as características da amostra, assegurando que ela seja representativa em aspectos relevantes. Útil quando as características populacionais são bem conhecidas e estão relacionadas ao objeto de estudo.
+\item \textbf{Limitações}: Não garante representatividade probabilística, uma vez que os participantes são selecionados de forma intencional, e não aleatória. A qualidade dos resultados depende da habilidade e do julgamento do entrevistador, podendo haver viés de seleção. Pode ser inadequado quando as categorias relevantes para a pesquisa são numerosas ou difíceis de identificar.
+\end{itemize}
 
-Uma pesquisa com amostragem por quotas poderá ser utilizado e trazer bons resultados quando as características relevantes para controle e delineamento da amostra forem conhecidas, estiverem disponíveis ao pesquisador, estiverem relacionadas ao objeto de estudo e se constituírem em poucas categorias.
+A amostragem por quotas é amplamente utilizada em pesquisas de mercado, pesquisas sociais e políticas, onde a rapidez e a flexibilidade na coleta de dados são fatores importantes.
