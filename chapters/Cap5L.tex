@@ -1,103 +1,163 @@
 \chapter{REPRESENTAÇÃO GRÁFICA}
 
-\textbf{(O Maior Valor de uma Imagem é quando ela nos força a notar o que nunca esperávamos ver."  - John. Tukey)} \vskip0.3cm
+\begin{quote}
+``O maior valor de uma imagem é quando ela nos força a notar o que nunca esperávamos ver.'' \\
+\hfill --- \textbf{John Tukey}
+\end{quote}
 
-\section{Desenvolvimento Histórico}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.45, line cap=round, line join=round, thick]
 
-As origens da visualização ou representação estão nos diagramas geométricos, nas tabelas de posição das estrelas e nos mapas. No século XVI, com a expansão marítima da Europa, novas técnicas e instrumentos foram desenvolvidos e, com eles, novos, e mais precisas, forma de apresentação visual do conhcecimento. Até meados do século 17, ocorreram os primeiros mapas e diagramas.\vskip0.3cm
+% ===== Quadrados de Fibonacci (tamanhos: 1,1,2,3,5,8,13) =====
 
-Durante meados de 1600 a 1699, período este chamado de Medições e Teorias, os maiores problemas do século se referiam a medição física do tempo, distância e espaço para astronomia, nevegação e expansão terrotorial. Avannçam as estimativas, as probabilidades, a demografia e todo o campo de estatística. No fim do século os elementos para iniciar um pensamento visual então prontos. \vskip0.3cm
+% S1 (1x1)
+\draw (0,0) rectangle (1,1);
+\node at (0.5,0.5) {1};
 
-Entre 1700 a 1799, conhecido como das novas fórmulas gráficas, cartógrafos começam a mostrar mais do que a posição geográfica. Até o fim do século aparecem tentativas de mapear informações de geologia, economia, demografia e saúde. A medida que o volume de dados avança, novas fórmulas de visualização aparecem. Inovações tecnológicas como a cor, litografia e imprenssa abrem novos caminhos. \vskip0.3cm
+% S2 (1x1) à direita de S1
+\draw (1,0) rectangle (2,1);
+\node at (1.5,0.5) {1};
+
+% S3 (2x2) acima de S1+S2
+\draw (0,1) rectangle (2,3);
+\node at (1,2) {2};
+
+% S4 (3x3) à esquerda do conjunto
+\draw (-3,0) rectangle (0,3);
+\node at (-1.5,1.5) {3};
+
+% S5 (5x5) abaixo do conjunto
+\draw (-3,-5) rectangle (2,0);
+\node at (-0.5,-2.5) {5};
+
+% S6 (8x8) à direita do conjunto
+\draw (2,-5) rectangle (10,3);
+\node at (6,-1) {8};
+
+% S7 (13x13) acima do conjunto
+\draw (-3,3) rectangle (10,16);
+\node at (3.5,9.5) {13};
+
+% ===== Arcos de 1/4 formando a espiral =====
+\draw  (1,0) arc[start angle=0, end angle=90, radius=1];
+\draw  (1,1) arc[start angle=90, end angle=180, radius=1];
+\draw  (2,1) arc[start angle=0, end angle=90, radius=2];
+\draw  (0,3) arc[start angle=90, end angle=180, radius=3];
+\draw  (-3,0) arc[start angle=180, end angle=270, radius=5];
+\draw  (2,-5) arc[start angle=270, end angle=360, radius=8];
+\draw  (10,3) arc[start angle=0, end angle=90, radius=13];
+
+\end{tikzpicture}
+\caption{Espiral de Fibonacci com quadrados de lados $1,1,2,3,5,8,13$ e números nos quadrados.}
+\label{fig:fibonacci_espiral_numeros}
+\end{figure}
+
+
+
+
+
 
 \newpage
-Em 1786, Willian Playfair produziu os primeiros gráficos de linhas, barras e setores.
+\section{Desenvolvimento Histórico}
+
+As origens da representação gráfica remontam aos primeiros diagramas geométricos, às tabelas de posição das estrelas e aos mapas. No século XVI, com a expansão marítima europeia, surgiram novos instrumentos e técnicas que possibilitaram formas mais precisas de apresentação visual do conhecimento. Até meados do século XVII, foram produzidos os primeiros mapas e diagramas sistematizados.\vskip0.3cm
+
+Entre 1600 e 1699, período conhecido como das Medições e Teorias, os grandes desafios estavam relacionados à mensuração física do tempo, das distâncias e do espaço, sobretudo para aplicações em astronomia, navegação e expansão territorial. Nesse contexto, avançaram as estimativas, as probabilidades, a demografia e o campo nascente da estatística. Ao final desse período, já estavam consolidados os elementos necessários para o início de um pensamento visual estruturado. \vskip0.3cm
+
+No século XVIII (1700–1799), denominado das Novas Fórmulas Gráficas, os cartógrafos passaram a representar mais do que apenas a posição geográfica, introduzindo informações relacionadas à geologia, economia, demografia e saúde. O crescimento do volume de dados impulsionou novas formas de visualização. Recursos tecnológicos, como o uso de cores, a litografia e a imprensa, abriram novos caminhos para a difusão da informação. \vskip0.3cm
+
+
+Em 1786, William Playfair produziu os primeiros gráficos de linhas, barras e setores, estabelecendo bases para a infografia moderna.
 
 \vspace{-0.2cm}
 \begin{figure}
     \centering
-\includegraphics[scale=0.5]{figures/william_playfair.jpeg}
+\includegraphics[scale=0.45]{figures/william_playfair.jpeg}
     \caption{William Playfair (1759-1823)}
     \label{fig:my_label4}
 \end{figure}
 
+\newpage
+Na primeira metade do século XIX (1800–1849), conhecida como \textbf{Início da Infografia Moderna}, houve uma verdadeira explosão na produção de gráficos estatísticos e de mapas temáticos. \vskip0.3cm
 
-A primeira metade do século XIX, conhecido com Início da Infografia Moderana (1800 à 1849), foi responsável por uma explosão no crescimento de gráficos estatísticos e de mapeamento temático, graças as inovações obtidas no século anterior. Todas as formas de gráficos estatísticos conhecidas hoje foram desenvolvidas nesta época, na cartografia, mapas simples foram transformados em atlas complexos baseados em grande variedade de dados.  
+As inovações do século anterior permitiram o desenvolvimento de praticamente todas as formas de gráficos que conhecemos hoje. Na cartografia, por exemplo, mapas simples evoluíram para atlas complexos, baseados em grande variedade de dados.  
 \vskip0.3cm
 
-Entre os anos de 1850 à 1900, conhecido como Era de Ouro da Estatística, onde as condições para um rápido crescimento das visualizações estavam estabelecidos. Escritórios de Análises se espalhavam pela Europa com o aumento da importância das informações numéricas para planejamento social, industria, comércio e transporte. A teoria estatística iniciada por GAUSS e LAPLACE deu os meios para fazer sentido a um grande número de dados.  
+Entre 1850 e 1900, período denominado \textbf{Era de Ouro da Estatística}, consolidaram-se as condições para um rápido crescimento da visualização de dados. Escritórios de análises se multiplicaram na Europa, refletindo a crescente importância das informações numéricas para o planejamento social, industrial, comercial e de transporte. \vskip0.3cm
+
+A teoria estatística desenvolvida por Gauss e Laplace forneceu os fundamentos para compreender grandes volumes de dados.  
 \vskip0.3cm 
 
-Compreendido entre 1900 à 1949, chamado de Período Negro do Gráficos de Estatística, aconteceram poucas inovações gráficas e o entusiasmo vivido no século passado foi suplantado pelo crescimento da quantificação e modelos formais. Durante esse período, no entanto, tudo que foi alcançado consegue se popularizar, seja no governo, no comércio e nas ciências. A visualização gráfica é consagrada para explicar novas descobertas e teorias.
+Já no início do século XX (1900–1949), ocorreu o chamado \textbf{Período Negro dos Gráficos Estatísticos}. Nesse intervalo, poucas inovações surgiram, e o entusiasmo do século anterior foi ofuscado pela valorização crescente da quantificação e dos modelos formais. Apesar disso, os recursos gráficos disponíveis se popularizaram em áreas como governo, comércio e ciências, consolidando a visualização como instrumento essencial de comunicação científica.\vskip0.3cm 
+
+A partir de 1975, com a expansão da informática, iniciou-se uma nova fronteira para a representação gráfica. O desenvolvimento de softwares interativos e de fácil manipulação permitiu avanços sem precedentes. \vskip0.3cm 
+
+
+Nos anos 1990, com a popularização da multimídia e da internet, multiplicaram-se as formas dinâmicas de visualização, como animações, gráficos interativos e mapas em escala variável.\vskip0.3cm  
+
+
 
 \newpage
-
-De 1975 até hoje, o computador é considerado como nova fronteira. As inovações ocorridas nesta época foram muitas e em diversas áreas: o desenvolvimento de softwares e sistemas de computador, altamente interativos e de fácil manipulação, foram a alavanca para tudo.\vskip0.3cm  
-
-Com o surgimento da multimídia e da internet nos anos 1990 foram multiplicadas as formas de representar informação de modo dinâmico, explorando animações, gráficos interativos e mapas com escala variável.
-
 \section{Autores Importantes na Representação Gráfica}
 
+Diversos autores contribuíram de forma decisiva para a consolidação da representação gráfica ao longo da história. Entre eles:
+
 \begin{itemize}
-\item O médico anestesista Britânico John Snow considerado o pai da epidemiologia moderna, em 1854, descobre a fonte transmissora de cólera e com um mapa registrou as coordenadas das ocorrências dos óbitos (SNOW, 1854a);
-\item Em 1858, Florence Nightingale, enfermeira britânica produziu o coxcomb diagrams que mostrou as baixas do exército britânico na Guerra da Criméia;
-\item Durante o ano de 1869, Charles Joseph Minard, engenheiro civil francês retratou a dizimação do exército de Napoleão durante sua condenada campanha contra a Rússia. Desmonstrando como níveis mais complexos de narratividades podem ser alcançados com uma única visualização estática (MINARD, 1869);
-\item No ano de 1914, Willard Brinton engenheiro americano publicou o primeiro livro de visualização para negócios;
-\item Em 1952, Mary Eleanor Spear publicou seu livro contendo boas práticas em construção de gráficos baseadas em décadas de serviço no governo Ame\-ricano;
-\item Em 1967, Jacques Bertin, cartógrafo francês publicou o primeiro livro sobre teoria da visualização (Sémiologie graphique: Les diagrames, les réseaux, les cartes), criava um sistema complexo de representação visual, com des\-taque para a cartografia. A semiologia gráfica era uma proposta arrojada para colocar problemas e apresentar dados de grande complexidade, longe de ser apenas ilustrativa (BERTIN, 1967); O livro era uma síntese de duas décadas de trabalho cotidiano na preparação de mapas para ilustrar livros de história e ciências sociais (GIL e BARLETA, 2015);
-\item Em meados de 1970, John Tukey matemático americano foi pioneiro no uso de computadores para visualização e popularizou o conceito de visualização exploratória e confirmatória (TUKEY, 1997);
-\item Em 1983, Edward Rolf Tufte publicou em seu livro formas de combinar rigor estatístico com clareza e princípios de design gráfico, ou seja, a excelência em gráficos estatísticos consiste em idéias complexas comunicadas com clareza, precisão e eficiência (TUFTE, 1983);
-\item Em 1986, Jock Mackinlay publicou sua Tese de PhD que levou o trabalho de Jacques Bertin para era digital;
-\item Em 1999, Leland Wilkinson estabeleu uma grámatica concisa para descrever os componentes de um gráfico.
+\item \textbf{John Snow} (1854) – Médico britânico considerado o pai da epidemiologia moderna, identificou a fonte transmissora da cólera em Londres utilizando um mapa que registrava os locais de ocorrência dos óbitos.;
+\item \textbf{Florence Nightingale} (1858) – Enfermeira britânica que produziu os famosos coxcomb diagrams, representando as baixas do exército britânico na Guerra da Crimeia;
+\item \textbf{Charles Joseph Minard} (1869) – Engenheiro civil francês que retratou a dizimação do exército de Napoleão em sua campanha contra a Rússia, criando uma das mais notáveis visualizações narrativas da história.;
+\item \textbf{Willard Brinton} (1914) – Engenheiro americano, autor do primeiro livro voltado à visualização de dados aplicada a negócios.;
+\item \textbf{Mary Eleanor Spear} (1952) – Publicou obra com boas práticas de construção de gráficos, fruto de sua experiência no governo americano;
+\item \textbf{Jacques Bertin} (1967) – Cartógrafo francês, autor de Sémiologie graphique, obra pioneira sobre teoria da visualização, propondo um sistema complexo de representação visual especialmente aplicado à cartografia.;
+\item \textbf{John Tukey} (década de 1970) – Matemático americano que introduziu o conceito de visualização exploratória e confirmatória, pioneiro no uso de computadores para análise gráfica.;
+\item \textbf{Edward R. Tufte} (1983) – Autor de referência em design de informação, combinou rigor estatístico com princípios de clareza visual, defendendo a comunicação eficiente de ideias complexas;
+\item \textbf{Jock Mackinlay} (1986) – Com sua tese de doutorado, levou os conceitos de Jacques Bertin para a era digital.;
+\item \textbf{Leland Wilkinson} (1999) – Estabeleceu uma gramática concisa para a descrição dos componentes de um gráfico, influenciando o desenvolvimento de ferramentas modernas de visualização..
 \end{itemize}
 
 \section{Porque usar Gráficos?}
 
-Primeiro, e mais importante, é preciso reforçar que a razão principal da análise de dados é a comunicação de idéias. De forma simplificada, é seu trabalho analisar informações retiradas de um banco de dados e sugerir possíveis efeitos no mundo real (PERLIM, 2022).\vskip0.3cm
-
-O primeiro princípio na criação de gráficos é que uma figura deve justificar a sua existência e conversar com a sua audiência (PERLIM, 2022.\vskip0.3cm
+O propósito fundamental da análise de dados é a comunicação de ideias. Em termos simples, cabe ao pesquisador analisar informações extraídas de bancos de dados e sugerir possíveis interpretações para a realidade.\vskip0.3cm
 
 
-As estatísticas geralmente podem ser melhor compreendidas quando são apresentadas em um gráfico do que em uma tabela. Um gráfico é uma representação visual de dados estatísticos, em que os dados são representados por símbolos como barras ou linhas.
-\vskip0.3cm  
-
-É uma ferramenta visual muito eficaz, pois exibe os dados de forma rápida e fácil, facilita a comparação e pode revelar tendências e relacionamentos dentro dos dados.\vskip0.3cm  
-
-Um gráfico geralmente assume a forma de uma figura uni ou bidimensional, como um gráfico de barras ou um gráfico de linhas. Embora existam gráficos tridimensionais disponíveis, eles geralmente são considerados complexos demais para serem facilmente compreendidos.\vskip0.3cm  
-
-\newpage
-Embora os gráficos fornecam menor grau de detalhes que as tabelas, estes apresentam um ganho na compreenção global dos dados, permitindo que se perceba imediatamente da sua forma geral sem deixar de evidenciar alhuns aspectos particulares que sejam de interesse do pesquisador, colocando em evidência as tendências, as ocorrências ocasionais, os valores mínimos e máximos e também as ordens de grandeza dos fenômenos que estão sendo observados.\vskip0.3cm
+Um gráfico deve justificar a sua existência e dialogar com o público-alvo. Muitas vezes, estatísticas são mais bem compreendidas quando apresentadas graficamente do que em tabelas, pois a representação visual facilita comparações, revela tendências e evidencia relações entre variáveis.\vskip0.3cm
 
 
-Os gráficos podem ser usados para ilustrar padrões em uma grande quantidade de dados ou para comunicar uma descoberta ou mensagem chave. Você deve considerar o uso de gráficos se quiser mostrar:
+Embora possam fornecer menos detalhes que as tabelas, os gráficos oferecem uma visão global dos dados, permitindo identificar tendências, ocorrências excepcionais, valores mínimos e máximos, bem como ordens de grandeza.\vskip0.3cm
+
+
+Os gráficos são particularmente úteis para mostrar:
+
 
 \begin{itemize}
-    \item \textbf{Comparação}: Quantos? Qual item é maior ou menor?
-    \item \textbf{Mudanças ao Longo do Tempo:} Como uma variável evolui?
-    \item \textbf{Distribuição de frequência}: Como os itens são distribuídos? Quais são as diferenças?
-    \item \textbf{Correlação}: Duas variáveis estão ligadas?
-    \item \textbf{Participação relativa de um todo}: como um item se compara ao total
+    \item \textbf{Comparação}: identificar qual item é maior ou menor;
+    \item \textbf{Evoluções temporais:} visualizar como uma variável se altera ao longo do tempo;
+    \item \textbf{Distribuições}: compreender a frequência ou dispersão dos valores;
+    \item \textbf{Relações}: observar correlações entre variáveis;
+    \item \textbf{Composição}: representar a participação relativa de cada parte em relação ao todo.
 \end{itemize}
 
 
 \section{Quando Pode Não ser Apropriado usar Gráficos}
 
-\textbf{(Um mau gráfico é pior do que nenhum gráfico.  - WALLGREN, 1996)} \vskip0.3cm
+%\begin{quote}
+%``Um mau gráfico é pior do que nenhum gráfico.'' \\
+%\hfill --- \textbf{Wallgren} (1996)
+%\end{quote}
 
-Um gráfico nem sempre é a ferramenta mais adequada para apresentar informações estatísticas. \vskip0.3cm
+Embora sejam poderosos instrumentos de comunicação, os gráficos não são sempre a melhor escolha. Em determinadas situações, textos ou tabelas podem transmitir informações de forma mais clara e objetiva \vskip0.3cm
 
-Às vezes, um texto e/ou tabela de dados pode fornecer uma explicação melhor para o seu público e economizar tempo e esforço consideráveis.\vskip0.3cm
-
-Você deve reconsiderar o uso de gráficos quando seus dados: 
+Deve-se reconsiderar o uso de gráficos quando os dados:
 
 \begin{itemize}
-\item Estiverem muito dispersos; 
-\item Têm poucos valores; 
-\item Ter muitos valores; 
-\item Mostram pouca ou nenhuma variação
+\item Estão muito dispersos; 
+\item São escassos ou apresentam poucos valores; 
+\item São excessivamente numerosos, comprometendo a legibilidade; 
+\item Apresentam pouca ou nenhuma variação significativa.
 \end{itemize}
 
-\newpage
+%\newpage
 \section{Conceitos Básicos de Representação Gráfica}
 
 Com palavras, números ou desenhos podem-se mostrar às pessoas interessadas o resultado da pesquisa, antes mesmo de aplicarem-se sobre os dados as operações matemáticas, que permitirão a interpretação final por parte da equipe encarregada do levantamento estatístico.\vskip0.3cm
@@ -113,7 +173,7 @@ As representações dos dados em sua forma gráfica constituem importantes instr
 A estatística gráfica são representações visuais dos dados estatatísticos que devem corresponder, mas nunca substituir as tabelas estatísticas.
 
 
-\newpage
+
 \section{Classificação Didática dos Gráficos}
 \subsection{Quanto a Forma}
 
@@ -134,7 +194,7 @@ Há três tipos de gráficos, classificados quanto ao critério da forma:
 São gráficos destinados principalmente ao público em geral, objetivando proporcionar uma visualização rápida e clara da intensidade das modalidades e dos valores relativos ao fenômeno observado. São gráficos tipicamente expositivos, devendo, por conseguinte, ser o mais o completo possível, dispensando comentários explicativos adicionais. Nos gráficos de informação não se deve prescindir dos títulos. Já as legendas podem ser omitidas, desde que as informações desejadas  estejam presentes, possibilitando a completa interpretação do gráfico.
 
 
-\newpage
+
 \subsubsection{Gráfico de Análise}
 
 Os gráficos de análise prestam-se melhor ao trabalho estatístico, fornecendo elementos úteis à fase de análise dos dados, sem deixar se ser também informativos. Quando se usam gráficos para apresentar os resultados de uma análise, esses freqüentemente vêm acompanhados de uma tabela. Inclui-se, muitas vezes, um texto dissertativo, chamando a atenção do leitor para os pontos principais revelados pelo gráfico ou pela tabela. Muitos relatórios administrativos, econômicos ou de qualquer outra natureza combinam as três formas de apresentação de dados. Isto porque, na prática, poucas pessoas têm habilidade com números, e as que têm dificuldades consultarão, via de regra, apenas o gráfico. Por outro lado, a maior parte das pessoas nunca examinará as tabelas estatísticas, preferindo analisar os gráficos e eventualmente procurar no texto a informação adicional necessária.\vskip0.3cm
@@ -152,7 +212,7 @@ A representação gráfica deve conter determinados elementos que são essenciai
 \begin{itemize}
 \item \textbf{Número}: utilizado para identificar o gráfico no texto, sendo sempre precedido da palavra GRÁFICO com o seu número. Por exemplo: GRÁFICO 1, GRÁFICO 2 etc, ou de acordo com a numeração do capítulo, GRÁFICO 1.1, GRÁFICO 1.2, e assim por diante. \item \textbf{Título}: deve conter designação do fenômeno observado (O QUE?) e o local (ONDE?) e data de ocorrência do mesmo (QUANDO?) e (COMO?), ficando abaixo do gráfico. 
 
-\newpage
+
 O título deve preferencialmente ser escrito após o número do gráfico, devendo ser separado por espaço, hífen e espaço em letras maiúsculas seguindo o padrão do texto. O título deve estar presente em qualquer tipo de representação gráfica a ser escrito com vista a orientar o leitor na sua interpretação. Simultaneamente, deve ser conciso, relevante e claro, ou seja, conter apenas informação essencial para uma interpretação correta do gráfico. 
 \item \textbf{Fonte}: indicação do órgão ou entidade responsável pelo fornecimento dos dados usados na elaboração do gráfico. Utilizar letras maiúsculas para escrever FONTE, devendo ser seguida de dois pontos, espaço e o nome da fonte utilizada. Quando os dados foram obtidos pelo próprio autor, por exemplo, em uma pesquisa e campo, a fonte pode ser escrita como: FONTE: o autor. 
 \item \textbf{Nota}: quando necessária, é utilizada para a apresentação de informações de natureza geral, esclarecendo o conteúdo ou metodologia utilizada. A nota vem em seguida à fonte. A palavra NOTA deve ser escrita em letras maiúsculas, devendo ser seguida de dois pontos, espaço e a explicação da nota. 
