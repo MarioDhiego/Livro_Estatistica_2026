@@ -1853,36 +1853,70 @@ Ela é usada como referência padrão, pois corresponde ao comportamento típico
 
 Exemplo realista de dados (cm)
 
-$$ x = {[165,168,170,172,175]} $$
-
-Esses valores são bem distribuídos em torno da média, sem extremos relevantes.
+$$ x = {[168,172,175,178,182]} $$
 
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    domain=-4:4,
-    samples=250,
-    axis lines=middle,
+    domain=150:200,
+    samples=300,
+    axis lines=left,
     xlabel={Altura (cm)},
     ylabel={Densidade},
-    width=11cm,
-    height=6.5cm,
-    xtick=\empty,
+    width=13cm,
+    height=7cm,
+    ymin=0,
+    xtick={150,160,170,180,190,200},
     ytick=\empty
 ]
-
-% Curva normal padrão
+%-----------------------------
+% Curva Mesocúrtica (Normal)
+%-----------------------------
 \addplot[
     thick,
-    blue
+    blue,
+    fill=blue!20
 ]
-{exp(-x^2/2)};
-
+{exp(-((x-175)^2)/(2*8^2))} \closedcycle;
+%-----------------------------
+% Curva Normal de Referência
+%-----------------------------
+\addplot[
+    thick,
+    black,
+    dashed
+]
+{exp(-((x-175)^2)/(2*8^2))};
+%-----------------------------
+% Linha da Média
+%-----------------------------
+\addplot[
+    thick,
+    black
+]
+coordinates {(175,0) (175,0.05)};
+\node at (axis cs:176,0.048)
+{\small $\mu$};
+%-----------------------------
+% ±1 Desvio-Padrão
+%-----------------------------
+\addplot[dotted, thick] coordinates {(167,0) (167,0.03)};
+\addplot[dotted, thick] coordinates {(183,0) (183,0.03)};
+\node at (axis cs:167,0.028) {\small $-1\sigma$};
+\node at (axis cs:183,0.028) {\small $+1\sigma$};
+% Texto interno
+\node at (axis cs:188,0.035)
+{\small (Normal)};
 \end{axis}
 \end{tikzpicture}
-\caption{Distribuição mesocúrtica típica de variáveis biológicas aproximadamente normais, como altura.}
+\caption{Distribuição mesocúrtica: altura humana segue aproximadamente a curva normal.}
 \end{figure}
+
+
+
+A altura de adultos tende a formar uma distribuição mesocúrtica, pois os valores se concentram moderadamente ao redor da média (ex.: 175 cm), sem extremos relevantes
+
 
 %-------------------------------------------------------------------------------%
 
@@ -1892,45 +1926,71 @@ Esses valores são bem distribuídos em torno da média, sem extremos relevantes
 Em estudos clínicos, a variável glicemia pode apresentar curtose elevada quando:
 
 \begin{itemize}
-    \item muitos pacientes possuem valores normais,
-    \item mas alguns poucos apresentam hiperglicemia severa.
+    \item muitos indivíduos estão próximos do normal (≈100 mg/dL);
+    \item poucos pacientes apresentam hiperglicemia severa.
 \end{itemize}
 
 Isso gera uma curva com pico alto e caudas pesadas, típica de uma distribuição leptocúrtica. \vskip0.3cm
 
 Exemplo realista de dados (mg/dL)
 
-$$ x = {[90,92,91,89,93,250]} $$
-
-O valor extremo (250) representa um paciente diabético fora do padrão geral.
+$$ x = {[90,92,95,100,105,280]} $$
 
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    domain=-4:4,
-    samples=250,
-    axis lines=middle,
+    domain=60:300,
+    samples=300,
+    axis lines=left,
     xlabel={Glicemia (mg/dL)},
     ylabel={Densidade},
-    width=11cm,
-    height=6.5cm,
-    xtick=\empty,
+    width=13cm,
+    height=7cm,
+    ymin=0,
+    xtick={60,100,140,180,220,260,300},
     ytick=\empty
 ]
-
-% Curva mais pontiaguda
+%-----------------------------
+% Curva Leptocúrtica (pico alto)
+%-----------------------------
 \addplot[
     thick,
-    red
+    red,
+    fill=red!20
 ]
-{exp(-x^2/0.7)};
+{exp(-((x-100)^2)/(2*10^2))} \closedcycle;
+%-----------------------------
+% Curva Normal de Referência
+%-----------------------------
+\addplot[
+    thick,
+    black,
+    dashed
+]
+{exp(-((x-100)^2)/(2*25^2))};
+%-----------------------------
+% Linha da Média
+%-----------------------------
+\addplot[thick, black]
+coordinates {(100,0) (100,0.05)};
+\node at (axis cs:102,0.048)
+{\small $\mu$};
+%-----------------------------
+% ±1 Desvio-Padrão
+%-----------------------------
+\addplot[dotted, thick] coordinates {(75,0) (75,0.025)};
+\addplot[dotted, thick] coordinates {(125,0) (125,0.025)};
+\node at (axis cs:75,0.023) {\small $-1\sigma$};
+\node at (axis cs:125,0.023) {\small $+1\sigma$};
+% Texto interno
+\node at (axis cs:200,0.03)
+{\small (caudas pesada)};
 
 \end{axis}
 \end{tikzpicture}
-\caption{Distribuição leptocúrtica: forte concentração na média e presença de caudas pesadas.}
+\caption{Distribuição leptocúrtica: glicemia apresenta concentração central e possíveis valores extremos.}
 \end{figure}
-
 
 
 
@@ -1939,7 +1999,6 @@ O valor extremo (250) representa um paciente diabético fora do padrão geral.
 \subsection{Platicúrtica (mais achatada)}
 
 O tempo de reação neurológico frequentemente apresenta grande variabilidade, pois depende de fatores como:
-
 
 \begin{itemize}
     \item Idade;
@@ -1953,7 +2012,7 @@ Assim, os valores ficam mais espalhados e a curva se torna achatada, caracteriza
 
 Exemplo realista de dados (ms)
 
-$$ x = {[180,220,310,400,520]} $$
+$$ x = {[180,250,350,500,650]} $$
 
 Os valores são bastante dispersos, reduzindo o pico central.
 
@@ -1961,29 +2020,57 @@ Os valores são bastante dispersos, reduzindo o pico central.
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    domain=-4:4,
-    samples=250,
-    axis lines=middle,
-    xlabel={Tempo de reação (ms)},
+    domain=100:700,
+    samples=300,
+    axis lines=left,
+    xlabel={Tempo de Reação Neurológico (ms)},
     ylabel={Densidade},
-    width=11cm,
-    height=6.5cm,
-    xtick=\empty,
+    width=13cm,
+    height=7cm,
+    ymin=0,
+    xtick={100,200,300,400,500,600,700},
     ytick=\empty
 ]
 
-% Curva achatada
+% Curva Platicúrtica
 \addplot[
     thick,
-    green!60!black
+    green!60!black,
+    fill=green!20
 ]
-{exp(-x^2/4)};
+{exp(-((x-400)^2)/(2*160^2))} \closedcycle;
+
+% Curva Normal de Referência
+\addplot[
+    thick,
+    black,
+    dashed
+]
+{exp(-((x-400)^2)/(2*80^2))};
+
+% Linha da Média
+\addplot[thick, black]
+coordinates {(400,0) (400,0.004)};
+\node at (axis cs:410,0.038) {\small $\mu$};
+
+% ±1 Desvio-Padrão
+\addplot[dotted, thick] coordinates {(320,0) (320,0.002)};
+\addplot[dotted, thick] coordinates {(480,0) (480,0.002)};
+\node at (axis cs:320,0.038) {\small $-1\sigma$};
+\node at (axis cs:480,0.038) {\small $+1\sigma$};
+
+% Texto interno corrigido (NÃO corta mais)
+\node[
+    align=center,
+    text width=4cm
+]
+at (rel axis cs:0.50,0.55)
+{\small Curva achatada\\(alta variabilidade)};
 
 \end{axis}
 \end{tikzpicture}
-\caption{Distribuição platicúrtica: maior dispersão e menor concentração central.}
+\caption{Distribuição platicúrtica: tempo de reação apresenta grande dispersão entre indivíduos.}
 \end{figure}
-
 
 
 %-------------------------------------------------------------------------------%
