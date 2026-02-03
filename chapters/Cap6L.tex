@@ -1136,127 +1136,300 @@ Dispõe-se de várias medidas de dispersão ou de variação, sendo as mais comu
 \newpage
 \subsection{Desvio Médio (DM)}
 
-O desvio médio (DM) é uma medida de dispersão que representa a média das distâncias absolutas entre cada observação e a média aritmética do conjunto de dados.
 
-\begin{equation}\label{eq:dm}
-DM = \frac{1}{n}\sum_{i=1}^{n} \left|x_i - \bar{x}\right|
+O desvio médio é uma medida de dispersão que indica o afastamento médio dos valores em relação à média aritmética. Ele é calculado pela média dos desvios absolutos:
+
+\begin{equation}\label{eq:dm_final}
+DM = \frac{1}{n}\Big(
+|x_1-\bar{x}|+
+|x_2-\bar{x}|+
+\cdots+
+|x_n-\bar{x}|
+\Big)
 \end{equation}
 
 
 \subsection{Variância ($S^{2}$) de Dados Brutos}
-A variância amostral de um conjunto de dados $x_{1},x_{2},\ldots,x_{n}$ , é assim definida:
 
-\begin{eqnarray}\nonumber
-S^{2} = \left[ \frac{(x_{1}-\bar{X})^{2}+(x_{2}-\bar{X})^{2}+\ldots+(x_{n}-\bar{X})^{2}}{n-1} \right]
-    & = &  \\
-    \left[ \frac{\sum_{i=1}^{n}(x_{i}-\bar{X})^{2}}{n-1} \right]  & = &  \\ \nonumber
-    \left[ \frac{\sum_{i=1}^{n}x_{i}^{2}-\frac{(\sum_{i=1}^{n}x_{i})^{2}}{n}}{n-1} \right] &  &
-\end{eqnarray}
+A variância amostral é uma medida de dispersão que quantifica o grau de afastamento
+dos valores em relação à média aritmética. Para um conjunto de dados
+$x_{1},x_{2},\ldots,x_{n}$, define-se:
+
+\begin{align}
+S^{2} &=
+\frac{(x_{1}-\bar{x})^{2}+(x_{2}-\bar{x})^{2}+\cdots+(x_{n}-\bar{x})^{2}}{n-1}
+\label{eq:var_expandida}
+\\[0.4cm]
+&=
+\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\bar{x})^{2}
+\label{eq:var_somatorio}
+\\[0.4cm]
+&=
+\frac{1}{n-1}
+\left[
+\sum_{i=1}^{n}x_{i}^{2}
+-
+\frac{\left(\sum_{i=1}^{n}x_{i}\right)^{2}}{n}
+\right]
+\label{eq:var_computacional}
+\end{align}
+
+onde:
+\begin{itemize}
+    \item $x_i$ representa o $i$-ésimo valor observado;
+    \item $\bar{x}$ é a média amostral;
+    \item $n$ é o tamanho da amostra;
+    \item $n-1$ é chamado de correção de Bessel, usada para obter um estimador não viciado.
+\end{itemize}
 
 
+\newpage
 \subsection{Variância ($S^{2}_{t}$) de Dados Tabulados}
 
-\begin{eqnarray}\nonumber
-S^{2} = \left[ \frac{(x_{1}-\bar{X})^{2}f_{1}+(x_{2}-\bar{X})^{2}f_{2}+\ldots+(x_{n}-\bar{X})^{2}f_{n}}{n-1} \right]
-    & = &  \\
-    \left[ \frac{\sum_{i=1}^{n}(x_{i}-\bar{X})^{2}f_{i}}{n-1} \right]  & = &  \\ \nonumber
-    \left[ \frac{\sum_{i=1}^{n}x_{i}^{2}f_{i}-\frac{(\sum_{i=1}^{n}x_{i}f_{i})^{2}}{n}}{n-1} \right] &  &
-\end{eqnarray}
+Quando os dados estão organizados em uma tabela de frequências, cada valor
+$x_i$ ocorre $f_i$ vezes. Nesse caso, a variância amostral tabulada é dada por:
+
+\begin{align}
+S_t^{2}
+&=
+\frac{(x_{1}-\bar{x})^{2}f_{1}+
+      (x_{2}-\bar{x})^{2}f_{2}+
+      \cdots+
+      (x_{k}-\bar{x})^{2}f_{k}}
+     {N-1}
+\label{eq:var_tabulada_expandida}
+\\[0.4cm]
+&=
+\frac{1}{N-1}\sum_{i=1}^{k}(x_{i}-\bar{x})^{2}f_{i}
+\label{eq:var_tabulada_somatorio}
+\\[0.4cm]
+&=
+\frac{1}{N-1}
+\left[
+\sum_{i=1}^{k}x_{i}^{2}f_{i}
+-
+\frac{\left(\sum_{i=1}^{k}x_{i}f_{i}\right)^{2}}{N}
+\right]
+\label{eq:var_tabulada_computacional}
+\end{align}
 
 
+onde:
+\begin{itemize}
+    \item $x_i$ representa o $i$-ésimo valor observado;
+    \item $f_i$ é a frequência absoluta associada a $x_i$;
+    \item $k$ é o número de valores distintos na tabela;
+    \item $N$ é o total de observações, dado por:
+\end{itemize}
+
+\begin{equation}
+N=\sum_{i=1}^{k}f_i
+\end{equation}
+
+
+\newpage
 \subsection{Variância Aparada}
 
-Uma medida ainda mais elaborada de dispersão é conhecida como "Variância Aparada" (trimmed variance). A idéia, como para a "média aparada", é omitir uma proporção dos maiores e menores valores e calcular o análogo da variância amostral:
+Uma medida mais robusta de dispersão é a chamada \textit{variância aparada}
+(\textit{trimmed variance}). Assim como ocorre com a média aparada, a ideia é
+reduzir a influência de valores extremos (outliers), omitindo-se uma proporção
+dos menores e maiores valores antes de calcular a variância.
 
-\begin{equation}\label{varAparada}
-    S_{\alpha}^{2} = \left[\frac{1}{n-2k}\right]\sum_{i=k+1}^{n-k}(X_{i}-\bar{X}_{\alpha})^{2}
+Considere uma amostra ordenada:
+
+\[
+X_{(1)} \leq X_{(2)} \leq \cdots \leq X_{(n)}.
+\]
+
+Seja $\alpha$ a proporção de observações a ser aparada em cada extremidade.
+Define-se:
+
+\[
+k \approx \alpha n,
+\]
+
+onde $k$ é o inteiro mais próximo de $\alpha n$.
+
+A variância aparada é então dada por:
+
+\begin{equation}\label{eq:var_aparada}
+S_{\alpha}^{2}
+=
+\frac{1}{\,n-2k\,}
+\sum_{i=k+1}^{n-k}
+\left(X_{(i)}-\bar{X}_{\alpha}\right)^{2}.
 \end{equation}
 
 
-Onde k é o inteiro mais próximo de $\alpha n$. Veja que é feita a média do quadrado dos desvios entre o valor e as médias aparadas consistentes (de acordo com a \label{aparada}). A variância aparada é algumas vezes multiplicada por um fator de ajuste para fazê-la mais consistente com a variância amostral ($S^{2}$).
-
-
-\subsection{Desvio Padrão (s)}
-
-Definido como a raiz quadrada positiva da variância, o desvio-padrão exerce grande vantagem sobre a variância, já que ele é apresentado na mesma unidade de medida dos dados brutos. Trata-se da mais importante das medidas de variabilidade, onde indica a dispersão média absoluta dos dados em torno da própria média aritmética. Também chamado \textbf{afastamento médio quadrático}, o desvio-padrão pode ser assim obtido de duas maneiras:\vskip0.3cm
-
-O desvio-padrão amostral de uma amostra de n valores quantitativos $x_{1}, x_{2}, \cdots, x_{n}$ não-tabelados é calculado mediante:
-
-\begin{equation}\label{dp}
-    S = \sqrt{\frac{\sum_{i=1}^{n}(x_{i}-\bar{X})^{2}}{n-1}} = \sqrt{S^{2}}
-\end{equation}
-
-Onde:
-
+onde:
 \begin{itemize}
-    \item $S$: é o desvio-padrão da amostra;
-    \item $n$: é é o número total de observações na amostra;
-    \item $X_{i}$ representa cada valor individual na amostra;
-    \item $\hat{X}_{i}$ é a média da amostra, calculada como $\hat{X}=\frac{\sum_{i=1}^{n} x_{i}}{n}$.
+    \item $X_{(i)}$ representa o $i$-ésimo valor da amostra após ordenação;
+    \item $\alpha$ é a proporção de dados eliminada em cada extremidade;
+    \item $k$ é o número de observações removidas de cada lado;
+    \item $\bar{X}_{\alpha}$ é a média aparada, calculada por:
 \end{itemize}
-\vskip0.3cm
 
+\begin{equation}\label{eq:media_aparada}
+\bar{X}_{\alpha}
+=
+\frac{1}{n-2k}
+\sum_{i=k+1}^{n-k}X_{(i)}.
+\end{equation}
 
+A variância aparada é particularmente útil quando a amostra contém valores
+extremos que podem inflar artificialmente a variância tradicional.
+Ao eliminar uma fração dos menores e maiores valores, obtém-se uma medida de
+dispersão mais robusta e representativa do comportamento central dos dados.
 
 \newpage
-Demostração do Desvio-Padrão
+\subsection{Desvio Padrão ($S$)}
 
-$$
-S = \sqrt{S^{2}}
-$$
+O desvio-padrão é definido como a raiz quadrada positiva da variância. 
+Ele apresenta uma grande vantagem sobre a variância, pois é expresso na 
+mesma unidade de medida dos dados originais.\vskip0.3cm
 
+Trata-se da medida de dispersão mais utilizada em Estatística, pois indica 
+o grau de afastamento dos valores em torno da média aritmética.\vskip0.3cm
 
-\begin{eqnarray}\nonumber
- S = \sqrt{\frac{\sum(X-\bar{X})^2}{N}} = \sqrt{\frac{\sum X^{2}}{N}- \left[ \frac{\sum X}{N} \right] ^2}     & = &  \\ \nonumber
- S^{2} = \frac{\sum (X-\bar{X})^2}{N}  = \frac{\sum(X^{2}-2\bar{X}X+\bar{X}^{2})}{N} = \frac{\sum X^{2}-2\bar{X}\sum X + \sum \bar{X}^{2} }{N}   & = &  \\ 
-\frac{\sum \bar{X}^{2} }{N} - \frac{2 \bar{X} \sum X}{N} + \frac{N \bar{X}^{2}}{N}  = 
-\frac{\sum \bar{x}^{2}}{N} - 2 \bar{X} \left(\frac{\sum X}{N} \right) + \bar{X}^{2}  & = &  \\ \nonumber
-\frac{\sum X^{2}}{N} - 2\bar{X}^{2} + \bar{X}^{2} =  \frac{\sum X^{2}}{N} - \bar{X}^{2} =  \frac{\sum \bar{x}^{2}}{N} -  \left[ \frac{\sum X}{N} \right]^{2}  \nonumber
-\end{eqnarray}
+O desvio-padrão amostral de uma amostra com $n$ observações 
+$x_{1},x_{2},\ldots,x_{n}$ é dado por:
 
-
-
-
-
-
-Já para dados tabulados, agrupados em classe de frequência usa-se
-
-\begin{equation}\label{dp}
-    S = \sqrt{\frac{\sum_{i=1}^{k}(x_{i}-\bar{X})^{2}f_{i}}{n-1}} = \sqrt{S^{2}}
+\begin{equation}\label{eq:dp_bruto}
+S=\sqrt{\frac{\sum_{i=1}^{n}(x_i-\bar{x})^{2}}{n-1}}
+=\sqrt{S^{2}}.
 \end{equation}
 
-Onde:
-
+onde:
 \begin{itemize}
-    \item $S$: é o desvio-padrão da amostra;
-    \item $k$: é é o número de classes;
-    \item $f_{i}$: é a frequência da classe i;
-    \item $n$: é o número total de observações na amostra (soma das frequências);
-    \item $x_{i}$: é o ponto médio de cada classe;
-    \item $\hat{X}_{i}$ é a média ponderada dos pontos médios das classes, calculada como $\hat{X} = \frac{\sum_{i=1}^{k} f_{i} x_{i}}{n}$.
+    \item $S$ é o desvio-padrão amostral;
+    \item $n$ é o número total de observações;
+    \item $x_i$ representa o $i$-ésimo valor observado;
+    \item $\bar{x}$ é a média amostral, definida por:
 \end{itemize}
-\vskip0.3cm
 
-\newpage
+\begin{equation}\label{eq:media}
+\bar{x}=\frac{\sum_{i=1}^{n}x_i}{n}.
+\end{equation}
+
+
+\subsubsection*{Forma computacional do desvio-padrão}
+Partindo da variância amostral:
+
+\begin{equation}
+S^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^{2},
+\end{equation}
+
+expandindo o termo quadrático:
+
+\begin{align}
+\sum_{i=1}^{n}(x_i-\bar{x})^{2}
+&=\sum_{i=1}^{n}(x_i^{2}-2x_i\bar{x}+\bar{x}^{2}) \\[0.2cm]
+&=\sum_{i=1}^{n}x_i^{2}
+-2\bar{x}\sum_{i=1}^{n}x_i
++\sum_{i=1}^{n}\bar{x}^{2}.
+\end{align}
+
+
+\begin{align}
+\sum_{i=1}^{n}(x_i-\bar{x})^{2}
+&=\sum_{i=1}^{n}x_i^{2}
+-2\bar{x}(n\bar{x})
++n\bar{x}^{2} \\[0.2cm]
+&=\sum_{i=1}^{n}x_i^{2}-n\bar{x}^{2}.
+\end{align}
+
+Portanto, a variância pode ser escrita como:
+
+\begin{equation}\label{eq:var_computacional}
+S^{2}=
+\frac{1}{n-1}
+\left[
+\sum_{i=1}^{n}x_i^{2}
+-\frac{\left(\sum_{i=1}^{n}x_i\right)^{2}}{n}
+\right].
+\end{equation}
+
+
+E finalmente:
+
+\begin{equation}
+S=\sqrt{S^{2}}.
+\end{equation}
+
+\subsection{Desvio Padrão para Dados Tabulados}
+
+Quando os dados estão organizados em uma tabela de frequências, o desvio-padrão é:
+
+\begin{equation}\label{eq:dp_tabulado}
+S=
+\sqrt{
+\frac{\sum_{i=1}^{k}(x_i-\bar{x})^{2}f_i}{N-1}
+}.
+\end{equation}
+
+
+onde:
+\begin{itemize}
+    \item $k$ é o número de classes (ou valores distintos);
+    \item $f_i$ é a frequência absoluta associada ao valor ou classe $i$;
+    \item $x_i$ é o ponto médio da classe $i$;
+    \item $N$ é o total de observações, dado por:
+\end{itemize}
+
+\begin{equation}
+N=\sum_{i=1}^{k}f_i.
+\end{equation}
+
+A média ponderada é:
+\begin{equation}
+\bar{x}=\frac{\sum_{i=1}^{k}x_i f_i}{N}.
+\end{equation}
+
+
 \subsection{Coeficiente de Variação (CV)}
 
-O coeficiente de variação ou coeficiente de variabilidade CV é uma medida de dispersão relativa, e útil para comparação, em termos relativos, do grau de concentração, em torno da média, de séries distintas.\vskip0.3cm 
+O coeficiente de variação (CV), também chamado de coeficiente de variabilidade,
+é uma medida de dispersão \textbf{relativa}, utilizada para comparar o grau de
+variabilidade de diferentes conjuntos de dados, especialmente quando estes
+apresentam unidades de medida distintas.\vskip0.3cm
 
-Devido ser um número adimensional permite a comparação de séries de variáveis com unidades diferentes. Assim, o CV é a razão percentual entre o desvio padrão e a média aritmética, ou seja, pode-se caracterizar a dispersão ou variabilidade dos dados em termos relativos ao seu valor médio, sendo representada por:
+Por ser uma medida \textbf{adimensional}, o CV permite comparar séries estatísticas
+mesmo quando expressas em escalas diferentes (por exemplo, peso em kg e altura em cm). \vskip0.3cm
 
+O coeficiente de variação é definido como a razão entre o desvio-padrão e a média,
+expressa em porcentagem:
 
-\begin{equation}\label{CV}
-    CV =  \left[ \frac{Desvio-Padrao}{Media} \right] \times 100 = \left[ \frac{S}{\bar{X}} \right]  \times 100
+\begin{equation}\label{eq:cv}
+CV=\frac{S}{\bar{x}}\times 100\%.
 \end{equation}
 
-Costuma-se usar a seguinte interpretação para o CV:
-
+onde:
 \begin{itemize}
-\item até $15\%$ variação pequena;
-\item $15\%$ a $30\%$ variação média;
-\item de $30\%$ ou mais, variação grande; 
+    \item $S$ é o desvio-padrão amostral;
+    \item $\bar{x}$ é a média aritmética da amostra.
 \end{itemize}
 
+O coeficiente de variação mede a dispersão dos dados em termos relativos ao valor
+médio. Valores menores de CV indicam maior homogeneidade, enquanto valores maiores
+indicam maior variabilidade.
+
+Costuma-se adotar, como regra prática, a seguinte interpretação:
+
+\begin{itemize}
+    \item $CV \leq 15\%$: variabilidade baixa (dados homogêneos);
+    \item $15\% < CV \leq 30\%$: variabilidade moderada;
+    \item $CV > 30\%$: variabilidade alta (dados heterogêneos).
+\end{itemize}
+
+
+\textbf{Observação:} o coeficiente de variação é adequado apenas quando a média
+$\bar{x}$ é positiva e diferente de zero. Caso contrário, o CV pode assumir valores
+muito elevados ou não possuir interpretação estatística apropriada.
+
+
+
+
+\newpage
 \subsubsection{Aplicações do CV na Gestão Pública} 
 
 O coeficiente de variação (CV) é uma medida estatística valiosa para a gestão pública, permitindo avaliar a variabilidade de diversos indicadores de desempenho em diferentes áreas da administração. Através da análise do CV, gestores podem identificar ineficiências, desperdícios e oportunidades de melhorias, contribuindo para uma gestão mais eficiente, eficaz e transparente.\vskip0.3cm
@@ -1266,7 +1439,6 @@ Aqui estão alguns exemplos de como o coeficiente de variação pode ser utiliza
 \begin{itemize}
     \item \textbf{Gastos Públicos}: O CV pode ser usado para avaliar a variabilidade dos gastos públicos em diferentes áreas, programas ou departamentos. Um CV alto pode indicar uma distribuição irregular de recursos financeiros, o que pode exigir uma análise mais aprofundada para identificar possíveis áreas de otimização ou realocação de recursos.
 
-    \newpage
     \item \textbf{Monitoramento de Políticas Públicas}: O CV pode ser aplicado para monitorar o impacto de políticas públicas em diferentes indicadores sociais, como saúde, educação e segurança. Ao analisar a variabilidade dos resultados ao longo do tempo, gestores podem identificar a efetividade das políticas e realizar ajustes quando necessário.
     \item \textbf{Gestão de Pessoal}: O CV pode ser utilizado para avaliar a variabilidade da produtividade, absenteísmo e rotatividade dos funcionários. Essa análise permite identificar problemas de gestão de pessoas, como falta de treinamento, motivação ou condições de trabalho inadequadas, possibilitando a implementação de medidas para melhorar o desempenho da equipe.
     \item \textbf{Taxas de Criminalidade e Segurança Pública}: O CV pode ser usado para analisar a variabilidade nas taxas de criminalidade em diferentes áreas geográficas ou períodos de tempo. Isso pode ajudar na identificação de áreas de alto risco que exigem intervenções específicas de segurança pública.
@@ -1276,255 +1448,542 @@ Aqui estão alguns exemplos de como o coeficiente de variação pode ser utiliza
 
 Em resumo, o coeficiente de variação é uma ferramenta útil na gestão pública para avaliar a variabilidade relativa em várias áreas e ajudar na identificação de áreas que requerem atenção ou melhorias.
 
+%-------------------------------------------------------------------------------%
+\section{Medidas de Ordenação ou Separatrizes}
+
+As medidas separatrizes são valores que dividem um conjunto de dados ordenado
+em partes iguais, permitindo localizar posições relativas dentro da distribuição.
+Entre as principais separatrizes estão os quartis, decis e percentis.
+
+\subsection{Quartis $(Q_i)$}
+
+Os quartis são medidas que dividem uma amostra ordenada em quatro partes iguais,
+sendo muito utilizados para descrever a posição dos dados e sua dispersão
+(FEIJOO, 2010).
+
+\begin{itemize}
+    \item \textbf{Primeiro quartil ($Q_1$):} valor abaixo do qual se encontram
+    aproximadamente 25\% dos dados;
+    \item \textbf{Segundo quartil ($Q_2$):} valor abaixo do qual se encontram
+    aproximadamente 50\% dos dados. Note que $Q_2$ coincide com a mediana;
+    \item \textbf{Terceiro quartil ($Q_3$):} valor abaixo do qual se encontram
+    aproximadamente 75\% dos dados;
+    \item \textbf{Quarto quartil ($Q_4$):} corresponde ao valor máximo da amostra
+    (100\% dos dados).
+\end{itemize}
+
+
+Para calcular quartis em distribuições agrupadas, seguem-se os passos:
+
+\begin{enumerate}
+    \item Ordenar os dados e construir a tabela de frequências;
+    \item Calcular a frequência acumulada;
+    \item Determinar a posição do quartil:
+\end{enumerate}
+
+\begin{equation}
+P_{(Q_i)}=\frac{iN}{4},
+\end{equation}
+
+onde $i=1,2,3$ e $N$ é o total de observações.\vskip0.3cm
+
+
+O quartil é obtido pela expressão:
+
+\begin{equation}\label{eq:quartil}
+Q_i=
+l_{Q_i}+
+\left(
+\frac{P_{(Q_i)}-F_{ac}}{f_{Q_i}}
+\right)h,
+\end{equation}
+
+
+onde:
+\begin{itemize}
+    \item $l_{Q_i}$ é o limite inferior da classe onde está o quartil;
+    \item $F_{ac}$ é a frequência acumulada anterior à classe do quartil;
+    \item $f_{Q_i}$ é a frequência da classe quartílica;
+    \item $h$ é a amplitude do intervalo de classe;
+    \item $N=\sum f_i$ é o total de observações.
+\end{itemize}
+
+
+%-------------------------------------------------------------------------------%
+\subsection{Decis $(D_i)$}
+
+Os decis dividem uma distribuição de frequência em dez partes iguais.
+
+\begin{itemize}
+    \item $D_1$ deixa aproximadamente 10\% dos dados abaixo dele;
+    \item $D_5$ coincide com a mediana (50\%);
+    \item $D_9$ deixa aproximadamente 90\% dos dados abaixo dele;
+    \item $D_{10}$ corresponde ao valor máximo da amostra.
+\end{itemize}
+
+A posição do decil é:
+
+\begin{equation}
+P_{(D_i)}=\frac{iN}{10},
+\end{equation}
+
+onde $i=1,2,\ldots,9$.
+
+\begin{equation}\label{eq:decil}
+D_i=
+l_{D_i}+
+\left(
+\frac{P_{(D_i)}-F_{ac}}{f_{D_i}}
+\right)h.
+\end{equation}
+%-------------------------------------------------------------------------------%
+\subsection{Percentis $(P_i)$}
+
+Os percentis dividem uma distribuição em cem partes iguais.
+
+\begin{itemize}
+    \item $P_{25}$ coincide com o primeiro quartil ($Q_1$);
+    \item $P_{50}$ coincide com a mediana ($Q_2$);
+    \item $P_{75}$ coincide com o terceiro quartil ($Q_3$);
+    \item $P_{100}$ corresponde ao valor máximo da amostra.
+\end{itemize}
+
+A posição do percentil é:
+
+\begin{equation}
+P_{(P_i)}=\frac{iN}{100},
+\end{equation}
+
+onde $i=1,2,\ldots,99$.
+
+\begin{equation}\label{eq:percentil}
+P_i=
+l_{P_i}+
+\left(
+\frac{P_{(P_i)}-F_{ac}}{f_{P_i}}
+\right)h.
+\end{equation}
+%-------------------------------------------------------------------------------%
+
+
+\subsection{Intervalo Interquartílico (IQR)}
+
+O intervalo interquartílico, conhecido pela sigla \textit{IQR}
+(\textit{Interquartile Range}), é uma medida de dispersão baseada nos quartis. \vskip0.3cm
+
+Ele representa a amplitude do intervalo que contém os 50\% centrais dos dados,
+isto é, os valores compreendidos entre o primeiro quartil ($Q_1$) e o terceiro
+quartil ($Q_3$). \vskip0.3cm
+
+Diferentemente da variância e do desvio-padrão, o IQR é uma medida
+\textbf{robusta}, pois não é fortemente influenciado por valores extremos
+(\textit{outliers}). \vskip0.3cm
+
+Matematicamente, o intervalo interquartílico é definido como:
+
+\begin{equation}\label{eq:iqr}
+IQR = Q_3 - Q_1.
+\end{equation}
+
+onde:
+
+\begin{itemize}
+    \item $Q_1$ é o primeiro quartil (25\% dos dados abaixo dele);
+    \item $Q_3$ é o terceiro quartil (75\% dos dados abaixo dele).
+\end{itemize}
+
+Assim, o IQR mede a variabilidade da região central da distribuição, indicando
+o grau de dispersão dos valores mais representativos da amostra. \vskip0.3cm
+
+O intervalo interquartílico é amplamente utilizado em Bioestatística e áreas
+da saúde, pois fornece uma medida de dispersão mais estável em distribuições
+assimétricas ou com presença de valores discrepantes. \vskip0.3cm
+
+Entre suas principais vantagens, destacam-se:
+
+\begin{itemize}
+    \item não depende de valores extremos;
+    \item descreve a dispersão dos dados centrais;
+    \item é muito utilizado na construção de boxplots.
+\end{itemize}
+
+
+O IQR também é utilizado como base para identificar valores discrepantes
+(\textit{outliers}). Um valor é considerado potencialmente discrepante se:
+
+\begin{equation}
+x < Q_1 - 1.5(IQR)
+\qquad \text{ou} \qquad
+x > Q_3 + 1.5(IQR).
+\end{equation}
+
+Esse critério é amplamente empregado na construção do diagrama de caixa chamado de 
+(\textit{boxplot}).   \vskip0.3cm
+
+\textbf{Exemplo:} suponha que, para uma amostra, obteve-se:
+
+\[
+Q_1 = 12
+\qquad \text{e} \qquad
+Q_3 = 20.
+\]
+
+Logo:
+
+\[
+IQR = 20 - 12 = 8.
+\]
+
+Portanto, os 50\% centrais dos dados estão distribuídos em um intervalo de
+amplitude igual a 8 unidades.
+%-------------------------------------------------------------------------------%
 
 
 \newpage
-
-\section{Medidas de Ordenação ou Separatrizes}
-\subsection{Quartis $(Q_{i})$}
-
-
-
-
-
-
-Quartis são medidas que dividem (separam) uma amostra (ou coleção) de dados de tipo quantitativo (ou qualitativo ordinal) ordenada em 4 partes iguais (FEIJOO, 2010).
-
-
-
-\begin{enumerate}
-  \item[{1)}] O 1º Quartil ou quartil inferior, representado por ($Q_{1}$) ou ($Q_{0,25}$), é o valor tal que pelo menos 25\% dos dados são não maiores do que ele e pelo menos 75\% dos dados são não menores do que ele;
-
-
-  
-  \item[{2)}] No 2º Quartil ($Q_{2}$), 50\% dos elementos estarão abaixo dele e 50\%, acima. Observe então que o 2º Quartil é igual à Mediana.
-  \item[{3)}] No 3º Quartil ($Q_{3}$), 75\% dos elementos estarão abaixo dele e 25\%, acima.
-  \vskip0.3cm
- \item[{4)}] No 4º Quartil ($Q_{4}$), 100\% dos elementos estarão resumidos. Nota-se que o 4º quartil é igual a média artimética.
-\end{enumerate}
-
-
-Para o cálculo do quartil utilizam-se os seguintes passos.
-
-
-
-\begin{enumerate}
-
-\item [{1°)}] Ordena-se os dados do menor para o maior;
-\item [{2°)}] Encontra-se a frequência acumulada da distribuição;
-\item [{3°)}]Calcula-se a posição do quartil na tabela.
-$$ P_{(q_{i})} = \left[ \frac{(i \times n)}{4}  \right] $$
-\item [{4°)}] Posteriormente, marca-se na tabela a posição pela frequência acumulada, para identificar em qual classe estará o quartil.
-\item [{5°)}] Em seguida aplica-se a fórmula do quartil
-\end{enumerate}
-
-\begin{equation}\label{}
-    Q_{1}= l_{q_{i}}+\left[\frac{P_{i}-FAA}{f_{q_{1}}}\right]\times h_{1}
-\end{equation}
-
- onde
-
- \begin{itemize}
-   \item $l_{q_{i}}=$ é o limite inferior da classe do quartil de ordem i;
-   \item $FAA=$ È a freqüência acumulada anterior da classe do quartil de ordem i;
-   \item $f_{q_{i}}=$ È a freqüência simples da classe do quartil de ordem i;
-   \item $h_{i}=$ é o intervalo de classe;
- \end{itemize}
-
-
-
-
-\subsection{Decis $(D_{i})$}
-
-Dividem uma Distribuição de freqüência em 10 partes iguais.
-
-
-\begin{enumerate}
-  \item[{1)}] No $1º$ Decil ($D_{1}$), 10\% dos elementos estarão abaixo dele e 90\%, acima.
-  \item[{2)}] No $2º$ Decil ($D_{2}$), 20\% dos elementos estarão abaixo dele e 80\%, acima.
-  \item[{3)}] No $3º$ Decil ($D_{3}$), 30\% dos elementos estarão abaixo dele e 70\%, acima.
-  \item[{4)}] $\ldots \ldots \ldots \ldots \ \ \  \ldots \ldots \ldots \ldots \ \ \  \ldots \ldots \ldots \ldots \ \ \  \ldots \ldots \ldots \ldots \ \ \ldots \ldots \ldots \ldots$
- \item[{5)}] No $10º$ Decil ($D_{10}$), 100\% dos elementos estão resumidos. Observe então que o $10º$ decil é igual a média artimética.
-\end{enumerate}
-
-\begin{enumerate}
-\item [{1)}]Calcula-se primeira a posição do decil na tabela.
-$$ P_{(d_{i})} = \left[ \frac{(i \times n)}{10} \right] $$
-\item [{2)}] Posteriormente, marca-se na tabela a posição pela frequência acumulada, para identificar em qual classe estará o decil.
-\item [{3)}] Em seguida aplica-se a fórmula do decil
-\end{enumerate}
-
-\begin{equation}\label{}
-    D_{1}= l_{d_{i}}+\left[\frac{P_{d_{i}}-FAA}{f_{d_{1}}}\right]\times h_{1}
-\end{equation}
-
- onde
-
- \begin{itemize}
-   \item $l_{d_{i}}=$ é o limite inferior da classe do decil de ordem i;
-   \item $FAA=$ È a freqüência acumulada anterior da classe do decil de ordem i;
-   \item $f_{d_{i}}=$ È a freqüência simples da classe do decil de ordem i;
-   \item $h_{i}=$ é o intervalo de classe;
- \end{itemize}
-
-
-
-\subsection{Percentis $(P_{i})$}
-
-Dividem uma Distribuição de freqüência em 100 partes iguais. Então:
-
-
-\begin{enumerate}
-  \item[{1)}] No $1º$ Percentil ($P_{1}$), 1\% dos elementos estarão abaixo dele e 99\% estarão acima.
-  \item[{2)}] No $2º$ Percentil ($P_{2}$), 2\% dos elementos estarão abaixo dele e 98\% estarão acima.
-  \item[{3)}] No $3º$ Percentil ($P_{3}$), 3\% dos elementos estarão abaixo dele e 97\% estarão acima.
-   \item[{4)}] $\ldots \ldots \ldots \ldots \ \ \  \ldots \ldots \ldots \ldots \ \ \  \ldots \ldots \ldots \ldots \ \ \  \ldots \ldots \ldots \ldots \ \ \ldots \ldots \ldots \ldots$
-  \item[{5)}] No $99º$ Percentil ($P_{99}$), 99\% dos elementos estarão abaixo dele e 1\% estarão acima.
-   \item[{6)}] No $100º$ Percentil ($P_{100}$), 100\% dos elementos estão resumidos. Observe então que o $100º$ Percentil é igual a média artimética.
-\end{enumerate}
-
-
-
-\begin{enumerate}
-\item [{1)}]Calcula-se primeira a posição do percentil na tabela.
-$$ P_{(p_{i})} = \left[ \frac{(i \times n)}{100} \right] $$
-\item [{2)}] Posteriormente, marca-se na tabela a posição pela frequência acumulada, para identificar em qual classe estará o percentil.
-\item [{3)}] Em seguida aplica-se a fórmula do percentil
-\end{enumerate}
-
-\begin{equation}\label{}
-    P_{p_{i}}= l_{p_{i}}+\left[\frac{P_{p_{i}}-FAA}{f_{p_{i}}}\right]\times h_{1}
-\end{equation}
-
- onde
-
- \begin{itemize}
-   \item $l_{p_{i}}=$ é o limite inferior da classe do percentil de ordem i;
-   \item $FAA=$ È a freqüência acumulada anterior da classe do percentil de ordem i;
-   \item $f_{p_{i}}=$ È a freqüência simples da classe do percentil de ordem i;
-   \item $h_{i}=$ é o intervalo de classe;
- \end{itemize}
-
-
-
+%-------------------------------------------------------------------------------%
 \section{Medidas de Forma, Enviesamento ou Assimetria }
 
-Embora sejam menos utilizadas na prática que as medidas de posição e dispersão, as medidas de assimetria (\textit{skewness}) e curtose são úteis para identificar modelos probabilísticos para análise inferencial.\vskip0.3cm
+Embora sejam menos utilizadas na prática do que as medidas de posição e de
+dispersão, as medidas de forma, como a assimetria (\textit{skewness}) e a
+curtose (\textit{kurtosis}), são importantes para descrever o comportamento
+global de uma distribuição de frequências e auxiliar na escolha de modelos
+probabilísticos em análises inferenciais. \vskip0.3cm
 
-As medidas de assimetria e curtose são as que restam para complementarmos o quadro das estatísticas descritivas, que proporcionam, juntamente com as medidas de posição e de dispersão, a descrição e compreensão completas da distribuição de freqüências estudadas.\vskip0.3cm
+Essas medidas complementam o conjunto das estatísticas descritivas, pois,
+além de indicar onde os dados se concentram (posição) e o quanto se dispersam
+(dispersão), também descrevem o \textbf{formato} da distribuição. \vskip0.3cm
 
-Assimetria, como próprio nome insinua, significa desvio ou afastamento, ou seja, é o grau de desvio da simetria de uma distribuição ou afastamento de informação de uma curva de freqüência.\vskip0.3cm
+A assimetria, como o próprio nome sugere, representa o grau de desvio em
+relação à simetria. Em uma distribuição simétrica, os valores se distribuem
+de forma equilibrada em torno da média. Já em distribuições assimétricas,
+há uma concentração maior de observações em um dos lados da curva. \vskip0.3cm
 
+Uma das medidas mais utilizadas para avaliar o grau de assimetria de uma
+distribuição é o coeficiente proposto por \textbf{Karl Pearson}, calculado
+por meio das seguintes expressões:
 
-
-
-%$$ b=\frac{1}{n}\sum_{i=1}^{n}\left[\frac{x_{i}-\bar{X}}{s}\right]^{2} $$
-
-Uma medida usada muito freqüentemente para avaliar o grau de assimetria ou de deformação de uma distribuição e o coeficiente sugerido por \textbf{Karl Pearson}, o qual se calcula mediante as seguintes expressões:
-
-\begin{enumerate}
-  \item [{1)}]Primeiro Coeficiente de Assimetria de Pearson
-  \begin{equation}\label{assimetria}
-    AS = \left[ \frac{(Media-Moda)}{(Desvio-Padrao)} \right] = \left[  \frac{(\bar{X}-M_{o})}{S_{x}} \right]
+\begin{equation}\label{eq:assimetria1}
+AS_1 = \frac{\bar{X} - M_o}{S_x}
 \end{equation}
-  \item [{2)}]Segundo Coeficiente de Assimetria de Pearson
-  \begin{equation}\label{assimetria}
-    AS = \left[ \frac{(Q_{3}+Q_{1}-2M_{e})}{(Q_{3}-Q_{1})} \right]
-\end{equation}
-    ou
- \begin{equation}
-    AS = \left[ \frac{3(\bar{X}-M_{e})}{S_{x}} \right]
-\end{equation}
-\end{enumerate}
 
-
-
-
-
-
-\textbf{Escala de Assimetria}
-
-\begin{enumerate}
-\item $|AS| =0$ a distribuição é Simétria
-\item $|AS| < 0,15$ a Assimetria é Pequena
-\item $0,15 < |AS| <1$ a Assimetria é Moderada
-\item $|AS| > 1$ a Assimetria é Elevada
-\end{enumerate}
-
-
-\newpage 
-
-Em um conjunto de dados, a mediana, a moda e a média
-não necessariamente devem apresentar o mesmo valor. Uma
-informação importante é que a mediana não é influenciada pelos valores extremos. Comparando os resultados encontrados para uma amostra em relação às medidas de posição estudadas e verificando a inter-relação entre elas, você pode concluir que seus valores podem nos dar um indicativo da natureza da distribuição dos dados, em função das regras definidas a seguir:
-
+onde:
 
 \begin{itemize}
-\item Se a $\bar{X}=media$ for maior que a $\tilde{X}=mediana$ e maior que a Moda então a distribuição é assimétrica a direita (positiva), ou seja, os dados estão mais concentrados a direita.  	
-\item Se a $\bar{X}$ for igual a $\tilde{X}$ e igual a moda então a distribuição é simétrica.
-\item Se a $\bar{X}= media$ for menor que a $\tilde{X}= mediana$ e menor que a Moda então a distribuição é assimétrica a esquerda (negativa), ou seja, os dados estão mais concentrados a esquerda. 	
+    \item $\bar{X}$ é a média aritmética;
+    \item $M_o$ é a moda;
+    \item $S_x$ é o desvio-padrão amostral.
 \end{itemize}
 
-As medidas de tendência  central possuem algumas vantagens e desvantagens. A média possue a vantagem de Refletir cada valor observado na distribuição, e a desvantagem de ser influenciada por valores extremos. Já a mediana é menos sensível a valores extremos do que a Média, porém, é Difícil de determinar para grande quantidade de dados. Enquanto que a moda tem maior quantidade de valores concentrados neste ponto, e não se presta a análise matemática.
+Esse coeficiente compara a posição da média em relação à moda. Quando a média
+é maior que a moda, a distribuição tende a apresentar assimetria positiva.  \vskip0.3cm
 
 
+O segundo coeficiente de Pearson é baseado na mediana:
 
-
-
-
- 
-\newpage 
-
-\section{Medidas de Achatamento, Afilamento ou Curtose }
-
-Em alguns casos uma distribuição pode ter seus valores concentrados próximos da média tal que a distribuição tem um pico mais alto, em outros casos a distribuição pode ser plana. Assim, medidas do grau de agudez de uma distribuição são chamadas de coeficiente de curtose (SPIGEL et al, 2013). \vskip0.3cm
-
-A curtose ou excesso indica até que ponto a curva de freqüências de uma distribuição se apresenta mais afilada ou mais achatada do que uma curva-padrão, denominada curva normal.\vskip0.3cm
-
-A medida de curtose é o grau de achatamento de uma distribuição, considerando usualmente em relação a uma distribuição normal. De acordo com o grau de curtose, podemos ter três tipos de curvas de freqüência: \textbf{Mesocúrtica}, \textbf{Leptocúrtica} e \textbf{Platicúrtica}.\vskip0.3cm
-
-\begin{itemize}
-\item Quando a distribuição apresenta uma curva de frequência mais fechada (mais aguda em sua parte superior), ela é denominada Leptocúrtica (Lepto = Delgado, Alongado, Magro, etc).
-\item A distribuição de referência (Distribuição Normal) é denominada Mesocúrtica (Meso = Meio, Central, etc).
-\item Quando a distribuição apresenta uma curva de frequência mais aberta (mais achatada em sua parte superior), ela é denominada Platicúrtica (Plato = Chato, Plano, Largo, etc).
-\end{itemize}
-
-Para avaliar o grau de curtose de uma curva ou distribuição de freqüências, usa-se o Coeficiente Percentílico de Curtose (K):
-
-\begin{equation}\label{curtose}
-    K = \left[ \frac{(Q_{3}-Q_{1})}{2(D_{9}-D_{1})} \right]
+\begin{equation}\label{eq:assimetria2}
+AS_2 = \frac{3(\bar{X} - M_e)}{S_x}
 \end{equation}
-
-Onde
-
-\begin{itemize}
-  \item $Q_{1}$ e $Q_{3}$  = é o primeiro e terceiro quartil;
-  \item $D_{1}$ e $D_{9}$  = é o primeiro e nono decil;
-   \end{itemize}
 
 \newpage
+onde:
+\begin{itemize}
+    \item $M_e$ é a mediana;
+    \item $\bar{X}$ é a média;
+    \item $S_x$ é o desvio-padrão.
+\end{itemize}
 
-Sendo que existe um caso particular e a fórmula \ref{curtose} pode ser substituída
-pelos percentis $P_{90}=D_{9}$ e $P_{10}=D_{1}$, quando for o caso.
+Esse coeficiente é mais utilizado na prática, pois a mediana é uma medida
+mais robusta do que a moda. \vskip0.3cm
 
-\vskip0.3cm
-Uma outra forma de representar o coeficiente de Curtose é da seguinte maneira
+Outra forma alternativa de medir a assimetria, especialmente útil em dados
+com valores extremos, é o coeficiente baseado nos quartis:
 
-\begin{equation}\label{curtose2}
-    K= \left[ \frac{C}{D_{9}-D_{1}} \right]
+\begin{equation}\label{eq:assimetriaQuartis}
+AS_Q = \frac{Q_3 + Q_1 - 2M_e}{Q_3 - Q_1}
 \end{equation}
 
-onde o C é chamado de amplitude semi-interquartilica
+Esse coeficiente utiliza apenas os 50\% centrais dos dados, sendo menos
+sensível a \textit{outliers}. \vskip0.3cm
 
-\begin{equation}\label{curtose2}
-    C= \left[ \frac{Q_{3}-Q_{1}}{2} \right]
-\end{equation}
-
-
-\textbf{Escala de Curtose}
+\textbf{Escala de interpretação da assimetria:}
 
 \begin{enumerate}
-\item Se $K = 0,263 \Rightarrow$  A curva correspondente à distribuição de frequências é \textbf{Mesocúrtica};
-\item Se $K < 0,263 \Rightarrow$  A curva correspondente à distribuição é concentrada ao redor da média, ou seja, é mais pontiaguda ou afunilada e menos dispersa, sendo classificada de \textbf{Leptocúrtica};
-\item Se $K > 0,263 \Rightarrow$ A curva correspondente à distribuição de frequência é mais dispersa ou Achatada, classificada de \textbf{Platicúrtica};
+    \item $AS = 0$: distribuição perfeitamente simétrica;
+    \item $|AS| < 0,15$: assimetria desprezível ou pequena;
+    \item $0,15 \leq |AS| < 1$: assimetria moderada;
+    \item $|AS| \geq 1$: assimetria elevada.
 \end{enumerate}
+
+Em um conjunto de dados, a média, a mediana e a moda nem sempre coincidem.
+A comparação entre essas medidas fornece um indicativo importante sobre a
+natureza da distribuição:
+
+\begin{itemize}
+    \item Se $\bar{X} > M_e > M_o$, a distribuição é assimétrica à direita
+    (\textbf{Positiva});
+    \item Se $\bar{X} = M_e = M_o$, a distribuição é aproximadamente \textbf{(Simétrica)};
+    \item Se $\bar{X} < M_e < M_o$, a distribuição é assimétrica à esquerda
+    (\textbf{Negativa}).
+\end{itemize}
+
+
+%-------------------------------------------------------------------------------%
+
+
+%-------------------------------------------------------------------------------%
+\newpage
+\section{Medidas de Achatamento, Afilamento ou Curtose}
+
+Em Estatística Descritiva, além de conhecer a posição e a dispersão dos dados,
+é importante compreender o \textbf{formato} da distribuição de frequências.
+Nesse contexto, uma característica relevante é o grau de achatamento ou de
+afilamento da curva em torno da média. \vskip0.3cm
+
+A medida que descreve esse comportamento é denominada \textbf{curtose}.
+Segundo Spiegel et al. (2013), a curtose é uma medida do grau de concentração
+das observações próximas ao centro da distribuição. \vskip0.3cm
+
+De modo geral, a curtose indica até que ponto a curva de frequências apresenta
+um pico mais elevado (mais afilado) ou mais rebaixado (mais achatado), em
+comparação com uma distribuição de referência, geralmente a
+\textbf{Distribuição Normal}. \vskip0.3cm
+
+Assim, conforme o valor da curtose, uma distribuição pode ser classificada em
+três tipos principais:
+
+\begin{itemize}
+    \item \textbf{Leptocúrtica}: distribuição com pico mais alto e maior
+    concentração de valores próximos à média (curva mais afilada);
+
+    \item \textbf{Mesocúrtica}: distribuição com curtose semelhante à normal,
+    considerada como referência;
+
+    \item \textbf{Platicúrtica}: distribuição mais achatada, com valores mais
+    dispersos em torno da média.
+\end{itemize}
+
+\subsection{Coeficiente Percentílico de Curtose}
+
+Uma forma prática de avaliar o grau de curtose é por meio do
+\textbf{Coeficiente Percentílico de Curtose}, baseado em separatrizes
+(quartis e decis).\vskip0.3cm
+
+Esse coeficiente é dado por:
+
+\begin{equation}\label{eq:curtose}
+K = \frac{Q_{3}-Q_{1}}{2(D_{9}-D_{1})}
+\end{equation}
+
+onde:
+
+\begin{itemize}
+    \item $Q_{1}$ e $Q_{3}$ representam, respectivamente, o primeiro e o terceiro
+    quartil da distribuição;
+
+    \item $D_{1}$ e $D_{9}$ representam, respectivamente, o primeiro e o nono
+    decil;
+
+    \item $(Q_{3}-Q_{1})$ é o intervalo interquartílico, que contém os 50\%
+    centrais dos dados;
+
+    \item $(D_{9}-D_{1})$ representa o intervalo que contém os 80\% centrais
+    da distribuição.
+\end{itemize}
+
+\subsection{Caso Particular com Percentis}
+Observa-se que os decis podem ser substituídos por percentis equivalentes,
+pois:
+
+\[
+D_{1} = P_{10}
+\qquad \text{e} \qquad
+D_{9} = P_{90}
+\]
+
+Assim, em alguns casos, utiliza-se:
+
+\[
+K = \frac{Q_{3}-Q_{1}}{2(P_{90}-P_{10})}
+\]
+
+\subsection{Fórmula Alternativa Semi-Interquartílica}
+
+Outra forma equivalente de expressar o coeficiente de curtose consiste em
+definir inicialmente a amplitude semi-interquartílica:
+
+\begin{equation}\label{eq:semiIQR}
+C = \frac{Q_{3}-Q_{1}}{2}
+\end{equation}
+
+Substituindo em \eqref{eq:curtose}, obtém-se:
+
+\begin{equation}\label{eq:curtose_alt}
+K = \frac{C}{D_{9}-D_{1}}
+\end{equation}
+
+
+
+\textbf{Escala de Interpretação da Curtose}
+
+Para a Distribuição Normal, o coeficiente percentílico assume aproximadamente:
+
+\[
+K = 0,263
+\]
+
+Portanto, tem-se:
+
+\begin{enumerate}
+    \item Se $K \approx 0,263$, a distribuição é \textbf{Mesocúrtica}
+    (semelhante à normal);
+
+    \item Se $K < 0,263$, a distribuição é \textbf{Leptocúrtica},
+    apresentando maior concentração de valores próximos à média;
+
+    \item Se $K > 0,263$, a distribuição é \textbf{Platicúrtica},
+    sendo mais achatada e com maior dispersão.
+\end{enumerate}
+%-------------------------------------------------------------------------------%
+
+\subsection{Mesocúrtica (Normal)}
+
+A variável \textbf{Altura Humana} costuma apresentar comportamento mesocúrtico, pois a maioria dos indivíduos se concentra em torno de um valor médio, com dispersão moderada e sem excesso de extremos. \vskip0.3cm
+
+Ela é usada como referência padrão, pois corresponde ao comportamento típico da distribuição normal. \vskip0.3cm
+
+Exemplo realista de dados (cm)
+
+$$ x = {[165,168,170,172,175]} $$
+
+Esses valores são bem distribuídos em torno da média, sem extremos relevantes.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    domain=-4:4,
+    samples=250,
+    axis lines=middle,
+    xlabel={Altura (cm)},
+    ylabel={Densidade},
+    width=11cm,
+    height=6.5cm,
+    xtick=\empty,
+    ytick=\empty
+]
+
+% Curva normal padrão
+\addplot[
+    thick,
+    blue
+]
+{exp(-x^2/2)};
+
+\end{axis}
+\end{tikzpicture}
+\caption{Distribuição mesocúrtica típica de variáveis biológicas aproximadamente normais, como altura.}
+\end{figure}
+
+%-------------------------------------------------------------------------------%
+
+\newpage
+\subsection{Leptocúrtica (mais pontiaguda)}
+
+Em estudos clínicos, a variável glicemia pode apresentar curtose elevada quando:
+
+\begin{itemize}
+    \item muitos pacientes possuem valores normais,
+    \item mas alguns poucos apresentam hiperglicemia severa.
+\end{itemize}
+
+Isso gera uma curva com pico alto e caudas pesadas, típica de uma distribuição leptocúrtica. \vskip0.3cm
+
+Exemplo realista de dados (mg/dL)
+
+$$ x = {[90,92,91,89,93,250]} $$
+
+O valor extremo (250) representa um paciente diabético fora do padrão geral.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    domain=-4:4,
+    samples=250,
+    axis lines=middle,
+    xlabel={Glicemia (mg/dL)},
+    ylabel={Densidade},
+    width=11cm,
+    height=6.5cm,
+    xtick=\empty,
+    ytick=\empty
+]
+
+% Curva mais pontiaguda
+\addplot[
+    thick,
+    red
+]
+{exp(-x^2/0.7)};
+
+\end{axis}
+\end{tikzpicture}
+\caption{Distribuição leptocúrtica: forte concentração na média e presença de caudas pesadas.}
+\end{figure}
+
+
+
+
+\newpage
+%-------------------------------------------------------------------------------%
+\subsection{Platicúrtica (mais achatada)}
+
+O tempo de reação neurológico frequentemente apresenta grande variabilidade, pois depende de fatores como:
+
+
+\begin{itemize}
+    \item Idade;
+    \item Fadiga;
+    \item Uso de Medicamentos;
+    \item Condições Cognitivas;
+\end{itemize}
+
+
+Assim, os valores ficam mais espalhados e a curva se torna achatada, caracterizando uma distribuição platicúrtica. \vskip0.3cm
+
+Exemplo realista de dados (ms)
+
+$$ x = {[180,220,310,400,520]} $$
+
+Os valores são bastante dispersos, reduzindo o pico central.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    domain=-4:4,
+    samples=250,
+    axis lines=middle,
+    xlabel={Tempo de reação (ms)},
+    ylabel={Densidade},
+    width=11cm,
+    height=6.5cm,
+    xtick=\empty,
+    ytick=\empty
+]
+
+% Curva achatada
+\addplot[
+    thick,
+    green!60!black
+]
+{exp(-x^2/4)};
+
+\end{axis}
+\end{tikzpicture}
+\caption{Distribuição platicúrtica: maior dispersão e menor concentração central.}
+\end{figure}
+
+
+
+%-------------------------------------------------------------------------------%
