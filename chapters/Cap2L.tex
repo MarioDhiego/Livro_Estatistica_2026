@@ -1,10 +1,23 @@
 \chapter{TEORIA DAS PROBABILIDADES}
 \section{Introdução}
 
-A teoria dos conjuntos é a parte da matemática que trata das propriedades dos conjuntos, tendo sua origem nos trabalhos do matemático \textbf{Georg Ferdinand Ludwig Philipp Cantor (1845-1918)}, e se baseia na idéia de definir conjunto como uma noção primitiva. Algumas Vezes chamada de teoria ingênua ou intuitiva devido a descoberta de vários antinomias (ou paradoxos) relacionados a definição de conjunto.\vskip0.3cm
+A Teoria dos Conjuntos é uma das áreas fundamentais da Matemática,
+responsável pelo estudo das propriedades e relações entre coleções de objetos,
+denominadas \textit{conjuntos}. Sua origem está associada principalmente aos
+trabalhos do matemático alemão \textbf{Georg Ferdinand Ludwig Philipp Cantor}
+(1845--1918), considerado o fundador da teoria moderna dos conjuntos. \vskip0.3cm
 
-Estas antinomias na teoria dos conjuntos conduziram a matemática a \textbf{Axiomatizar} as teorias  matemáticas, com influências profundas sobre a lógica e os fundamentos da matemática.
+Cantor introduziu a ideia de que um conjunto pode ser tratado como uma noção
+primitiva, isto é, um conceito básico que não necessita de definição formal
+imediata. Por esse motivo, a teoria inicial ficou conhecida como
+\textit{teoria ingênua dos conjuntos}. No entanto, essa abordagem revelou
+diversas antinomias (ou paradoxos), que surgiram devido à ausência de uma base
+axiomática rigorosa para definir conjuntos arbitrários.
+\vskip0.3cm
 
+Esses paradoxos conduziram a Matemática, ao longo do século XX, a um processo
+de \textbf{axiomatização}, influenciando profundamente os fundamentos da lógica
+e da própria Matemática.
 
 \begin{figure}
     \centering
@@ -14,316 +27,363 @@ Ludwig Philipp Cantor(1845-1918)}
     \label{fig:my_label}
 \end{figure}
 
+\newpage
+A teoria teve início formal com a publicação, em 1874, de um artigo no qual
+Cantor investigava a comparação entre coleções infinitas. Uma de suas grandes
+contribuições foi demonstrar que conjuntos infinitos podem possuir diferentes
+``tamanhos'', conceito hoje conhecido como \textit{cardinalidade}.
+\vskip0.3cm
 
-A teoria teve seu início com a publicação em 1874 de um trabalho de Cantor que tratava sobre a comparação de coleções infinitas. Cantor, nasceu em São Petersburgo (Rússia), filho do comerciante dinamarquês, George Waldemar Cantor, e de uma musicista russa, Maria Anna Böhm. Em 1856 sua família mudou-se para a Alemanha, continuando aí os seus estudos. Estudou no Instituto Federal de Tecnologia de Zurique. Doutorou-se na Universidade de Berlim em 1867.\vskip0.3cm
+Desde 1638, com \textbf{Galileu Galilei}, já se sabia que é possível estabelecer
+uma correspondência biunívoca entre os números inteiros e seus quadrados,
+contrariando a concepção euclidiana de que ``o todo é sempre maior que qualquer
+uma de suas partes''.
+\vskip0.3cm
 
-Desde 1638, com \textbf{Galileu Galilei}, sabe-se que se pode obter uma correspondência 1-1 entre os números inteiros e seus quadrados, o que violava a concepçao euclidiana de que o todo é sempre maior que qualquer uam de suas partes.\vskip0.3cm
+Cantor utilizou esse princípio para desenvolver o método da diagonalização,
+com o qual provou, por contradição, que o conjunto dos números reais não admite
+uma correspondência biunívoca com o conjunto dos números inteiros. Esse resultado
+contribuiu para o desenvolvimento do conceito de contínuo, posteriormente
+formalizado por \textbf{Richard Dedekind}.
+\vskip0.3cm
 
-Esta aplicação de correspondência 1-1 permitiu a Cantor introduzir um método de diagnalização, que por contradição, permita provar que o conjunto dos números reais não tinha correspondência 1-1 com o conjunto dos números inteiros. Isto, mais tarde, levou ao desenvolvimento do conceito de contínuo por \textbf{Richard De\-de\-kind}. \vskip0.3cm
+Em 1892, Cantor demonstrou que o conjunto dos números racionais
+$\mathbb{Q}$ é enumerável, enquanto o conjunto dos números reais
+$\mathbb{R}$ é não enumerável, portanto de cardinalidade maior.
+Mais tarde, em 1897, surgiram paradoxos associados à teoria, motivando o avanço
+dos sistemas axiomáticos.
+\vskip0.3cm
 
-Em meados de 1892, Cantor, provou que o conjunto dos números racionais $Q$ é (e)numerável, enquanto que o conjunto dos números reais $IR$ é contínuo (logo, maior que o anterior). Já em 1897, Cantor descobriu vários paradoxos suscitados pela teoria dos conjuntos. Foi ele que utilizou pela primeira vez o símbolo ${\displaystyle \mathbb {R}}$ para representar o conjunto dos números reais.\vskip0.3cm
-
-
-Iniciando com estas descobertas, Cantor acabou desenvolvendo uma \textbf{Teoria dos Conjuntos} abstratos, que constitui-se em uma generalização do conceito de conjunto usada até hoje em vários ramos de pesquisa. \vskip0.3cm
-
-
-Perseguido e criticado por sua tese, teve a saúde mental comprometida. Tempos depois, seus métodos foram assimilados e se mostraram perfeitamente práticos e úteis. Reconhecido alguns anos depois, foi nomeado membro honorário da \textbf{London Mathematical Society} e homenageado com a medalha da \textbf{Royal Society of London}.\vskip0.3cm
-
-%Perturbado pelas perseguições, morreu aos 72 anos, em uma clínica psiquiátrica na Alemanha.
-
+Apesar das críticas enfrentadas em vida, suas ideias foram plenamente assimiladas
+e tornaram-se essenciais em diversos ramos da Matemática moderna.
 
 %\newpage
 \section{Conjuntos}
 
-O conceito de conjunto é fundamental não somente no estudo da
-Probabilidade e da Estatística, como para a Matemática em geral.
-\emph{Qualquer lista ou coleção bem definida de entidades ou
-objetos é chamada conjunto}, os objetos que individualmente formam
-ou compõem a coleção ou conjunto são chamados \emph{elementos ou
-membros}. Em geral, denota-se um conjunto por uma letra maiúscula
-($A,B,C,...$) e um elemento do conjunto por letra minúscula
-($a,b,c,...$).\vskip0.3cm
+O conceito de conjunto é fundamental não apenas para a Probabilidade e a Estatística,
+mas para toda a Matemática. \vskip0.3cm
 
+\textit{Qualquer coleção bem definida de objetos é chamada de conjunto}.
+Os objetos que compõem um conjunto são chamados de \textit{elementos} ou
+\textit{membros}.
+\vskip0.3cm
+
+Em geral, denotamos conjuntos por letras maiúsculas $(A,B,C,\dots)$
+e seus elementos por letras minúsculas $(a,b,c,\dots)$.
+
+
+\newpage
 \section{Subconjuntos}
 
-Se todo elemento de um conjunto A é também elemento de um conjunto
-B, dizemos que A é subconjunto de B, e escrevemos $A \subset B$
-ou $B \supset A$ e lemos "A está contido em B", ou "B contém
-A".\vskip0.3cm
+Se todo elemento de um conjunto $A$ também pertence a um conjunto $B$,
+dizemos que $A$ é subconjunto de $B$, e escrevemos:
 
-Se um elemento $a$ pertence a um conjunto $C$ escrevemos $a \in C$. Se $a$ não pertence a $C$ escrevemos $a \in C$. Se tanto $a$ como $b$ pertencem a $C$ escrevemos $a,b \in C$. A fim de que um conjunto seja bem definido, devemos dispor de uma regra que nos permita dizer se determinado objeto pertence ou não ao conjunto.\vskip0.3cm
+\[
+A \subseteq B
+\]
 
-Um conjunto pode ser definido relacionando-se todos os seus elementos, ou, quando isto não for possível, indicando uma propriedade que seja válida para todos os elementos do conjunto, e somente para eles.\vskip0.3cm
+ou equivalentemente:
 
+\[
+B \supseteq A.
+\]
 
-Existem três meneiras de descrever que objetos estão contidos no conjunto A.
+Se um elemento $a$ pertence ao conjunto $C$, escrevemos:
+
+\[
+a \in C.
+\]
+
+Caso contrário:
+
+\[
+a \notin C.
+\]
+
+Um conjunto é considerado bem definido quando existe uma regra clara que permita
+decidir se um determinado objeto pertence ou não a ele.
+\vskip0.3cm
+
+Existem diferentes formas de descrever um conjunto:
 
 \begin{enumerate}
-    \item Poderemos fazer uma lista dos elementos de A. Por
-    exemplo, $A = \{ 1,2,3,4 \}$ descreve o conjunto formado pelos
-    inteiros positivos 1,2,3 e 4.
-    \item Poderemos descrever o conjunto A por meio de palavras.
-    Por exemplo, poderemos dizer que A é formado de todos os
-    números reais entre 0 e 1, inclusive.
-    \item Para descrever o conjunto acima poderemos simplesmente
-    escrever $A = \{ x|0\leq x \leq 1 \}$; isto é, A é o conjunto
-    de todos os x, onde x é um número real entre 0 e 1, inclusive.
+    \item Listando explicitamente seus elementos:
+    \[
+    A = \{1,2,3,4\}.
+    \]
+
+    \item Descrevendo-o verbalmente:
+    ``o conjunto de todos os números reais entre 0 e 1''.
+
+    \item Utilizando notação por propriedade:
+    \[
+    A = \{x \mid 0 \leq x \leq 1\}.
+    \]
 \end{enumerate}
 
 
 \section{Experimentos Aleatórios}
 
-È aquele que repetido em condições idênticas produz geralmente resultados distintos. Por exemplo jogar uma moeda não viciada, sabemos que a chance de sair cara é 50\%, mas não conseguimos prever com exatidão o resultado da jogada, mesmo controlando todas as circunstâncias relevantes ao experimento.\vskip0.3cm
+Um \textbf{experimento aleatório} é aquele que, mesmo repetido sob condições
+idênticas, pode produzir resultados diferentes, sem que seja possível prever com
+certeza o resultado individual.
+\vskip0.3cm
 
+\textbf{Exemplo 1:} Lançar uma moeda três vezes. \\
+\textbf{Exemplo 2:} Lançar dois dados simultaneamente.
+\vskip0.3cm
 
-\textbf{Ex1}: Lançar uma moeda três vezes. \vskip0.3cm
-\textbf{Ex2}: Lançar dois dados simultaneamente. \vskip0.3cm
-
-%\newpage
 \subsection{Características dos Experimentos Aleatórios}
 
-%Observando-se os experimentos acima pode-se destacar algumas
-%características comuns.
-
 \begin{itemize}
-    \item Podem ser repetidos indefinidamente sob as mesmas
-   condições;
-   \item Não se pode adiantar um resultado particular, mas
-    pode-se descrever todos os resultados possíveis;
-    \item Se repetidos muitas vezes apresentarão uma regularidade
-    em termos de frequências de resultados.
+    \item Podem ser repetidos indefinidamente sob as mesmas condições;
+    \item Não se pode prever um resultado específico, mas é possível listar todos
+    os resultados possíveis;
+    \item Quando repetidos muitas vezes, apresentam regularidade estatística nas frequências observadas.
 \end{itemize}
+
 
 
 \section{Fenômenos Aleatórios}
 
-O conceito de fenômeno aleatório é ligeiramente diferente do conceito de experimento aleatório. Nos experimentos aleatórios podemos controlar, de certa forma, fatores alheios ao problema os quais podem influenciar os resultados do experimento, além disso, podemos "reproduzir" o experimento com certa margem de liberdade.\vskip0.3cm
+Fenômenos aleatórios diferem dos experimentos aleatórios porque, em geral,
+não podem ser controlados ou reproduzidos livremente: o pesquisador atua como
+observador. \vskip0.3cm
 
-Já nos fenômenos aleatórios nós somos meros observadores, os fenômenos aleatórios tratados pela estatística são aqueles que possuem "regularidade estatística", isto é, são observáveis e suceptíveis de repetição.\vskip0.3cm
+Fenômenos estudados pela Estatística possuem \textit{regularidade estatística},
+ou seja, podem ser observados repetidamente ao longo do tempo. \vskip0.3cm
 
-\textbf{Ex1}: Observar o número de casos de Meningite por mês em
-Belém. \vskip0.3cm
 
-\textbf{Ex2}: Observar a quantidade de chuva mensal.\vskip0.3cm
 
+\textbf{Exemplo 1:} Número mensal de casos de meningite em Belém. \\
+\textbf{Exemplo 2:} Quantidade mensal de chuva em uma região.
 
 %\newpage
 \section{Espaço Amostral}
 
-Em um fenômeno aleatório ou probabilístico, isto é, sujeito às leis do acaso, chamamos \emph{espaço amostral} ou \emph{espaço das possibilidades} ao conjunto (em geral o mais detalhado possível) de todos os resultados possíveis de ocorrer. Denota-lo-emos por $S$ ou $\Omega$.\vskip0.3cm
+O \textbf{espaço amostral}, denotado por $S$ ou $\Omega$, é o conjunto de todos
+os resultados possíveis de um experimento aleatório.
+\vskip0.3cm
 
-Por exemplo, se jogarmos um dado vermelho e um dado preto, o espaço amostral correspondente poderá ser descrito como segue.
+Por exemplo, ao lançar dois dados, o espaço amostral contém $36$ pares ordenados:
 
-$$
-S_{1} =
-\left[%
-\begin{array}{cccccc}
-  (1,1) & (2,1) & (3,1) & (4,1) & (5,1) & (6,1) \\
-  (1,2) & (2,2) & (3,2) & (4,2) & (5,2) & (6,2) \\
-  (1,3) & (2,3) & (3,3) & (4,3) & (5,3) & (6,3) \\
-  (1,4) & (2,4) & (3,4) & (4,4) & (5,4) & (6,4) \\
-  (1,5) & (2,5) & (3,5) & (4,5) & (5,5) & (6,5) \\
-  (1,6) & (2,6) & (3,6) & (4,6) & (5,6) & (6,6) \\
-\end{array}%
-\right]
-$$
+\[
+\Omega = \{(i,j)\mid i=1,\dots,6,\ j=1,\dots,6\}.
+\]
 
-Onde, digamos, o primeiro número de cada par indica o ponto do
-dado branco e o segundo indica o ponto do dado preto. Entretanto, deve-se notar que, mesmo que os dados fossem
-idênticos, o espaço amostral poderia ser considerado análogo pois
-a rigor, haveria também 36 resultados possíveis.\vskip0.3cm
-
-\newpage
-Quatro moedas são lançadas simultâneamente. Como uma moeda tem duas faces, e são 4 moedas, o espaço amostral será $2^{4}=16$ 
-
-$$
-S_{2} =
-\left[%
-\begin{array}{ccccc}
-  CCCC  & CCCK  & CCKK  & CKKK  & KKKK \\
-        & CCKC  & CKCK  & KCKK  &      \\
-        & CKCC  & KCCK  & KKCK  &      \\
-        & KCCC  & CKKC  & KKKC  &      \\
-        &       & KCKC  &       &      \\
-        &       & KKCC  &       &      \\
-\end{array}%
-\right]
-$$
-
-onde C representa \textbf{Cara} e K \textbf{Coroa}, em cada moeda
-lançada.\vskip0.3cm
-
-Com isso, o espaço amostral é dividido em discreto e contínuo.
 
 
 \subsection{Espaço Amostral Discreto}
 
-Quando as realizações do experimento denotam uma qualidade ou são
-resultados de uma contagem, o espaço amostral é dito discreto,
-isto é, suceptível de enumeração (finita ou infinita), nesse caso,
-cada possível resultado é chamado de evento elementar $\{w_{i}\}$.
+Quando os resultados possíveis são finitos ou enumeráveis, dizemos que o espaço
+amostral é \textbf{discreto}:
 
-$$ \Omega = \{ (w_{1}),(w_{2}),(w_{3}),... \}  $$
+\[
+\Omega = \{w_1,w_2,w_3,\dots\}.
+\]
 
 
 \subsection{Espaço Amostral Contínuo}
 
-Quando as realizações do experimento são resultados de uma
-mensuração, isto é, os possíveis resultados não são enumeráveis, o
-espaço amostral é chamado de contínuo. Neste caso, não faz sentido
-falar em eventos elementares e, em geral, os eventos estão
-constituídos por intervalos.
+Quando os resultados possíveis são não enumeráveis, geralmente associados a
+mensurações (tempo, peso, altura), o espaço amostral é \textbf{contínuo}.
 
 
 \section{Eventos}
 
-Qualquer subconjunto de um espaço amostral será um evento,
-definindo um resultado bem determinado. Os eventos podem ser
-simples ou compostos, conforme se constituam de um ou mais
-resultados de $S$. Designaremos os eventos por letras maiúsculas.
+Um \textbf{evento} é qualquer subconjunto do espaço amostral $\Omega$. \vskip0.3cm
 
-\newpage
+Os eventos podem ser simples ou compostos e são representados por letras maiúsculas.
+
 \subsection{Operações com Eventos}
 
-Sejam A e B dois eventos associados a um espaço amostral.
+Sejam $A$ e $B$ eventos em $\Omega$:
 
 \begin{enumerate}
-    \item Se A e B forem eventos, a união entre A e B, denotada por, $A \cup B$ será o evento que
-    ocorrerá se, e somente se, A ou B (ou ambos) ocorrerem.
-    \item Se A e B forem eventos, a interseção entre A e B, denotada por, $A \cap B$ será o evento que
-    ocorrerá se, e somente se, A e B ocorrerem.
-    \item Se A for um evento, $\bar{A}$ será o evento complementar que ocorrerá
-    se, e somente se, \emph{não ocorrer A}.
-    \item Se A e B forem eventos, a diferença de A e B, denotada
-    por $A-B$, será o evento que aqueles elementos que estão em A mas
-    não estão em B ocorrerá.
-    \item Dois eventos, A e B, são \emph{mutuamente excludentes}, se eles
-    não puderem ocorrer juntos. Exprimiremos isso escrevendo $A \cap B =
-    \phi$, isto é, a interseção de A e B é o \emph{conjunto vazio}.
+    \item União:
+    \[
+    A \cup B
+    \]
+    ocorre se $A$ ou $B$ ocorrer (ou ambos).
+
+    \item Interseção:
+    \[
+    A \cap B
+    \]
+    ocorre se $A$ e $B$ ocorrerem simultaneamente.
+
+    \item Complementar:
+    \[
+    A^c
+    \]
+    ocorre se $A$ não ocorrer.
+
+    \item Diferença:
+    \[
+    A - B
+    \]
+    representa os resultados que estão em $A$, mas não em $B$.
+
+    \item Eventos mutuamente exclusivos:
+    \[
+    A \cap B = \varnothing.
+    \]
 \end{enumerate}
 
-
-
+\newpage
 \subsection{Propriedades das Operações}
 
 \begin{enumerate}
-    \item Comutativa
-$$A \cup B = B \cup A$$
-$$A \cap B = B \cup A$$
-    \item Associativa
-$$A \cup (B \cup C) = (A \cup B)\cup C$$
-$$A \cap (B \cap C) = (A \cap B)\cap C$$
-    \item Distributiva
-$$A \cup (B \cap C) = (A \cup B)\cap (A \cup C)$$
-$$A \cap (B \cup C) = (A \cap B)\cup (A \cap C)$$
-    \item Leis de Morgan
-$$ (A \cup B)^{c}= A^{c} \cap B^{c}$$
-$$ (A \cap B)^{c}= A^{c} \cup B^{c}$$
-\item Geral
-$$ A \cup \phi = A$$
-$$ A \cap \phi = \phi$$
-$$ \bar{\bar{A}}=A $$
-$$ A \cup \bar{A}= \Omega $$
-\end{enumerate}
+    \item Comutatividade:
+    \[
+    A \cup B = B \cup A,
+    \qquad
+    A \cap B = B \cap A.
+    \]
 
+    \item Associatividade:
+    \[
+    A \cup (B \cup C) = (A \cup B)\cup C,
+    \]
+    \[
+    A \cap (B \cap C) = (A \cap B)\cap C.
+    \]
+
+    \item Distributividade:
+    \[
+    A \cup (B \cap C) = (A \cup B)\cap (A \cup C),
+    \]
+    \[
+    A \cap (B \cup C) = (A \cap B)\cup (A \cap C).
+    \]
+
+    \item Leis de De Morgan:
+    \[
+    (A \cup B)^c = A^c \cap B^c,
+    \qquad
+    (A \cap B)^c = A^c \cup B^c.
+    \]
+
+    \item Propriedades gerais:
+    \[
+    A \cup \varnothing = A,
+    \qquad
+    A \cap \varnothing = \varnothing,
+    \]
+    \[
+    (A^c)^c = A,
+    \qquad
+    A \cup A^c = \Omega.
+    \]
+\end{enumerate}
+%----------------------------------------------------------------------------------%
+
+
+\newpage
+%----------------------------------------------------------------------------------%
 \section{Definições de Probabilidade}
 
-Historicamente, a probabilidade foi objeto de ampla discussão, tendo sido definida de maneiras diferentes. Assim, houve a definição de probabilidade como sendo o limite da frequencia relativa de ocorrência de um evento quando o número de provas tendia ao infinito. Esta definição, dita \textbf{Frequêntista}, padecia evidentementa de uma grande limitação.\vskip0.3cm
+Historicamente, a probabilidade foi objeto de ampla discussão, tendo sido definida de maneiras distintas ao longo do tempo. Inicialmente, surgiu a definição segundo a qual a probabilidade de um evento é o limite da frequência relativa de sua ocorrência quando o número de repetições do experimento tende ao infinito. Essa concepção, denominada \textbf{frequentista}, apresenta, entretanto, importantes limitações, especialmente quando não é possível repetir o experimento um grande número de vezes.\vskip0.3cm
  
-Uma segunda definição, connhecida por \textbf{Clássica}, concebia a probabilidade como sendo quociente do número de casos favoráveis ao evento pelo númeto de casos possíveis, desde que todos igualmente prováveis. Esta definição é hoje considerada uma regra prática para atribuição das probabilidades, quando aplicável.\vskip0.3cm
+Uma segunda definição, conhecida como \textbf{clássica}, concebe a probabilidade como o quociente entre o número de casos favoráveis a um evento e o número total de casos possíveis, desde que todos sejam igualmente prováveis. Atualmente, essa definição é considerada uma regra prática útil apenas em situações específicas.\vskip0.3cm
 
-Na segunda metade do século XIX a Teoria das Probabilidades atingiu um dos pontos mais altos com os trabalhos da escola russa fundada por \textbf{Pafnuty Lvovich Chebyshev} (1821-1894).\vskip0.3cm
+Na segunda metade do século XIX, a Teoria das Probabilidades atingiu um de seus pontos mais altos com os trabalhos da escola russa fundada por \textbf{Pafnuty Lvovich Chebyshev} (1821--1894).\vskip0.3cm
  
-Modernamente, se adota a definição \textbf{Axiomática} da probabilidade, proposta em 1933 pelo matemático russo, \textbf{Andrei Nikolaevich Kolmogorov}, segundo a qual a probabilidade obedece as três axiomas.
+Modernamente, adota-se a definição \textbf{axiomática} da probabilidade, proposta em 1933 pelo matemático russo \textbf{Andrei Nikolaevich Kolmogorov}, segundo a qual a probabilidade deve obedecer a três axiomas fundamentais.
+
+
  
-\newpage
+
 \subsection{Definição Frequentista de Probabilidade}
 
-Na prática acontece que nem sempre é possível determinar a probabilidade de um evento. Neste caso, é necessário ter um método de aproximação desta probabilidade. Um dos métodos utilizados é a experimentação que objetiva estimar o valor da probabilidade de um evento $A$ com base em valores reais. A probabilidade avaliada através deste processo pe denominado de probabilidade empírica.\vskip0.3cm
+Na prática, nem sempre é possível determinar exatamente a probabilidade de um evento. Nesses casos, utiliza-se um método de aproximação baseado na repetição do experimento aleatório. Esse procedimento permite estimar a probabilidade de um evento $A$ a partir de dados observados. A probabilidade avaliada dessa forma é denominada \textbf{probabilidade empírica}.\vskip0.3cm
 
-Seja $\epsilon$ um experimento e $A$ um evento de um espaço amostral associado ao experimento $E$. Suponha-se que $E$ seja repetido $n$ vezes e seja $m$ o número de vezes que $A$ ocorre nas $n$ repetições de $E$. Então a fraquência relativa do evento $A$, anotada por $f_{r_{a}}$, é o quociente:
- 
+Seja $\epsilon$ um experimento aleatório e $A$ um evento do espaço amostral $S$ associado a esse experimento. Suponha que $\epsilon$ seja repetido $n$ vezes e que $m$ seja o número de vezes em que $A$ ocorre. A frequência relativa do evento $A$, denotada por $f_{r_A}$, é definida como:
+
 \begin{equation}
-     f_{(r_{a})}= \left( \frac{m}{n} \right)
+     f_{r_A}= \frac{m}{n}.
 \end{equation}
 
 \subsubsection{Propriedades da Frequência Relativa} 
 
-Seja $\epsilon$ um experimento e $A$ e $B$ dois eventos de um espaço amostral associado $S$. Sejam $f_{r_{a}}$ e $f_{r_{b}}$ e as frequências relativas de $A$ e $B$ respectivamente. Então:
+Seja $\epsilon$ um experimento aleatório e $A$ e $B$ dois eventos do espaço amostral $S$. Sejam $f_{r_A}$ e $f_{r_B}$ as frequências relativas de $A$ e $B$, respectivamente. Então:
 
 \begin{enumerate}
-    \item $0 \leqslant f_{r_{a}}  \leqslant 1$, isto é, a frequência ralativa do evento $A$ é um número que varia entre $0$ e $1$.
-    \item $f_{r_{a}}= 1$ se e somente se, $A$ ocorre em todas as $n$ repetições de $\epsilon$.
-    \item $f_{r_{a}}= 0$ se e somente se, $A$ ocorre em todas as $n$ repetições de $\epsilon$.
-    \item $f_{r_{A \cup B}}  = f_{r_{A}} + f_{r_{B}}$ se $A$ e $B$ forem eventos mutuamente excludentes.
+    \item $0 \leqslant f_{r_A} \leqslant 1$, isto é, a frequência relativa de um evento varia entre $0$ e $1$.
+    
+    \item $f_{r_A}=1$ se, e somente se, $A$ ocorre em todas as $n$ repetições de $\epsilon$.
+    
+    \item $f_{r_A}=0$ se, e somente se, $A$ não ocorre em nenhuma das $n$ repetições de $\epsilon$.
+    
+    \item Se $A$ e $B$ forem mutuamente excludentes, então:
+    \[
+    f_{r_{A \cup B}} = f_{r_A} + f_{r_B}.
+    \]
 \end{enumerate}
- 
- 
+
+
 \subsection{Definição Clássica de Probabilidade}
  
-Se $E$ um experimento aleatório e $S$ um espaço amostral formado por $n$ resultados igualmente prováveis. Seja $A \subseteq S$ um evento com $m$ elementos. A probabilidade de $A$, anotado por $P(A)$, lê-se $p$ de $A$, é definida como sendo:
-  
+
+Seja $E$ um experimento aleatório e $S$ um espaço amostral formado por $n$ resultados igualmente prováveis. Seja $A \subseteq S$ um evento com $m$ elementos. A probabilidade de $A$, denotada por $P(A)$, é definida como:
+
 \begin{equation}
-     P(A)= \left( \frac{m}{n} \right)
+     P(A)= \frac{m}{n}.
 \end{equation}
   
-Isto é, a probabilidade do evento $A$ é o quociente entre o número $m$ de casos favoráveis e o número $n$ de casos possíveis.\vskip0.3cm
+Isto é, a probabilidade do evento $A$ é o quociente entre o número de casos favoráveis e o número de casos possíveis.\vskip0.3cm
 
-
-\textbf{Exemplo:} Calcular a probabilidade de no lançamento de um
-dado equilibrado obter-se:
+\textbf{Exemplo:} Calcular a probabilidade de, no lançamento de um dado equilibrado, obter-se:
 
 \begin{enumerate}
-    \item Um resultado igual a 4.
+    \item Um resultado igual a $4$.
     \item Um resultado ímpar.
 \end{enumerate}
 
-$$
-P(A)= \left[ \frac{m}{n} \right] = \left[  \frac{1}{6} \right] = 16,67\% 
-$$
+\[
+P(A)= \frac{1}{6} \approx 16,67\%.
+\]
 
-$$
-P(B)= \left[ \frac{m}{n} \right] = \left[ \frac{3}{6} \right] =  50\%
-$$
+\[
+P(B)= \frac{3}{6} = 50\%.
+\]
 
-A definição clássica é dúbia, a já que a idéia de igualmente provável pe a mesma de com probabilidade igual, isto é, a definição é circular, porquer está definindo essencialmente a probabilidade com seus próprios termos. A definição não pode ser aplicada quando o espaço amostral é infinito.
+A definição clássica apresenta limitações, pois a noção de ``igualmente provável'' já pressupõe o conceito de probabilidade, tornando a definição parcialmente circular. Além disso, ela não se aplica quando o espaço amostral é infinito ou quando os resultados não são equiprováveis.
 
 
-%\newpage
 \subsection{Definição Axiomática de Probabilidade}
 \subsubsection{O Que é Axiomática?}
 
-Em determinadao ponto da evolução de uma teoria de pensamento matemático, torna-se imperioso ordenar, sistemtizar e relacionar todos os conhecimentos entretanto nela reconhecidos, isto é, proceder à sua \textbf{Axiomatização}. 
+Em determinado estágio da evolução de uma teoria matemática, torna-se necessário ordenar, sistematizar e relacionar todos os conhecimentos nela reconhecidos, isto é, proceder à sua \textbf{axiomatização}.\vskip0.3cm
  
+Axiomatizar consiste em:
+
 \begin{enumerate}
-\item Axiomatizar consiste em escolher algumas afirmações que podem ser feitas sobre os objetos matemáticos em estudo, na área considerada;
-\item Delas, por processo dedutivo, obter todas as demais proposições que constituem o corpo de conhecimento da teoria em causa;
+\item Escolher afirmações fundamentais sobre os objetos matemáticos em estudo;
+\item A partir delas, deduzir todas as demais proposições da teoria por raciocínio lógico.
 \end{enumerate} 
 
-Essas afirmações, das quais deduzimos todas as outras, são os \textbf{Axiomas} e o seu conjunto constitui uma \textbf{Axiomática}.\vskip0.3cm
+Essas afirmações fundamentais são denominadas \textbf{axiomas}, e o conjunto delas constitui uma \textbf{axiomática}.\vskip0.3cm
  
 
-Os Axiomas, além de se basearem numa ceitação por evidência, devem ser:
+Os axiomas devem ser:
 
 \begin{enumerate}
-    \item Logicamente independente isto é, nenhum deles deve ser passível de se obter dos restantes;
-    \item Compatível, isto é, os axiomas não podem, por dedução lógica, conduzir a proposições contraditórias; 
+    \item \textbf{Logicamente independentes}, isto é, nenhum deles deve ser deduzido dos demais;
+    \item \textbf{Compatíveis}, ou seja, não podem conduzir a contradições.
 \end{enumerate}
  
-As afirmações que se obtêm dedutivamente a partir dos axiomas, ou de outras já deles obtidas por dedução, chamamos \textbf{Teoremas}.\vskip0.3cm
+As proposições deduzidas a partir dos axiomas são chamadas \textbf{teoremas}.\vskip0.3cm
 
 \newpage
-Em, 1933 \textbf{Andrei Nikolaevich Kolmogorov} estabeleceu a definição de probabilidade por Axiomatização, na sua obra intitulada \textbf{Foundations of Theory of Probability} . Foi com base nas propriedades das frequências relativas e das operações sobre conjuntos que Kolmogorov concebeu a primeira construção Axiomática Geral para a Teoria das Probabilidades.
-
+Em 1933, \textbf{Andrei Nikolaevich Kolmogorov} estabeleceu a formulação axiomática moderna da probabilidade em sua obra \textbf{Foundations of the Theory of Probability}. Sua construção foi baseada nas propriedades das frequências relativas e nas operações da teoria dos conjuntos.
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.6]{figures/Kolmogorov.jpeg}
+    \includegraphics[scale=0.65]{figures/Kolmogorov.jpeg}
     \caption{Andrei Nikolaevich Kolmogorov (1903-1987)}
     \label{fig:my_label10}
 \end{figure}
-
-
 
 Kolmogorov nasceu em 25 ade abril de 1903 em Tambov, na cidade de Moscou. Foi um matemtático Russo, participou das maiores descobertas científicas do século XX, nas áreas de Probabilidade e Estatística, e em Teoria da Informação.\vskip0.3cm
 
@@ -341,270 +401,215 @@ Considerado um dos grandes cientista em sua época, Kolmogorov foi agraciado por
 \newpage
 \subsubsection{Axiomas de Probabilidade}
 
-Seja $E$ um experimento aleatório com um espaço amostral associado. A cada evento $A \subset B$ associa-se um número real, representado por $P(A)$ e denominado de probabilidade de $A$, que satisfaz as seguintes propriedades(axiomas).
+Seja $S$ um espaço amostral. A cada evento $A \subseteq S$ associa-se um número real $P(A)$, denominado probabilidade de $A$, que satisfaz:
 
 \begin{enumerate}
-    \item Se $\phi$ for o conjunto vazio, então
-    $P(\phi)=0$.
-
-\textbf{Demostração}: Para qualquer evento $A$, podemos escrever
-$A=A\cup \phi$. Uma vez que $A$ e $\phi$ são mutuamente
-excludentes, decorre que, $P(A)=P(A\cup \phi)= P(A)+P(\phi)$,
-assim, $P(A)- P(A)= P(\phi)= 0$.
-    \item Se $\bar{A}$ for o evento complementar de $A$, então
-    $P(A)=1-P(\bar{A})$.
-
-\textbf{Demostração}: Podemos escrever $\Omega = A \cup \bar{A}$
-e, então, $P(\Omega)= P(A)+ P(\bar{A})$, assim, a $P(\Omega)=1$,
-com isso, $1= P(A)+P(\bar{A})$, ou seja, $P(\bar{A})= 1- P(A)$.
-    \item Se A e B forem dois eventos \emph{quaisquer}, então $P(A\cup B)=P(A)+P(B)-P(A\cap B)$
-
-\textbf{Demostração}: A idéia desta demostração é decompor $A\cup
-B$ e $B$ em dois eventos mutuamente excludentes e, em seguida,
-aplicar a propriedade da soma. Desse modo escreveremos,
-
-$$A \cup B= A\cup (B\cap \bar{A})$$
-$$B= (A \cap B) \cup (B\cap \bar{A})$$
-
-consequêntemente,
-
-$$P(A \cup B)= P(A)+P(B \cap \bar{A})$$
-$$ P(B) = P(A \cap B) + P(B \cap \bar{A})$$
-
-Subtraindo a segunda igualdade da primeira, obtém-se
-
-$$ P(A \cup B) - P(B) = P(A)- P(A \cap B)$$
- e daí chega-se ao resultado
-
-$$ P(A \cup B) = P(A)+P(B)- P(A \cap B)$$
-    \item Se A, B e C forem três eventos quaisquer, então $P(A \cup B \cup C) = P(A)+P(B)+P(C)-P(A\cap B)-P(A\cap C)-P(B\cap C)+P(A\cap B \cap C)$
-
-
-\textbf{ \maltese Demostração}: A demostração consiste em escrever
-$A \cup B \cup C$ na forma $(A \cup B)\cup C$ e aplicar o
-resultado do teorema anterior. Deixa-se a cargo do estudante
-completar a demostração.
-
-    \item Se $A \subset B$, então $P(A) < P(B)$
+    \item \textbf{Não negatividade:} $P(A)\geq 0$.
+    
+    \item \textbf{Normalização:} $P(S)=1$.
+    
+    \item \textbf{Aditividade:} Se $A$ e $B$ são eventos mutuamente excludentes, então:
+    \[
+    P(A\cup B)=P(A)+P(B).
+    \]
 \end{enumerate}
-
-\textbf{Demostração}: Podemos decompor B em dois eventos
-mutuamente excludentes, na seguinte forma $B = A \cup (B \cap
-\bar{A})$. Consequentemente, $P(B) = P(A)+ P(B \cup \bar{A}) \geq
-P(A)$, porque $P(B \cap \bar{A}) \geq 0$.
-
 
 \subsubsection{Consequências dos Axiomas}
 
-De acordo com os Axiomas, apresentados anteriormente, serão definidos algumas propriedades, como consequências diretas:
+Como consequências diretas desses axiomas, obtêm-se:
 
 \begin{enumerate}
-\item Se $\phi$ for o conjunto vazio, então $P(\phi)=0$
-\item Se $\bar{A}$ for o evento complementar de $A$, então $P(A)=1-P(A)$
-\item Se $A$ e $B$ forem dois eventos quaisquer, então $P(A \bigcup B)= P(A)+P(B)-P(A \bigcap B)$ 
-\item Se $A$, $B$ e $C$ forem três eventos quaisquer, então $P(A \bigcup B \bigcup C)= P(A)+P(B)+P(C)- P(A \bigcap B)- P(A \bigcap C)- P(B \bigcap C)+P(A \bigcap B \bigcap C)$
-\item Se $A \subset B$, então $P(A) \prec P(B)$
+\item $P(\varnothing)=0$.
+\item $P(\bar{A})=1-P(A)$.
+\item $P(A\cup B)=P(A)+P(B)-P(A\cap B)$.
+\item Se $A\subseteq B$, então $P(A)\leq P(B)$.
 \end{enumerate}
 
+%------------------------------------------------------------------------------------%
 \section{Probabilidade Condicional}
 
-Seja A e B dois eventos associados ao experimento $\varepsilon$.
-Denotaremos por P(B/A) a probabilidade condicionada do evento B,
-Quando A tiver ocorrido.\vskip0.3cm
+Sejam $A$ e $B$ dois eventos associados a um experimento aleatório $\varepsilon$.
+Denotaremos por $P(B\mid A)$ a probabilidade condicional do evento $B$,
+isto é, a probabilidade de que $B$ ocorra dado que $A$ já ocorreu.\vskip0.3cm
 
-Sempre que calcularmos P(B/A), estaremos essencialmente calculando
-P(B) em relação ao espaço amostral reduzido A, em lugar de fazê-lo
-em relação ao espaço amostral original $S$.\vskip0.3cm
+Sempre que calculamos $P(B\mid A)$, estamos essencialmente avaliando a probabilidade de $B$
+em relação a um \textbf{espaço amostral reduzido}, isto é, restrito ao evento $A$,
+em vez de considerarmos o espaço amostral original $S$.\vskip0.3cm
 
-\newpage
-Quando calcularmos P(B) estaremos nos perguntando quão provável
-será estarmos em B, sabendo que devemos estar em S. È quando
-calcularmos P(B/A) estaremos perguntando quão provável será
-estarmos em B, sabendo que devemos estar em A. Isto é, o espaço
-amostral ficou reduzido de S para A.
+Quando calculamos $P(B)$, perguntamos quão provável é estarmos em $B$ sabendo que devemos estar em $S$.
+Já ao calcular $P(B\mid A)$, perguntamos quão provável é estarmos em $B$ sabendo que devemos estar em $A$.
+Assim, o espaço amostral se reduz de $S$ para $A$.\vskip0.3cm
 
+A probabilidade condicional é definida por:
 
-\begin{equation}\label{}
-    P(B/A) = \left[ \frac{P(A \cap B)}{P(A)} \right], \quad \quad desde \quad que
-    \quad P(A)>0.
+\begin{equation}
+    P(B\mid A)=\frac{P(A\cap B)}{P(A)}, \quad \text{desde que } P(A)>0.
 \end{equation}
 
-\begin{equation}\label{}
-    P(A/B) = \left[ \frac{P(A \cap B)}{P(B)} \right], \quad \quad desde \quad que
-    \quad P(B)>0.
+De forma análoga:
+
+\begin{equation}
+    P(A\mid B)=\frac{P(A\cap B)}{P(B)}, \quad \text{desde que } P(B)>0.
 \end{equation}
 
-È simples verificar as seguintes propriedades de P(B/A) para A
-fixado:
+É simples verificar as seguintes propriedades de $P(B\mid A)$, para $A$ fixado:
 
 \begin{enumerate}
-    \item $0 \leq P(B/A) \leq 1$
-    \item $P(S/A)=1$
-     \item $P(B_{1} \cup B_{2}/A) = P(B_{1}/A)+P(B_{2}/A)$ se os
-     eventos $B_{1}$ e $B_{2}$ forem mutuamente execludentes, $B_{1}\cap B_{2}=\emptyset$
-     \item $P(B_{1} \cup B_{2} \cup ... / A) =
-     P(B_{1}/A)+P(B_{2}/A)+...$ se $B_{i}\cup B_{j}=\phi$ para $i\neq
-     j$.
-\end{enumerate}
-
-\textbf{Exemplo 1}: Dois Dados equilibrados são lançados,
-registrando-se o resultado como ($x_{1},x_{2}$), onde $x_{i}$ é o
-resultado do i-ésimo dado, i=1,2. Por isso, o espaço amostral S
-pode ser representado pela seguinte lista de 36 resultados
-igualmente prováveis.
-
-$$
-\Omega =
-\left[%
-\begin{array}{cccccc}
-  (1,1) & (2,1) & (3,1) & (4,1) & (5,1) & (6,1) \\
-  (1,2) & (2,2) & (3,2) & (4,2) & (5,2) & (6,2) \\
-  (1,3) & (2,3) & (3,3) & (4,3) & (5,3) & (6,3) \\
-  (1,4) & (2,4) & (3,4) & (4,4) & (5,4) & (6,4) \\
-  (1,5) & (2,5) & (3,5) & (4,5) & (5,5) & (6,5) \\
-  (1,6) & (2,6) & (3,6) & (4,6) & (5,6) & (6,6) \\
-\end{array}%
-\right]
-$$
-
-Considere os dois eventos seguintes:\vskip0.3cm
-
-$A=\{(x_{1},x_{2}|x_{1}+x_{2}=10)\}$
-
-$B=\{(x_{1},x_{2}|x_{1}>x_{2})\}$
-
-\vskip0.3cm
-
-\newpage
-Calcular:
-
-\begin{enumerate}
-    \item P(B/A)
-    \item P(A/B)
+    \item $0\leq P(B\mid A)\leq 1$;
+    \item $P(S\mid A)=1$;
+    \item $P(B_{1}\cup B_{2}\mid A)=P(B_{1}\mid A)+P(B_{2}\mid A)$,
+    se $B_{1}$ e $B_{2}$ forem mutuamente excludentes;
+    \item Mais geralmente,
+    \[
+    P\left(\bigcup_{i=1}^{n}B_i \,\Big|\, A\right)=\sum_{i=1}^{n}P(B_i\mid A),
+    \]
+    se os eventos $B_i$ forem dois a dois mutuamente excludentes.
 \end{enumerate}
 
 
-$$P(B/A) = \left[ \frac{P(A \cap B)}{P(A)} \right] = \left[ \frac{\frac{1}{36}}{\frac{3}{36}} \right] = \frac{1}{3} $$
+\textbf{Exemplo 1:} Dois dados equilibrados são lançados e o resultado é registrado como $(x_{1},x_{2})$,
+onde $x_i$ representa o resultado do $i$-ésimo dado. Assim, o espaço amostral possui $36$ resultados igualmente prováveis:
 
+\[
+\Omega=
+\left\{
+(x_1,x_2):x_1,x_2\in\{1,2,3,4,5,6\}
+\right\}.
+\]
 
-$$P(A/B) = \left[ \frac{P(A \cap B)}{P(B)} \right] =  \left[ \frac{\frac{1}{36}}{\frac{15}{36}} \right] = \frac{1}{15}$$
+Considere os eventos:
 
-O evento $A \cap B$ ocorre se, e somente se, a soma dos dois dados
-for 10 e se o primeiro dado tiver apresentado um valor maior que o
-segundo dado.\vskip0.3cm
-
-
-\textbf{Exemplo 2}: Uma caixa comtém duas moedas. Uma honesta e
-outra com 2 caras. Uma moeda é escolhida aleatoriamente,
-arremessada e o resultado observado é cara. Qual a probabilidade
-de que o outro lado desta moeda escolhida, seja cara?\vskip0.3cm
-
-Considere os seguintes Eventos.\vskip0.3cm
-
-B=\{o resultado é cara\}.
-
-A=\{A moeda é a de 2 caras\}
-
-\vskip0.3cm
+\[
+A=\{(x_1,x_2):x_1+x_2=10\},
+\qquad
+B=\{(x_1,x_2):x_1>x_2\}.
+\]
 
 Calcular:
 
 \begin{enumerate}
-    \item P(A/B)
-    \item P(B/A)
+    \item $P(B\mid A)$;
+    \item $P(A\mid B)$.
 \end{enumerate}
 
+O evento $A$ ocorre nos casos:
 
-$$P(A/B) = \left[ \frac{P(A \cap B)}{P(B)} \right] = \left[ \frac{\frac{2}{4}}{\frac{3}{4}} \right] = \frac{2}{3}$$
+\[
+(4,6),(5,5),(6,4),
+\]
 
-Das 4 faces que podem ocorrer, 3 são caras, e duas são caras, com
-caras no outro lado da moeda de 2 caras.\vskip0.3cm
+portanto:
 
-A maior consequência da definição de probabilidade condicionada
-acima, é obtida ao se escrever:
+\[
+P(A)=\frac{3}{36}.
+\]
 
-\newpage
-$$
-P(A \cap B)= P(B/A)P(A)
-$$
- ou equivalentemente,
+O evento $A\cap B$ ocorre apenas em:
 
-$$
-P(A \cap B)= P(A/B)P(B)
-$$
+\[
+(6,4),
+\]
 
+logo:
 
-%\newpage
-Isto é, algumas vezes mencionado como o \textbf{Teorema da
-Multiplicação} de probabilidade. Podemos aplicar esse teorema para
-calcular a probabilidade da ocorrência conjunta dos eventos A e B.
-\vskip0.3cm
+\[
+P(A\cap B)=\frac{1}{36}.
+\]
 
-O teorema da multiplicação de probabilidades pode ser generalizado
-para mais de dois eventos, da seguinte maneira:
+Assim,
 
-\begin{equation}\label{}
-    P[A_{1} \cap A_{2} \cap ... \cap A_{n}]=
-    P(A_{1})P(A_{2}/A_{1})P(A_{3}/A_{1},A_{2})...P(A_{n}/A_{1},...A_{n-1})
+\[
+P(B\mid A)=\frac{P(A\cap B)}{P(A)}
+=\frac{\frac{1}{36}}{\frac{3}{36}}=\frac{1}{3}.
+\]
+
+Além disso,
+
+\[
+P(B)=\frac{15}{36},
+\]
+
+portanto,
+
+\[
+P(A\mid B)=\frac{\frac{1}{36}}{\frac{15}{36}}=\frac{1}{15}.
+\]
+
+\textbf{Exemplo 2:} Uma caixa contém duas moedas: uma honesta e outra com duas faces ``cara''.
+Uma moeda é escolhida aleatoriamente, lançada e o resultado observado é cara.
+Qual a probabilidade de que a moeda escolhida seja a moeda de duas caras?\vskip0.3cm
+
+Considere os eventos:
+
+\[
+A=\{\text{a moeda escolhida é a de duas caras}\},
+\qquad
+B=\{\text{o resultado observado é cara}\}.
+\]
+
+Temos:
+
+\[
+P(A)=\frac{1}{2},\qquad
+P(B\mid A)=1,\qquad
+P(B\mid A^c)=\frac{1}{2}.
+\]
+
+Logo,
+
+\[
+P(B)=P(B\mid A)P(A)+P(B\mid A^c)P(A^c)
+=1\cdot\frac{1}{2}+\frac{1}{2}\cdot\frac{1}{2}
+=\frac{3}{4}.
+\]
+
+Assim,
+
+\[
+P(A\mid B)=\frac{P(B\mid A)P(A)}{P(B)}
+=\frac{1\cdot\frac{1}{2}}{\frac{3}{4}}
+=\frac{2}{3}.
+\]
+
+\subsection{Teorema da Multiplicação}
+
+Da definição de probabilidade condicional, obtemos:
+
+\[
+P(A\cap B)=P(B\mid A)P(A),
+\]
+
+ou equivalentemente:
+
+\[
+P(A\cap B)=P(A\mid B)P(B).
+\]
+
+Esse resultado é conhecido como o \textbf{Teorema da Multiplicação}.\vskip0.3cm
+
+Ele pode ser generalizado para $n$ eventos:
+
+\begin{equation}
+P(A_1\cap A_2\cap\cdots\cap A_n)=
+P(A_1)\,P(A_2\mid A_1)\cdots P(A_n\mid A_1,\dots,A_{n-1}).
 \end{equation}
 
-Até aqui empregamos o conceito de probabilidade condicionada a fim
-de avaliar a probabilidade de ocorrência conjunta de dois eventos.
-Poderemos aplicar esse conceito em outra maneira de calcular a
-probabilidade de um evento simples A. Necessitaremos da seguinte
-definição:\vskip0.3cm
+\subsection{Partição do Espaço Amostral e Probabilidade Total}
 
-Dizemos que os eventos $B_{1},B_{2},...,B_{k}$ representam uma
-\textbf{Partição do Espaço Amostral S}, quando
+Dizemos que os eventos $B_1,B_2,\dots,B_k$ formam uma \textbf{partição} do espaço amostral $S$ se:
 
 \begin{enumerate}
-    \item $B_{i} \cap B_{j}=\phi$, para todo $i\neq j$
-    \item $\bigcup^{k}_{i=1}=S$
-    \item $P(B_{i})>0$ para todo $i$
+    \item $B_i\cap B_j=\varnothing$, para $i\neq j$;
+    \item $\displaystyle \bigcup_{i=1}^{k}B_i=S$;
+    \item $P(B_i)>0$, para todo $i$.
 \end{enumerate}
 
-Explicando: Quando o experimento $\varepsilon$ pe realizado
-\textbf{um}, \textbf{e somente um}, dos eventos $B_{i}$
-ocorre.\vskip0.3cm
+Nesse caso, vale o \textbf{Teorema da Probabilidade Total}:
 
-\textbf{Exemplo 1}: Na jogada de um dado,
-$B_{1}=\{1,2\},B_{2}=\{3,4,5 \}$ e $B_{3}=\{6\}$ representariam
-uma partição do espaço amostral, enquanto $C_{1}=\{1,2,3,4\}$ e
-$C_{2}=\{4,5,6 \}$ não o representariam.\vskip0.3cm
-
-Consideremos A um evento qualquer referente a S, e
-$B_{1},B_{2},...,B_{k}$ uma partição de S. Poderemos escrever
-
-$$
-A = (A \cap B_{1}) \cup (A \cap B_{2}) \cup ... \cup (A \cap
-B_{k}).
-$$
-
-Naturalmente, alguns dos conjuntos $A \cap B_{j}$ poderão ser
-vazios, mas isso não invalida essa decomposição de A. O ponto
-importante é que todos os eventos $A \cap B_{1},...,A \cap B_{k}$
-são dois a dois mutuamente excludentes. Por isso, poderemos
-aplicar a propriedade da adiçãos de eventos mutuamente
-excludentes, e escrever
-
-
-$$
-P(A)=P(A\cap B_{1})+P(A\cap B_{2})+...+P(A\cap B_{k})
-$$
-
-Contudo, cada termo $P(A\cap B_{j})$ pode ser expresso na forma
-$P(A/B_{j})P(B_{j})$ e, daí, obteremos o que se denomina o
-\textbf{Teorema da Probabilidade Total}:
-
-\begin{equation}\label{}
-P(A)=P(A/B_{1})P(B_{1})+P(A/B_{2})P(B_{2})+...+P(A/B_{k})P(B_{k})
+\begin{equation}
+P(A)=\sum_{i=1}^{k}P(A\mid B_i)\,P(B_i).
 \end{equation}
 
-Este resultado representa uma relação extremamente útil, porque
-frequentemente, quando P(A) é pedida, pode ser difícil calculá-la
-diretamente. No entanto, com a informação adicional de que $B_{j}$
-tenha ocorrido, seremos capazes de calcular $P(A/B_{j})$ e, em
-seguida, empregar a fórmula acima.
 
 
 \section{Teorema de Bayes}
@@ -628,7 +633,7 @@ cemitério.
     \label{fig:my_label2}
 \end{figure}
 
-\newpage
+
 Seu trabalho com as probabilidades foi reunido em um ensaio
 publicado após a sua morte (em 1763) no livro Philosophical
 Transactions of the Royal Society of London. O ensaio Essay
