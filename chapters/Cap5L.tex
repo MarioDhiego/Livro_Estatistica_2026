@@ -323,10 +323,24 @@ Os problemas mais comuns que podem comprometer a efetividade de uma visualizaç�
 \section{Principais Tipos de Gráficos}
 \subsection{Ramo-e-Folhas (\textit{Stem and Leaf})}
 
-O diagrama de Ramo-e-Folhas, também chamado de Talo-e-Folha, Caule-e-Folha ou \textit{Stem and leaf} foi desensvolvido em 1977 pelo estatístico americano Jhon Wilder Tukey. O mesmo fornece um meio prático de registrar as observações e podem ser usados como uma amostra direta dos dados ou um passo preliminar ma construção de uma tabela de frequência.\vskip0.3cm
+O diagrama de \textbf{Ramo-e-Folhas}, também conhecido como
+\textbf{Talo-e-Folha}, \textbf{Caule-e-Folha} ou, em inglês,
+\textit{Stem and Leaf}, foi proposto em 1977 pelo estatístico
+americano \textbf{John Wilder Tukey}.  \vskip0.3cm
 
+Esse tipo de representação gráfica constitui uma ferramenta simples,
+porém extremamente útil, para organizar observações numéricas de forma
+estruturada, permitindo uma visualização rápida da distribuição dos dados. \vskip0.3cm
 
-È um gráfico que faz o agrupamento simples dos dados, mas tem a vantagem de permitir que os valores originais sejam recuperados, diferente do histograma que também serve para agrupar os dados, porém não permite que os valores originais não sejam recuperados depois.\vskip0.3cm
+Uma das principais vantagens do diagrama de ramo-e-folhas é que,
+diferentemente do histograma, ele preserva os valores originais da amostra,
+ou seja, os dados podem ser reconstruídos a partir do gráfico.
+Por essa razão, ele pode ser utilizado tanto como uma apresentação direta
+dos dados quanto como uma etapa preliminar na construção de tabelas de frequência. \vskip0.3cm
+
+A Tabela~\ref{febreamarela} apresenta um conjunto de dados brutos referentes
+ao número de doses aplicadas mensalmente da vacina contra febre amarela,
+no município de Belém (PA), ao longo dos últimos anos.
 
 
 \begin{table}[H]
@@ -350,14 +364,28 @@ O diagrama de Ramo-e-Folhas, também chamado de Talo-e-Folha, Caule-e-Folha ou \
 \hline \hline
 \end{tabular}}
 \\
-\hspace{-4.0cm} Fonte: SESMA-PA, 2022.
+\hspace{-3.5cm} Fonte: SESMA-PA, 2022.
 \end{table}
 
+Para construir um diagrama de ramo-e-folhas, cada observação numérica é
+decomposta em duas partes principais:
+
+\begin{itemize}
+    \item o \textbf{ramo}, formado pelos primeiros dígitos do valor;
+    \item a \textbf{folha}, formada pelo dígito final, que completa a observação.
+\end{itemize}
+
+Os ramos são dispostos em ordem crescente no lado esquerdo de uma linha vertical,
+enquanto as folhas correspondentes são registradas à direita.
+Opcionalmente, pode-se adicionar uma coluna com a frequência de cada ramo,
+facilitando a interpretação quantitativa. \vskip0.3cm
 
 
-Para a construção de um diagrama ramo-e-folhas, não há regras fixas para construí-los, mas a idéia básica é dividir cada observação em três partes: desenhe duas linhas vertical e coloque os primeiros digitos de cada classe chamado de (\textbf{ramos}) no lado esquerdo da linha vertical. Os números no lado central da linha vertical representam o segundo dígito de cada observação, sendo estes as \textbf{folhas}, e a terceira parte (opcional) no lado direito as frequências  simples.\vskip0.3cm
+A Tabela~\ref{ramosfolhas} apresenta o diagrama de ramo-e-folhas construído
+para os dados da vacina contra febre amarela.
 
-\begin{table}[H]
+\newpage
+\begin{table}[h]
     \centering
     {
     \caption{Diagrama de Ramo-e-Folhas para as Doses de Vacinas sobre Febre Amarela, aplicadas nos ultimos 5 anos no muncípio de Belém, Estado do Pará - 2024.}
@@ -392,245 +420,612 @@ Para a construção de um diagrama ramo-e-folhas, não há regras fixas para con
 \end{table}
 
 
+
+
+%----------------------------------------------------------------------------------------------------------%
 \newpage
 \subsection{Histogramas}
 
-O histograma é um gráfico de barras no qual a escala horizontal representa classes de valores de dados e a escala vertical representa frequências. As alturas dos barras correspondem aos valores das frequências, e as barras são desenhadas adjascente uma às outras (sem separação).
- \vskip0.3cm
- 
-O histograma é formado por um conjunto de retangulos justapostos que tem as bases sobre um eixo horizontal, com centro no ponto médio. As bases coincidem com as amplitudes de classe, e as alturas deve ser proporcionais as frequências das classes. Os histogramas em geral apresentam a medição de interesse no eixo x e o número ou percentagem de observações no eixo y, embora alguns programas de computador façam o oposto. 
+O \textbf{histograma} é um dos gráficos mais utilizados em Estatística
+para representar a distribuição de frequências de uma variável quantitativa.
+Trata-se de um gráfico formado por barras (retângulos) em que:
+
+\begin{itemize}
+    \item o eixo horizontal representa os \textbf{intervalos de classe}
+    (ou faixas de valores da variável);
+    \item o eixo vertical representa as \textbf{frequências}
+    (absolutas ou relativas) associadas a cada classe.
+\end{itemize}
+
 \vskip0.3cm
 
-Se todos os intervalos tiverem a mesma amplitude, as alturas serão proporcionais as frequências das classes, tornando-se então as alturas numericamente iguais a essas frequências, ou seja, LARGURA DO RETÂNGULO = h(amplitude de classe) e ALTURA DO RETÂNGULO = f(frequência de classe).
+Diferentemente do gráfico de barras utilizado para variáveis qualitativas,
+no histograma as barras são desenhadas \textbf{justapostas}, isto é,
+sem espaçamento entre elas, pois os intervalos de classe são contínuos e
+adjacentes.
+
+\vskip0.3cm
+
+Formalmente, um histograma é construído a partir de um conjunto de
+\textbf{retângulos} cujas bases estão sobre o eixo horizontal e cujas alturas
+são proporcionais às frequências observadas em cada classe.
+Cada retângulo possui:
+
+\begin{itemize}
+    \item \textbf{base} igual à amplitude do intervalo de classe;
+    \item \textbf{altura} proporcional à frequência correspondente.
+\end{itemize}
+\vskip0.3cm
+
+Em geral, a variável de interesse é apresentada no eixo $x$,
+enquanto o número (ou porcentagem) de observações aparece no eixo $y$.
+Alguns softwares estatísticos podem inverter essa orientação,
+mas a interpretação permanece a mesma. \vskip0.3cm
+
+Quando todas as classes possuem a mesma amplitude $h$,
+a altura de cada retângulo torna-se numericamente igual à frequência da classe.
+Assim, pode-se resumir:
+
+\[
+\text{Largura do retângulo} = h,
+\qquad
+\text{Altura do retângulo} = f,
+\]
+
+onde $f$ representa a frequência associada ao intervalo considerado. \vskip0.3cm
 
 
-%\vspace{-2cm}
-\begin{figure}
+\newpage
+O histograma permite identificar rapidamente características importantes
+da distribuição dos dados, tais como: concentração de valores; dispersão; assimetria; presença de valores extremos. \vskip0.3cm
+
+A Figura~\ref{fig:my_label25} apresenta um exemplo de histograma construído
+a partir das idades de vítimas fatais em acidentes de trânsito registrados
+no município de Belém no ano de 2024.
+
+\begin{figure}[H]
     \centering
-\includegraphics[scale=0.35,width=11cm]{figures/histograma1.jpeg}
-    \caption{(\textbf{Histograma}:) das Idades de Vítimas Fatais por Acidentes de Trânsito, Belém em 2024.}
+    \includegraphics[scale=0.5,width=11cm]{figures/histograma1.jpeg}
+    \caption{Histograma das idades de vítimas fatais em acidentes de trânsito,
+    Belém (2024).}
     \label{fig:my_label25}
 \end{figure}
 
-
+%----------------------------------------------------------------------------------------------------------%
 
 
 \newpage
 \subsection{Polígono de Frequência Simples e Acumulado}
 
-È um gráfico de linhas, sendo as frequência marcadas sobre as perpendiculares levantadas pelos pontos médios das classes. È a representação gráfica das frequências acumuladas. Usa-se quando deseja saber qual parcela da população encontra-se até um determinado valor, ou qual parcela encontra-se após um determinado valor.\vskip0.3cm
+O \textbf{polígono de frequência} é um gráfico de linhas utilizado
+para representar a distribuição de frequências de uma variável quantitativa.
+Ele é construído a partir dos pontos médios dos intervalos de classe,
+sobre os quais são marcadas as frequências correspondentes. \vskip0.3cm
 
-O polígono de frequência é traçado marcando-se as frequências acumuladas sobre os pontos correspondente aos limites superiores dos intervalos de classe, também, conhecido como \textbf{Ogiva de Galton}. A partir da Ogiva de Galton, pode-se fazer uma interpolação linear, estimar valores de frequências acumuladas, de uma distribuição em classes de frequências.\vskip0.3cm
+Para traçar o polígono, procede-se da seguinte forma:
 
-A ogiva de galton, ou também chamada de \textbf{Gráfico de Frequências Acumuladas}, concentra no limite superior de cada classe a quantidade de elementos inferiores ou iguais a esse limite superior. Dessa, forma, pode-se estimar a frequência acumulada para um determinado valor que pertença a qualquer intervalo que tiver sido usado para construir a ogiva. Para determinadar esse valor, faz-se uma interpolação linear da ogiva.
+\begin{itemize}
+    \item determina-se o ponto médio de cada classe;
+    \item marca-se, sobre a perpendicular levantada nesse ponto,
+    a frequência da classe;
+    \item liga-se os pontos consecutivos por segmentos de reta.
+\end{itemize}
+\vskip0.3cm
+
+Esse gráfico é especialmente útil para visualizar o comportamento geral
+da distribuição e comparar diferentes conjuntos de dados de maneira mais clara
+do que no histograma. \vskip0.3cm
+
+\subsubsection{Polígono de Frequência Acumulada (Ogiva)}
+
+Quando se deseja representar as \textbf{frequências acumuladas},
+utiliza-se o chamado \textbf{polígono de frequência acumulada},
+mais conhecido como \textbf{ogiva} ou \textbf{Ogiva de Galton}.
+\vskip0.3cm
+
+A ogiva é construída marcando-se as frequências acumuladas nos pontos
+correspondentes aos \textbf{limites superiores} dos intervalos de classe.
+Em seguida, esses pontos são ligados por segmentos de reta,
+formando uma curva crescente. \vskip0.3cm
+
+Esse tipo de gráfico permite responder questões importantes, tais como:
+
+\begin{itemize}
+    \item qual proporção dos dados encontra-se \textbf{até} determinado valor;
+    \item qual parcela da população está \textbf{acima} de certo limite;
+    \item estimativas aproximadas de percentis e medianas.
+\end{itemize}
+\vskip0.3cm
+
+Além disso, a partir da ogiva é possível realizar uma
+\textbf{interpolação linear}, estimando valores de frequência acumulada
+para pontos situados dentro de qualquer intervalo utilizado na construção
+da distribuição em classes. \vskip0.3cm
+
+Portanto, a ogiva constitui uma ferramenta gráfica fundamental para o estudo
+da distribuição acumulada dos dados, sendo amplamente aplicada em análises
+estatísticas descritivas.
 
 
 \newpage
-\vspace{-1cm}
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.3,height=220pt,width=15cm]{figures/poligono1.jpeg}
-    \caption{\textbf{(Polígono de Frequências Absoluta):} das Idades de Vítimas Fatais por Acidentes de Trânsito, Belém em 2024.}
-    \label{fig:my_label25}
-\end{figure}
+%\vspace{-1cm}
+%\begin{figure}[H]
+%    \centering
+%\includegraphics[scale=0.3,height=220pt,width=15cm]{figures/poligono1.jpeg}
+%    \caption{\textbf{(Polígono de Frequências Absoluta):} das Idades de Vítimas Fatais por Acidentes de Trânsito, Belém em 2024.}
+%    \label{fig:my_label25}
+%\end{figure}
 
-\vspace{-0.8cm}
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.3,height=220pt,width=15cm]{figures/poligono2.jpeg}
-    \caption{\textbf{(Polígono de Frequências Relativa):} das Idades de Vítimas Fatais por Acidentes de Trânsito, Belém em 2024.}
-    \label{fig:my_label25}
-\end{figure}
+%\vspace{-0.8cm}
+%\begin{figure}[H]
+%    \centering
+%includegraphics[scale=0.3,height=220pt,width=15cm]{figures/poligono2.jpeg}
+%    \caption{\textbf{(Polígono de Frequências Relativa):} das Idades de Vítimas Fatais por Acidentes de Trânsito, Belém em 2024.}
+%    \label{fig:my_label25}
+%\end{figure}
 
+
+%------------------------------------------------------------------------------------------------------%
 \newpage
 \subsection{Gráfico de Barras (Simples ou Múltiplas)}
 
-O gráfico de barras é composto por duas linhas ou eixos, um
-vertical e outro horizontal. No eixo vertical são construídas as
-barras que representam a variação de um fenômeno ou de um processo
-de acordo com sua intensidade. Essa intensidade é indicada pela
-altura da barra. No eixo horizontal especifica-se as categorias da
-variavel. As barras devem sempre possuir a mesma largura e a
-distância entre elas deve ser constante.\vskip0.3cm
+O \textbf{gráfico de barras} é uma das representações mais utilizadas em
+Estatística Descritiva, pois permite comparar categorias de forma rápida e
+intuitiva. Ele é formado por dois eixos perpendiculares: um eixo horizontal,
+no qual são apresentadas as \textbf{categorias} da variável, e um eixo vertical,
+no qual é indicada a \textbf{frequência} (absoluta ou relativa) ou outra medida
+associada a cada categoria. \vskip0.3cm
 
-Os Gráficos de Barra são uma das formas mais populares de representar a informação, principalmente pela facilidade de execução e leitura. Sendo utilizado para apresentar um conjunto de dados e também para comparar vários conjuntos de dados. O formato em barras devem ser utilizados para representar variáveis discretas ou qualitativas, em termos absolutos ou relativos, para comparar categorias de variáveis quantitativas ou representar a evolução de uma característica ao longo do tempo.\vskip0.3cm
+As barras devem possuir \textbf{largura constante} e serem desenhadas com
+\textbf{espaçamento uniforme}, de modo a não induzir interpretações equivocadas.
+A \textbf{altura} (ou comprimento, caso as barras sejam horizontais) é
+proporcional ao valor representado, permitindo comparações diretas entre as
+categorias. \vskip0.3cm
 
-A representação de valores negativos é desaconselhada em gráficos de barras, dado que, convencionalmente, aos valores negativos está associada uma barra numa posição descendente. De fato, a associação visual entre esquerda e direita e valores negativos e positivos, respectivamente, pode não ser directa para um leitor menos experiente. Por essa razão, devem ser utilizados gráficos de colunas quando existem valores negativos.\vskip0.3cm
+Os gráficos de barras são especialmente indicados para:
 
-Nos gráficos de barras não é admissível a quebra de escala por deixar de ser possível efectuar comparações verticais entre categorias. Uma quebra de escala é enganadora, porque mostra visualmente a existência de grandes variações nos dados que de fato, não existem.\vskip0.3cm 
+\begin{itemize}
+    \item variáveis \textbf{qualitativas} (nominais ou ordinais), como sexo,
+    cor, categoria profissional, tipo de ocorrência etc.;
+    \item variáveis \textbf{quantitativas discretas}, como número de filhos,
+    quantidade de veículos, número de atendimentos, entre outras;
+    \item comparação entre grupos ou subgrupos, quando se deseja analisar
+    diferenças entre categorias.
+\end{itemize}
+\vskip0.3cm
 
-Na representação da informação, por vezes, é importante organizar as categorias por ordem crescente ou decrescente para melhor compreender certos fenómenos implícitos. É igualmente comum ordenar alfabeticamente (ou geograficamente) as designações das categorias, nomeadamente nos casos em que se representam países ou outro tipo de unidades administrativas, mas tal nem sempre é a melhor opção. \vskip0.3cm 
+\subsubsection{Gráfico de Barras Simples}
+
+No \textbf{gráfico de barras simples}, cada categoria é representada por uma
+única barra, sendo adequado quando se deseja visualizar apenas uma distribuição
+de frequências ou uma variável categórica isolada. \vskip0.3cm
+
+\subsubsection{Gráfico de Barras Múltiplas (ou Agrupadas)}
+
+No \textbf{gráfico de barras múltiplas}, cada categoria é representada por um
+\textbf{conjunto de barras} lado a lado, geralmente correspondendo a diferentes
+grupos (por exemplo: masculino/feminino, anos diferentes, regiões distintas).
+Esse formato é útil para comparações simultâneas, desde que o gráfico mantenha
+boa legibilidade. \vskip0.3cm
+
 
 \newpage
-Se o mesmo conjunto de categorias é apresentado em mais do que um gráfico, então a posição relativa de cada categoria deve manter-se, ou seja, as categorias devem aparecer na mesma ordem em todos os gráficos. Da mesma forma, o tamanho e a escala dos gráficos deve ser o mesmo, se o objectivo for a comparação entre eles.\vskip0.3cm  
+\subsubsection{Boas práticas e cuidados na interpretação}
 
+Apesar de serem simples, os gráficos de barras exigem alguns cuidados para
+evitar distorções visuais e interpretações incorretas:
 
-Quando as categorias não são todas discriminadas, existindo, por exemplo, uma que reúne as restantes categorias sob a designação de ‘Outros’, é aconselhável não a incluir na ordenação e reservar-lhe o último lugar (WALLGREN, 1996; SCHMID, 1992). Caso se utilizem cores para diferenciar as categorias, a categoria ‘Outros’, por ser a menos importante, deve ter uma cor que não se destaque (ex: cinzento). \vskip0.3cm
+\begin{itemize}
+    \item \textbf{Evitar quebras de escala:} em gráficos de barras, não se deve
+    interromper o eixo vertical, pois isso pode exagerar diferenças pequenas e
+    induzir o leitor ao erro;
+    \item \textbf{Valores negativos:} a presença de valores negativos não é
+    comum em distribuições de frequência. Quando for necessário representar
+    valores positivos e negativos, recomenda-se atenção especial à escala e à
+    linha de referência no zero;
+    \item \textbf{Ordenação das categorias:} dependendo do objetivo da análise,
+    pode ser interessante ordenar as categorias em ordem crescente ou decrescente,
+    facilitando a identificação de padrões. Em outros casos, a ordenação
+    alfabética pode ser adequada, principalmente em listas extensas;
+    \item \textbf{Comparações consistentes:} quando dois ou mais gráficos
+    representam o mesmo conjunto de categorias, a ordem das categorias deve ser
+    mantida em todos eles. Além disso, recomenda-se manter a mesma escala para
+    possibilitar comparações visuais corretas.
+\end{itemize}
 
-O primeiro passo na construção do gráfico é ter os dados armazenados em objetos apropriados. No caso do gráfico de barras é necessário que os dados estejam armazenados em um vetor ou matriz.
+Quando existe uma categoria que agrupa valores residuais, como \textit{Outros},
+é recomendável apresentá-la ao final do gráfico, evitando que ela interfira na
+interpretação das categorias principais. Além disso, caso se utilize cores para
+diferenciar categorias, essa classe agregada deve ser representada de forma
+neutra, pois normalmente não constitui o foco principal da análise. \vskip0.4cm
+
+Por fim, para construir um gráfico de barras de maneira adequada, é necessário
+organizar os dados previamente em estruturas apropriadas, como tabelas de
+frequência, vetores ou matrizes, dependendo do software estatístico utilizado.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.5,height=200pt,width=14cm]{figures/plot_barra1.jpg}
-    \caption{\textbf{(Gráfico de Barra):} Faixa Etária das Vítimas Fatais de Belém em 2024.}
-    \label{fig:my_label600}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%\includegraphics[scale=0.5,height=200pt,width=14cm]{figures/plot_barra1.jpg}
+%    \caption{\textbf{(Gráfico de Barra):} Faixa Etária das Vítimas Fatais de Belém em 2024.}
+%    \label{fig:my_label600}
+%\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%------------------------------------------------------------------------------------------------------%
 \newpage
 \subsection{Gráfico de Linhas, Curvas ou Segmentos}
 
-Este tipo de gráfico representa a série histórica, exclusivamente, indicado para mostrar tendências e evolução de uma variável contínua por outra variável contínua. Requer, entretanto, que tal série apresente um número significativo de informações (5 ou mais), ou melhor, para 5 ou número menor de ocorrências, outro gráfico deve ser construído, o gráfico de colunas.\vskip0.3cm
+O \textbf{gráfico de linhas} (também chamado de gráfico de curvas ou de
+segmentos) é um dos formatos mais utilizados para representar a evolução de
+uma variável ao longo do tempo. Ele é especialmente adequado para descrever
+\textbf{séries históricas} ou \textbf{séries temporais}, isto é, conjuntos de
+observações registradas em instantes sucessivos.
 
-O primeiro gráfico data do séc. X ou XI, mas só no fim do séc. XVIII surgiu na literatura. William Playfair foi responsável pela publicação do primeiro gráfico de linhas baseado em dados económicos. A reintrodução do sistema de coordenadas cartesianas em 1637 por René Decartes, responsável pela relação estabelecida entre uma linha e uma equação, enquadrou e deu corpo a este formato de representação de dados.\vskip0.3cm
+\vskip0.3cm
 
-A leitura dos dados em gráficos de séries temporais obedece a duas lógicas preferenciais: 
-avaliação da tendência, crescente ou decrescente, da série de dados, e responder a perguntas do tipo: Em que período se localizou o maior aumento ou a maior diminuição? Quais foram os pontos de inflexão ou de inversão pontual da tendência? A escala logarítmica possibilita a comparação de séries cujos valores apresentam dimensões muito diferentes (ainda que os valores da escala deixem de poder ser lidos de forma direta). \vskip0.3cm
+Nesse tipo de gráfico, os valores da variável são marcados em um sistema de
+eixos cartesianos e ligados por segmentos de reta, formando uma linha
+contínua. Assim, torna-se possível visualizar de maneira clara o comportamento
+global da série, identificando padrões de crescimento, queda ou estabilidade.
 
-Em certas circunstâncias, deve ser equacionada a substituição destes formatos pelos gráficos de barras e gráficos de área.
+\vskip0.4cm
+
+O gráfico de linhas é indicado principalmente quando:
+
+\begin{itemize}
+    \item deseja-se analisar a \textbf{tendência} de uma variável ao longo do tempo;
+    \item há um número razoável de observações (em geral, cinco ou mais pontos);
+    \item o objetivo é destacar a \textbf{evolução contínua} de um fenômeno.
+\end{itemize}
+
+\vskip0.3cm
+
+Quando há poucos valores a serem comparados, gráficos de colunas ou barras
+podem ser mais apropriados, pois oferecem melhor distinção visual entre
+categorias isoladas.
+
+\vskip0.5cm
+
+\subsubsection{Aspectos históricos}
+
+Os primeiros registros de representações gráficas datam de períodos muito
+antigos, porém o uso sistemático de gráficos estatísticos ganhou força apenas
+no final do século XVIII. O economista e engenheiro escocês
+\textbf{William Playfair} é considerado um dos pioneiros na divulgação de
+gráficos de linhas aplicados a dados econômicos, contribuindo decisivamente
+para a popularização desse recurso na análise estatística.
+
+\vskip0.3cm
+
+Além disso, a consolidação do sistema de coordenadas cartesianas, introduzido
+por \textbf{René Descartes} em 1637, estabeleceu a base matemática necessária
+para relacionar equações e representações geométricas, permitindo que curvas e
+linhas se tornassem ferramentas essenciais na visualização de dados.
+
+\vskip0.5cm
+
+\subsubsection{Interpretação e leitura de séries temporais}
+
+A leitura de um gráfico de linhas geralmente segue duas lógicas principais:
+
+\begin{itemize}
+    \item \textbf{Avaliação da tendência geral:} identificar se a série apresenta
+    comportamento crescente, decrescente ou aproximadamente constante.
+
+    \item \textbf{Identificação de variações relevantes:} observar períodos em que
+    ocorreram os maiores aumentos ou reduções, bem como pontos de inflexão,
+    isto é, momentos em que a tendência se altera.
+\end{itemize}
+
+\vskip0.3cm
+
+Em algumas situações, pode ser útil utilizar uma \textbf{escala logarítmica},
+especialmente quando se deseja comparar séries cujos valores apresentam ordens
+de grandeza muito diferentes. Nesse caso, embora a leitura direta dos valores
+se torne menos intuitiva, a comparação proporcional entre séries é facilitada.
+
+\vskip0.5cm
+
+\subsubsection{Considerações finais}
+
+Embora o gráfico de linhas seja extremamente eficiente para representar
+tendências e evolução temporal, em certos contextos pode ser mais adequado
+utilizar gráficos de barras ou gráficos de área, sobretudo quando se deseja
+destacar volumes acumulados ou comparar categorias discretas.
+
+\vskip0.3cm
+
+Assim, a escolha do tipo de gráfico deve sempre considerar a natureza dos
+dados e o objetivo principal da análise estatística.
+
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.5,height=200pt,width=14cm]{figures/newplot.png}
-    \caption{\textbf{(Gráfico de Linha 1):} Taxa de Motorização do Tipo Motocicleta em Belém, Pará, Brasil, no período de 2003 a 2020.}
-    \label{fig:my_label500}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%\includegraphics[scale=0.5,height=200pt,width=14cm]{figures/newplot.png}
+%    \caption{\textbf{(Gráfico de Linha 1):} Taxa de Motorização do Tipo Motocicleta em Belém, Pará, Brasil, no período de 2003 a 2020.}
+%   \label{fig:my_label500}
+%\end{figure}
 
 
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.5,height=200pt,width=14cm]{figures/newplot(1).png}
-    \caption{\textbf{(Gráfico de Linha 2):} Taxa de Mortalidade na condição de Motociclista em Belém, Pará, Brasil, no período de 2002 a 2021.}
-    \label{fig:my_label500}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%\includegraphics[scale=0.5,height=200pt,width=14cm]{figures/newplot(1).png}
+%    \caption{\textbf{(Gráfico de Linha 2):} Taxa de Mortalidade na condição de Motociclista em Belém, Pará, Brasil, no período de 2002 a 2021.}
+%    \label{fig:my_label500}
+%\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%------------------------------------------------------------------------------------------------------%
 \subsection{Gráfico Circular, Setorial ou Pizza (\textit{Pie Chart})}
 
-O gráfico circular, setorial ou também chamado de Pizza, é utilizado para comparar os valores de cada parcela de um conjunto de dados com o total. É feito tomando por base a figura de um círculo dividido em setores de tamanhos proporcionais aos valores que representam. Os valores são expressos em números ou em percentuais. \vskip0.3cm
+O \textbf{gráfico circular}, também denominado gráfico setorial ou gráfico de
+pizza (\textit{pie chart}), é utilizado para representar a distribuição de
+um conjunto de dados em relação ao total. Sua principal finalidade é comparar
+a participação relativa de cada categoria dentro de uma população ou amostra. \vskip0.3cm
 
-Algumas recomendações devem ser feitas para a elaboração dos Setogramas. Os valores devem ser apresentados em ordem decrescente a partir da parte superior do gráfico e no sentido horário.\vskip0.3cm
+Esse tipo de gráfico é construído a partir de um círculo dividido em setores,
+cujas áreas são proporcionais aos valores observados. Assim, cada setor
+representa uma parcela do total, podendo ser expresso tanto em números
+absolutos quanto em percentuais. \vskip0.3cm
 
-A sua utilização é desaconselhada quando se pretende comparar mais de um período temporal, para variáveis que contenham até cinco categorias ou quando as categorias têm aproximadamente o mesmo peso, sob pena de perder umas das principais funçoes: a da comparação, sendo neste caso, preferível substituir o gráfico de setores por um gráfico de barras.\vskip0.3cm
+De forma geral, recomenda-se que:
 
-Quando a variável é do tipo \textbf{Ordinal}, gráficos de colunas são mais indicados pelo fato de permitirem manter a ordem das categorias (BARBETA, 2010).
+\begin{itemize}
+    \item Os setores sejam apresentados em ordem decrescente de frequência;
+    \item A leitura seja feita a partir da parte superior do círculo e no sentido horário;
+    \item As categorias sejam claramente identificadas, evitando excesso de informações.
+\end{itemize}
 
-\newpage
+Apesar de sua popularidade, a utilização do gráfico de setores deve ser feita
+com cautela. Seu uso é \textbf{desaconselhado} quando:
+
+\begin{itemize}
+    \item Deseja-se comparar mais de um período temporal;
+    \item Há muitas categorias (mais de cinco);
+    \item As categorias possuem valores muito próximos, dificultando a distinção visual.
+\end{itemize}
+
+Nessas situações, a principal função do gráfico --- a comparação --- pode ser
+prejudicada, sendo geralmente preferível substituí-lo por um gráfico de barras
+ou colunas. \vskip0.3cm
+
+Além disso, quando a variável analisada é do tipo \textbf{ordinal}, gráficos
+de colunas são mais adequados, pois permitem preservar a ordem natural das
+categorias, facilitando a interpretação (BARBETA, 2010).
+%------------------------------------------------------------------------------------------------------%
+
+
 \subsubsection{Gráfico de Rosca (\textit{Donut Chart})}
 
-Um gráfico de rosca ou rosquinha (\textit{donut chart}, em inglês) é uma variação de um gráfico de pizza padrão. A grande diferença entre eles é a presença de um furo no meio.\vskip0.3cm
+O \textbf{gráfico de rosca}, também conhecido como gráfico de rosquinha
+(\textit{donut chart}), é uma variação moderna do gráfico circular ou gráfico
+de pizza. Sua principal característica é a presença de um espaço vazio no
+centro, formando uma estrutura semelhante a uma rosca. \vskip0.3cm
 
-Os gráficos de rosca são os primos mais jovens e descolados do gráfico de pizza, e é fácil perceber por quê. Eles são elegantes e simples e se ajustarão a praticamente qualquer estilo de design. São uma versão moderna de um gráfico tradicional. \vskip0.3cm
+Assim como no gráfico de setores, o objetivo do gráfico de rosca é representar
+a participação relativa de categorias em relação ao total. Cada segmento
+corresponde a uma categoria, e o tamanho do arco (ou área) de cada pedaço
+indica a proporção associada àquela classe. \vskip0.3cm
+
+Uma vantagem estética desse tipo de gráfico é que o espaço central pode ser
+utilizado para inserir informações adicionais, como o total da amostra,
+percentuais globais ou descrições resumidas, tornando a visualização mais
+atrativa e funcional. \vskip0.3cm
+
+Os gráficos de rosca são frequentemente considerados uma alternativa mais
+contemporânea ao gráfico de pizza, pois apresentam um design mais leve e
+adaptável a diferentes estilos visuais. No entanto, as mesmas limitações
+interpretativas permanecem: quando há muitas categorias ou valores muito
+semelhantes, a comparação entre setores torna-se difícil. \vskip0.3cm
+
+Além disso, em algumas situações pode-se utilizar versões reduzidas, como o
+\textbf{gráfico de meia rosca}, que economiza espaço e pode ser útil em painéis
+ou relatórios com muitas representações simultâneas.
 
 
-Um gráfico de rosca geralmente mostra as proporções de dados categóricos em que o tamanho de cada pedaço da rosca comunica a proporção de cada categoria.\vskip0.3cm
-
-
-Os gráficos de rosca também podem ser cortados ao meio para economizar ainda mais espaço, chamados de meia rosca. 
-
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.25,height=200pt,width=11cm]{figures/Rosca2.jpeg}
-    \caption{\textbf{(Gráfico Meia Rosca):} Condição das Vítimas Não Fatal por Acidentes de Trânsito, Registrados no Município de Belém, Estado do Pará, no período de 2016 a 2024.}
-    \label{fig:my_label300}
-\end{figure}
-
-
+%\begin{figure}[H]
+%    \centering
+%\includegraphics[scale=0.2,height=200pt,width=11cm]{figures/Rosca2.jpeg}
+%    \caption{\textbf{(Gráfico Meia Rosca):} Condição das Vítimas Não Fatais por
+%    Acidentes de Trânsito, registradas no município de Belém (PA), no período
+%    de 2016 a 2024.}
+%    \label{fig:my_label300}
+%\end{figure}
+%------------------------------------------------------------------------------------------------------%
 \newpage
 \subsection{Gráfico Radar ou Polar}
 
-O gráfico radar é utilizado para representar fenômenos cuja apresentação é feita em três ou mais variáveis quantitativas em eixos que partem do mesmo ponto. A sua análise exige mais atenção em virtude da maior complexidade da sua apresentação. 
+O \textbf{gráfico radar}, também chamado de \textbf{gráfico polar}, é uma forma
+de representação gráfica utilizada para comparar simultaneamente três ou mais
+variáveis quantitativas. Nesse tipo de gráfico, cada variável é representada
+por um eixo que parte de um mesmo ponto central, formando uma estrutura
+semelhante a uma teia. \vskip0.3cm
 
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.25,height=260pt,width=12cm]{figures/radarplot1.jpeg}
-    \caption{Acidentes de Trânsito por Tipo, Registrados no Município de Belém, Estado do Pará, no período de 2020 a 2022.}
-    \label{fig:my_label30}
-\end{figure}
+Esse formato é especialmente útil quando se deseja observar padrões gerais,
+comparar perfis entre diferentes grupos ou identificar rapidamente quais
+dimensões apresentam maiores ou menores valores em relação às demais. \vskip0.3cm
 
-O gráfico de radar é também conhecido como gráfico de \textbf{Teia}, \textbf{Aranha}, \textbf{Estrela}, \textbf{Polígono Irregular}, \textbf{Polar}, ou \textbf{Diagrama Kivia} (Mosley e Mayer, 1999).
+Entretanto, a interpretação de gráficos radar exige maior atenção do leitor,
+pois a sobreposição de áreas e a disposição circular podem dificultar a
+comparação precisa entre categorias, principalmente quando há muitas variáveis
+ou valores muito próximos. \vskip0.3cm
 
+O gráfico radar é também conhecido por diversas outras denominações, como
+\textbf{gráfico de teia}, \textbf{gráfico de aranha}, \textbf{gráfico estrela},
+\textbf{polígono irregular}, \textbf{diagrama polar} ou ainda
+\textbf{diagrama Kiviat} (Mosley e Mayer, 1999).
+
+%\begin{figure}[H]
+%    \centering
+%\includegraphics[scale=0.25,height=260pt,width=12cm]{figures/radarplot1.jpeg}
+%    \caption{Acidentes de Trânsito por Tipo, registrados no município de Belém,
+%    Estado do Pará, no período de 2020 a 2022.}
+%    \label{fig:my_label30}
+%\end{figure}
+
+%------------------------------------------------------------------------------------------------------%
 \newpage
 \subsection{Gráfico em Pirâmide Etária}
 
-A pirâmide etária é também um histograma e é muito utilizada em  análises demográficas por permitir visualizar numa única imagem a distribuição da população por idades e silutaneamente compará-las entre os gêneros. A representação em valores absolutos fornece a dimensão dos dados mas impede qualquer tipo de comparação no espaço ou no tempo, que apenas é possível se os dados foram apresentados em termos relativos (NAZARETH, 1996). 
-\vskip0.3cm
+A \textbf{pirâmide etária} é um tipo particular de histograma amplamente
+utilizado em análises demográficas, pois permite visualizar, em uma única
+representação gráfica, a distribuição da população por faixas de idade e,
+simultaneamente, comparar essa distribuição entre os gêneros. \vskip0.3cm
 
-A pirâmide etária é uma forma de representar a estrutura da população por idade e gênero. O eixo horizontal representa o número absoluto ou relativo da população e o eixo vertical representa os grupos etários e são normalmente apresentados em grupos etários em cinco anos, mas também podem ser representados ano a ano. O lado direito do eixo horizontal é destinado à representação do contingente ou proporção de mulheres e o esquerdo, dos homens.
+Esse gráfico é especialmente importante para o estudo da estrutura populacional,
+uma vez que evidencia características como o envelhecimento da população,
+o predomínio de determinados grupos etários e possíveis desequilíbrios entre
+homens e mulheres. \vskip0.3cm
+
+Quando construída com valores absolutos, a pirâmide fornece uma noção clara da
+dimensão populacional. Contudo, essa forma de apresentação dificulta comparações
+entre diferentes regiões ou períodos históricos. Para comparações no espaço e
+no tempo, recomenda-se utilizar valores relativos (percentuais), tornando os
+gráficos mais comparáveis (NAZARETH, 1996). \vskip0.3cm
+
+A pirâmide etária representa a estrutura da população segundo \textbf{idade} e
+\textbf{sexo}. O eixo vertical apresenta os grupos etários, geralmente organizados
+em intervalos de cinco anos, embora também possam ser utilizados intervalos anuais.
+O eixo horizontal indica o tamanho do contingente populacional, em termos absolutos
+ou relativos. \vskip0.3cm
+
+Convencionalmente, o lado esquerdo do gráfico é destinado à representação da
+população masculina, enquanto o lado direito representa a população feminina.
+Essa disposição facilita a comparação visual entre os gêneros em cada faixa etária. \vskip0.3cm
+
+A análise da forma da pirâmide pode revelar padrões demográficos relevantes:
+pirâmides com base larga indicam populações jovens e elevadas taxas de natalidade,
+enquanto pirâmides com topo mais largo sugerem envelhecimento populacional e maior
+expectativa de vida.
 
 
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.3,height=260pt,width=13cm]{figures/piramide1.jpeg}
-    \caption{Pirâmide Etária da População Residente, segundo Faixa Etária no Município de Belém, Estado do Pará - 2024.}
-    \label{fig:my_label30}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%\includegraphics[scale=0.3,height=260pt,width=13cm]{figures/piramide1.jpeg}
+%    \caption{Pirâmide Etária da População Residente, segundo Faixa Etária no Município de Belém, Estado do Pará - 2024.}
+%    \label{fig:my_label30}
+%\end{figure}
 
-
+%------------------------------------------------------------------------------------------------------%
 \newpage
 \subsection{Gráfico em Cartograma}
 
-O cartograma é a representação sobre uma carta geográfica (mapa). Também chamado de Esteriográfico é empregado quando o objetivo é o de figurar os dados estatísticos diretamente relacionados com áreas geográficas ou políticas.
+O \textbf{cartograma} é uma forma de representação estatística sobre uma carta
+geográfica, isto é, sobre um mapa. Trata-se de um recurso gráfico empregado quando
+o objetivo é apresentar dados diretamente associados a áreas territoriais,
+como municípios, estados, regiões ou países. \vskip0.3cm
+
+Também conhecido em algumas referências como \textbf{mapa estatístico} ou
+\textbf{mapa temático}, o cartograma permite visualizar a distribuição espacial
+de um fenômeno, facilitando a identificação de padrões geográficos, desigualdades
+regionais e concentrações de determinados eventos. \vskip0.3cm
+
+Esse tipo de gráfico é especialmente útil em estudos relacionados à saúde pública,
+demografia, economia, segurança e mobilidade, pois permite analisar como os valores
+de uma variável se comportam ao longo do território. \vskip0.3cm
+
+Os cartogramas representam as quantidades correspondentes a cada divisão geográfica
+por meio de elementos visuais, sendo o uso de \textbf{cores} e suas tonalidades uma
+das técnicas mais comuns. Em geral, aplica-se uma escala de intensidade crescente,
+na qual valores menores são associados a tons mais claros e valores maiores a tons
+mais escuros, garantindo uma leitura coerente e proporcional dos dados. \vskip0.3cm
+
+Dessa forma, os cartogramas podem expressar valores absolutos (como número total de
+acidentes em cada município) ou valores relativos (como taxas por 100 mil habitantes),
+sendo estes últimos mais indicados quando se deseja comparar regiões com populações
+de tamanhos diferentes. \vskip0.3cm
+
+Portanto, o cartograma constitui uma ferramenta essencial para integrar estatística
+e geografia, permitindo que informações numéricas sejam interpretadas de maneira
+visual e contextualizada no espaço.
 
 
 
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.25,height=270pt,width=12cm]{figures/Map1.jpeg}
-    \caption{Vítimas Fatais por Acidentes de Trânsito, Municípios do Estado do Pará em 2024.}
-    \label{fig:my_label25}
-\end{figure}
+
+%\begin{figure}[H]
+%    \centering
+%\includegraphics[scale=0.25,height=270pt,width=12cm]{figures/Map1.jpeg}
+%    \caption{Vítimas Fatais por Acidentes de Trânsito, Municípios do Estado do Pará em 2024.}
+%    \label{fig:my_label25}
+%\end{figure}
 
 
-Os cartogramas representam as quantidades que correspondem a cada divisão, o uso de cores e suas tonalidades dispostas segundo uma intensidade visual crescente de modo que os valores absolutos ou relativos sejam representados a partir do menor para o maior de maneira coerente e proporcional. 
 
 
+%------------------------------------------------------------------------------------------------------%
 \newpage
 \subsection{Gráfico em Pictograma}
 
-O gráfico ilustrativo, também chamado de simbólico ou pictograma, constitui um dos processos gráficos que melhor fala ao público, pela sua forma ao mesmo tempo atraente e sugestiva. O pictograma é um gráfico representado através de figuras que simbolizam fatos estatísticos, ao mesmo tempo que indicam proporcionalidade. São gráficos que carecem de precisão, mas, como são muitos atrativos, são largamente usados em revistas voltadas ao público em geral e publicidades na segurança pública. Não é utilizado em trabalhos científicos.\vskip0.3cm
+O \textbf{pictograma}, também chamado de \textbf{gráfico simbólico} ou
+\textbf{gráfico ilustrativo}, é uma forma de representação estatística
+baseada no uso de figuras ou ícones que simbolizam determinado fenômeno.
+Esse tipo de gráfico destaca-se por sua apresentação visualmente atrativa,
+sendo capaz de comunicar informações de maneira rápida e intuitiva ao público. \vskip0.3cm
 
-Os diagramas simbólicos são frequentemente usados para apresentar os dados estatísticos de modo a despertar a atenção do público em geral, e apresentando grande dose de originalidade e de habilidade na arte de apresentação dos dados.\vskip0.3cm
+Em um pictograma, os valores estatísticos são representados por símbolos
+repetidos, de modo que a quantidade de figuras corresponda, de forma
+aproximada, à magnitude do dado apresentado. Assim, um ícone pode equivaler,
+por exemplo, a 10 unidades, 100 pessoas ou 1.000 ocorrências, dependendo do
+contexto do estudo. \vskip0.3cm
 
-Os pictogramas mais usuais são os baseados no critério do tamanho: em que a variação em área do tamanho das formas utilizadas é proporcional à variação da variável representada.\vskip0.3cm
+Por sua natureza essencialmente ilustrativa, o pictograma não tem como
+objetivo fornecer elevada precisão numérica. Sua principal função é
+\textbf{facilitar a compreensão e despertar o interesse do leitor},
+razão pela qual é amplamente utilizado em materiais informativos,
+revistas, campanhas educativas e publicidades, especialmente em áreas como
+saúde pública e segurança no trânsito. \vskip0.3cm
 
+Entretanto, devido à sua limitação em termos de rigor e detalhamento,
+os pictogramas não são recomendados em trabalhos científicos ou relatórios
+técnicos que exijam medidas exatas e comparações estatísticas refinadas. \vskip0.3cm
+
+Os pictogramas mais comuns são construídos segundo o critério da repetição
+de símbolos, em que a variação da quantidade de ícones é proporcional à
+variação da variável representada. Essa abordagem permite uma comparação
+visual simples, embora apenas aproximada.  \vskip0.3cm
 
 
 \textbf{Regras Fundamentais para a Construção de um Pictograma}
 
 \begin{enumerate}
-    \item Os símbolos devem explicar-se por si próprios.
-    \item As quantidades maiores são indicadas por meio de um
-    número maior de símbolos, mas não por um símbolo maior.
-    \item Os símbolos comparam quantidades aproximadas, não
-    detalhes minuciosos.
-    \item Os gráficos pictóricos só devem ser usados para
-    comparações, nunca para afirmações detalhadas ou isoladas.
+    \item Os símbolos utilizados devem ser autoexplicativos, isto é,
+    facilmente compreendidos sem necessidade de interpretações complexas;
+    \item Quantidades maiores devem ser representadas pelo aumento do
+    número de símbolos e não pelo aumento do tamanho de um único símbolo,
+    evitando distorções visuais;
+    \item O pictograma deve ser empregado para comparações gerais,
+    e não para transmitir detalhes minuciosos ou valores exatos;
+    \item Gráficos pictóricos devem ser utilizados como recurso ilustrativo,
+    nunca como base para afirmações estatísticas rigorosas ou isoladas.
 \end{enumerate}
 
-\newpage
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.25,height=230pt,width=12cm]{figures/pictograma1.jpeg}
-\vspace{-0.5cm}
-    \caption{Pictograma de Vítimas Fatais por Sinistros de Trânsito com Bicicleta, em alguns Municípios do Estado do Pará - 2024.}
-    \label{fig:my_label50}
-\end{figure}
+%\newpage
+%\begin{figure}[H]
+%    \centering
+%\includegraphics[scale=0.25,height=230pt,width=12cm]{figures/pictograma1.jpeg}
+%\vspace{-0.5cm}
+%    \caption{Pictograma de Vítimas Fatais por Sinistros de Trânsito com Bicicleta, em alguns Municípios do Estado do Pará - 2024.}
+%    \label{fig:my_label50}
+%\end{figure}
 
-\vspace{-0.7cm}
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.25,height=230pt,width=12cm]{figures/pictograma2.jpeg}
-\vspace{-0.5cm}
-    \caption{Pictograma de Vítimas Fatais por Sinistros de Trânsito com Automóvel em alguns Municípios do Estado do Pará - 2024.}
-    \label{fig:my_label51}
-\end{figure}
+%\vspace{-0.7cm}
+%\begin{figure}[H]
+%    \centering
+%\includegraphics[scale=0.25,height=230pt,width=12cm]{figures/pictograma2.jpeg}
+%\vspace{-0.5cm}
+%    \caption{Pictograma de Vítimas Fatais por Sinistros de Trânsito com Automóvel em alguns Municípios do Estado do Pará - 2024.}
+%    \label{fig:my_label51}
+%\end{figure}
 
+
+
+%------------------------------------------------------------------------------------------------------%
 \newpage 
 \subsection{Gráfico em Diagrama de Caixa}
 
@@ -675,41 +1070,94 @@ Ao explorar um conjunto de dados de forma gráfica, deve-se considerar os valore
 
 %\newpage
 %\vspace{-3cm}
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.26,height=220pt,width=12cm]{figures/boxplot_dosagem.jpeg}
-    \caption{\textbf{BoxPlot Tradicional}: Dosagem Alcoólica de Vítimas Fatais por Acidentes de Trânsito, Região Metropolitrana de Belém em 2024.}
-    \label{fig:my_label25}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%\includegraphics[scale=0.26,height=220pt,width=12cm]{figures/boxplot_dosagem.jpeg}
+%    \caption{\textbf{BoxPlot Tradicional}: Dosagem Alcoólica de Vítimas Fatais por Acidentes de Trânsito, Região Metropolitrana de Belém em 2024.}
+%    \label{fig:my_label25}
+%\end{figure}
 
-\vspace{-0.7cm}
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.26,height=220pt,width=12cm]{figures/boxplot_dosagem_jitter.jpeg}
-    \caption{\textbf{BoxPlot com Efeito Jitter}: Dosagem Alcoólica de Vítimas Fatais por Acidentes de Trânsito, Região Metropolitrana de Belém em 2024.}
-    \label{fig:my_label25}
-\end{figure}
+%\vspace{-0.7cm}
+%\begin{figure}[H]
+%    \centering
+%\includegraphics[scale=0.26,height=220pt,width=12cm]{figures/boxplot_dosagem_jitter.jpeg}
+%    \caption{\textbf{BoxPlot com Efeito Jitter}: Dosagem Alcoólica de Vítimas Fatais por Acidentes de Trânsito, Região Metropolitrana de Belém em 2024.}
+%    \label{fig:my_label25}
+%\end{figure}
 
-
+%------------------------------------------------------------------------------------------------------%
 \subsection{Gráfico de Violino}
 
-O gráfico chamado de Violino, é muito utilizado quando se quer unificar a visualização do histograma junto com a do Boxplot, ou seja um casamento entre histogramas e boxplots. Observe que quanto menor o desvio padrão, mais concentrado são os dados, sendo refletido tanto no histograma como no boxplot. A vantagem do uso do \textbf{ViolinPlot} é que, além  das informações que o boxplot traz consigo, traz a densidade dos dados. 
-\vspace{0.3cm}
+O \textbf{gráfico de violino} (\textit{violin plot}) é uma ferramenta
+estatística moderna amplamente utilizada para representar a distribuição de uma
+variável quantitativa de forma mais rica do que o boxplot tradicional. O violino pode ser entendido como uma combinação entre o \textbf{histograma} e o \textbf{boxplot}, pois reúne, em uma única visualização,
+informações sobre:
 
-\vspace{-0.7cm}
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.19,height=160pt,width=11cm]{figures/violinplot_Tradicional.jpeg}
-    \caption{\textbf{ViolinoPlot com BoxPlot Tradicional}: Dosagem Alcoólica de Vítimas Fatais por Acidentes de Trânsito, Região Metropolitrana de Belém em 2024.}
-    \label{fig:my_label25}
-\end{figure}
+\begin{itemize}
+    \item a posição central dos dados (mediana);
+    \item a dispersão (quartis e amplitude interquartílica);
+    \item e principalmente a \textbf{densidade de probabilidade} da distribuição.
+\end{itemize}
 
-\vspace{-0.7cm}
-\begin{figure}[H]
-    \centering
-\includegraphics[scale=0.19,height=160pt,width=11cm]{figures/violinplot_jitter.jpeg}
-    \caption{\textbf{ViolinoPlot com BoxPlot e Efeito Jitter}: Dosagem Alcoólica de Vítimas Fatais por Acidentes de Trânsito, Região Metropolitrana de Belém em 2024.}
-    \label{fig:my_label25}
-\end{figure}
+O conceito do gráfico de violino foi introduzido originalmente pelo estatístico
+\textbf{Jerry L. Hintze} e pelo pesquisador \textbf{Ray D. Nelson}, no artigo
+clássico publicado em 1998, como uma alternativa gráfica que permite observar
+detalhadamente o formato da distribuição dos dados, indo além das limitações do
+boxplot (HINTZE, 1998).
+\vskip0.3cm
+
+A forma característica do violino é construída a partir de uma estimativa
+suavizada da densidade dos dados, baseada em métodos de \textbf{estimação de
+densidade kernel}, cuja formulação moderna é atribuída a trabalhos fundamentais
+como os de \textbf{Rosenblatt} (1956) e \textbf{Parzen} (1962). Assim, regiões
+mais largas indicam maior concentração de observações, enquanto regiões mais
+estreitas indicam menor frequência de valores naquele intervalo. \vskip0.3cm
+
+De modo geral, quanto menor for o desvio padrão, mais concentrados estarão os
+dados em torno da média, o que se reflete em um violino mais estreito e compacto.
+Por outro lado, distribuições com maior variabilidade produzem violinos mais
+alongados e largos. \vskip0.3cm
+
+A principal vantagem do \textbf{ViolinPlot} é que ele preserva todas as
+informações fornecidas pelo boxplot, mas acrescenta uma visão detalhada do
+formato da distribuição, permitindo identificar assimetrias, multimodalidade
+(presença de mais de um pico) e padrões que não são facilmente percebidos apenas
+com o boxplot (WILKINSON, 2005).
+\vskip0.3cm
+
+Além disso, é comum adicionar ao gráfico de violino pontos individuais
+representando as observações, com um pequeno deslocamento aleatório chamado de
+\textbf{efeito jitter}. Essa variação facilita a visualização da dispersão real
+dos dados e evita sobreposição excessiva de pontos, recurso frequentemente usado
+em visualização estatística moderna (CLEVELAND, 1993).
 
 
+
+
+%------------------------------------------------------------------------------------------------------%
+
+
+
+
+
+
+
+
+
+%\vspace{-0.7cm}
+%\begin{figure}[H]
+%    \centering
+%\includegraphics[scale=0.19,height=160pt,width=11cm]{figures/violinplot_Tradicional.jpeg}
+%    \caption{\textbf{ViolinoPlot com BoxPlot Tradicional}: Dosagem Alcoólica de Vítimas Fatais por Acidentes de Trânsito, Região Metropolitrana de Belém em 2024.}
+%    \label{fig:my_label25}
+%\end{figure}
+
+%\vspace{-0.7cm}
+%\begin{figure}[H]
+%    \centering
+%\includegraphics[scale=0.19,height=160pt,width=11cm]{figures/violinplot_jitter.jpeg}
+%    \caption{\textbf{ViolinoPlot com BoxPlot e Efeito Jitter}: Dosagem Alcoólica de Vítimas Fatais por Acidentes de Trânsito, Região Metropolitrana de Belém em 2024.}
+%    \label{fig:my_label25}
+%\end{figure}
+
+%------------------------------------------------------------------------------------------------------%
