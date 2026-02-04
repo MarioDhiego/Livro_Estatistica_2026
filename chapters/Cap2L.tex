@@ -121,7 +121,7 @@ Existem diferentes formas de descrever um conjunto:
     \]
 \end{enumerate}
 
-
+\newpage
 \section{Experimentos Aleatórios}
 
 Um \textbf{experimento aleatório} é aquele que, mesmo repetido sob condições
@@ -129,8 +129,11 @@ idênticas, pode produzir resultados diferentes, sem que seja possível prever c
 certeza o resultado individual.
 \vskip0.3cm
 
-\textbf{Exemplo 1:} Lançar uma moeda três vezes. \\
-\textbf{Exemplo 2:} Lançar dois dados simultaneamente.
+\begin{itemize}
+\item Exemplo 1: Lançar uma moeda três vezes. \\
+\item Exemplo 2: Lançar dois dados simultaneamente.
+\end{itemize}
+
 \vskip0.3cm
 
 \subsection{Características dos Experimentos Aleatórios}
@@ -154,11 +157,12 @@ Fenômenos estudados pela Estatística possuem \textit{regularidade estatística
 ou seja, podem ser observados repetidamente ao longo do tempo. \vskip0.3cm
 
 
+\begin{itemize}
+\item Exemplo 1: Número mensal de casos de meningite em Belém. \\
+\item Exemplo 2: Quantidade mensal de chuva em uma região.
+\end{itemize}
 
-\textbf{Exemplo 1:} Número mensal de casos de meningite em Belém. \\
-\textbf{Exemplo 2:} Quantidade mensal de chuva em uma região.
-
-%\newpage
+\newpage
 \section{Espaço Amostral}
 
 O \textbf{espaço amostral}, denotado por $S$ ou $\Omega$, é o conjunto de todos
@@ -230,7 +234,6 @@ Sejam $A$ e $B$ eventos em $\Omega$:
     \]
 \end{enumerate}
 
-\newpage
 \subsection{Propriedades das Operações}
 
 \begin{enumerate}
@@ -618,17 +621,15 @@ P(A)=\sum_{i=1}^{k}P(A\mid B_i)\,P(B_i).
 Sir \emph{Thomas Bayes} foi um matemático britânico e um ministro
 da igreja presbiteriana que primeiro utilizou a probabilidade
 indutivamente e estabeleceu as bases matemáticas para a inferência
-probabilística. Ele nasceu em Londres, em 1702, morreu em
-Tunbridge Wells em 1761 (tendo vivido apenas 59 anos), e foi
-sepultado no cemitério Bunhill Fields em Londres, onde sua tumba
-pode ser facilmente encontrada com o mapa fornecido pelo
-cemitério.
+probabilística. \vskip0.3cm
+
+Ele nasceu em Londres, em 1702, morreu em Tunbridge Wells em 1761 (tendo vivido apenas 59 anos), e foi sepultado no cemitério Bunhill Fields em Londres, onde sua tumba pode ser facilmente encontrada com o mapa fornecido pelo cemitério.
 
 
 \vspace{-0.15cm}
 \begin{figure}
     \centering
-    \includegraphics[scale=0.5]{figures/Thomas_Bayes.jpeg}
+    \includegraphics[scale=0.75]{figures/Thomas_Bayes.jpeg}
     \caption{Thomas Joshua Bayes (1702-1761)}
     \label{fig:my_label2}
 \end{figure}
@@ -641,6 +642,7 @@ Towards Solving a Problem in the Doctrine of Chances relatou,
 entre outras importantes descobertas de Bayes, o famoso Teorema de
 Bayes.
 
+\newpage
 \subsection{ O Que é o Teorema de Bayes}
 
 O teorema de Bayes é usado na inferência estatística para
@@ -672,910 +674,1254 @@ acumula um grande banco dessas informações e, aplicando o teorema
 de Bayes, consegue estimar a probabilidade de cada novo dado de
 pertencer a cada grupo já classificado.\vskip0.3cm
 
-\newpage
+%\newpage
 \subsection{Definição do Teorema}
 
-Seja $B_{1},B_{2},...,B_{k}$ uma partição do espaço amostral S e
-seja A um evento associado a S. aplicando-se a definição de
-probabilidade condicionada, poderemos escrever
-
+Seja $B_1,B_2,\dots,B_k$ uma partição do espaço amostral $S$ e seja $A$ um evento qualquer.
+Então, para cada $i$, vale:
 
 \begin{equation}\label{bayes}
-    P(B_{i}/A) =\left[ \frac{P(A/B_{i})P(B_{i})}{\sum_{j=1}^{k}P(A/B_{j})P(B_{j})} \right]
+P(B_i\mid A)=
+\frac{P(A\mid B_i)\,P(B_i)}
+{\sum_{j=1}^{k}P(A\mid B_j)\,P(B_j)}.
 \end{equation}
 
+Esse resultado é conhecido como \textbf{Teorema de Bayes} e constitui a base da chamada
+\textbf{Estatística Bayesiana}. È também denominado fórmula da probabilidade das causas (ou dos antededentes). Desde que os $B_{i}$ constituam uma partição do espaço amostral um, e somente um, dos eventos $B_{i}$ ocorrerá.
 
-Esse resultado é conhecido como \emph{Teorema de Bayes}. È também
-denominado fórmula da probabilidade das causas (ou dos
-antededentes). Desde que os $B_{i}$ constituam uma partição do
-espaço amostral um, e somente um, dos eventos $B_{i}$ ocorrerá.\vskip0.3cm
-
-
-A ídéia expressa no Teorema da Bayes deu origem a uma nova, moderna e alternativa maneira de wse pensar a Estatística, gerando a chamada \textbf{Estatística Bayesiana}. 
+\newpage
+A ídéia expressa no Teorema da Bayes deu origem a uma nova, moderna e alternativa maneira de se pensar a Estatística, gerando a chamada \textbf{Estatística Bayesiana}. 
 
 
 \subsection{Árvores de Probabilidades}
 
-A construção de uma \textbf{Arvore de probabilidade} ou chamada de \textbf{diagrama de árvore} fornece uma ferramenta essencial para solução de problemas emvolvendo duas ou mais etapas, ou seja, útil para modelar experimentos que têm caráter sequencial, isto é, que são executados em múltiplas etapas, uma seguida da outra.
+A construção de uma \textbf{árvore de probabilidades}, também chamada de
+\textbf{diagrama de árvore}, é uma ferramenta fundamental na solução de problemas
+probabilísticos que envolvem \textbf{duas ou mais etapas sucessivas}. \vskip0.3cm
 
-\section{Eventos Independentes}
-
-Já consideramos eventos A e B que não podem ocorrer conjuntamente,
-isto é, $A\cap B = \phi$. Tais eventos são denominados mutuamente
-excludentes, ou eventos incompatíveis. Observamos anteriormente
-que se A e B forem mutuamente excludentes, então $PA/B=0$, porque
-a ocorrência dada de B impede a ocorrência de A. No outro extremo,
-temos a situação já estudada, na qual $B \supset A$ e,
-consequentemente, $P(B/A)=1$.\vskip0.3cm
-
-Consideremos $P(A \cap B)$, supondo que as probabilidades
-condicionadas sejam iguais às correspondentes probabilidades
-absolutas. Teremos:
-
-$$
-P(A \cap B)= P(A/B)P(B)=P(A)P(B)
-$$
-
-$$
-P(A \cap B)= P(B/A)P(A)=P(B)P(A)
-$$
+Esse tipo de representação é especialmente útil quando um experimento ocorre de
+forma \textbf{sequencial}, isto é, quando o resultado de uma etapa influencia as
+probabilidades da etapa seguinte. Assim, árvores de probabilidade permitem
+organizar visualmente os possíveis caminhos de um experimento e calcular
+probabilidades de eventos compostos de maneira sistemática.
 
 
-Desse modo, desde que nem P(A) nem P(B) sejam iguais a zero,
-verificamos que as probabilidades absolutas serão iguais às
-probabilidades condicionais se, e somente se, $P(A \cap
-B)=P(A)P(B)$. Em consequência, formulamos a seguinte definição, a
-qual será também válida quer P(A) ou P(B) seja nulo:\vskip0.3cm
+\bigskip
 
-\textbf{Definição:} A e B serão eventos independentes se, e
-somente se,
+\subsubsection{Estrutura Matemática}
 
-$$
-P(A \cap B) = P(A)P(B)
-$$
+Considere dois eventos $A$ e $B$. A probabilidade de ocorrência conjunta desses
+eventos é dada pela regra do produto:
 
-
-Será importante para nós, estendermos a noção de independência
-para mais de dois eventos. Consideremos, inicialmente, três
-eventos associados a um experimento, digamos A, B e C. Se A e B, A
-e C, B e C forem independentes dois a dois (no sentido acima),
-então não se concluirá, em geral, que não exista dependência entre
-os três eventos.\vskip0.3cm
-
-\textbf{Definição:} Diremos que os três eventos A, B e C são
-mutuamente independentes se, e somente se, todas as condições
-seguintes forem válidas:
-
-$$
-P(A \cap B)=P(A)P(B)
-$$
-
-$$
-P(A \cap C)=P(A)P(C)
-$$
-
-$$
-P(B \cap C)=P(B)P(C)
-$$
-
-$$
-P(A \cap B \cap C)=P(A)P(B)P(C)
-$$
-
-
-Finalmente, generalizando esta noção para n eventos, na seguinte
-definição:\vskip0.3cm
-
-\textbf{Definição:} Os n eventos $A_{1},A_{2},...,A_{n}$ serão
-mutuamente independentes se, e somente se, tivermos para
-$k=2,3,...,n$:
-
-\begin{equation}\label{}
-    P(A_{i_{1}} \cap A_{i_{2}} \cap A_{i_{k}})=
-    P(A_{i_{1}})P(A_{i_{2}})...P(A_{i_{k}})
+\begin{equation}
+P(A \cap B) = P(A)\cdot P(B \mid A),
 \end{equation}
-\vskip0.3cm
+
+onde $P(B \mid A)$ representa a \textbf{probabilidade condicional} de $B$
+ocorrer dado que $A$ já ocorreu.
+
+De forma geral, para um experimento com $n$ etapas sequenciais, a probabilidade
+de um caminho completo é obtida multiplicando-se as probabilidades condicionais:
+
+\begin{equation}
+P(E_1 \cap E_2 \cap \dots \cap E_n)
+=
+P(E_1)\cdot P(E_2\mid E_1)\cdot\dots\cdot P(E_n\mid E_1\cap\dots\cap E_{n-1}).
+\end{equation}
 
 
 
+\subsubsection{Exemplo 1: Sorteio Sequencial}
 
+Suponha uma urna contendo $5$ bolas, sendo $3$ verdes e $2$ vermelhas.
+Retiram-se duas bolas \textbf{sem reposição}.
 
+\begin{itemize}
+\item Evento $V_1$: primeira bola verde.
+\item Evento $V_2$: segunda bola verde.
+\end{itemize}
 
+A probabilidade da primeira bola ser verde é:
+
+\begin{equation}
+P(V_1)=\frac{3}{5}.
+\end{equation}
+
+Como não há reposição, restam $4$ bolas, sendo $2$ verdes. Assim:
+
+\begin{equation}
+P(V_2\mid V_1)=\frac{2}{4}.
+\end{equation}
+
+Logo, a probabilidade de retirar duas bolas verdes é:
+
+\begin{equation}
+P(V_1\cap V_2)=P(V_1)\cdot P(V_2\mid V_1)
+=\frac{3}{5}\cdot\frac{2}{4}
+=\frac{3}{10}.
+\end{equation}
+
+\bigskip
+
+\subsubsection{Exemplo 2: Aplicação em Tomada de Decisão Pública}
+
+Considere um sistema de monitoramento ambiental que detecta risco de desmatamento.
+
+\begin{itemize}
+\item Evento $D$: há desmatamento real na região.
+\item Evento $S$: o sensor emite alerta positivo.
+\end{itemize}
+
+Suponha:
+
+\begin{equation}
+P(D)=0.20,
+\qquad
+P(S\mid D)=0.90,
+\qquad
+P(S\mid D^c)=0.10.
+\end{equation}
+
+A probabilidade de o sensor emitir alerta e realmente haver desmatamento é:
+
+\begin{equation}
+P(D\cap S)=P(D)\cdot P(S\mid D)
+=0.20\cdot0.90
+=0.18.
+\end{equation}
+
+Esse tipo de análise é essencial para políticas públicas baseadas em dados,
+pois permite quantificar incertezas e aprimorar decisões estratégicas na gestão
+ambiental.
 
 \newpage
+\section{Eventos Independentes}
 
+Em Probabilidade, um dos conceitos mais importantes é o de \textbf{independência entre eventos}. \vskip0.3cm
+
+Dois eventos $A$ e $B$ são ditos \textbf{independentes} quando a ocorrência de
+um deles \textbf{não influencia} a chance de ocorrência do outro. Em outras palavras, saber que $A$ ocorreu não altera a probabilidade de $B$,
+isto é,
+
+\begin{equation}
+P(B\mid A)=P(B).
+\end{equation}
+
+De forma equivalente, dois eventos são independentes se satisfazem a regra:
+
+\begin{equation}
+P(A\cap B)=P(A)\cdot P(B).
+\end{equation}
+
+Essa propriedade indica que a probabilidade de ambos ocorrerem simultaneamente
+é simplesmente o produto das probabilidades individuais.
+
+
+
+\subsection*{Exemplo 1: Lançamento de Moeda e Dado}
+
+Considere o experimento composto:
+
+\begin{itemize}
+\item Lançar uma moeda.
+\item Lançar um dado de seis faces.
+\end{itemize}
+
+Defina os eventos:
+
+\begin{itemize}
+\item $A$: sair \textbf{cara} na moeda.
+\item $B$: sair um número \textbf{par} no dado.
+\end{itemize}
+
+Temos:
+
+\[
+P(A)=\frac{1}{2},
+\qquad
+P(B)=\frac{3}{6}=\frac{1}{2}.
+\]
+
+Como os experimentos não interferem entre si, os eventos são independentes.
+Logo,
+
+\begin{equation}
+P(A\cap B)=P(A)\cdot P(B)
+=\frac{1}{2}\cdot\frac{1}{2}
+=\frac{1}{4}.
+\end{equation}
+
+Portanto, a probabilidade de sair \textbf{cara} e um número \textbf{par} é $0,25$.
+
+
+\subsection*{Exemplo 2: Aplicação em Gestão Pública}
+
+Suponha que, em um determinado município do Pará:
+
+\begin{itemize}
+\item $A$: ocorrer chuva intensa em um dia.
+\item $B$: ocorrer um acidente de trânsito urbano no mesmo dia.
+\end{itemize}
+
+Se estudos indicam que esses eventos são estatisticamente independentes, então:
+
+\[
+P(A)=0.30,
+\qquad
+P(B)=0.10.
+\]
+
+Logo, a probabilidade de ocorrerem simultaneamente é:
+
+\begin{equation}
+P(A\cap B)=0.30\cdot0.10=0.03.
+\end{equation}
+
+Assim, existe uma chance de apenas $3\%$ de que, no mesmo dia, haja
+chuva intensa e acidente urbano.
+
+
+
+\subsection*{Independência de Três Eventos}
+
+Considere agora três eventos $A$, $B$ e $C$.
+
+Dizemos que eles são \textbf{mutuamente independentes} quando todas as combinações
+possíveis também são independentes, ou seja:
+
+\begin{equation}
+P(A\cap B)=P(A)P(B),
+\qquad
+P(A\cap C)=P(A)P(C),
+\qquad
+P(B\cap C)=P(B)P(C),
+\end{equation}
+
+e adicionalmente:
+
+\begin{equation}
+P(A\cap B\cap C)=P(A)P(B)P(C).
+\end{equation}
+
+
+\subsection*{Exemplo 3: Três Sensores Independentes}
+
+Imagine três sensores ambientais que monitoram queimadas na floresta:
+
+\begin{itemize}
+\item $A$: sensor 1 detecta foco.
+\item $B$: sensor 2 detecta foco.
+\item $C$: sensor 3 detecta foco.
+\end{itemize}
+
+Suponha que:
+
+\[
+P(A)=0.20,
+\qquad
+P(B)=0.30,
+\qquad
+P(C)=0.10.
+\]
+
+Se os sensores funcionam de forma independente, então:
+
+\begin{equation}
+P(A\cap B\cap C)
+=0.20\cdot0.30\cdot0.10
+=0.006.
+\end{equation}
+
+Logo, a chance de os três sensores detectarem simultaneamente um foco é de
+apenas $0,6\%$.
+
+\bigskip
+
+\subsection*{Generalização: Independência Mútua}
+
+De maneira geral, um conjunto de eventos $A_1,A_2,\dots,A_n$ é dito
+\textbf{mutuamente independente} se, para qualquer subconjunto com $k\geq 2$
+eventos, vale:
+
+\begin{equation}
+P(A_{i_1}\cap A_{i_2}\cap\cdots\cap A_{i_k})
+=
+P(A_{i_1})P(A_{i_2})\cdots P(A_{i_k}).
+\end{equation}
+
+\bigskip
+
+\subsection*{Observação Importante}
+
+É essencial destacar que:
+
+\begin{quote}
+Independência dois a dois \textbf{não garante} independência mútua.
+\end{quote}
+
+Ou seja, pode ocorrer que todos os pares de eventos sejam independentes,
+mas o conjunto completo não seja. Assim, a independência é uma hipótese forte, amplamente utilizada em modelos estatísticos, inferência e simulações computacionais, pois simplifica cálculos
+e permite compreender sistemas complexos com maior clareza.
+
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.0]
+
+% Universo
+\draw (0,0) rectangle (6,4);
+\node at (5.7,3.7) {$\Omega$};
+
+% Conjuntos A e B
+\draw[thick] (2.2,2) circle (1.3);
+\draw[thick] (3.8,2) circle (1.3);
+
+% Labels
+\node at (1.5,2) {$A$};
+\node at (4.5,2) {$B$};
+
+% Interseção
+\node at (3,2) {$A\cap B$};
+
+% Probabilidade
+\node at (3,0.6)
+{$P(A\cap B)=P(A)\cdot P(B)$};
+
+\end{tikzpicture}
+\caption{Diagrama de Venn ilustrando dois eventos independentes.}
+\label{fig:venn_independencia}
+\end{figure}
+
+
+%----------------------------------------------------------------------------------------%
+%------------------------- var ----------------------------------------------------------%
+\newpage
 \section{Variáveis Aleatórias Unidimensionais}
 \subsection{Introdução}
 
-Ao se descrever o espaço amostral(S) de um experimento($\Omega$)
-nota-se que os elementos não são necessariamente números. Assim,
-por exemplo, no lançamento de duas moedas pode-se ter o seguinte
-espaço amostral:\vskip0.3cm
 
+Em muitos experimentos aleatórios, o espaço amostral $\Omega$ é formado por resultados que não são, necessariamente, números.
+Por exemplo, no lançamento de duas moedas, o espaço amostral é dado por:
 
-\begin{equation}
-    S = \{CC, CK, KC, KK\}
-\end{equation}
+\[
+\Omega=\{CC,\,CK,\,KC,\,KK\},
+\]
 
+onde $C$ representa ``cara'' e $K$ representa ``coroa''.
 
-\par Quando se joga uma moeda certo números de vezes, pode se estar
-interessado, não na particular sucessão obtida, mas somente no
-aumento de caras. Do mesmo modo, quando se joga uma moeda até
-obter uma cara, pode-se estar unicamente interessado no número de
-jogadas necessárias para obtê-la.\vskip0.3cm
+\vskip0.3cm
 
-\par Contudo, na maior parte das vezes, se está interessado num
-resultado numérico, isto é, deseja-se associar aos elementos do
-espaço amostral S um número real $x=X(S)$. Desta forma formula-se
-a definição:\vskip0.3cm
+Em diversas situações, entretanto, não estamos interessados na sequência exata obtida, mas sim em alguma característica numérica associada ao resultado.
+Por exemplo:
+
+\begin{itemize}
+    \item ao lançar três moedas, pode-se desejar apenas o número de caras obtidas;
+    \item ao lançar uma moeda repetidamente até aparecer cara, pode-se estar interessado no número de lançamentos necessários.
+\end{itemize}
+
+\vskip0.3cm
+
+Assim, surge a necessidade de associar a cada resultado do espaço amostral um valor numérico real.
+Esse tipo de associação conduz ao conceito fundamental de \textbf{variável aleatória}.
 
 \subsection{Definição}
 
-Seja $E$ um experimento com um espaço amostral associado $S$. Uma
-função X que associe a cada elemento de $S(s \in S)$ um número
-real $x=X(s)$ é denominada \textbf{Variável Aleatória}.\vskip0.3cm
+Seja $\Omega$ o espaço amostral de um experimento aleatório.
+Uma função
 
-\par O conjunto formado por todos os valores $x$, isto é, a imagem
-da variável aleatória X, é \textbf{denominado de conjunto de
-valores de X} e anotado por $X(S)$. Desta forma:
+\[
+X:\Omega \longrightarrow \mathbb{R},
+\]
+
+que associa a cada resultado $s\in\Omega$ um número real $X(s)$, é denominada uma
+\textbf{variável aleatória}.
+
+\vskip0.3cm
+
+O conjunto de todos os valores possíveis assumidos por $X$ é chamado de
+\textbf{imagem} (ou conjunto de valores) da variável aleatória, e é denotado por:
+
+\[
+X(\Omega)=\{x\in\mathbb{R}\;:\; X(s)=x,\; s\in\Omega\}.
+\]
+
+\vskip0.3cm
+
+Em geral, utilizamos letras maiúsculas ($X,Y,Z,\dots$) para representar variáveis aleatórias e letras minúsculas ($x,y,z,\dots$) para representar valores possíveis dessas variáveis.
+
+
+\subsection{Exemplo: Número de caras em três lançamentos}
+
+Considere o experimento de lançar três moedas equilibradas. O espaço amostral é composto por todas as sequências possíveis de caras e coroas.  \vskip0.3cm
+
+Defina a variável aleatória $X$ como:
+
+\[
+X(s)=\text{número de caras obtidas na sequência } s.
+\]
+
+Logo, o conjunto de valores possíveis é:
+
+\[
+X(\Omega)=\{0,1,2,3\}.
+\]
+
+A tabela a seguir apresenta os resultados possíveis e os respectivos valores de $X$, durante uma jogada de lancamento de dados:
+
+\begin{table}[H]
+\centering
+\caption{Variável aleatória $X$: número de caras em três lançamentos.}
+\begin{tabular}{c|cccccccc}
+\hline\hline
+$\Omega$     & KKK & CKK & KCK & KKC & CCK & CKC & KCC & CCC\\
+\hline
+$X(s)$       & 0   & 1   & 1   & 1   & 2   & 2   & 2   & 3\\
+\hline\hline
+\end{tabular}
+\end{table}
+
+\vskip0.3cm
+
+Note que, sobre o mesmo espaço amostral, poderíamos definir diversas outras variáveis aleatórias, como o número de coroas, ou a diferença entre caras e coroas.
+
+\newpage
+\section{Variável Aleatória Discreta}
+\subsection{Definição}
+
+Uma variável aleatória $X$ é chamada de \textbf{discreta} quando assume valores em um conjunto finito ou infinito enumerável, isto é,
+
+\[
+X(\Omega)=\{x_1,x_2,x_3,\dots\}.
+\]
+
+\subsection{Função de Probabilidade}
+
+Se $X$ é uma variável aleatória discreta, define-se sua
+\textbf{função de probabilidade} como:
+
+\[
+f(x_i)=P(X=x_i),
+\]
+
+onde $x_i$ é um valor possível de $X$. Essa função satisfaz as propriedades:
+
+\[
+f(x_i)\geq 0,\quad \forall i,
+\]
+
+\[
+\sum_{i} f(x_i)=1.
+\]
+
+\subsection{Exemplo: Duas moedas}
+
+Considere o lançamento de duas moedas e seja $X$ o número de caras obtidas.
+
+\[
+\Omega=\{CC,CK,KC,KK\}.
+\]
+
+\begin{table}[H]
+\centering
+\caption{Valores possíveis da variável aleatória $X$.}
+\begin{tabular}{c|cccc}
+\hline\hline
+Resultado & CC & CK & KC & KK\\
+\hline
+$X(s)$    & 2  & 1  & 1  & 0\\
+\hline\hline
+\end{tabular}
+\end{table}
+
+Assim, a função de probabilidade é:
+
+\begin{table}[H]
+\centering
+\caption{Distribuição de probabilidade de $X$.}
+\begin{tabular}{c|ccc}
+\hline\hline
+$x$      & 0   & 1   & 2\\
+\hline
+$f(x)$   & 1/4 & 1/2 & 1/4\\
+\hline\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Função de Distribuição Acumulada (FDA)}
+
+A função de distribuição acumulada de $X$ é definida por:
+
+\[
+F(x)=P(X\leq x).
+\]
+
+No caso discreto, temos:
+
+\[
+F(x)=\sum_{x_i\leq x} f(x_i).
+\]
+
+
+
+\subsection{Esperança Matemática}
+
+Se $X$ assume valores $x_1,x_2,\dots$, então a esperança de $X$ é:
+
+\[
+E(X)=\sum_i x_i\,P(X=x_i).
+\]
+
+
+\subsection{Variância}
+
+A variância de $X$ mede a dispersão dos valores em torno da média:
+
+\[
+V(X)=E(X^2)-[E(X)]^2.
+\]
+
+onde
+
+\[
+E(X^2)=\sum_i x_i^2\,P(X=x_i).
+\]
+
+
+
+%----------------------------------------------------------------------------------%
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Variáveis Aleatórias Contínuas (V.A.C.)}
+
+De modo geral, muitas grandezas observadas na natureza não são obtidas por contagem, mas sim por \textbf{mensuração}.
+Por exemplo:
+
+\begin{itemize}
+    \item Peso de um Paciente,
+    \item tempo de Espera em um Atendimento,
+    \item Temperatura Ambiente,
+    \item Nível de Voltagem em um Circuito,
+    \item Concentração de um Poluente no Ar.
+\end{itemize}
+
+Essas quantidades podem assumir infinitos valores dentro de um intervalo real, sendo mais adequadamente descritas como
+\textbf{variáveis aleatórias contínuas}. \vskip0.3cm
+
+Por outro lado, variáveis associadas a \textbf{contagens} (como número de veículos em uma via ou quantidade de atendimentos em um hospital) são tipicamente modeladas como variáveis aleatórias discretas. \vskip0.3cm
+
+Em alguns casos, a distinção depende do nível de precisão da medida.
+Por exemplo, o comprimento de uma peça é uma variável contínua, mas se for arredondado para duas casas decimais pode ser tratado como discreto.
+
+\subsection{Definição}
+
+Seja $\Omega$ o espaço amostral de um experimento aleatório.
+Uma variável aleatória $X$ é dita \textbf{contínua} se seu conjunto de valores possíveis $X(\Omega)$ é infinito não enumerável, isto é, se assume valores em um intervalo (ou união de intervalos) da reta real.
+
+\subsection{Função Densidade de Probabilidade}
+
+Uma variável aleatória contínua $X$ é caracterizada por uma função
+$f(x)$, chamada de \textbf{função densidade de probabilidade (fdp)}, que satisfaz:
+
+\begin{enumerate}
+    \item Não negatividade:
+    \[
+    f(x)\geq 0,\quad \forall x\in\mathbb{R};
+    \]
+
+    \item Normalização:
+    \[
+    \int_{-\infty}^{+\infty} f(x)\,dx = 1.
+    \]
+\end{enumerate}
+
+\vskip0.3cm
+
+A probabilidade de $X$ assumir valores dentro de um intervalo $(a,b)$ é dada por:
+
+\[
+P(a<X<b)=\int_a^b f(x)\,dx.
+\]
+
+\vskip0.3cm
+
+Um ponto fundamental é que, para variáveis contínuas,
+
+\[
+P(X=x)=0.
+\]
+
+Ou seja, probabilidades são sempre associadas a intervalos, e não a valores isolados.
+
+
+\subsection{Exemplo: Tempo de vida de uma lâmpada}
+
+Suponha que o tempo de duração (em anos) de uma lâmpada seja uma variável aleatória contínua com densidade:
+
+\[
+f(x)=
+\begin{cases}
+2e^{-2x}, & x\geq 0,\\
+0, & \text{caso contrário}.
+\end{cases}
+\]
+
+Essa é uma distribuição exponencial, frequentemente utilizada em modelos de confiabilidade e tempo de falha.
+
+
+\subsection{Função Distribuição Acumulada}
+
+A função de distribuição acumulada (FDA) de uma variável contínua $X$ é definida por:
+
+\[
+F(x)=P(X\leq x).
+\]
+
+No caso contínuo, temos:
+
+\[
+F(x)=\int_{-\infty}^{x} f(s)\,ds.
+\]
+
+
+
+\subsection{Exemplo: Construção de uma FDA}
+
+Considere a densidade:
+
+\[
+f(x)=
+\begin{cases}
+\frac{1}{2}x, & 0<x<2,\\
+0, & \text{caso contrário}.
+\end{cases}
+\]
+
+A FDA é obtida por integração:
+
+\[
+F(x)=\int_0^x \frac{1}{2}s\,ds=\frac{1}{4}x^2,\quad 0\leq x\leq 2.
+\]
+
+Portanto,
+
+\[
+F(x)=
+\begin{cases}
+0, & x<0,\\[0.2cm]
+\frac{1}{4}x^2, & 0\leq x\leq 2,\\[0.2cm]
+1, & x>2.
+\end{cases}
+\]
+
+
+
+\subsection{Esperança Matemática}
+
+Se $X$ é uma variável aleatória contínua com densidade $f(x)$, então sua esperança é:
+
+\[
+\boxed{
+E(X)=\int_{-\infty}^{+\infty} x f(x)\,dx.
+}
+\]
+
+Esse valor representa a média teórica da distribuição.
+
+
+
+%---------------------------------------------------------------------------%
+\subsection{Variância}
+
+A variância é uma das medidas mais importantes em Probabilidade e Estatística,
+pois quantifica o grau de dispersão dos valores assumidos por uma variável
+aleatória em torno de sua média. \vskip0.3cm
+
+Seja $X$ uma variável aleatória contínua com esperança matemática (média)
+
+\[
+\mu = E(X).
+\]
+
+A variância de $X$, denotada por $V(X)$ ou $\mathrm{Var}(X)$,
+é definida como o valor esperado do quadrado do desvio de $X$ em relação à média:
 
 \begin{equation}
-    X(S) = \{ x \in \mathbb{R}/X(s)=x  \}
+V(X)=E\big[(X-\mu)^2\big].
 \end{equation}
-
-
-
-%\textbf{Definição 2}: Uma variável aleatória X num espaço amostral
-%S é uma função de S no conjunto $\mathbb{R}$ dos números reais tal
-%que a imagem inversa de cada intervalo de $\mathbb{R}$ seja um
-%evento de S.\vskip0.3cm
-
-As variáveis aleatórias serão definidas usualmente com as letras
-maiúscula $X, Y, Z, \ldots, etc$. Se X é uma variável aleatória,
-como s é enumerável; por exemplo
-$X(S)={x_{1},x_{2},x_{3},\ldots,}$. Os números $x_{i}$ são os
-valores da variável aleatória.\vskip0.3cm
-
-\newpage
-\textbf{Exemplo 1}: Seja S o espaço amostral formado pelas
-sequências obtidas no lançamento de 3 moedas equilibradas. Seja X
-a variável aleatória definida como sendo o número de caras da
-sequência, isto é, $X(s)=$ números de caras. O conjunto de
-valores da variável X é $X(S)=\{0,1,2,3\}$, pois, neste caso,
-tem-se:
-
-\begin{table}[!htb]
-\centering{
-\caption{Experimento 1, do Lançamento de 3 Moedas equilibradas.}
-\begin{tabular}{c|c|c|c|c|c|c|c|c}
-  \hline\hline
-  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-   $S$      & KKK & CKK & KCK & KKC & CCK & CKC & KCC & CCC\\
-  \hline
-    $X(s)$  & 0   & 1   & 1   &  1  & 2   & 2   & 2 & 3 \\
-  \hline\hline
-\end{tabular}}
-\end{table}
 
 \vskip0.3cm
 
-%\begin{figure}[!htb]
-%\centering
-%  % Requires \usepackage{graphicx}
-%  \includegraphics[scale=1]{fig7.eps}\\
-%  \vspace{-0.5cm}
-%  \caption{Variável Aleatória X: número de caras obtidas no lançamento de 3 caras.}\label{}
-%\end{figure}
+Essa definição expressa que a variância mede o quanto os valores de $X$
+se afastam, em média, do valor central $\mu$.
 
 
-Note-se que para este mesmo espaço amostral poderíamos definir
-muitas outras variáveis aleatórias, por exemplo: o quadrado de
-números de caras e o número de caras menos o número de coroas,
-etc.
+\subsubsection{Demonstração da Fórmula Alternativa}
 
+A expressão acima pode ser desenvolvida algebricamente.
+Começamos expandindo o termo quadrático:
 
-\section{Variável Aleatória Discreta (V.A.D)}
+\[
+(X-\mu)^2 = X^2 -2\mu X +\mu^2.
+\]
 
-\textbf{Definição 1}: Seja S o espaço amostral e seja X uma
-variável aleatória. Dado que o número de valores dos quais a
-variável aleatória X poderá assumir, ou seja, $R_{x}$, o
-contradomínio, sendo\emph{ finito ou infinito contável ou
-enumerável} de valores $X_{1}, X_{2}, X_{3}, \ldots,$ denomina-se
-X de variável aleatória discreta.
+Aplicando o operador esperança em ambos os lados, obtemos:
 
-\subsubsection{Função de Probabilidade de uma V.A.D}
+\[
+V(X)=E(X^2 -2\mu X +\mu^2).
+\]
 
-\textbf{Definição 1:} Seja X uma variável aleatória num espaço
-amostral S com contradomínio finito, isto é, $X(S)=\{x_{1}, x_{2},
-\ldots, x_{n} \}$. Se, para cada ponto x, de $X(S)$, definirmos
-sua probabilidade como $P(X=x_{i})$, denotada por $f(x_{i})$,
-teremos um espaço de probbilidade. Esta função $f$ em $X(S)$, isto
-é, definida por
+Pela linearidade da esperança, temos:
 
+\[
+V(X)=E(X^2)-2\mu E(X)+E(\mu^2).
+\]
 
-\begin{equation}\label{}
-f(x_{i})=P(X=x_{i}),
+Agora, note que $\mu$ é uma constante, pois $\mu=E(X)$.
+Logo:
+
+\[
+E(\mu^2)=\mu^2.
+\]
+
+Além disso, como $E(X)=\mu$, segue que:
+
+\[
+-2\mu E(X)=-2\mu\cdot \mu=-2\mu^2.
+\]
+
+Substituindo esses resultados na expressão anterior:
+
+\[
+V(X)=E(X^2)-2\mu^2+\mu^2.
+\]
+
+Portanto:
+
+\[
+V(X)=E(X^2)-\mu^2.
+\]
+
+Finalmente, como $\mu=E(X)$, concluímos que:
+
+\begin{equation}
+\boxed{
+V(X)=E(X^2)-[E(X)]^2.
+}
 \end{equation}
-
-é chamada de distribuição ou função de probabilidade de X e é
-usualmente dada na forma de uma tabela.
-
-
-\begin{table}[!htb]
-\centering{\caption{Esquema geral sobre a Função de Probabilidade de uma VAD}
-\begin{tabular}{c|c|c|c|c}
-  \hline\hline
-  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-   $x_{1}$   & $x_{2}$    & $x_{3}$    & $\ldots$ & $x_{n}$ \\
-  \hline
-  $f(x_{1})$ & $f(x_{2})$ & $f(x_{3})$ & $\ldots$ & $f(x_{n})$\\
-  \hline\hline
-\end{tabular}}
-\end{table}
 
 
 \newpage
-\textbf{Definição 2:} Seja X uma variável aleatória
-discreta(V.A.D), isto é, com $X(S)$ finito e infinito enumerável,
-definida num espaço amostral S. A cada resultado $x_{i}$ de $X(S)$
-associa-se um número $f(x_{i})=P(X=x_{i})$ denominado
-probabilidade de $x_{i}$ e tal que satisfaz as seguintes
-propriedades:
+\subsubsection{Expressão Integral para Variáveis Contínuas}
 
+Se $X$ é contínua e possui função densidade de probabilidade $f(x)$,
+então o segundo momento de $X$ é dado por:
 
-$$
-f(x_{i}) \geq 0, \quad \forall i.
-$$
+\[
+\boxed{
+E(X^2)=\int_{-\infty}^{+\infty}x^2 f(x)\,dx.
+}
+\]
 
-$$
-\sum_{i=1}^{n}f(x_{i})=1
-$$
+Assim, a variância pode ser escrita como:
 
-
-A função $f$ assim definida é denominada de \textbf{função de
-probabilidade} de X. A coleção dos pares $(x_{i}, f(x_{i}))$ para
-$i=1,2,3,...$ é denominada de distribuição de probabilidade da
-variável aleatória X.\vskip0.3cm
-
-\textbf{Exemplo 2}: Jogando-se uma moeda duas vezes, o espaço
-amostral é
-
-$$
-S= \{ cc, ck, kc, kk \}
-$$
-
-seja X o número de caras que aparecem. A cada ponto amostral
-podemos associar um número real para X, tal como se vê na tabela
-abaixo.
-
-
-\begin{table}[!htb]
-\centering{\caption{Exemplo de Variável Aleatória X: número de caras}
-\begin{tabular}{c|c|c|c|c}
-  \hline\hline
-  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-   Ponto Amostral    & cc  & ck  &  kc & kk  \\
-  \hline
-    $x$              & 0   & 1   &  1  & 2 \\
-  \hline\hline
-\end{tabular}}
-\end{table}
-
-%\newpage
-
-
-Assim, a função de probabilidade da variável aleatória x: números
-de caras é
-
-\begin{table}[!htb]
-\centering{\caption{Exemplo de Função de Probabilidade de X: números de
-caras}
-\begin{tabular}{c|c|c|c}
-  \hline\hline
-  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-   $x$      & 0   & 1   &   2  \\
-  \hline
-    $f(x_{i})$  & 1/4 & 1/2 &  1/4 \\
-  \hline\hline
-\end{tabular}}
-\end{table}
-
-
-%\newpage
-\subsubsection{Função de Distribuição Acumulada de uma V.A.D}
-
-\textbf{Definição 1}: Seja X uma variável aleatória discreta com
-função densidade $f(x)$. Então a função de distribuição
-acumulada(FDA) de X é a função F em escada definida por:
-
-\begin{equation}\label{}
-    F(x)=P(X \leq x)= \sum f(X_{i}),
-\end{equation}
-
-onde x é um número real entre $-\infty < x < \infty$.\vskip0.3cm
-
-
-Se X toma apenas um número finito de valores $x_{1},x_{2},...,x_{n}$ então a função de distribuição acumulada é dada por
-
-$$
-F(x)=
-\left\{%
-\begin{array}{ll}
-    0                                     & \hbox{$-\infty< x < x_{1}$} \\
-    f(x_{1})                              & \hbox{$x_{1} \leq x < x_{2}$} \\
-    f(x_{1})+f(x_{2})                     & \hbox{$x_{2} \leq x < x_{3}$} \\
-    \vdots                                & \hbox{$\vdots$} \\
-    f(x_{1})+f(x_{2})+\ldots+  f(x_{n})   & \hbox{$x_{n} \leq x < \infty$} \\
-\end{array}%
-\right.
-$$
-
-
-\textbf{Exemplo 1} : Seja X uma variável aleatória discreta com a
-função de distribuição da tabela abaixo:
-
-
-\begin{table}[!htb]
-\centering{\caption{Exemplo de uma Variável Aleatória Discreta.}
-\begin{tabular}{c|c|c|c|c}
-  \hline\hline
-  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-   $x$   & -2  & 1   & 2 & 4 \\
-  \hline
-  $f(X)$ & 1/4 & 1/8 & 1/2 & 1/8\\
-  \hline\hline
-\end{tabular}}
-\end{table}
-
-
-Então a função de distribuição acumulada F(x) de X é dada por:
-
-$$
-F(x)=
-\left\{%
-\begin{array}{ll}
-   0   , & se \quad \hbox{$x < -2$;} \\
-   1/4 , & se \quad \hbox{$-2 \leq x < 1$;} \\
-   3/8 , & se \quad \hbox{$1 \leq x < 2$;} \\
-   7/8 , & se \quad \hbox{$2 \leq x < 4$;} \\
-   1   , & se \quad \hbox{$x \geq 4$.} \\
-\end{array}%
-\right.
-$$
-
-\textbf{Exemplo 2} : Suponhamos que a variável aleatória X tome os
-três valores 0,1 e 2, com probabilidades $1/3, 1/6 e 1/2$,
-respectivamente. Então, a função de distribuição de probabilidade
-de X é denotada por:
-
-
-\begin{table}[!htb]
-\centering{\caption{Função de Distribuição de uma Variável Aleatória Discreta.}
-\begin{tabular}{c|c|c|c}
-  \hline\hline
-  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-   $x$   &  0  & 1   & 2 \\
-  \hline
-  $f(X)$ & 1/3 & 1/6 & 1/2 \\
-  \hline\hline
-\end{tabular}}
-\end{table}
-
-Assim, a função de distribuição acumulada de X é,
-
-$$
-F(x)=
-\left\{%
-\begin{array}{ll}
-   0   , & se \quad \hbox{$x < 0$;} \\
-   1/3 , & se \quad \hbox{$0 \leq x < 1$;} \\
-   1/2 , & se \quad \hbox{$1 \leq x < 2$;} \\
-   1   , & se \quad \hbox{$x \geq 2$.} \\
-\end{array}%
-\right.
-$$
-
-
-\newpage
-\subsection{Esperança de uma Variável Aleatória Discreta}
-
-Seja X uma variável aleatória discreta, com valores possíveis
-$x_{1},x_{2},\ldots,x_{n}$. Seja $ f(x_{i})= P(X=x_{i})$,
-$i=1,2,\ldots,n$. Então, o valor esperado de X (ou esperança
-matemática, expectância ou média de X), denominado por $E(X)$ é
-definida por :
-
-
-\begin{equation}\label{e(x)}
-    E(X) = x_{1}P(X=x_{1})+x_{2}P(X=x_{2})+\ldots+x_{n}P(X=x_{n})= \sum_{i=1}^{\infty} x_{j}P(X=x_{j})
-\end{equation}
-
-ou equivalente, se $P(X=x_{i})=f(x_{i})$,
-
-
-\begin{equation}\label{e(x)}
-    E(X) = x_{1}f(x_{1})+x_{2}f(x_{2})+\ldots+x_{n}f(x_{n})= \sum_{i=1}^{\infty} x_{j}f(x_{j})
-\end{equation}
-
-
-\textbf{Exemplo 3}: Suponha-se um jogo disputado com um único dado
-honesto, em que um jogador ganha R\$20 se aparece a face 2, R\$40
-se aparece a face 4, perde R\$30 se aparece a face 6, e não ganha
-nem perde se aparece qualquer das outras faces. Determine a
-esperança de seu ganho.\vskip0.3cm
-
-Seja X uma variável aleatória discreta que dá a quantia ganha em
-qualquer jogada. As importância possíveis associados ao
-aparecimento de $1,2,...,6$ são $x_{1},x_{2},...,x_{6}$
-respectivamente, enquanto que as probabilidades respectivas são \\ 
-$f(x_{1}),f(x_{2}),...,f(x_{6})$.
-
-
-%\begin{table}[!htb]
-%\centering{\caption{}
-%\begin{tabular}{c|c|c|c|c|c|c}
-%  \hline\hline
-%  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-%   $x_{j}$   & 0   & +20 & 0   & +40 & 0 & -30 \\
-%  \hline
-%  $f(x_{j})$ & 1/6 & 1/6 & 1/6 & 1/6 & 1/6 & 1/6\\
-%  \hline\hline
-%\end{tabular}}
-%\end{table}
+\[
+V(X)=
+\int_{-\infty}^{+\infty}x^2 f(x)\,dx
+-
+\left(
+\int_{-\infty}^{+\infty}x f(x)\,dx
+\right)^2.
+\]
 
 \vskip0.3cm
 
-Então o valor esperado de X é
-
-$$
-E(X)= \left[\left(0 \times \frac{1}{6}\right)+\left(20 \times
-\frac{1}{6}\right)+ \left(0 \times \frac{1}{6}\right)+ \left(40
-\times \frac{1}{6}\right)+\left(0 \times
-\frac{1}{6}\right)+\left(-30 \times \frac{1}{6}\right)\right]=5
-$$
-
-%Segue-se que o jogador pode esperar ganhar R\$5.
+Essa forma mostra que a variância depende do segundo momento de $X$ e do quadrado de sua média.
 
 
-\subsection{Variância de uma Variável Aleatória Discreta}
+\subsection{Exemplo Completo}
 
-Seja X uma variável aleatória discreta. Definimos a variância de
-X, denotado por $V(X)$.
+Considere a densidade:
 
-\begin{equation}\label{v(x)}
-    V(X) = E[X-E(X)]^{2} = E(X^{2})-[E(X)]^{2}
-\end{equation}
-
-onde a $E(X^{2})$ é definida por:
-
-\begin{equation}\label{e(x)}
-    E(X^{2}) = x_{1}^{2}f(x_{1})+x_{2}^{2}f(x_{2})+\ldots+x_{n}^{n}f(x_{n})= \sum_{i=1}^{\infty} x_{j}^{2}f(x_{j})
-\end{equation}
-
-
-\textbf{Exemplo 4}: Usando o exemplo 3, calcule a variãncia.
-
-
-$$
-E(X^{2})= \left[\left(0^{2} \times \frac{1}{6}\right)+\left(20^{2}
-\times \frac{1}{6}\right)+ \left(0^{2} \times \frac{1}{6}\right)+
-\left(40^{2} \times \frac{1}{6}\right)\right]
-$$
-
-
-$$
-\left[+\left(0^{2} \times \frac{1}{6}\right)+\left(-30^{2} \times
-\frac{1}{6}\right)\right]= 183,33
-$$
-
-
-$$
-V(X) = E(X^{2})-[E(X)]^{2} = 183,33 - [5]^{2}= 158,33.
-$$
-
-%\newpage
-
-\textbf{Exercício 1}: Considera-se a jogada de um par de dados e
-seja X a variável aleatória (soma dos pontos).
-
-\begin{enumerate}
-    \item Determine a função de probabilidade de X.
-    \item Construa um gráfico para a função de probabilidade de X.
-    \item Calcule a Esperança e variância da variável aleatória X.
-    \item Dtermine a função de distribuição acumulada de X.
-    \item Construa um gráfico para a função de distribuição acumulada de X.
-\end{enumerate}
-
-
-
-\begin{table}[!htb] 
-\centering{\caption{Função de Probabilidade de X: soma dos pontos para a jogada de um par de dados.}
-\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
-  \hline\hline
-  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-  x    &  2   & 3    & 4    & 5    & 6    & 7    & 8    & 9    & 10   & 11    & 12 \\
- \hline
-  f(x) & 1/36 & 2/36 & 3/36 & 4/36 & 5/36 & 6/36 & 5/36 & 4/36 & 3/36 &  2/36 & 1/36 \\
-  \hline\hline
-\end{tabular}}
-\end{table}
-
-$$
-E(X)= \left[\left(2 \times \frac{1}{36}\right)+\left(3 \times
-\frac{2}{36}\right)+ \ldots +\left( 12 \times
-\frac{1}{36}\right)\right]=
-$$
-
-
-$$
-E(X^{2})= \left[\left(2^{2} \times \frac{1}{36}\right)+\left(3^{2}
-\times \frac{2}{36}\right)+\left(12^{2} \times
-\frac{1}{36}\right)\right]=
-$$
-
-$$
-F(x)=
-\left\{%
-\begin{array}{ll}
-   0      & se \quad \hbox{$-\infty < x < 2$} \\
-   1/36   & se \quad \hbox{$2 \leq x < 3$} \\
-   3/36   & se \quad \hbox{$3 \leq x < 4$} \\
-   6/36   & se \quad \hbox{$4 \leq x < 5$} \\
-   \vdots & se \quad \hbox{$\vdots$} \\
-   35/36  & se \quad \hbox{$11 \leq x < 12$} \\
-    1     & se \quad \hbox{$12 \leq x < \infty$} \\
-\end{array}%
-\right.
-$$
-
-%\newpage
-
-\textbf{Exercício 2}: Seja X uma variável aleatória que representa
-o número de ases em uma extração aleatória de 4 cartas de um
-baralho usual de 52 cartas.
-
-\begin{enumerate}
-    \item Determine a função de probabilidade de X.
-    \item Construa um gráfico para a função de probabilidade de X.
-    \item Calcule a Esperança e variância da variável aleatória X.
-    \item Dtermine a função de distribuição acumulada de X.
-    \item Construa um gráfico para a função de distribuição acumulada de X.
-\end{enumerate}
-
-\textbf{Exercício 3}: Uma urna contém 5 bolas brancas e 3 pretas.
-Extraem-se duas bolas aleatoriamente, sem reposição. Seja X o
-número de bolas brancas.
-
-\begin{enumerate}
-    \item Dtermine a função de distribuição acumulada de X.
-    \item Construa um gráfico para a função de distribuição acumulada de X.
-    \item Calcule a Esperança e variância da variável aleatória X.
-\end{enumerate}
-
-\textbf{Exercício 4}: Seja Z uma variável aleatória que representa
-o número de caras menos o número de coroas em duas jogadas de uma
-moeda honesta.
-
-\begin{enumerate}
-    \item Dtermine a função de distribuição acumulada de Z.
-    \item Construa um gráfico para a função de distribuição acumulada de X.
-    \item Calcule a Esperança e variância da variável aleatória Z.
-\end{enumerate}
-
-\textbf{Exercício 5}: Determinar a probabilidade de haver meninos
-e meninas em famílias com 3 crianças, admitindo-se as mesmas
-probabilidades ambos.
-
-\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Variáveis Aleatórias Contínuas (V.A.C)}
-
-De forma geral, as variáveis aleatórias que representam medidas de grandezas físicas como coordenadas espaciais, peso, tempo,
-temperatura e voltagem são descritas mais adequadamente como variáveis aleatórias contínuas. Variáveis aleatórias associadas nas contagens de objetos ou eventos são exemplos típicos de variáveis aleatórias discretas.\vskip0.3cm
-
-Entretanto, existem casos em que tanto a formulação discreta como a contínua poderiam ser apropriadas. Assim, embora normalmente a medida de comprimento seja considerada como uma variável aleatória contínua, pode-se considerar a medida arredondada para um certo número de casas decimais, e portanto, como sendo uma variável aleatória discreta.\vskip0.3cm
-
-
-Existem muitas situações, tanto teóricas quanto aplicadas, em que
-as variáveis aleatórias naturais a considerar são contínuas ao
-invés de discretas, vejamos algumas definições formais.\vskip0.3cm
-
-
-\textbf{Definição 1}: Seja E um experimento e S um espaço amostral
-associado, Se X é uma variável aleatória definida em S tal que
-$X(S)$ seja infinito não-enumerável, isto é, seja um intervalo ou
-conjunto de intervalos de números reais, então X é dita uma
-variável aleatória contínua.
-
-
-
-\subsection{Função Densidade de Probabilidade de uma V.A.C}
-
-Seja X uma variável aleatória contínua , se existir uma função f,
-denominado função densidade de probabiliade (fdp) de X que
-satisfaça às seguintes condições:
-
-
-\begin{equation}\label{}
-    f(x_{i}) \geq 0, \quad \forall x.\in \mathbb{R}
-\end{equation}
-
-
-\begin{equation}\label{}
-    \int^{+\infty}_{-\infty}f(x)dx=1
-\end{equation}
-
-onde a 2.8 é a afirmativa matemática do fato de que uma variável
-aleatória real deve certamente estar compreendida entre $-\infty$
-e $\infty$. Definimos então a probabilidade de X estar entre a e b
-por
-
-\begin{equation}\label{}
-    P(a< X < b)=\int_{a}^{b}f(x)dx = F(b)-F(a)
-\end{equation}
-
-
-\newpage
-\textbf{Exemplo 1}: A duração, em anos, de uma certa lâmpada
-especial é uma variável aleatória contínua com densidade dada por:
-
-
-$$
+\[
 f(x)=
-\left\{%
-\begin{array}{ll}
-   2e^{-2x}       & se \quad \hbox{$x \geq 0$;} \\
-   0              & se \quad \hbox{c.c} \\
-\end{array}%
-\right.
-$$
+\begin{cases}
+\frac{1}{8}x^2, & 0<x<2,\\
+0, & \text{caso contrário}.
+\end{cases}
+\]
+
+\textbf{(i) Esperança}
+
+\[
+E(X)=\int_0^2 x\cdot \frac{1}{8}x^2\,dx
+=\frac{1}{8}\int_0^2 x^3\,dx
+=\frac{1}{8}\cdot\frac{2^4}{4}
+=1.
+\]
+
+\textbf{(ii) Segundo momento}
+
+\[
+E(X^2)=\int_0^2 x^2\cdot \frac{1}{8}x^2\,dx
+=\frac{1}{8}\int_0^2 x^4\,dx
+=\frac{1}{8}\cdot\frac{2^5}{5}
+=\frac{4}{5}.
+\]
+
+\textbf{(iii) Variância}
+
+\[
+V(X)=\frac{4}{5}-1^2=\frac{-1}{5}.
+\]
+
+(Portanto, este exemplo mostra que uma escolha inadequada de densidade pode gerar inconsistências, reforçando a necessidade de verificar a normalização.)
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Exercício Proposto}
 
-\subsection{Função Distribuição Acumulada de uma V.A.C}
+Seja $X$ uma variável aleatória contínua com densidade:
 
-Seja X uma variável aleatória contínua com função densidade de
-probabilidade f(x). Então, a função de distribuição acumulada(fda)
-de X é a função $F$ definida por:
-
-
-\begin{equation}\label{F}
-    F(X) = P(X\leq x_{i})= \int_{-\infty}^{x}f(s)ds
-\end{equation}
-
-
-\textbf{Exemplo 1}: Seja X uma variável aleatória contínua com
-função densidade de probabilidade dada por:
-
-$$
+\[
 f(x)=
-\left\{%
-\begin{array}{ll}
-   \frac{1}{2}x   & se \quad \hbox{$0 < x < 2$;} \\
-   0              & se \quad \hbox{c.c} \\
-\end{array}%
-\right.
-$$
-
-A função de distribuição acumulada F(x) é dada por:
-
-$$
-F(x) = \int^{x}_{0}\frac{1}{2}sds = \frac{1}{4}x^{2}
-$$
-
-$$
-F(x)=
-\left\{%
-\begin{array}{ll}
-    0                 & se \quad \hbox{$x < 0$;} \\
-   \frac{1}{4}x^{2}   & se \quad \hbox{$0 \leq x \leq 2$;} \\
-   1                  & se \quad \hbox{x > 2} \\
-\end{array}%
-\right.
-$$
-
-
-\subsection{Esperança de uma V.A.C}
-
-Seja X uma variável aleatória contínua com função densidade de
-probabilidade f, o valor esperado (ou esperança matemática,
-expectância ou média) de X é definido por:
-
-
-\begin{equation}\label{}
-    E(X)=\int_{-\infty}^{+\infty}xf(x)dx
-\end{equation}
-
-\newpage
-\subsection{Variância de uma V.A.C}
-
-Seja X uma variável aleatória contínua com média E(X), então a
-variância de X, anotada por V(X) é definida por:
-
-
-\begin{equation}\label{}
-V(X) = E(X^{2})-[E(X)^{2}]= \int_{-\infty}^{\infty}x^{2}f(x)dx
--\left[\int_{-\infty}^{+\infty}xf(x)dx\right]^{2}
-\end{equation}
-
-
-\textbf{Exemplo 1}: Seja X uma variável aleatória contínua com
-função densidade de probabilidade dada por:
-
-$$
-f(x)=
-\left\{%
-\begin{array}{ll}
-   \frac{1}{3}x^{3}   & se \quad \hbox{$0 < x < 2$;} \\
-   0                  & se \quad \hbox{c.c} \\
-\end{array}%
-\right.
-$$
-
-A Esperança da variável aleatória contínua X é dada por:
-
-$$
-E(X)= \int_{r} xf(x)dx = \int^{2}_{0}x\frac{1}{3}x^{3} =
-\int^{2}_{0}\frac{1}{3}x^{4} = \frac{x^{5}}{15}\mid^{2}_{0}=
-\frac{32}{15}
-$$
-
-A Variância da variável aleatória contínua X é dada por:
-
-$$
-E(X^{2})= \int_{r} x^{2}f(x)dx = \int^{2}_{0}x^{2}\frac{1}{3}x^{3}
-= \int^{2}_{0}\frac{1}{3}x^{5} = \frac{x^{6}}{18}\mid^{2}_{0}=
-\frac{32}{9}
-$$
-
-$$
-V(X) = E(X^{2})-[E(X)^{2}] =
-\frac{32}{9}-\left[\frac{32}{15}\right]^{2} = 12,64 - 2,133 =
-10,50
-$$
-
-\textbf{Exercício 1} Seja X uma variável aleatória contínua com
-função densidade de probabilidade de X.
-
-
-$$
-f(x)=
-\left\{%
-\begin{array}{ll}
-   cx^{2}      & se \quad \hbox{$0 < x < 3$} \\
-   0           & se \quad \hbox{c.c} \\
-\end{array}%
-\right.
-$$
+\begin{cases}
+cx^2, & 0<x<3,\\
+0, & \text{caso contrário}.
+\end{cases}
+\]
 
 \begin{enumerate}
-    \item Determine a constante c.
-    \item Calcular a função de distribuição acumulada de X.
-    \item Calcule a Esperança e variância da variável aleatória Z.
+    \item Determine a constante $c$.
+    \item Obtenha a função distribuição acumulada $F(x)$.
+    \item Calcule $P(1<X\leq 2)$.
+    \item Determine $E(X)$ e $V(X)$.
 \end{enumerate}
 
 
-\newpage
-Para calcular a constante temos que integrar essa função e igualar
-a 1.
+%------------------------------------------------------------------------------------------%
+\subsection{Propriedades da Esperança e Variância}
 
-$$
-\int_{-\infty}^{+\infty}f(x)dx = 1 \rightarrow
-\int_{0}^{3}cx^{2}dx = c\left[\frac{x^{3}}{3}\mid^{3}_{0}\right]
-\rightarrow 9c = 1 \rightarrow c = 1/9
-$$
+A esperança matemática é um operador fundamental na Teoria da Probabilidade,
+pois permite determinar o valor médio esperado de uma variável aleatória.
+Além disso, ela possui propriedades algébricas essenciais que simplificam
+cálculos em diversos modelos estatísticos. \vskip0.3cm
 
-substituindo o valor da constante na função temos
+Sejam $X$ e $Y$ variáveis aleatórias com esperança finita e seja $k\in\mathbb{R}$
+uma constante real. Então, valem as seguintes propriedades.
 
-$$
-f(x)=
-\left\{%
-\begin{array}{ll}
-   \frac{1}{9}x^{2}      & se \quad \hbox{$0 < x < 3$} \\
-   0           & se \quad \hbox{c.c} \\
-\end{array}%
-\right.
-$$
+\subsubsection{Propriedade 1: Esperança de uma constante}
 
-A função de distribuição acumulada F(x) é dada por:
-
-$$
-F(x) = \int^{x}_{-\infty}f(s)ds = \int^{x}_{0}\frac{1}{9}s^{2}ds =
-\frac{x^{3}}{27}
-$$
-
-$$
-F(x)=
-\left\{%
-\begin{array}{ll}
-    0                 & se \quad \hbox{$x < 0$;} \\
-   \frac{x^{3}}{27}   & se \quad \hbox{$0 \leq x \leq 3$;} \\
-   1                  & se \quad \hbox{$x \geq 3$} \\
-\end{array}%
-\right.
-$$
-
-A probabilidade $P(1 < x \leq 2)$ é dada por:
-
-$$
-P(a < X < b)=\int^{b}_{a}f(x)dx = F(b)-F(a)
-$$
-
-então
-
-$$P(1 < x \leq 2) = P(X \leq 2) - P(X \leq 1) = \int^{2}_{1}\frac{1}{9}x^{2}dx = \frac{x^{3}}{27}\mid^{2}_{1}=
-\frac{2^{3}}{27}-\frac{1^{3}}{27}=\frac{7}{27}$$
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\subsection{Propriedades da Esperança e Variância de V.A}
-
-\begin{enumerate}
-    \item[{(i)}] A média de uma constante é igual a própria constante.
-\end{enumerate}
-
-\begin{equation}\label{}
-E(k)=k
+\begin{equation}
+E(k)=k.
 \end{equation}
 
+\textbf{Demonstração:} Se $k$ é uma constante, então a variável aleatória assume sempre o mesmo valor. Pela definição da esperança para variáveis contínuas:
 
-\begin{enumerate}
-    \item[{(ii)}] Se multiplicarmos os valores de uma variável aleatória
-    por uma constante, a média fica multiplicada por esta
-    constante.
-\end{enumerate}
+\[
+E(k)=\int_{-\infty}^{+\infty} k\, f(x)\,dx.
+\]
 
+Como $k$ é constante, pode ser colocado fora da integral:
 
-\begin{equation}\label{}
-E(kX)=k \times E(X)
+\[
+E(k)=k\int_{-\infty}^{+\infty} f(x)\,dx.
+\]
+
+Mas toda função densidade satisfaz:
+
+\[
+\int_{-\infty}^{+\infty} f(x)\,dx=1.
+\]
+
+Logo:
+
+\[
+E(k)= k \times 1 = k.
+\]
+
+\subsubsection{Propriedade 2: Esperança de um múltiplo constante}
+
+\begin{equation}
+E(kX)=kE(X).
 \end{equation}
 
+\textbf{Demonstração:} Pela definição:
 
-\begin{enumerate}
-    \item[{(iii)}] Se os valores de uma variável aleatória forem somados a
-    uma constante a média ficará igualmente somada dessa constante
-\end{enumerate}
+\[
+E(kX)=\int_{-\infty}^{+\infty} (kx)\, f(x)\,dx.
+\]
 
+Colocando $k$ em evidência:
 
-\begin{equation}\label{}
-E(X\pm k)=E(X)\pm k
+\[
+E(kX)=k\int_{-\infty}^{+\infty} x f(x)\,dx.
+\]
+
+Mas o termo integral é exatamente $E(X)$:
+
+\[
+E(kX)=kE(X).
+\]
+
+\subsubsection{Propriedade 3: Esperança de uma soma com constante}
+
+\begin{equation}
+E(X+k)=E(X)+k.
 \end{equation}
 
+\textbf{Demonstração:}
 
-\begin{enumerate}
-    \item[{(iv)}] A média de uma soma ou diferença de duas variáveis
-    aleatórias é igual a soma ou diferença das médias dessas
-    variáveis.
-\end{enumerate}
+Temos:
+
+\[
+E(X+k)=\int_{-\infty}^{+\infty} (x+k)\, f(x)\,dx.
+\]
+
+Separando a integral:
+
+\[
+E(X+k)=\int_{-\infty}^{+\infty} x f(x)\,dx
++\int_{-\infty}^{+\infty} k f(x)\,dx.
+\]
+
+O primeiro termo é $E(X)$ e o segundo é $k$, pois:
+
+\[
+\int_{-\infty}^{+\infty} f(x)\,dx=1.
+\]
+
+Portanto:
+
+\[
+E(X+k)=E(X)+k.
+\]
 
 
-\begin{equation}\label{}
-E(X \pm Y)= E(X)\pm E(Y)
+\subsubsection{Propriedade 4: Linearidade da esperança}
+
+\begin{equation}
+E(X\pm Y)=E(X)\pm E(Y).
 \end{equation}
 
+\textbf{Demonstração:} Considerando a esperança de uma soma:
 
-\begin{enumerate}
-    \item[{(v)}] A média do produto de duas variáveis
-    aleatórias \textbf{independentes} é igual ao produto das
-    médias dessas variáveis.
-\end{enumerate}
+\[
+E(X+Y)=\int_{-\infty}^{+\infty}(x+y)\,f_{X,Y}(x,y)\,dx\,dy.
+\]
+
+Distribuindo:
+
+\[
+E(X+Y)=\int\int x f_{X,Y}(x,y)\,dx\,dy
++\int\int y f_{X,Y}(x,y)\,dx\,dy.
+\]
+
+O primeiro termo corresponde a $E(X)$ e o segundo a $E(Y)$:
+
+\[
+E(X+Y)=E(X)+E(Y).
+\]
+
+O caso da diferença é análogo:
+
+\[
+E(X-Y)=E(X)-E(Y).
+\]
 
 
-\begin{equation}\label{}
-E(XY)= E(X) \times E(Y)
+\subsubsection{Propriedade 5: Esperança do produto de variáveis independentes}
+
+Se $X$ e $Y$ são independentes, então:
+
+\begin{equation}
+E(XY)=E(X)\,E(Y).
 \end{equation}
 
+\textbf{Demonstração:} Pela definição:
+
+\[
+E(XY)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}
+xy\,f_{X,Y}(x,y)\,dx\,dy.
+\]
+
+Se $X$ e $Y$ são independentes, então:
+
+\[
+f_{X,Y}(x,y)=f_X(x)\,f_Y(y).
+\]
+
+Logo:
+
+\[
+E(XY)=\int\int xy\,f_X(x)f_Y(y)\,dx\,dy.
+\]
+
+Separando os termos:
+
+\[
+E(XY)=
+\left(\int_{-\infty}^{+\infty} x f_X(x)\,dx\right)
+\left(\int_{-\infty}^{+\infty} y f_Y(y)\,dy\right).
+\]
+
+Mas:
+
+\[
+\int x f_X(x)\,dx=E(X),
+\qquad
+\int y f_Y(y)\,dy=E(Y).
+\]
+
+Portanto:
+
+\[
+E(XY)=E(X)\,E(Y).
+\]
+\vskip0.3cm
+
+Essas propriedades mostram que a esperança é um operador linear e que,
+sob independência, o valor esperado do produto se decompõe no produto das esperanças,
+um resultado central em Estatística e Inferência.
+
+\subsubsection{Propriedades da Variância}
+
+Além da esperança, outra medida fundamental é a variância, que quantifica
+o grau de dispersão dos valores de uma variável aleatória em torno de sua média.
+
+\vskip0.3cm
+
+Recordemos que, para uma variável aleatória contínua $X$, a variância é definida por:
+
+\[
+V(X)=E\big[(X-E(X))^2\big].
+\]
+
+Uma forma equivalente muito utilizada é:
+
+\[
+V(X)=E(X^2)-[E(X)]^2.
+\]
+
+A seguir apresentamos algumas propriedades importantes.
+
+\subsubsection{Propriedade 1: Variância de uma constante}
+
+\begin{equation}
+V(k)=0.
+\end{equation}
+
+\textbf{Demonstração:}
+
+Se $k$ é constante, então:
+
+\[
+E(k)=k.
+\]
+
+Logo:
+
+\[
+V(k)=E\big[(k-E(k))^2\big].
+\]
+
+Mas como $E(k)=k$, temos:
+
+\[
+V(k)=E\big[(k-k)^2\big]=E(0)=0.
+\]
+
+Portanto, uma constante não apresenta dispersão.
+
+
+
+\subsubsection{Propriedade 2: Variância de um múltiplo constante}
+
+\begin{equation}
+V(kX)=k^2V(X).
+\end{equation}
+
+\textbf{Demonstração:} Pela definição:
+
+\[
+V(kX)=E\big[(kX-E(kX))^2\big].
+\]
+
+Usando a propriedade da esperança:
+
+\[
+E(kX)=kE(X).
+\]
+
+Substituindo:
+
+\[
+V(kX)=E\big[(kX-kE(X))^2\big].
+\]
+
+Fatorando $k$:
+
+\[
+V(kX)=E\big[k^2(X-E(X))^2\big].
+\]
+
+Como $k^2$ é constante:
+
+\[
+V(kX)=k^2E\big[(X-E(X))^2\big].
+\]
+
+Mas o termo interno é a variância de $X$:
+
+\[
+V(kX)=k^2V(X).
+\]
+
+
+\subsubsection{Propriedade 3: Variância de uma soma com constante}
+
+\begin{equation}
+V(X+k)=V(X).
+\end{equation}
+
+\textbf{Demonstração:} Temos:
+
+\[
+V(X+k)=E\big[(X+k-E(X+k))^2\big].
+\]
+
+Pela propriedade da esperança:
+
+\[
+E(X+k)=E(X)+k.
+\]
+
+Logo:
+
+\[
+V(X+k)=E\big[(X+k-(E(X)+k))^2\big].
+\]
+
+Cancelando os termos $k$:
+
+\[
+V(X+k)=E\big[(X-E(X))^2\big].
+\]
+
+Portanto:
+
+\[
+V(X+k)=V(X).
+\]
+
+Isso mostra que adicionar uma constante desloca a variável,
+mas não altera sua dispersão.
+
+
+
+\subsubsection{Propriedade 4: Variância da soma de duas variáveis}
+
+Para quaisquer variáveis aleatórias $X$ e $Y$:
+
+\begin{equation}
+V(X+Y)=V(X)+V(Y)+2\,\mathrm{Cov}(X,Y),
+\end{equation}
+
+onde $\mathrm{Cov}(X,Y)$ é a covariância definida por:
+
+\[
+\mathrm{Cov}(X,Y)=E(XY)-E(X)E(Y).
+\]
+
+\textbf{Demonstração:} Pela definição:
+
+\[
+V(X+Y)=E\big[(X+Y-E(X+Y))^2\big].
+\]
+
+Como:
+
+\[
+E(X+Y)=E(X)+E(Y),
+\]
+
+então:
+
+\[
+V(X+Y)=E\big[(X+Y-E(X)-E(Y))^2\big].
+\]
+
+Reescrevendo:
+
+\[
+V(X+Y)=E\big[((X-E(X))+(Y-E(Y)))^2\big].
+\]
+
+Expandindo o quadrado:
+
+\[
+V(X+Y)=E\big[(X-E(X))^2+(Y-E(Y))^2
++2(X-E(X))(Y-E(Y))\big].
+\]
+
+Aplicando linearidade da esperança:
+
+\[
+V(X+Y)=E[(X-E(X))^2]+E[(Y-E(Y))^2]
++2E[(X-E(X))(Y-E(Y))].
+\]
+
+Reconhecendo:
+
+\[
+E[(X-E(X))^2]=V(X),
+\qquad
+E[(Y-E(Y))^2]=V(Y),
+\]
+
+e o termo cruzado é a covariância:
+
+\[
+E[(X-E(X))(Y-E(Y))]=\mathrm{Cov}(X,Y).
+\]
+
+Logo:
+
+\[
+V(X+Y)=V(X)+V(Y)+2\,\mathrm{Cov}(X,Y).
+\]
+
+
+
+\subsubsection{Caso Especial: Soma de variáveis independentes}
+
+Se $X$ e $Y$ são independentes, então:
+
+\[
+\mathrm{Cov}(X,Y)=0.
+\]
+
+Assim:
+
+\begin{equation}
+V(X+Y)=V(X)+V(Y).
+\end{equation}
+
+A variância de uma soma de variáveis independentes é igual à soma das variâncias,
+um resultado central em Estatística e Probabilidade.
+%------------------------------------------------------------------------------------------%
 
 
 
 
+%------------------------------------------------------------------------------------------%
 \newpage
 \section{Principais Distribuições de Probabilidade}
  
- 
+
 Uma distribuição de probabilidade é um modelo matemático que relaciona um certo valor da variável aleatória em estudo com a sua probabilidade de ocorrência. De conformidade com a natureza da variável aleatória, a distribuição pode ser classificada em discreta ou contínua.
  
 \subsection{Distribuição Binomial}
