@@ -1,106 +1,119 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%  Language Science Press Master File          %%%
 %%%         Edited Volumes                       %%%
-%%%     Follow the instructions below            %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Everything following a % is ignored
-% Some lines start with %. Remove the % to include them
-
 
 \RequirePackage{scrlfile}
 \ReplacePackage{scrpage2}{scrlayer-scrpage}
 
-\documentclass[output=book,collection,colorlinks,citecolor=green]{langscibook}
+\documentclass[
+  output=book,
+  collection,
+  colorlinks,
+  citecolor=green
+]{langscibook}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Include all additional packages and commands here
-\usepackage{caption}
-\usepackage{subcaption}
+%%%                 PACOTES                      %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Codificação (pdfLaTeX)
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+
+% Matemática
+\usepackage{amsmath, amsfonts, amsthm}
+
+% Figuras e gráficos
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Tabelas
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{array}
+\usepackage{float}
+
+% Legendas
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Ambientes verbatim
 \usepackage{fancyvrb}
+
+% Controle de quadros
+\usepackage{trivfloat}
+
+% Hiperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=green,
+    filecolor=magenta,
+    urlcolor=blue
+}
+
+% Arquivos locais
 \input{localmetadata.tex}
 \input{localpackages.tex}
 \input{localhyphenation.tex}
 \input{localcommands.tex}
 \addbibresource{localbibliography.bib}
-\usepackage{trivfloat}
-\usepackage{amsmath,amsfonts,amsthm}
-\usepackage{booktabs}
-\usepackage{multirow}
-\usepackage{float} 
-\usepackage{scrlayer-scrpage}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-%\usepackage[portuguese]{babel}
-\usepackage{hyperref} 
+
+% Pacote personalizado (se for seu)
 \usepackage{diego}
-\usepackage{polyglossia}
-\setmainlanguage{portuguese}
-\usepackage{tikz}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-\usepackage{tabularx} 
-\usepackage{threeparttable}  % Para notas e rodapé de tabelas
-\usepackage{array}            % Mais controle sobre colunas
-
-
-% Configurações para cores dos links
-\hypersetup{
-    colorlinks=true,       % Ativa cores para os links
-    linkcolor=black,       % Cor dos links internos (e.g., sumário)
-    citecolor=green,       % Cor das citações
-    filecolor=magenta,     % Cor dos links para arquivos
-    urlcolor=blue          % Cor dos links para URLs
-}
-
-%\usepackage{monografia}
-%\renewcommand{\chapter}{Capitulo}
-%\renewcommand{\contentsname}{Índice}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%             Frontmatter                      %%%
+%%%             FRONTMATTER                      %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \trivfloat{quadro}
-\floatstyle{plaintop} % Forçar posição da legenda para o topo
-\restylefloat{quadro} % Forçar posição da legenda para o topo
-\renewcommand{\listquadroname}{Lista de Quadros} % Forçar texto na Lista de Quadros
+\floatstyle{plaintop}
+\restylefloat{quadro}
+\renewcommand{\listquadroname}{Lista de Quadros}
+
 \setcounter{tocdepth}{2}
 
 \begin{document}
-\input{localcommands.tex} 
+
 \maketitle
 \frontmatter
-\currentpdfbookmark{Contents}{name} % adds a PDF bookmark
+\currentpdfbookmark{Sumário}{contents}
 \tableofcontents
 \listoftables
 \listoffigures
+
 \include{chapters/prefaceEd}
 \include{chapters/acknowledgments}
-\include{chapters/abbreviations} 
+\include{chapters/abbreviations}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                MAINMATTER                    %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \mainmatter
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%             Chapters                         %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\setcounter{chapter}{0} \include{chapters/Cap1L}  
-\setcounter{chapter}{1} \include{chapters/Cap2L}
-\setcounter{chapter}{2} \include{chapters/Cap3L}
-\setcounter{chapter}{3} \include{chapters/Cap4L}
-\setcounter{chapter}{4} \include{chapters/Cap5L}
-\setcounter{chapter}{5} \include{chapters/Cap6L}
-\setcounter{chapter}{6} \include{chapters/Cap7L}
-\setcounter{chapter}{7} \include{chapters/Cap8L}
-\setcounter{chapter}{8} \include{chapters/Cap9L}
-% copy the lines above and adapt as necessary
+\include{chapters/Cap1L}
+\include{chapters/Cap2L}
+\include{chapters/Cap3L}
+\include{chapters/Cap4L}
+\include{chapters/Cap5L}
+\include{chapters/Cap6L}
+\include{chapters/Cap7L}
+\include{chapters/Cap8L}
+\include{chapters/Cap9L}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%             Backmatter                       %%%
+%%%                BACKMATTER                    %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% There is normally no need to change the backmatter section
-\input{localseealso.tex} 
+
+\input{localseealso.tex}
 \input{backmatter.tex}
+
 \end{document}
