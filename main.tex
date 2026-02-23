@@ -8,8 +8,10 @@
 
 \documentclass[
   output=book,
-  colorlinks,
-  citecolor=green,
+  colorlinks=false,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue,
   biblatexoptions={style=langsci-unified, citestyle=authoryear-comp}
 ]{langscibook}
 
@@ -76,6 +78,43 @@
 
 \begin{document}
 \maketitle
+
+%---------------- Ficha ---------------------%
+\clearpage
+\thispagestyle{empty}
+
+
+
+
+\begin{center}
+\fbox{
+\begin{minipage}{0.85\textwidth}
+\small
+
+Valente, Mário Diego Rocha. 
+
+\hspace*{2em}Fundamentos de Estatística na Gestão Pública / Mário Diego Rocha Valente, Geovana Raiol Pires, Heliton Ribeiro Tavares. – 1. ed. – [Belém] : Edição do Autor, 2026.
+
+\hspace*{1em}[290] p. : il. ; 23 cm.
+
+\hspace*{1em}Inclui referências bibliográficas e índice.
+\hspace*{1em}ISBN xxx-x-xxxxx-xx-x
+
+\hspace*{1em}1. Estatística. 2. Administração pública. 3. Políticas públicas – Análise quantitativa. 4. Métodos estatísticos. I. Pires, Geovana Raiol. II. Tavares, Heliton Ribeiro. III. Título.
+
+\hfill CDD 519.5
+
+\end{minipage}
+}
+\end{center}
+
+\clearpage
+
+
+
+%---------------------------------------------%
+
+
 \frontmatter
 
 \currentpdfbookmark{Sumário}{contents}
@@ -101,7 +140,7 @@
 \include{chapters/Cap6L}
 \include{chapters/Cap7L}
 \include{chapters/Cap8L}
-\include{chapters/Cap9L}
+%\include{chapters/Cap9L}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                BACKMATTER                    %%%

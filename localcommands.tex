@@ -1,23 +1,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%        CONFIGURAÇÕES DE IDIOMA              %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Traduções padrão via Babel
-\addto\captionsportuguese{
-  \renewcommand{\chaptername}{Capítulo}
-  \renewcommand{\contentsname}{Sumário}
-  \renewcommand{\listfigurename}{Lista de Figuras}
-  \renewcommand{\listtablename}{Lista de Tabelas}
-  \renewcommand{\bibname}{Referências Bibliográficas}
-  \renewcommand{\figurename}{Figura}
-  \renewcommand{\tablename}{Tabela}
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   PREFIXO DE CAPÍTULO PARA LANGSCIBOOK      %%%
+%%%        CONFIGURAÇÃO DEFINITIVA DE CAPÍTULO   %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \AtBeginDocument{
+
+  % Prefixo usado pela langscibook
   \renewcommand{\lsChapterPrefix}{Capítulo}
+
+  % Garantia extra (fallback)
+  \renewcommand{\chaptername}{Capítulo}
+
 }

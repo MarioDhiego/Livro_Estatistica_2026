@@ -1,220 +1,671 @@
 \chapter{MEDIDAS ESTATÍSTICAS}
 \section{Introdução}
 
-Algumas medidas de suma importância para a estatística são os somatórios e produtórios. Suas aplicabilidades vão desde a estatística descritiva, análise de variância, ao desenvolvimento de funções. Estes temas serão tratados a seguir.
+Diversas medidas fundamentais da Estatística apoiam-se em operações algébricas sistematizadas, especialmente os somatórios e produtórios. Essas notações permitem simplificar expressões extensas e são amplamente utilizadas na estatística descritiva, inferencial, análise de variância, teoria da probabilidade e modelagem matemática. \vskip0.3cm
 
+Neste capítulo, apresentam-se as notações formais, propriedades algébricas e aplicações dessas operações, bem como conceitos derivados como proporções, razões, taxas e coeficientes.
+
+\section{Somatório}
 \subsection{Somatório Simples}
 
-Muitos dos processos estatísticos exigem o cálculo da soma. Para simplificar a representação da operação de adição nas expressões algébricas, utiliza-se a notação representada pela letra grega sigma maiúsculo ($\Sigma$), na qual o somatório foi proposto para simplificar a representação da soma.\vskip0.3cm
+Grande parte dos procedimentos estatísticos envolve operações de soma. Para representar de forma compacta a adição de vários termos, utiliza-se a notação da letra grega sigma maiúscula ($\Sigma$).  \vskip0.3cm
 
+A expressão
 
-Assim, $\sum_{i=1}^{n}x_{i}$  lê-se  somatório de x índice i, com i variando de 1 até n, em que n é a ordem da ultima parcela da soma ou o limite superior (LS) do somatório, i=1 é a ordem da primeira parcela da soma ou o limite inferior (LI), e i é o índice que está indexando os valores da variável  X (ou letras como Y, Z, W podem ser utilizadas).\vskip0.3cm
+\[
+\sum_{i=1}^{n} x_i
+\]
 
-As letras do meio do alfabeto são geralmente usadas como índices, letras do final do alfabeto são comumente utilizadas como variáveis; e letras do inicio do alfabeto são freqüentemente empregadas para representar eventos em cálculo de probabilidades. Na verdade, o somatório nada mais é do que uma notação simplificada de várias somas.\vskip0.3cm
-
-
-\newpage
-As principais representações dos somatórios são:
-
-$$\sum_{i=1}^{n}x_{i} = (x_{1}+x_{2}+\ldots+x_{n}) \ \ Soma \ \ Simples $$
-
-$$\sum_{i=1}^{n}x_{i}^{2} = (x_{1}^{2}+x_{2}^{2}+\ldots+x_{n}^{2}) \ \ Soma \ de \ Quadrados$$
-
-
-$$ \left(\sum_{i=1}^{n}x_{i}\right)^{2}=(x_{i}+x_{2}+\ldots+x_{n})^{2} \ \ Quadrado \ da \ Soma$$
-
-$$ \sum_{i=1}^{n}x_{i}y_{j}= \left( (x_{1}y_{1})+(x_{2}y_{2})+\ldots+(x_{n}y_{n}) \right) \ \ Soma \ de \ Produtos$$
-
-$$ \sum_{i=1}^{n}x_{i} \sum_{j=1}^{m}y_{j}= (x_{1}+x_{2}+\ldots+x_{n})(y_{1}+y_{2}+\ldots+y_{n}) \ \ Produto \ da \ Soma$$
-
-
-\subsubsection{Proriedades do Somatório Simples}
-
-\begin{enumerate}
-  \item [{a})] O número de termos (NT) de um somatório refere-se à diferença entre os limites superior (ls) e inferior (li) acrescido da unidade, ou adicionalmente decrescido de r, quando o somatório estiver sujeito a r restrições.
-\begin{equation}\label{}
-    NT=(LS-LI)+1-r
-\end{equation}
-  \item [{b})] O somatório de uma constante k refere-se ao produto de NT por k.
-$$\sum_{i=1}^{n}k=[(n-1)+1]k = nk $$
-ou
-$$ \sum_{i=1}^{n}k = (k+k+\ldots+k) = nk $$
-\newpage
-  \item [{c})] O Somatório do produto de uma constante por uma variável que depende do somatório é igual ao produto da constate pelo somatório da variável, ou seja,
-$$ \sum_{i=1}^{n}(kx_{i}) = (kx_{1}+kx_{2}+\ldots+kx_{n}) = k \left( \sum_{i=1}^{n}x_{i} \right)$$
-      \item [{d})] Propriedade Distributiva com relação à adição, isto é
-$$ \sum_{i=1}^{n}(x_{i}+y_{j}) = \left( \sum_{i=1}^{n}x_{i} \right) + \left( \sum_{i=1}^{n}y_{i} \right) $$
-  \item [{e})] Propriedade Distributiva com relação à subtração, isto é
-$$ \sum_{i=1}^{n}(x_{i}-y_{j}) = \left( \sum_{i=1}^{n}x_{i}\right) - \left( \sum_{i=1}^{n}y_{i}  \right) $$
-  \item [{f})] O Quadrado da soma é diferente da soma dos quadrados, ou seja,
-  $$\left(\sum_{i=1}^{n}x_{i}\right)^{2} \neq  \left( \sum_{i=1}^{n}x_{i}^{2} \right)$$
-  \item [{g})] O Produto de duas somas é diferente da soma dos produtos, isto é
-  $$ \left[ \left(\sum_{i=1}^{n}x_{i} \right) \times \left(\sum_{i=1}^{n}y_{i} \right) \right] \neq  \left( \sum_{i=1}^{n} (x_{i} \times y_{i})\right) $$
-  \item [{h})] O somatório de um quociente é diferente do quociente de duas somas.
-$$  \left( \sum_{i=1}^{n} \frac{x_{i}}{y_{i}} \right) \neq \left( \frac{\sum_{i=1}^{n}x_{i}}{\sum_{i=1}^{n}y_{i}} \right) $$
-  %\item [{i})] O somatório duplo de um produto é igual ao produto dos somatórios tomados separadamente.
-  %$$   \left( \sum_{i=1}^{n} \sum_{j=1}^{m}x_{i}y_{j} \right)  =  \left( \sum_{i=1}^{n}x_{i} \times \sum_{j=1}^{m}y_{i} %\right) $$
-\end{enumerate}
+lê-se: "somatório de $x_i$, com $i$ variando de 1 até $n$". 
 
 \newpage
+Onde:
+
+\begin{itemize}
+\item $i$ é o índice;
+\item $1$ é o limite inferior (LI);
+\item $n$ é o limite superior (LS);
+\item $n$ corresponde ao número total de termos.
+\end{itemize}
+
+Assim, a notação equivale a:
+
+\[
+\sum_{i=1}^{n} x_i = x_1 + x_2 + \cdots + x_n
+\]
+
+O somatório é, portanto, uma notação compacta que substitui a escrita repetitiva de somas sucessivas.
+
+\subsubsection{Principais Representações}
+
+\[
+\sum_{i=1}^{n} x_i^2 = x_1^2 + x_2^2 + \cdots + x_n^2
+\]
+
+\[
+\left( \sum_{i=1}^{n} x_i \right)^2 \neq \sum_{i=1}^{n} x_i^2
+\]
+
+\[
+\sum_{i=1}^{n} x_i y_i = x_1y_1 + x_2y_2 + \cdots + x_ny_n
+\]
+
+\[
+\left( \sum_{i=1}^{n} x_i \right)
+\left( \sum_{j=1}^{m} y_j \right)
+\]
+
+%-------------------------------------------------------------------------------------------------------%
+\newpage
+\subsubsection{Propriedades do Somatório}
+
+Apresentam-se a seguir demonstrações formais, porém concisas, das propriedades fundamentais do somatório. Tais demonstrações reforçam a base algébrica utilizada posteriormente em estatística descritiva e inferencial.
+
+\paragraph{Soma de uma Constante: Deseja-se demonstrar que} 
+
+\[
+\sum_{i=1}^{n} k = nk
+\]
+
+Pela definição de somatório:
+
+\[
+\sum_{i=1}^{n} k = k + k + \cdots + k
+\]
+
+Como existem $n$ termos iguais a $k$, temos:
+
+\[
+= nk
+\]
+
+\hfill $\square$
+
+\paragraph{Constante Multiplicativa}
+
+\[
+\sum_{i=1}^{n} kx_i = k \sum_{i=1}^{n} x_i
+\]
+
+Pela definição:
+
+\[
+\sum_{i=1}^{n} kx_i = kx_1 + kx_2 + \cdots + kx_n
+\]
+
+Colocando $k$ em evidência:
+
+\[
+= k(x_1 + x_2 + \cdots + x_n)
+\]
+
+Logo,
+
+\[
+\sum_{i=1}^{n} kx_i = k \sum_{i=1}^{n} x_i
+\]
+
+\hfill $\square$
+
+\paragraph{Propriedade Distributiva (adição)} 
+
+\[
+\sum_{i=1}^{n} (x_i + y_i)
+=
+\sum_{i=1}^{n} x_i +
+\sum_{i=1}^{n} y_i
+\]
+
+Pela definição:
+
+\[
+(x_1+y_1) + (x_2+y_2) + \cdots + (x_n+y_n)
+\]
+
+Reorganizando os termos:
+
+\[
+= (x_1 + x_2 + \cdots + x_n)
++
+(y_1 + y_2 + \cdots + y_n)
+\]
+
+Logo,
+
+\[
+\sum_{i=1}^{n} (x_i + y_i)
+=
+\sum_{i=1}^{n} x_i +
+\sum_{i=1}^{n} y_i
+\]
+
+\hfill $\square$
+
+\paragraph{Propriedade distributiva (subtração)}
+
+
+\[
+\sum_{i=1}^{n} (x_i - y_i)
+=
+\sum_{i=1}^{n} x_i -
+\sum_{i=1}^{n} y_i
+\]
+
+A demonstração segue o mesmo raciocínio da propriedade anterior.
+
+\hfill $\square$
+
+\paragraph{Soma dos desvios em relação à média}
+
+\[
+\sum_{i=1}^{n} (x_i - \bar{x}) = 0
+\]
+
+Sabemos que:
+
+\[
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+\]
+
+Então,
+
+\[
+\sum_{i=1}^{n} (x_i - \bar{x})
+=
+\sum_{i=1}^{n} x_i
+-
+\sum_{i=1}^{n} \bar{x}
+\]
+
+Como $\bar{x}$ é constante:
+
+\[
+=
+\sum_{i=1}^{n} x_i
+-
+n\bar{x}
+\]
+
+Substituindo a definição de média:
+
+\[
+=
+\sum_{i=1}^{n} x_i
+-
+n \left( \frac{1}{n} \sum_{i=1}^{n} x_i \right)
+\]
+
+\[
+=
+\sum_{i=1}^{n} x_i
+-
+\sum_{i=1}^{n} x_i
+= 0
+\]
+
+\hfill $\square$
+
+\paragraph{O quadrado da soma não é a soma dos quadrados}
+
+
+\[
+\left(\sum_{i=1}^{n} x_i\right)^2
+\neq
+\sum_{i=1}^{n} x_i^2
+\]
+
+Expandindo o quadrado da soma:
+
+\[
+(x_1 + x_2 + \cdots + x_n)^2
+\]
+
+\[
+=
+\sum_{i=1}^{n} x_i^2
++
+2 \sum_{i<j} x_i x_j
+\]
+
+Observa-se a presença dos termos cruzados $2x_i x_j$, que não aparecem na soma dos quadrados.
+
+Logo,
+
+\[
+\left(\sum_{i=1}^{n} x_i\right)^2
+=
+\sum_{i=1}^{n} x_i^2
++
+2 \sum_{i<j} x_i x_j
+\]
+
+Portanto, as duas expressões não são equivalentes.
+
+\hfill $\square$
+%-------------------------------------------------------------------------------------------------------%
 \subsection{Somatório Duplo}
 
-É muito comum quando trabalhamos com matrizes ou tabelas de dupla entrada necessitarmos calcular somatórios em relação as suas linhas e/ou colunas. Surgem então dois índices, um para linha e outro para coluna, com isso vem a noção de somatório duplo. \vskip0.3cm
+Em diversas aplicações estatísticas, especialmente quando se trabalha com matrizes ou tabelas de dupla entrada, torna-se necessário realizar somas em duas dimensões: linhas e colunas. \vskip0.3cm
+
+A notação formal do somatório duplo é:
+
+\[
+\sum_{i=1}^{n} \sum_{j=1}^{m} x_{ij}
+\]
+
+onde:
+
+\begin{itemize}
+\item $i$ representa o índice das linhas ($i = 1,2,\ldots,n$);
+\item $j$ representa o índice das colunas ($j = 1,2,\ldots,m$);
+\item $x_{ij}$ é o elemento localizado na linha $i$ e coluna $j$.
+\end{itemize}
+
+Essa notação indica que a priori, para cada valor fixo de $i$, realiza-se inicialmente a soma em relação a $j$, e posteriormente soma-se o resultado em relação a $i$.
+
+\subsubsection*{Exemplo Numérico}
+
+Considere a seguinte tabela de dupla entrada:
+
+\begin{center}
+\begin{tabular}{c|ccc}
+\hline
+ & C$_1$ & C$_2$ & C$_3$ \\
+\hline
+L$_1$ & 2 & 4 & 6 \\
+L$_2$ & 1 & 3 & 5 \\
+\hline
+\end{tabular}
+\end{center}
+
+Aqui, temos:
+
+\[
+x_{11}=2, \quad x_{12}=4, \quad x_{13}=6
+\]
+\[
+x_{21}=1, \quad x_{22}=3, \quad x_{23}=5
+\]
+
+O somatório duplo total é:
+
+\[
+\sum_{i=1}^{2} \sum_{j=1}^{3} x_{ij}
+\]
+
+Calculando passo a passo: \vskip0.3cm
+
+Primeiro, somam-se as colunas para cada linha:
+
+\[
+\sum_{j=1}^{3} x_{1j} = 2+4+6 = 12
+\]
+
+\[
+\sum_{j=1}^{3} x_{2j} = 1+3+5 = 9
+\]
+
+Depois, soma-se em relação às linhas:
+
+\[
+\sum_{i=1}^{2} (12, 9) = 12 + 9 = 21
+\]
+
+Logo,
+
+\[
+\sum_{i=1}^{2} \sum_{j=1}^{3} x_{ij} = 21
+\]
+
+Observa-se que esse resultado equivale à soma de todos os elementos da tabela.
+
+\subsubsection*{Interpretação Estatística}
+
+O somatório duplo é amplamente utilizado em:
+
+\begin{itemize}
+\item cálculo de totais em tabelas de contingência;
+\item soma de quadrados na análise de variância;
+\item cálculo de covariâncias;
+\item modelagem matricial e álgebra linear.
+\end{itemize}
+
+Uma propriedade importante é que, quando os limites são finitos, a ordem dos somatórios pode ser invertida:
+
+\[
+\sum_{i=1}^{n} \sum_{j=1}^{m} x_{ij}
+=
+\sum_{j=1}^{m} \sum_{i=1}^{n} x_{ij}
+\]
+
+Essa propriedade decorre da comutatividade e associatividade da adição.
 
 
-A representação de somatório duplo é:
+%----------------------------------------------------------------------------------------------%
+\section{Produtório}
 
-\begin{equation}
-    \sum_{i=1}^{n} \sum_{j=1}^{m} x_{i}
-\end{equation}
+O produtório utiliza a letra grega pi maiúscula ($\Pi$) para representar multiplicações sucessivas de termos indexados. Trata-se do análogo multiplicativo do somatório. \vskip0.3cm
 
-Acontece com muita freqüência, na apresentação de dados estatísticos, o emprego de tabelas de dupla entrada, nas quais os valores são expressos em função de duas variáveis: uma variável linha e uma coluna. \vskip0.3cm
+A notação
 
-Desta maneira pode-se representar: estado civil (solteiro, casado, outros) versus o gênero (masculinoe feminino), as faixas etárias versus suas rendas, componentes versus modelos, etc.\vskip0.3cm
+\[
+\prod_{i=1}^{n} x_i
+\]
 
-Assim, a indicação da soma dos elementos das tabelas de dupla entrada pode ser feita mediante o emprego do somatório duplo.\vskip0.3cm
+lê-se: “produtório de $x_i$, com $i$ variando de 1 até $n$”, e equivale a:
 
+\[
+x_1 \times x_2 \times \cdots \times x_n
+\]
 
-\newpage
-\textbf{Exercícios de Somatório:}
+Assim como o somatório, o produtório constitui uma forma compacta de representar operações repetidas.
 
-\begin{enumerate}
-\item [{1)}] Sabe-se que: \\
-$X_{1}=3$ $X_{2}=4$ $X_{3}=8$ $X_{4}=7$ $X_{5}=6$ \\
-$Y_{1}=3$ $Y_{2}=8$ $Y_{3}=2$ $Y_{4}=5$ $Y_{5}=6$ \\
- Calcule:
-\begin{enumerate}
-\item [{a)}] $\sum_{i=1}^{5}X_{i}$
-\item [{b)}] $\sum_{i=1}^{5} 4 X_{i}$
-\item [{c)}] $\sum_{i=3}^{5} (X_{i}+6)$
-\item [{d)}] $\sum_{i=2}^{4} (2X_{i}-3)$
-\item [{e)}] $\sum_{i=1}^{5}X_{i}Y_{i}$
-\item [{f)}] $\sum_{i=1}^{5}(X_{i}+Y_{i})$
-\end{enumerate}
-\item [{2)}] Se o $\sum_{i=1}^{6}X_{i}=-4$ e $\sum_{i=1}^{6}X_{i}^{2}=10$, calcular as seguintes expressões
-\begin{enumerate}
-\item [{a)}] $\sum_{i=1}^{6}(2X_{i}+3)$
-\item [{b)}] $\sum_{i=1}^{6}(X_{i}-1)$
-\item [{c)}] $\sum_{i=1}^{6}(X_{i}-5)^{2}$
-\end{enumerate}
-\item [{3)}] Dados $\sum_{i=1}^{4}X_{i}=7$, $\sum_{i=1}^{4}Y_{i}=-3$ e $\sum_{i=1}^{4}X_{i}Y_{i}=5$, determinar:
-\begin{enumerate}
-\item [{a)}] $\sum_{i=1}^{4}(2X_{i}+5X_{i})$
-\item [{b)}] $\sum_{i=1}^{4}(X_{i}-3)(2Y_{i}+1)$
-\end{enumerate}
-\item [{4)}] Desenvolver os termos de cada uma das seguintes somas indicadas:
-\begin{enumerate}
-\item [{a)}] $\sum_{i=1}^{n}a$
-\item [{b)}] $ \sum_{i-1}^{6}X_{i}^{2}$
-\item [{c)}] $\sum_{i=1}^{4}(Y_{1}-3)^{2} $
-\item [{d)}] $\sum_{i=1}^{5}F_{i}X_{i} $
-\item [{e)}] $\sum_{i=1}^{4}(X_{i}+Y_{i}) $
-\item [{f)}] $\sum_{i=1}^{4}(\frac{X_{1}}{Y_{i}}-1)^{2} $
-\item [{g)}] $\sum_{i=1}^{3}(X_{i}-a)$
-\item [{h)}] $\sum_{i=1}^{5}f_{1}(Y_{i}-a)^{2}$
-\end{enumerate}
-\item [{5)}] Se $Z_{1}=X_{1}+Y_{1}$ e $Z_{2}=X_{2}+Y_{2} \ldots Z_{n}=X_{n}+Y_{n}$, Provar que $\bar{Z}=\bar{X}+\bar{Y}$
-\item [{6)}] Demonstrar que:
-\begin{enumerate}
-\item [{a)}] $\sum_{i=1}^{n}(X_{i}-\bar{X})=0$
-\item [{b)}] $\sum_{i=1}^{n}(X_{i}-a)= Minimo$
-\item [{c)}] $\sum_{i=1}^{n}X_{i}(X_{i}-\bar{X})=\sum_{i=1}^{n}(X_{i}-\bar{X})^{2}$
-\item [{d)}] $\sum_{i=1}^{n}[X_{1}(X_{i}+\bar{X})-\bar{X}^{2}]=\sum_{i=1}^{n}X_{i=1}^{2}$
-\item [{e)}] $\sum_{i=1}^{n}\sum_{j=1}^{n}(X_{i}-\bar{X})
-(Y_{j}-\bar{Y})=0$
-\item [{f)}] $\sum_{i=1}^{n}[X_{i}(X_{i}+\bar{X})+(X_{i}-\bar{X})^{2}]=2\sum_{j=1}^{n}X_{j}^{2}$
-\item [{g)}] $\sum_{i=1}^{N}
-(X_{i}-1)^{2}=\sum_{i=1}^{N}X_{i}^{2}-2\sum_{i=1}^{N}+N$
-\item [{h)}] $\sum f_{i}(x_{i}-\bar{x})^{2}= \sum f_{i}x_{i}^{2}- \frac{(\sum f_{i}x_{i})^{2}}{\sum f_{i}}$
-\end{enumerate}
-\end{enumerate}
+\subsection{Propriedades do Produtório}
 
+\textbf{1. Produto de constante}
 
-\newpage
-\subsection{Produtório}
+\[
+\prod_{i=1}^{n} k
+=
+k \times k \times \cdots \times k
+\]
 
-O símbolo produtório foi proposto para simplificar e facilitar a representação dos produtos nas expressões algébricas. Representado pela letra grega $pi$ maiúscula ($\Pi$).
+Como o termo $k$ aparece $n$ vezes na multiplicação, pela definição de potência:
 
+\[
+k \times k \times \cdots \times k = k^n
+\]
 
-\begin{equation}\label{}
-\prod_{i=1}^{n}x_{i} 
-\end{equation}
+Logo,
 
+\[
+\prod_{i=1}^{n} k = k^n
+\]
 
-Lê-se: produtório de X índice i, com i variando de 1 a n.\vskip0.3cm
+\bigskip
 
-ou seja,
+\textbf{2. Constante multiplicativa}
 
-\begin{equation}\label{}
-\underbrace{x_{1} \times x_{2} \times  \ldots \times x_{n}}_{n fatores}= \prod_{i=1}^{n}x_{i}= x^{n}
-\end{equation}
+\[
+\prod_{i=1}^{n} (k x_i)
+=
+(kx_1)(kx_2)\cdots(kx_n)
+\]
 
-\subsubsection{Proriedades do Produtório}
+Reorganizando os fatores:
 
-\begin{enumerate}
-\item [{a})]  Produto Simples.
-$$ \prod_{i=1}^{n}x_{i} = x_{1} \times x_{2} \times  \ldots \times x_{n} $$
-\item [{b})] Produto de uma constante k.
-$$ \prod_{i=1}^{n}k = k_{1} \times k_{2} \times  \ldots \times k_{n} =  k^{n}$$
-\item [{c})] Produto de uma constante por uma variável.
-$$ \prod_{i=1}^{n} kx_{i} = kx_{1} \times kx_{2} \times  \ldots \times  kx_{n} = k^{n} \prod_{i=1}^{n} x_{i}$$
+\[
+= k^n (x_1 x_2 \cdots x_n)
+\]
 
-\newpage
-\item [{d})] Produto de duas variáveis.
-$$ \prod_{i=1}^{n} x_{i}y_{i} = x_{1}y_{1} \times x_{2}y_{2} \times \ldots \times x_{n}y_{n} = \prod_{i=1}^{n} x_{i}\prod_{i=1}^{n} y_{i}$$
-\item [{e})] Logarítmo do Produto.
-$$ log \prod_{i=1}^{n} x_{i} = \sum_{i=1}^{n} log x_{i} , \ \ \forall \ \ x_{i} > 0$$
+Portanto,
 
-\end{enumerate}
+\[
+\prod_{i=1}^{n} (k x_i)
+=
+k^n \prod_{i=1}^{n} x_i
+\]
 
+\bigskip
 
-\subsection{Proporções e Percentagens}
+\textbf{3. Produto de duas sequências}
 
-Uma proporção é o número, $a$, de observações com determinada caracteristica (como por exemplo aqueles que sofreram um acidente de trânsito) dividido pelo número total de observações, $a+b$, num determinado grupo (como aqueles que estão na condição de Motociclistas). Isto é,
+\[
+\prod_{i=1}^{n} (x_i y_i)
+=
+(x_1 y_1)(x_2 y_2)\cdots(x_n y_n)
+\]
 
-$$ 
-\mbox{Proporção} = \left( \frac{a}{a+b} \right)
-$$
+Reagrupando os termos (pela associatividade e comutatividade):
 
-Uma proporção sempre é definida como uma parte dividida pelo total e é útil para dados ordinais e números assim como para dados nominais, especialmente quando as observações forem colocadas numa tabela de frequência. Uma \textbf{Percentagem} é a proporção multiplicada por $100\%$.\vskip0.3cm
+\[
+=
+(x_1 x_2 \cdots x_n)
+(y_1 y_2 \cdots y_n)
+\]
 
-$$ \mbox{Proporção} = \left( \frac{a}{a+b} \right) \times 100\% $$
+Logo,
 
-\subsection{Razões}
+\[
+\prod_{i=1}^{n} x_i y_i
+=
+\left(\prod_{i=1}^{n} x_i\right)
+\left(\prod_{i=1}^{n} y_i\right)
+\]
 
-Uma razão é o número $a$ de observações num determinado grupo com cada característica
-dividida pelo número b de observações sem essa característica:
+\bigskip
 
+\textbf{4. Logaritmo do produtório}
 
-$$ 
-\mbox{Razão} = \left( \frac{a}{b} \right)
-$$
+Para $x_i > 0$:
 
-Uma razão sempre é definida como uma parte dividida por uma outra parte.\vskip0.3cm
+\[
+\log \left( \prod_{i=1}^{n} x_i \right)
+=
+\log (x_1 x_2 \cdots x_n)
+\]
 
-\newpage
-\subsection{Taxas}
+Pela propriedade dos logaritmos:
 
-As Taxas são semelhantes as proporções exceto pelo fato de que é usado um multiplicador ($1.000 , 10.000 , ou 100.000$) e são calculados durante um período específico. O multiplicador é chamado de base e a fórmula é
+\[
+\log(ab) = \log a + \log b
+\]
+
+Aplicando repetidamente:
+
+\[
+=
+\log x_1 + \log x_2 + \cdots + \log x_n
+\]
+
+Logo,
+
+\[
+\log \left( \prod_{i=1}^{n} x_i \right)
+=
+\sum_{i=1}^{n} \log x_i
+\]
+%----------------------------------------------------------------------------------------------%
 
 
-$$ 
-\mbox{Taxa} = \left( \frac{a}{a+b} \right) \times base
-$$
+%----------------------------------------------------------------------------------------------%
+\section{Proporções, Razões, Taxas e Coeficientes}
+
+Essas medidas são amplamente utilizadas em segurança pública para análise criminal, planejamento operacional e avaliação de políticas públicas.
+
+\subsection{Proporção}
+
+Uma proporção representa a relação entre uma parte e o todo ao qual essa parte pertence:
+
+\[
+P = \frac{a}{a+b}, \quad P \in [0,1]
+\]
+
+onde:
+\begin{itemize}
+\item $a$ é o número de ocorrências com determinada característica;
+\item $a+b$ é o total de ocorrências.
+\end{itemize}
+
+A \textbf{percentagem} corresponde à proporção multiplicada por 100:
+
+\[
+P\% = P \times 100
+\]
+
+\subsubsection*{Exemplo em Segurança Pública: Em um município Paraense, foram registrados}
+
+\begin{itemize}
+\item 300 furtos;
+\item 200 roubos.
+\end{itemize}
+
+O total de crimes patrimoniais é $300 + 200 = 500$.  
+A proporção de furtos é:
+
+\[
+P = \frac{300}{500} = 0.6
+\]
+
+Em termos percentuais:
+
+\[
+P\% = 0.6 \times 100 = 60\%
+\]
+
+Logo, 60\% dos crimes patrimoniais registrados foram furtos.
+
+\subsubsection*{Variação Algébrica}
+
+Se $T = a+b$, então:
+
+\[
+P = \frac{a}{T} \quad \Rightarrow \quad a = P \cdot T
+\]
+
+Essa forma é útil quando se conhece a proporção e o total e deseja-se recuperar o número absoluto.
+
+%----------------------------------------------------------
+\subsection{Razão}
+
+A razão compara duas quantidades distintas, não necessariamente partes do mesmo total:
+
+\[
+R = \frac{a}{b}, \quad R \ge 0
+\]
+
+Diferentemente da proporção, o denominador não inclui o numerador.
+
+\subsubsection*{Exemplo em Segurança Pública: Em uma operação policial no município de Belém foram apreendidas}
 
 
+\begin{itemize}
+\item 80 armas de fogo;
+\item 40 veículos roubados.
+\end{itemize}
 
+A razão armas/veículos é:
+
+\[
+R = \frac{80}{40} = 2
+\]
+
+Interpretação: para cada veículo recuperado, apreenderam-se 2 armas.
+
+\subsubsection*{Forma Inversa}
+
+A razão pode ser invertida:
+
+\[
+R^{-1} = \frac{b}{a} = \frac{40}{80} = 0.5
+\]
+
+O que altera a interpretação: para cada arma apreendida, havia 0,5 veículo recuperado.
+
+%----------------------------------------------------------
+\subsection{Taxa}
+
+A taxa incorpora explicitamente uma dimensão temporal e uma população exposta ao risco:
+
+\[
+\text{Taxa} = \frac{\text{Número de eventos no período}}{\text{População exposta no período}} \times \text{base}
+\]
+
+\vskip0.3cm
+A \textbf{base} $B$ (1.000, 10.000 ou 100.000) é um fator de escala que permite comparação entre populações de tamanhos distintos.
+
+\subsubsection*{Exemplo: Taxa de Homicídios}
+
+Suponha:
+
+\begin{itemize}
+\item 120 homicídios em um ano;
+\item população de 200.000 habitantes.
+\end{itemize}
+
+A taxa por 100.000 habitantes é:
+
+\[
+\text{Taxa} = \frac{120}{200.000} \times 100.000 = 60
+\]
+
+Interpretação: ocorreram 60 homicídios por 100.000 habitantes no período analisado.
+
+\subsubsection*{Demonstração da Padronização}
+
+Se a base é $B$, então:
+
+\[
+\text{Taxa} = \frac{E}{N} \times B
+\quad \Rightarrow \quad
+\frac{E}{N} = \frac{\text{Taxa}}{B}
+\]
+
+Logo, a taxa nada mais é do que uma proporção ajustada por um fator de escala.
+
+%----------------------------------------------------------
 \subsection{Coeficientes}
 
-É a relação entre o número de eventos reais (os acontecimentos) e os esperados (que poderiam acontecer). È a medida de probabilidade. O numerador exprime o número de eventos ocorridos e o denominador exprime a população efetivamente exposta ao evento.\vskip0.3cm
+Coeficientes são medidas padronizadas que expressam a intensidade de ocorrência de eventos em relação à população exposta:
 
-Apresenta-se a seguir alguns exemplos de coeficientes.
+\[
+\text{Coeficiente} = \frac{\text{Número de eventos}}{\text{População exposta}} \times \text{base}
+\]
 
-\subsubsection{Coeficiente de Mortalidade Geral - CMG}
+Na prática, taxa e coeficiente possuem a mesma estrutura matemática; a diferença reside no contexto de uso:
 
-$$
-C_{M_{G}} = \left(  \frac{numero \ de \ total \ de \ obitos \ em \ certa \ area \ durante \ o \ ano}{populacao \ da \ mesma \ area \ ajustada \ para \ o \ meio \ do \ ano} \right) \times 1.000
-$$
+\begin{itemize}
+\item \textbf{Taxa:} eventos ao longo do tempo (ex.: homicídios/ano);  
+\item \textbf{Coeficiente:} intensidade de ocorrência (ex.: mortalidade, natalidade, criminalidade).
+\end{itemize}
+
+%----------------------------------------------------------
+\subsubsection{Coeficiente de Mortalidade Geral (CMG)}
+
+\[
+CMG = \frac{\text{Número total de óbitos no período}}{\text{População média no período}} \times 1.000
+\]
+
+\subsubsection*{Exemplo em Segurança Pública: Em determinado estado:}
+
+\begin{itemize}
+\item 2.400 mortes violentas em um ano;
+\item população média de 4.000.000 habitantes.
+\end{itemize}
+
+\[
+CMG = \frac{2.400}{4.000.000} \times 1.000 = 0.6
+\]
+
+Ou seja, 0,6 óbitos por mil habitantes no período.  
+Se a base fosse 100.000:
+
+\[
+CMG = \frac{2.400}{4.000.000} \times 100.000 = 60
+\]
+\vskip0.3cm
+
+Ou seja, 60 óbitos por 100.000 habitantes.
+
+%----------------------------------------------------------
+\subsection*{Exemplo de Resumo Comparativo}
+
+\begin{center}
+\begin{tabular}{|l|c|c|l|}
+\hline
+\textbf{Medida} & \textbf{Fórmula} & \textbf{Intervalo / Base} & \textbf{Exemplo} \\
+\hline
+Proporção & $P = \frac{a}{a+b}$ & [0,1] & 60\% furtos sobre crimes patrimoniais \\
+\hline
+Razão & $R = \frac{a}{b}$ & ≥0 & 2 armas apreendidas por veículo \\
+\hline
+Taxa & $\frac{E}{N} \times B$ & Base:  100.000 & 80 homicídios por 100.000 hab. \\
+\hline
+Coeficiente & $\frac{E}{N} \times B$ & Base: 1.000  & 0,5 óbitos por mil hab. \\
+\hline
+\end{tabular}
+\end{center}
+%---------------------------------------------------------------------------------------------%
 
 
 %---------------------------------------------------------------------------------------------%

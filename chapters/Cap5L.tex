@@ -1027,45 +1027,35 @@ visual simples, embora apenas aproximada.  \vskip0.3cm
 
 %------------------------------------------------------------------------------------------------------%
 
-\subsection{Gráfico em Diagrama de Caixa}
+\subsection{Gráfico em Diagrama de Caixa (BoxPlot)}
 
-John Wilder Tukey nasceu em 1915, em New Bedford (Massachusetts), numa cidade pesqueira na costa de \textit{New Jersey}. Criado em um ambiente a\-ca\-dê\-mi\-co e científico, Tukey demonstrou desde cedo um talento para a matemática e a estatística.\vskip0.3cm
+John Wilder Tukey (1915 a 2000) nasceu em New Bedford, Massachusetts, nos Estados Unidos. Destacou-se como um dos mais influentes estatísticos do século XX, especialmente pelo desenvolvimento da \textit{Análise Exploratória de Dados} (Exploratory Data Analysis – EDA), abordagem que enfatiza o papel central da visualização na compreensão preliminar dos dados. \vskip0.3cm
 
-\vspace{-0.2cm}
 \begin{figure}
     \centering
-\includegraphics[scale=0.75]{figures/John_Tukey.jpeg}
-    \caption{John Wilder Tukey (1915-2000)}
-    \label{fig:my_label25}
+    \includegraphics[scale=0.75]{figures/John_Tukey.jpeg}
+    \caption{John Wilder Tukey (1915 a 2000)}
 \end{figure}
 
-Tukey, graduou-se em ciências em 1936 e em química em 1937 pela \textbf{Universidade de Brown}. Posteriormente, ele continuou seus estudos na \textbf{Universidade de Princeton}, onde obteve um Ph.D. em matemática. \vskip0.3cm
+Tukey graduou-se em Ciências (1936) e em Química (1937) pela Universidade de Brown e posteriormente obteve o título de Ph.D. em Matemática pela Universidade de Princeton. \vskip0.3cm
 
-Seu trabalho em estatística teve um impacto significativo, especialmente no desenvolvimento de técnicas estatísticas robustas e na análise exploratória de dados.\vskip0.3cm
+Em 1977, na obra clássica \textit{Exploratory Data Analysis}, Tukey introduziu o diagrama de caixa (\textit{boxplot}), um dispositivo gráfico destinado a sintetizar informações fundamentais sobre a distribuição de uma variável quantitativa de forma compacta e comparável entre grupos. O boxplot apresenta cinco estatísticas essenciais:
 
-Em 1977, Tukey propôs um dispositivo visual útil para a comunicação de características de uma série de dados que se tornou bastante famoso. Conhecido enormemente no meio acadêmico como Diagrama de Caixa ou Box-Plot, na qual é um tipo de gráfico que objetiva apresentar diversas informações sobre o comportamento dos dados e ainda manter uma forma compacta. \vskip0.3cm
+\begin{itemize}
+    \item valor mínimo;
+    \item primeiro quartil (Q1);
+    \item mediana;
+    \item terceiro quartil (Q3);
+    \item valor máximo.
+\end{itemize}
 
+A caixa representa o intervalo interquartílico (IQR), correspondente à dispersão central dos dados (entre 25\% e 75\%). A linha interna indica a mediana. As extensões externas, denominadas \textit{whiskers}, conectam a região central aos valores extremos não considerados discrepantes. \vskip0.3cm
 
-\newpage
-Na análise das informações, pode ser importante a construção de um diagrama em caixa, contendo as seguintes informações: valores mínimos e máximos, a mediana, o primeiro e o terceiro quartil, na qual representa 25\% e 75\% d  distribuição de freqüência.\vskip0.3cm
+A posição relativa da mediana dentro da caixa pode indicar assimetria, enquanto a altura da caixa fornece uma medida robusta de variabilidade. \vskip0.3cm
 
+Valores discrepantes (\textit{outliers}) são identificados, em geral, por regras baseadas na amplitude interquartílica (como 1,5 vezes o IQR). Contudo, tais critérios são convencionais e podem não refletir integralmente a estrutura real da distribuição. \vskip0.3cm
 
-\begin{figure}[H]
-\centering{
- \includegraphics[scale=0.7]{figures/Boxcaixa.eps}\\
-  \vspace{-0.2cm}
-  \caption{Esquema Geral sobre o diagrama de caixas ou Box Plot.}\label{esquematabela}
-  }
-\end{figure}
-
-
-As linhas verticais que saem do diagrama foram chamadas whiskers por Tukey, essas linhas servem de elo entre os valores mais centrais e os extremos da série de dados, geralmente representam os valores mínimos e máximos.\vskip0.3cm 
-
-A mediana da série é representada por uma linha horizontal central no diagrama, e o quartil inferior (Q1) e superior (Q3), pelas linhas inferior e superior que delimitam a caixa.\vskip0.3cm  
-
-A mediana representa uma estimativa de tendência central, e a altura da do diagrama, uma estimativa da variabilidade geral dos dados. Na qual a posição da mediana, seja ela central ou mais próxima a um dos quartis, indica a presença ou não de assimetria nos dados.\vskip0.3cm
-
-Ao explorar um conjunto de dados de forma gráfica, deve-se considerar os valores discrepantes ou Outliers, pois eles podem revelar importantes informações e podem afetar grandemente os valores da média e do desvio-padrão, bem como disfarçar seriamente um histograma, ou seja,, um outlier pode ter efeito um dramá\-tico sobre a escala do gráfico, de modo que a verdadeira natureza da distribuição pode ser totalmente  obscurecida.
+Apesar de sua eficiência sintética, o boxplot pode ocultar características importantes, como multimodalidade ou padrões internos de concentração, o que motivou o desenvolvimento de extensões gráficas posteriores.
 
 
 %\newpage
@@ -1086,64 +1076,38 @@ Ao explorar um conjunto de dados de forma gráfica, deve-se considerar os valore
 %\end{figure}
 
 %------------------------------------------------------------------------------------------------------%
-\subsection{Gráfico de Violino}
+\subsection{Gráfico de Violino (ViolinPlot)}
 
-O \textbf{gráfico de violino} (\textit{violin plot}) é uma ferramenta
-estatística moderna amplamente utilizada para representar a distribuição de uma
-variável quantitativa de forma mais rica do que o boxplot tradicional. O violino pode ser entendido como uma combinação entre o \textbf{histograma} e o \textbf{boxplot}, pois reúne, em uma única visualização,
-informações sobre:
+O gráfico de violino pode ser compreendido como uma extensão do boxplot tradicional, ao incorporar uma estimativa suavizada da densidade de probabilidade da variável por meio de métodos de estimação kernel. Diferentemente do boxplot, que sintetiza a distribuição com base em estatísticas resumidas, o violino explicita a forma completa da distribuição empírica dos dados. \vskip0.3cm
+
+
+Em uma única representação gráfica, o violin plot permite visualizar: \vskip0.3cm
+
 
 \begin{itemize}
     \item a posição central dos dados (mediana);
     \item a dispersão (quartis e amplitude interquartílica);
-    \item e principalmente a \textbf{densidade de probabilidade} da distribuição.
+    \item e, sobretudo, a \textbf{densidade de probabilidade} da distribuição.
 \end{itemize}
 
-O conceito do gráfico de violino foi introduzido originalmente pelo estatístico
-\textbf{Jerry L. Hintze} e pelo pesquisador \textbf{Ray D. Nelson}, no artigo
-clássico publicado em 1998, como uma alternativa gráfica que permite observar
-detalhadamente o formato da distribuição dos dados, indo além das limitações do
-boxplot (HINTZE, 1998).
-\vskip0.3cm
+O conceito foi introduzido por \textbf{Jerry L. Hintze} e \textbf{Ray D. Nelson} (1998), que propuseram o gráfico como alternativa ao boxplot tradicional, destacando sua capacidade de revelar características estruturais da distribuição que frequentemente permanecem ocultas em representações baseadas apenas em quartis. 
 
-A forma característica do violino é construída a partir de uma estimativa
-suavizada da densidade dos dados, baseada em métodos de \textbf{estimação de
-densidade kernel}, cuja formulação moderna é atribuída a trabalhos fundamentais
-como os de \textbf{Rosenblatt} (1956) e \textbf{Parzen} (1962). Assim, regiões
-mais largas indicam maior concentração de observações, enquanto regiões mais
-estreitas indicam menor frequência de valores naquele intervalo. \vskip0.3cm
+\newpage
+A forma característica do violino é construída a partir de uma estimativa suavizada da densidade dos dados, fundamentada na técnica de \textbf{estimação de densidade kernel}. A base matemática desse procedimento remonta aos trabalhos clássicos de \textbf{Rosenblatt} (1956) e \textbf{Parzen} (1962), que formalizaram métodos não paramétricos para estimar funções densidade a partir de amostras. No gráfico, regiões mais largas indicam maior concentração de observações, enquanto regiões mais estreitas refletem menor frequência relativa naquele intervalo de valores. \vskip0.3cm
 
-De modo geral, quanto menor for o desvio padrão, mais concentrados estarão os
-dados em torno da média, o que se reflete em um violino mais estreito e compacto.
-Por outro lado, distribuições com maior variabilidade produzem violinos mais
-alongados e largos. \vskip0.3cm
 
-A principal vantagem do \textbf{ViolinPlot} é que ele preserva todas as
-informações fornecidas pelo boxplot, mas acrescenta uma visão detalhada do
-formato da distribuição, permitindo identificar assimetrias, multimodalidade
-(presença de mais de um pico) e padrões que não são facilmente percebidos apenas
-com o boxplot (WILKINSON, 2005).
-\vskip0.3cm
+Em termos interpretativos, distribuições com menor variabilidade tendem a produzir violinos mais compactos e concentrados, enquanto distribuições mais dispersas resultam em formas mais alongadas. Além disso, o violino permite identificar assimetrias e multimodalidade — isto é, a presença de múltiplos picos — aspectos que dificilmente seriam detectados apenas por meio do boxplot. \vskip0.3cm
 
-Além disso, é comum adicionar ao gráfico de violino pontos individuais
-representando as observações, com um pequeno deslocamento aleatório chamado de
-\textbf{efeito jitter}. Essa variação facilita a visualização da dispersão real
-dos dados e evita sobreposição excessiva de pontos, recurso frequentemente usado
-em visualização estatística moderna (CLEVELAND, 1993).
+
+A principal vantagem do \textbf{ViolinPlot} reside na preservação das informações centrais do boxplot, acrescidas da visualização explícita da forma da distribuição. Como destaca \textbf{Wilkinson} (2005), a representação gráfica deve priorizar a integridade estrutural dos dados, evitando simplificações que ocultem padrões relevantes. \vskip0.3cm
+
+
+Adicionalmente, é prática comum sobrepor ao gráfico pontos individuais representando as observações, frequentemente com pequeno deslocamento aleatório denominado \textbf{efeito jitter}. Esse recurso reduz o problema de sobreposição excessiva (\textit{overplotting}) e melhora a legibilidade da dispersão real dos dados, conforme discutido na literatura de visualização estatística moderna (\textbf{Cleveland, 1993}).
 
 
 
 
 %------------------------------------------------------------------------------------------------------%
-
-
-
-
-
-
-
-
-
 %\vspace{-0.7cm}
 %\begin{figure}[H]
 %    \centering
@@ -1161,3 +1125,120 @@ em visualização estatística moderna (CLEVELAND, 1993).
 %\end{figure}
 
 %------------------------------------------------------------------------------------------------------%
+\newpage
+\subsection{Gráfico de Grão (BeanPlot)}
+
+O \textbf{BeanPlot} é uma ferramenta gráfica moderna destinada à representação detalhada da distribuição de uma variável quantitativa. Assim como o gráfico de violino, o BeanPlot baseia-se em uma estimativa suavizada da densidade dos dados; contudo, distingue-se por enfatizar explicitamente a visualização das observações individuais e da média amostral, ampliando o grau de transparência interpretativa. \vskip0.3cm
+
+O BeanPlot pode ser compreendido como a integração de três componentes principais: \vskip0.3cm
+
+\begin{itemize}
+    \item a estimativa não paramétrica da densidade de probabilidade (kernel density);
+    \item a representação explícita de cada observação individual;
+    \item a indicação da média da amostra como medida de tendência central.
+\end{itemize}
+
+O método foi formalmente introduzido por \textbf{Kampstra (2008)}, que propôs o gráfico como alternativa ao boxplot tradicional, argumentando que este pode ocultar características estruturais relevantes da distribuição, tais como multimodalidade, assimetrias ou agrupamentos internos. No contexto brasileiro, a ferramenta foi apresentada e discutida por \textbf{Camey, Nunes e Cruz (2010)}, que demonstraram sua aplicabilidade prática no ambiente estatístico \textit{R} e destacaram suas vantagens no âmbito da análise exploratória de dados. \vskip0.3cm
+
+Assim como no violin plot, a forma característica do ``grão'' (\textit{bean}) é construída a partir de uma estimativa suavizada da densidade, fundamentada nos trabalhos clássicos de \textbf{Rosenblatt} (1956) e \textbf{Parzen} (1962), que estabeleceram a base matemática da estimação de densidade kernel. Regiões mais largas indicam maior concentração de observações, enquanto regiões mais estreitas refletem menor frequência relativa naquele intervalo de valores. \vskip0.3cm
+
+Diferentemente do violino tradicional, o BeanPlot sobrepõe explicitamente as observações individuais — geralmente representadas por pequenas linhas ou pontos — o que reduz a dependência de critérios convencionais de detecção de \textit{outliers}, uma vez que nenhum dado é ocultado pela representação gráfica. 
+\newpage
+
+Essa característica aumenta a robustez interpretativa e facilita a identificação de padrões discretos ou possíveis valores extremos.  \vskip0.3cm
+
+Outra particularidade relevante é a marcação explícita da média amostral, usualmente indicada por uma linha horizontal mais espessa. Ao privilegiar a média como estatística de referência — em contraste com a mediana destacada no boxplot — o BeanPlot reforça a leitura comparativa entre grupos, especialmente quando o interesse analítico recai sobre diferenças médias. \vskip0.3cm
+
+Do ponto de vista interpretativo, distribuições com menor variabilidade tendem a produzir ``grãos'' mais compactos e concentrados, enquanto distribuições mais dispersas resultam em representações mais alongadas. A visualização simultânea da densidade e das observações individuais minimiza o risco de simplificações excessivas, aspecto considerado central na literatura de visualização estatística moderna (\textbf{Cleveland, 1993}; \textbf{Wilkinson, 2005}). \vskip0.3cm
+
+Em síntese, o BeanPlot amplia o escopo da análise exploratória ao combinar densidade suavizada, representação integral das observações e indicação explícita da média, configurando-se como instrumento particularmente útil em contextos nos quais a transparência da variabilidade e a comparabilidade entre grupos são essenciais.
+%------------------------------------------------------------------------------------------------------%
+
+\subsection{Gráfico de Nuvens de Chuva (RaincloudPlot)}
+
+O \textit{Raincloud Plot} constitui uma representação gráfica híbrida que combina três elementos fundamentais da visualização estatística moderna: a densidade suavizada (kernel), a estatística resumida (boxplot) e a visualização explícita das observações individuais.  \vskip0.3cm
+
+Essa abordagem busca integrar síntese e transparência em uma única estrutura gráfica, reduzindo as limitações inerentes às representações isoladas. \vskip0.3cm
+
+Formalmente sistematizado por \textbf{Allen et al. (2019)}, o Raincloud Plot surgiu como proposta voltada à melhoria da clareza e reprodutibilidade em publicações científicas, especialmente em áreas como Psicologia, Medicina e Ciências Sociais aplicadas. \vskip0.3cm
+
+\newpage
+A estrutura típica do gráfico compreende: 
+
+\begin{itemize}
+    \item Uma metade de violino representando a densidade estimada;
+    \item Um boxplot indicando mediana e quartis;
+    \item Pontos individuais (com jitter opcional) representando cada observação.
+\end{itemize}
+
+Essa combinação permite visualizar simultaneamente:
+
+\begin{itemize}
+    \item Tendência central;
+    \item Dispersão;
+    \item Forma da distribuição;
+    \item Volume real de Dados;
+    \item Possíveis agrupamentos ou multimodalidade.
+\end{itemize}
+
+Do ponto de vista interpretativo, o Raincloud Plot é particularmente útil em comparações entre grupos, pois mantém a robustez estatística do boxplot enquanto preserva a estrutura completa da distribuição, reduzindo o risco de simplificações excessivas. \vskip0.3cm
+
+Em contextos de pesquisa científica contemporânea, essa representação tem sido valorizada por promover maior transparência gráfica e facilitar a replicabilidade das análicas, alinhando-se às recomendações de boas práticas de visualização estatística (CLEVELAND, 1993; WILKINSON, 2005).
+
+
+
+
+%------------------------------------------------------------------------------------------------------%
+\subsection{Comparação Estrutural e Estratégica}
+
+
+A representação gráfica de distribuições quantitativas evoluiu significativamente desde a introdução do boxplot por \textbf{Tukey (1977)}, no âmbito da \textit{Análise Exploratória de Dados}. Ao longo das décadas, novas propostas buscaram ampliar a transparência informacional, incorporando densidade, visualização individual e combinações híbridas de representação. \vskip0.3cm
+
+Se, do ponto de vista estrutural, cada gráfico enfatiza diferentes componentes da distribuição, do ponto de vista estratégico a escolha deve considerar o contexto de uso e o objetivo comunicacional. \vskip0.3cm
+
+
+\newpage
+A síntese comparativa pode ser organizada em dois níveis: (i) características estruturais e (ii) critérios decisórios de aplicação. \vskip0.3cm
+
+\subsubsection{Dimensão Estrutural}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{l*{6}{c}}
+\toprule
+\textbf{Característica} & \textbf{Boxplot} & \textbf{Violinplot} & \textbf{Beanplot} & \textbf{Jitter} & \textbf{Raincloud} \\
+\midrule
+Mediana                     & ok   & ok       & Opcional & Não     & ok \\
+Média                       & Não  & Opcional & ok       & Não     & ok \\
+Densidade (Kernel)          & Não  & ok       & ok       & Não     & ok \\
+Observações Individuais     & Não  & Opcional & ok       & Sim     & ok \\
+Multimodalidade             & Não  & ok       & ok       & Parcial & ok \\
+Síntese Compacta            & Alta & Média    & Média    & Baixa   & Média \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsubsection{Dimensão Estratégica de Decisão}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{lX X}
+\toprule
+\textbf{[Gráfico]} & \textbf{[Quando Usar?]} & \textbf{[Principal Vantagem]} \\
+\midrule
+Boxplot   & Relatórios executivos & Simplicidade e foco em estatísticas descritivas (quartis). \\
+\hline
+Violin    & Análise exploratória  & Visualização clara da densidade e multimodalidade. \\
+\hline
+BeanPlot  & Comparação entre grupos & Integra densidade com visualização explícita da média. \\
+\hline
+Jitter    & Amostras pequenas & Transparência; evidencia o volume real de dados. \\
+\hline
+Raincloud & Publicações científicas & Combina estatística resumida, densidade e dados brutos. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Sob a perspectiva da visualização orientada por evidências, conforme discutido por \textbf{Cleveland (1993)} e \textbf{Wilkinson (2005)}, a escolha do gráfico deve priorizar a integridade estrutural dos dados e a adequação ao público-alvo. Em relatórios executivos, a economia informacional pode ser desejável; já em contextos acadêmicos ou de pesquisa aplicada, a transparência tende a ser preferível à compressão excessiva. \vskip0.3cm
+
+Assim, a decisão não deve ser normativa, mas estratégica: cada ferramenta responde a demandas analíticas distintas, e sua escolha deve harmonizar natureza dos dados, tamanho amostral, objetivo inferencial e clareza comunicacional.
