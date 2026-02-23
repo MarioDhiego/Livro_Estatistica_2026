@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%  Language Science Press Master File          %%%
-%%%         Edited Volumes                       %%%
+%%%  Language Science Press Master File         %%%
+%%%               Book Version                  %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{scrlfile}
@@ -8,22 +8,23 @@
 
 \documentclass[
   output=book,
-  collection,
   colorlinks,
-  citecolor=green
+  citecolor=green,
+  biblatexoptions={style=langsci-unified, citestyle=authoryear-comp}
 ]{langscibook}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                 PACOTES                      %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Codificação (pdfLaTeX)
-\usepackage[utf8]{inputenc}
+% Idioma
 \usepackage[T1]{fontenc}
 \usepackage[portuguese]{babel}
 
 % Matemática
-\usepackage{amsmath, amsfonts, amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
 
 % Figuras e gráficos
 \usepackage{graphicx}
@@ -40,34 +41,27 @@
 \usepackage{array}
 \usepackage{float}
 
-% Legendas
-\usepackage{caption}
+% Subfiguras (usar apenas se necessário)
 \usepackage{subcaption}
 
-% Ambientes verbatim
+% Verbatim
 \usepackage{fancyvrb}
 
 % Controle de quadros
 \usepackage{trivfloat}
 
-% Hiperlinks
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black,
-    citecolor=green,
-    filecolor=magenta,
-    urlcolor=blue
-}
+% Pacote personalizado
+\usepackage{diego}
 
-% Arquivos locais
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%         ARQUIVOS LOCAIS                     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \input{localmetadata.tex}
 \input{localpackages.tex}
 \input{localhyphenation.tex}
 \input{localcommands.tex}
 \addbibresource{localbibliography.bib}
-
-% Pacote personalizado (se for seu)
-\usepackage{diego}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%             FRONTMATTER                      %%%
@@ -81,9 +75,9 @@
 \setcounter{tocdepth}{2}
 
 \begin{document}
-
 \maketitle
 \frontmatter
+
 \currentpdfbookmark{Sumário}{contents}
 \tableofcontents
 \listoftables
@@ -115,5 +109,7 @@
 
 \input{localseealso.tex}
 \input{backmatter.tex}
+
+\printbibliography[heading=references]
 
 \end{document}

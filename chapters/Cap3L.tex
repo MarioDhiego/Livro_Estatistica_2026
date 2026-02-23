@@ -223,7 +223,7 @@ Castro et al. (2016) realizou um estudo com base em processos judiciais de agres
     \vspace{0.2cm}
     \begin{tabular}{l|c|c}
     \hline\hline
-    \textbf{Municípios} & \textbf{N\º de Processos ($N_h$)} & \textbf{Percentual} \\
+        \textbf{Municípios} & \textbf{N° de Processos ($N_h$)} & \textbf{Percentual} \\
     \hline\hline
     Abaetetuba   & 47   & 6,9\%   \\
     Belém        & 555  & 82,3\%  \\
@@ -234,9 +234,10 @@ Castro et al. (2016) realizou um estudo com base em processos judiciais de agres
     \end{tabular}
 \end{table}
 
-Devido a restrições de acesso e ao volume dos processos físicos, optou-se por uma amostra representativa com erro de 5\% ($\epsilon_0 = 0,05$). O cálculo inicial resultou em $n = 251$ processos. 
+Devido a restrições de acesso e ao volume dos processos físicos, optou-se por uma amostra representativa com erro de 5\% ($\epsilon_0 = 0,05$). O cálculo inicial resultou em $n = 251$ processos. \vskip0.3cm
 
-Para manter a proporcionalidade municipal, aplicou-se a técnica estratificada:
+Para manter a proporcionalidade municipal, aplicou-se a técnica estratificada: \vskip0.3cm
+
 \begin{itemize}
     \item \textbf{Abaetetuba ($n_{h1}$):} $251 \times (47/675) = \mathbf{18}$ processos.
     \item \textbf{Belém ($n_{h2}$):} $251 \times (555/675) = \mathbf{206}$ processos.
@@ -250,276 +251,248 @@ O total amostral final é de \textbf{251 processos}, distribuídos de forma a re
 
 
 %----------------------------------------------------------------------------------------%
+\newpage
 \subsection{Amostragem Sistemática (AS)}
 
-A amostragem sistemática consiste em sortear uma unidade da população e, a partir dela, para constituir
-uma amostra de tamanho n, selecionar as unidades que ocupam de forma sequencial as suposições multiplas
-de um determinado valor $k=\frac{N}{n}$ pré-estabelecido, onde N é o número de unidades total da população (QUEIROZ, 2012).\vskip0.3cm
+A amostragem sistemática consiste em selecionar uma unidade inicial aleatoriamente e, a partir dela, constituir uma amostra de tamanho $n$ selecionando as unidades que ocupam posições sequenciais baseadas em um intervalo fixo $k = N/n$. \vskip0.3cm
 
-No processo de amostragem sistemática a primeira unidade é escolhida ao acaso e as demais, a partir da inicial, selecionadas de modo sistemático a intervalos iguais e definidas, até atingir o tamanho da amostra desejada. O intervalo é estabelecido pela razão entre o tamanho da população e o tamanho da amostran (AYRES, 2010).\vskip0.3cm
+Segundo \textbf{Lohr (2021)}, este método é frequentemente preferido em auditorias e levantamentos de campo por ser menos suscetível a erros de seleção do que a amostragem aleatória simples, desde que a estrutura de ordenação da população seja bem compreendida. \vskip0.3cm
 
-De acordo com Loetsch et al (1973) a amostragem sistemática consiste em selecionar unidade de amostras a partir
-de um esquema rígido e preestabelecido de sistematização segundo uma distribuição espacial equitativa ou mecânica, com os propósitos de cobrir a população em toda a sua extensão, e obter um modelo sistemático simples e uniforme. \vskip0.3cm
-
+No processo de amostragem sistemática, a "partida aleatória" é o único componente estocástico; uma vez definido o primeiro elemento, toda a amostra é determinada de forma determinística. \textbf{Thompson (2012)} ressalta que esse intervalo $k$, denominado razão de amostragem, funciona como um mecanismo de cobertura uniforme ao longo de todo o cadastro ou espaço geográfico da população. \vskip0.3cm
 
 \begin{figure}[H]
     \centering
-\includegraphics[scale=0.26]{figures/sistematica1.png}
-    \caption{Exemplo de Amostragem Sistemática Geral.}
-    \label{fig:amostragem_estratificada}
+    \includegraphics[scale=0.26]{figures/sistematica1.png}
+    \caption{Esquema de funcionamento da Amostragem Sistemática.}
+     \textbf{Fonte}: leticia.raposo@uniriotec.br 
+    \label{fig:amostragem_sistematica}
 \end{figure}
 
+A amostragem sistemática apresenta uma diferença fundamental em relação à AAS no que tange à variabilidade. Enquanto na AAS existem $\binom{N}{n}$ amostras possíveis, na sistemática existem apenas $k$ agrupamentos possíveis. Conforme \textbf{Heeringa, West e Berglund (2017)}, essa redução no espaço amostral implica que a variância da amostra sistemática não pode ser estimada diretamente de forma não tendenciosa com uma única amostra, pois não há independência entre as seleções subsequentes. \vskip0.3cm
+
+\textbf{Procedimento e Lógica Matemática}\vskip0.3cmPara populações ordenadas (prontuários, séries temporais, registros judiciais), define-se o intervalo $k = \lfloor N/n \rfloor$. Sorteia-se um número inteiro $i$ (início aleatório) tal que $1 \leq i \leq k$. Os elementos da amostra serão definidos pela sequência $\{i, i+k, i+2k, \dots, i+(n-1)k\}$. v\vskip0.3cm
 
 
-A amostragem sistemática apresenta uma diferença marcante com relação a amostragem aleatória simples, no que tange
-ao número de amostras possíveis. Sendo recomendada para utilização quando os elementos da população encontram-se
-ordenados (MARQUES, 2002).\vskip0.3cm
+\textbf{Vantagens Técnicas}\vskip0.3cm
 
-Seja uma população composta por N unidades, e n represente o tamanho da amostra, sendo $N=kn$. Se a amostragem for sistematica, o número de amostras possíveis é igual a $k =\left[ \frac{N}{n} \right] $, enquanto que, em se tratando de uma amostra simples ao acaso sem reposição, o número de amostras possíveis (nap) será de acordo com a equação \ref{nap}. Então, teoricamente, uma amostra sistemática não pode ser analisada como se fosse uma amostra aleatória simples. \vskip0.3cm
-
-De forma geral, na amostragem sistematica, utiliza-se a ordenação
-natural dos elementos da população (prontuários, casas, ordem de
-nascimento, etc), considerando N o tamanho da população e n o
-tamanho da amostra, calcular o intervalo de amostragem, ou o pulo
-sistematico, chamado k, por meio da formula $k=\frac{N}{n}$, senfo
-k um numero inteiro mais proximo.\vskip0.3cm
-
-Posteriormente, sorteia-se um numero entre um e k, chamado i,
-sendo $0 < i \leq k$. Esse numero i será o primeiro elemento da
-amostra. O segundo elemento da amostra será $i+k$, o terceiro
-elemento será $i+2k$, e assim sucessivamente, de forma sistematica
-até $i+(n-1)k$, ou seja, até completar o valor de n.
-
-
-\textbf{Vantagens da Amostragem Sistemática}
-\vskip0.3cm
-
-A amostragem sistemática, quando comparada com a amostra simples, apresenta algumas vantagens, entre as quais:
+De acordo com a literatura moderna de \textit{survey sampling} (LOHR, 2021; THOMPSON, 2012), as vantagens incluem: \vskip0.3cm
 
 \begin{enumerate}
-  \item[{a)}] A seleção das unidades amostrais, na amostragem sistemática, é mais fácil e mais rápida, economizando tempo na obtenção dos dados de campo;
-  \item[{b)}] A organização, a supervisão e a checagem (remedição) de algumas unidades de amostras se tornam operacioanalmente mais fáceis;
-  \item[{c)}] O tamanho da população não precisa, necessariamente, ser conhecido;
-  \item[{d)}] A redução de custo ocasionados pelo encaminhamento entre as unidades de amostras;
-  \item[{e)}] As unidades se distribuem mais uniformemte na população, originalmente uma maior representatividade, tornando-se eficiente quando existe qualquer tendência ou concentração de certas características;
-  \item[{f)}] È possível mapear a população;
-  \item[{g)}] A amostragem sistemática pode ser associada  a amostragem por conglomerado;
+\item[{a)}] \textbf{Eficiência de Custo:} Redução drástica no tempo de localização de unidades físicas em arquivos ou campos.
+\item[{b)}] \textbf{Espalhamento da Amostra:} Garante que a amostra "varra" toda a extensão da população, funcionando como uma estratificação implícita.
+\item[{c)}] \textbf{Robustez Logística:} Ideal para situações onde o tamanho da população ($N$) é desconhecido no início da coleta (ex: fluxo de pacientes em um hospital).
 \end{enumerate}
 
-\textbf{Desvantagens da Amostragem Sistemática}
-\vskip0.3cm
+\textbf{Limitações e o Risco de Periodicidade} \vskip0.3cm
 
-\begin{enumerate}
-  \item[{a)}] A grande desvantagem da amostra sistematica ocorre
-  quando a população apresenta dados com características \textbf{cíclicas}
-  \textbf{ou periódicas}, pois corre-se o risco da amostragem refletir
-  homogeneidade numa condição sabidamente heterogênea;
-  \item[{b)}] Escolhe-se somente uma unidade de amostra simples, as demais não são independentes (estatisticamente, cada unidade não corresponde a um grau de liberdade). Assim, a variância da amostra e a da média não podem ser calculados através dos estimadores usuais;
-  \item[{c)}] Escolhidos as amostras sistematicamente, todas as outras uniadades de amostra que não a integram têm probabilidade igual a zero de serem eleitas, enquanto as que integram-na possuem probabilidade 1 de seleção, ou seja, muitas unidades de amostras são, nesse caso, rejeitadas;
-\end{enumerate}
+A maior desvantagem técnica reside na \textbf{autocorrelação}. Se a população apresentar um padrão cíclico que coincida com o intervalo $k$, a amostra pode sofrer um viés severo. \textbf{Valliant et al. (2018)} alertam que, se $k$ for um múltiplo do ciclo da população, a variância estimada será subestimada, levando a conclusões falsamente precisas. Além disso, por possuir apenas uma unidade primária de seleção (o sorteio inicial), o cálculo de erros padrão exige métodos de aproximação, como o uso de diferenças sucessivas. \vskip0.3cm
 
-\textbf{Exemplo de Amostragem Sistemática}
-\vskip0.3cm
-
-Retomando-se o exemplo de Castro et al (2016), ao qual calculou-se o tamanho da amostra estratificada porporcional por municípios, ao fazer o levantamento deparou-se com elementos da população em forma de pilhas de processos judiciais ordenados e sequenciais. Havendo assim, a necessidade de se aplicar o Método de Amostragem Sistemático para se mapear a população de forma fácil e rápida.\vskip0.3cm
-
-
-\begin{table}[!htb]
-    \centering
-    {
-    \caption{Amostragem de Processos judiciais sobre práticas de agressão sexual com criancas e
-adolescentes julgados pelo TJE em três municípios Paraenses no período de 2012 a 2014.}
-    \label{amostras estratificada}
-    \vspace{0.1cm}
-\begin{tabular}{c|c|c}
-  \hline\hline
-  Municípios   & Nº de Processos &  Percentual \\
-  \hline\hline
-   Abaetetuba  & $N_{(h1)}=47$     & $n_{(h1)}= 6.69$        \\
-   Belém       & $N_{(h2)}=555$    & $n_{(h2)}= 82,22$       \\
-   Parauapebas & $N_{(h3)}=73$     & $n_{(h3)}= 10,81$       \\
-   \hline\hline 
-   Total       & $N_{(Total)}=675$ & $n_{(total)}=251$ \\ 
-  \hline\hline
-\end{tabular}}
-\\
-\hspace{-1.0cm}
-\end{table}
-
-
-%\vskip0.3cm
-
-A amostragem sistemática consiste em selecionar unidade de amostras a partir
-de um esquema rígido e preestabelecido de sistematização segundo uma distribuição
-espacial equitativa ou mecânica, com os propósitos de cobrir a população em toda
-a sua extensão, e obter um modelo sistemático simples e uniforme.\vskip0.3cm
-
-De forma geral, na amostragem sistemática, utiliza-se a ordenação natural dos elementos da população (nesse caso os processos judiciais de agressores sexuais), considerando N o tamanho da população (675) e n o tamanho da amostra (251), calcular o intervalo de amostragem, ou o pulo sistemático, chamado k, por meio da fórmula abaixo,
-
-\begin{equation}
-K= \left[ \frac{N}{n} \right]= \left[ \frac{675}{251} \right] = 3
-\end{equation}
 
 \newpage
-Posteriormente, sorteia-se um número entre 1 e k=3, chamado i, sendo que esse número i serão o primeiro elemento da amostra. O segundo elemento da amostra será (i+3), o terceiro elemento será (i+2)3, e assim sucessivamente, de forma sistemática até i(n-1)3, ou seja, ate completar o valor de amostra n=251.\vskip0.3cm
+\textbf{Exemplo Prático: Processos Judiciais}
+\vskip0.3cm
 
-Assim calcula-se o k, verifica-se que sorteando um número entre 1 e k=3, tem-se o número i=2, assim, a amostra ficará da seguinte maneira:
+Conforme a fundamentação teórica de Thompson (2012) sobre a eficácia da amostragem sistemática em cadastros físicos, retomamos o estudo de Castro et al. (2016). \vskip0.3cm
 
+Ao chegar ao Tribunal de Justiça, os pesquisadores depararam-se com elementos populacionais organizados em pilhas sequenciais. Para garantir a cobertura uniforme dessas pilhas sem o custo logístico de uma numeração individual completa para AAS, aplicou-se a sistemática. \vskip0.3cm
 
+Com uma população $N = 675$ e uma amostra necessária de $n = 251$, determinou-se a razão de amostragem:$$k = \left\lfloor \frac{675}{251} \right\rfloor = 3$$
 
-
-\begin{table}[!htb]
-    \centering
-    {
-    \caption{Amostragem sistemática sobre práticas de agressão sexual com crianças e adolescentes julgados pelo TJE em três municípios Paraenses no período de 2012 a 2014.}
-    \label{amostras estratificada}
-    \vspace{0.1cm}
-\begin{tabular}{c|c|c|c|c|c|c|c|c|c}
-  \hline\hline
-   2  & 5  & 7  & 10 & 13 & 15 & 18 & 21 & 24 & 26 \\
-   29 & 32 & 34 & 37 & 40 & 42 & 45 & 48 & 50 & 53 \\
-   56 & 58 & 61 & 64 & 67 & ... & ... & ... & ... & 674 \\
-  \hline\hline
-\end{tabular}}
-\\
-\hspace{-1.0cm}
-\end{table}
-
-
-
-\subsection{Amostragem Por Conglomerados ou Clusters}
-
-A amostragem por conglomerados ou grupos é uma variação de qualquer processo de amostragem que, em vez de utilizar unidades de amostras individuais, usa um grupo ou conglomerado de pequenas subparcelas ou unidades secundárias (QUEIROZ, 2012).\vskip0.3cm
+Sorteando-se uma partida aleatória $i=2$ (entre 1 e 3), a "varredura" sistemática gerou a seguinte sequência de coleta:
 
 
 \begin{table}[!htb]
 \centering
-    {
-    \caption{Esquema Geral sobre Amostragem por Conglomerados}
-    \label{amostras estratificada}
-    \vspace{0.1cm}
+\caption{Sequência dos primeiros 50 processos selecionados ($i=2, k=3$).}
+\label{tab:amostra_sistematica_detalhada}
+\vspace{0.2cm}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline\hline
+2  & 5  & 8  & 11 & 14 & 17 & 20 & 23 & 26 & 29 \\ \hline
+32 & 35 & 38 & 41 & 44 & 47 & 50 & 53 & 56 & 59 \\ \hline
+62 & 65 & 68 & 71 & 74 & 77 & 80 & 83 & 86 & 89 \\ \hline
+92 & 95 & 98 & 101 & 104 & 107 & 110 & 113 & 116 & 119 \\ \hline
+122 & 125 & 128 & 131 & 134 & 137 & 140 & 143 & 146 & 149 \\ \hline
+\dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & 674 \\
+\hline\hline
+\end{tabular}
+\vspace{0.1cm}
+\small \\ \textbf{Fonte:} Castro et al. (2016).
+\end{table}
+
+
+É interessante mencionar que o último elemento ($\mathbf{674}$) confirma a precisão do intervalo. Como a fórmula do termo geral de uma \textbf{PA} é $a_n = a_1 + (n-1) \cdot k$, temos:$$a_{225} = 2 + (225-1) \cdot 3 = 2 + 672 = 674$$ 
+
+Isso demonstra que, ao chegar ao 225 elemento, o pesquisador terá percorrido praticamente toda a extensão da pilha de 675 processos (Thompson, 2012).
+%-----------------------------------------------------------------------------------------%
+
+
+%-----------------------------------------------------------------------------------------%
+\newpage
+
+\subsection{Amostragem Por Conglomerados ou Clusters}
+
+Embora as técnicas tenham evoluído com o advento da computação, os pilares estabelecidos por \textbf{Cochran (1977)} continuam sendo a base para o cálculo de precisão e confiança em estudos populacionais.
+\vskip0.3cm
+
+A amostragem por conglomerados (ou agrupamentos) é uma estratégia na qual a unidade de seleção não é o indivíduo isolado, mas sim um grupo ou bloco de elementos que compartilham uma proximidade física ou institucional. Segundo \textbf{Queiroz (2012)}, este método utiliza unidades secundárias (elementos individuais) contidas dentro de unidades primárias de amostragem (os conglomerados).
+\vskip0.3cm
+
+Diferente da amostragem estratificada, que exige informações prévias detalhadas sobre a população para a criação dos estratos, a amostragem por conglomerados é frequentemente utilizada quando o pesquisador não dispõe de uma listagem completa dos elementos da população (o chamado \textit{frame} ou sistema de referência), mas possui acesso aos grupos que os contêm.
+
+\begin{table}[!htb]
+\centering
+    \caption{Esquema representativo de unidades secundárias ($y_{ij}$) dentro de conglomerados ($N$).}
+    \label{tab:esquema_conglomerados}
+    \vspace{0.2cm}
 \begin{tabular}{c|c|c|c|c|c}
 \hline\hline
-\multirow{2}{*}{Subparcelas} & \multicolumn{5}{c}{Conglomerados}              \\
+\multirow{2}{*}{Subparcelas} & \multicolumn{5}{c}{Conglomerados (Unidades Primárias)} \\
 \cline{2-6}
                              & 1         & 2        &   3       & $\cdots$ & N            \\
 \hline\hline
-1                            & $y_{11}$  & $y_{21}$ &  $y_{31}$ & $\cdots$ & $y_{N_{1}}$  \\
-2                            & $y_{12}$  & $y_{22}$ &  $y_{33}$ & $\cdots$ & $y_{N_{2}}$  \\
-...                          & $\cdots$  & $\cdots$ &  $\cdots$ & $\cdots$ & $\cdots$     \\
-M                            & $y_{1M}$  & $y_{2M}$ &  $y_{3M}$ & $\cdots$ & $y_{N_{M}}$   \\
+1                            & $y_{11}$  & $y_{21}$ &  $y_{31}$ & $\cdots$ & $y_{N1}$  \\
+2                            & $y_{12}$  & $y_{22}$ &  $y_{32}$ & $\cdots$ & $y_{N2}$  \\
+$\vdots$                     & $\vdots$  & $\vdots$ &  $\vdots$ & $\ddots$ & $\vdots$     \\
+M                            & $y_{1M}$  & $y_{2M}$ &  $y_{3M}$ & $\cdots$ & $y_{NM}$   \\
 \hline\hline
-Totais                       &  $y_{1.}$ & $y_{2.}$ &  $y_{3.}$ &   $\cdots$       & $y_{N.}$   \\
+\textbf{Totais}              &  $y_{1.}$ & $y_{2.}$ &  $y_{3.}$ &  $\cdots$       & $y_{N.}$   \\
 \hline\hline
-\end{tabular}}
+\end{tabular}
 \end{table}
 
-Apesar de a amostragem estratificada apresentar resultados
-satisfatórios, a sua implementação é dificultada pela falta
-de informações sobre a população para fazer a estratificação.
+\textbf{Lohr (2021)} destaca que a principal motivação para o uso de clusters é a \textbf{eficiência logística}. Geralmente, os conglomerados são definidos por critérios geográficos (bairros, quarteirões), organizacionais (escolas, hospitais) ou administrativos (distritos policiais, zonas eleitorais).
 
-
-
-Para poder contornar esse problema, pode-se trabalhar com o
-esquema de levantamento chamado amostragem por conglomerados.\vskip0.3cm
-
-Os conglomerados são definidos em razão da experiência
-do gestor ou do pesquisador. Geralmente, podemos definir os
-conglomerados por fatores geográficos, como bairros e quarteirões.
-A utilização da amostragem por conglomerados possibilita uma
-redução significativa do custo no processo de amostragem.\vskip0.3cm
-
-A amostragem por conglomerados ou também chamada de clusters, é usada quando a população
-pode ser dividida em subpopulações heterogêneas.\vskip0.3cm
-
-
-Uma amostragem por conglomerado é indicada quando:
-
+\newpage
+Uma amostragem por conglomerado é tecnicamente indicada quando:
 \begin{itemize}
-  \item Não se possui uma lista contendo todos os nomes dos elementos da população;
-  \item Existe grande heterogeneidade entre os elementos da população-alvo;
-  \item É preciso fazer entrevistas ou observações em grandes áreas geográficas;
+  \item Inexistência de uma lista nominal de todos os elementos da população;
+  \item Dispersão geográfica excessiva, que tornaria a AAS ou a Estratificada inviáveis financeiramente;
+  \item O custo de deslocamento entre as unidades individuais é elevado.
 \end{itemize}
 
-
-
-\begin{figure}
+\begin{figure}[h]
     \centering
-\includegraphics[scale=0.25]{figures/cluster1.png}
-    \caption{Exemplo de Amostragem por Conglomerado Geral.}
-    \label{fig:my_labe21}
+    \includegraphics[scale=0.25]{figures/cluster1.png}
+    \caption{Exemplo de seleção de unidades por conglomerados.}
+    \textbf{Fonte}: leticia.raposo@uniriotec.br     
+    \label{fig:conglomerados_geral}
 \end{figure}
 
 
 
+\textbf{Classificação e Fases}
+\vskip0.3cm
+A literatura moderna de \textit{survey sampling} classifica os projetos de clusters em duas dimensões principais:
+\begin{enumerate}
+    \item \textbf{Número de Estágios:} 
+    \begin{itemize}
+        \item \textbf{Estágio Único:} Todos os elementos dos conglomerados sorteados são pesquisados.
+        \item \textbf{Multietapa (Multi-stage):} Realiza-se um sorteio dos conglomerados e, dentro destes, sorteiam-se os elementos finais.
+    \end{itemize}
+    \item \textbf{Probabilidade Proporcional ao Tamanho (PPT):} Quando os grupos têm tamanhos muito distintos, utiliza-se o método PPT para evitar que conglomerados menores tenham peso excessivo na média final (\textbf{THOMPSON, 2012}).
+\end{enumerate}
+
+\textbf{Vantagens e Desvantagens Técnicas}
+\vskip0.3cm
+
+A principal vantagem é a redução drástica de custos operacionais. Entretanto, a desvantagem crítica reside na homogeneidade interna dos grupos. Segundo \textbf{Kish (1965)}, esse fenômeno é quantificado pelo \textbf{Efeito de Delineamento (Deff)}, que indica quantas vezes a variância da amostra por conglomerados é maior do que seria em uma amostragem aleatória simples de mesmo tamanho.
+\vskip0.3cm
+
+Conforme alertam \textbf{Valliant et al. (2018)}, a correlação intraclasse costuma aumentar o erro padrão da estimativa em comparação com a AAS. Além disso, a variação no tamanho dos conglomerados dificulta o controle rigoroso do $n$ final da amostra, exigindo ajustes estatísticos ponderados durante a análise dos dados.
+%------------------------------------------------------------------------------------------------%
 
 
-\newpage
-As unidades de amostragem ou grupos podem ser espaçadas como ocorre naturalmente em unidades geográficas ou físicas (por exemplo, estados, delegações ou distritos); em base  a uma organização como escolas, grau escolar; ou serviço telefônico, tais como códigos de área ou alterar o código de área do serviço dos números de telefone.\vskip0.3cm
-
-Duas grandes dimensões são utilizadas para classificar os diferentes tipos de amostragem por conglomerados. Uma baseia-se no número de fases do projeto da amostra, e o outra na representação proporcional de grupos na amostra total.\vskip0.3cm
 
 
-A principal Desvantagem dos cluters é que, os conglomerados raramente são do mesmo tamanho, dificultando o controle da amplitude da amostra. Além disso, pode introduzir maior variabilidade nos resultados, já que os elementos dentro de cada conglomerado tendem a ser mais semelhantes entre si, aumentando o erro amostral.
-
-
-
+%------------------------------------------------------------------------------------------------%
 \newpage
 \section{Amostragem Não Probabilística}
 
-Os métodos de amostragem não probabilística, dirigido ou também chamados de não aleatória, são métodos ad-hoc de caracter pragmático ou intuitivo e são largamente utilizados, pois possibilitam um
-estudo mais rápido e com menores custos.
+Os métodos de amostragem não probabilística — também chamados de dirigidos ou não aleatórios — são procedimentos \textit{ad-hoc} de caráter pragmático ou intuitivo. São largamente utilizados em cenários onde o rigor da aleatoriedade é inviabilizado por restrições de custo, tempo ou ausência de um sistema de referência (\textit{sampling frame}) completo. \vskip0.3cm
 
+Embora não permitam o cálculo do erro amostral por meio da teoria estatística clássica, esses métodos fornecem \textit{insights} valiosos em fases exploratórias da investigação científica.
 
-\subsection{Amostragem por Conveniência ou Acidental}
+\subsection{Amostragem por Conveniência ou Acidental (ACA)}
 
-A amostragem por conveniência ou acidental é uma técnica não probabilística, amplamente utilizada em pesquisas exploratórias devido à sua simplicidade, rapidez e baixo custo. Apesar de ser útil em situações específicas, ela possui limitações importantes, principalmente relacionadas à falta de representatividade da população.\vskip0.3cm
+A amostragem por conveniência é uma técnica na qual o pesquisador seleciona os elementos que estão mais prontamente disponíveis ou acessíveis. É amplamente utilizada em pesquisas exploratórias devido à sua simplicidade operacional. \vskip0.3cm
 
-As pricipais características sobre Amostragem por Conveniência são:
+As principais características deste método são:
 
 \begin{itemize}
-    \item \textbf{Rapidez e Facilidade}: Utiliza unidades acessíveis ou disponíveis no momento da pesquisa, como grupos próximos do pesquisador.
-    \item \textbf{Baixo Custo}: É uma opção econômica, pois dispensa processos elaborados de seleção.
-    \item \textbf{Aplicações Frequentes}: Estudos exploratórios para geração de ideias iniciais. Pré-testes de questionários ou instrumentos de pesquisa. Pesquisas com limitações de tempo ou orçamento.
-    \item \textbf{Baixa Confiabilidade}: A seleção das unidades depende do critério do pesquisador, o que pode introduzir vieses significativos. Não há garantias de que os resultados sejam representativos da população estudada.
-    \item \textbf{Quando Utilizar}: Pré-testes de questionários, Estudos exploratórios ou pilotos, e Pesquisas rápidas ou de baixo custo, quando a representatividade não é a prioridade.
+    \item \textbf{Acessibilidade}: Utiliza unidades disponíveis no momento da pesquisa, como voluntários, estudantes em uma sala de aula ou clientes em um ponto de venda.
+    \item \textbf{Economia de Recursos}: É a opção mais econômica e rápida, pois dispensa o sorteio rigoroso e o deslocamento planejado.
+    \item \textbf{Aplicações}: Ideal para pré-testes de questionários (estudos-piloto), geração de hipóteses iniciais e pesquisas em que a representatividade estatística não é o objetivo primário.
+    \item \textbf{Limitação Técnica}: Apresenta alto risco de viés de seleção. Como a probabilidade de inclusão é desconhecida, os resultados não podem ser generalizados para a população total com confiança estatística.
 \end{itemize}
-
-
 
 \newpage
-\subsection{Amostragem Intencional ou por Julgamento}
+\textbf{Exemplo na Gestão Pública (ACA):} \vskip0.3cm
 
-A amostragem intencional ou por julgamento é uma técnica de amostragem não probabilística em que o pesquisador utiliza seu conhecimento, experiência ou critérios específicos para selecionar os elementos que ele acredita serem mais representativos ou relevantes para o estudo. Aqui estão os principais aspectos e exemplos para ilustrar sua aplicação:
+Um gestor da Secretaria de Saúde de um município deseja realizar um pré-teste de um novo formulário de atendimento antes de implementá-lo em toda a rede. Para isso, ele aplica o questionário apenas aos cidadãos que estão na sala de espera da Unidade Básica de Saúde (UBS) central em uma manhã de segunda-feira. \vskip0.3cm
+
+\textbf{Nota Técnica (ACA):} \vskip0.3cm
+
+Embora rápida, essa amostra é enviesada, pois os usuários que frequentam a UBS central na segunda-feira podem ter perfis socioeconômicos e necessidades de saúde diferentes daqueles que utilizam postos rurais ou comparecem em outros horários.
+
+\subsection{Amostragem Intencional ou por Julgamento (AIJ)}
+
+Nesta modalidade, o pesquisador utiliza seu conhecimento especializado para selecionar elementos que ele acredita serem "casos típicos" ou especialmente relevantes para o estudo.
 
 \begin{itemize}
-    \item \textbf{Critério Baseado no Conhecimento}: A escolha dos elementos é feita com base no julgamento do pesquisador, que identifica indivíduos, locais ou grupos considerados mais adequados para o objetivo da pesquisa;
-    \item \textbf{Representatividade Percebida}: A abordagem se baseia na premissa de que os elementos escolhidos são "típicos" ou "representativos" do fenômeno estudado;
-    \item \textbf{Tamanho da Amostra}: Essa técnica é frequentemente usada quando o tamanho da amostra é pequeno e o pesquisador precisa otimizar a seleção para maximizar a relevância dos dados;
-    \item \textbf{Aplicações Comuns}: Seleção de especialistas para estudos qualitativos. Escolha de localidades "modelo" para entender fenômenos mais amplos. Estudos iniciais ou exploratórios em que se busca profundidade em vez de amplitude;
-    \item \textbf{Vantagens}: Simplicidade e rapidez na seleção.
-Foco em elementos-chave que podem gerar insights valiosos;
-Útil quando o pesquisador possui amplo conhecimento do contexto
-    \item \textbf{Limitações}: Alto risco de viés, pois depende da subjetividade do pesquisador.
-Pode não ser representativo de toda a população, comprometendo a generalização dos resultados.
+    \item \textbf{Critério do Especialista}: A escolha baseia-se no julgamento subjetivo de quem conhece profundamente o fenômeno. Por exemplo, ao estudar o trânsito, o pesquisador pode selecionar propositalmente cruzamentos com histórico específico de acidentes.
+    \item \textbf{Foco em Elementos-Chave}: É frequente na seleção de peritos ou especialistas para entrevistas em profundidade (Método Delphi ou painéis de especialistas).
+    \item \textbf{Risco de Subjetividade}: A qualidade da amostra depende inteiramente da competência do pesquisador. O viés cognitivo pode levar à exclusão de elementos divergentes que seriam importantes para a análise.
 \end{itemize}
-
-Essa abordagem, embora limitada na representatividade estatística, pode fornecer informações valiosas e detalhadas para a compreensão de fenômenos complexos, como os relacionados ao trânsito.
 
 \newpage
-\subsection{Amostragem por Quotas ou Proporcional}
+\textbf{Exemplo na Gestão Pública (AIJ):} \vskip0.3cm
 
-A amostragem por quotas ou proporcional é uma abordagem muito utilizada em pesquisas quando o objetivo é garantir que a amostra reflita, de maneira aproximada, as características da população em estudo. Aqui estão os pontos mais relevantes sobre este método:
+Em um estudo sobre a eficácia de políticas de segurança pública, uma equipe de pesquisadores do Governo Estadual seleciona deliberadamente os três municípios que apresentaram as maiores quedas nos índices de criminalidade no último ano, além de dois municípios onde os índices estagnaram. \vskip0.3cm
+
+\textit{Nota técnica (AIJ):} \vskip0.3cm
+
+A escolha não é aleatória, mas estratégica. O pesquisador usa seu "julgamento" para selecionar casos que ofereçam as melhores lições sobre o que funcionou (ou não) na gestão da segurança, focando na profundidade qualitativa.
+
+
+\subsection{Amostragem por Quotas ou Proporcional (AQP)}
+
+A amostragem por quotas é frequentemente considerada a "versão não probabilística" da amostragem estratificada. O objetivo é garantir que a amostra replique a distribuição de certas características da população (como sexo, idade ou classe social).
+
 
 
 \begin{itemize}
-    \item \textbf{Definição e Objetivo}:
-A amostragem por quotas é um tipo de amostragem não probabilística em que o pesquisador busca obter uma amostra semelhante à população com base em características específicas, como gênero, idade, raça ou renda. Isso é feito para assegurar que a amostra represente a diversidade da população em relação a essas variáveis;
-\item \textbf{Processo de Seleção}: Primeiro, são identificadas as características relevantes da população que precisam estar representadas na amostra. Em seguida, calcula-se a proporção de cada grupo na população. Com base nessas proporções, o pesquisador estabelece quotas (número de participantes por grupo) que devem ser preenchidas;
-\item \textbf{Instruções aos Entrevistadores}:
-Os entrevistadores são orientados a buscar pessoas que se encaixem nas características definidas até que a quota de cada grupo seja atingida.
-\item \textbf{Vantagens}: É um método rápido e de baixo custo, já que dispensa a necessidade de uma seleção aleatória complexa. Permite um controle maior sobre as características da amostra, assegurando que ela seja representativa em aspectos relevantes. Útil quando as características populacionais são bem conhecidas e estão relacionadas ao objeto de estudo.
-\item \textbf{Limitações}: Não garante representatividade probabilística, uma vez que os participantes são selecionados de forma intencional, e não aleatória. A qualidade dos resultados depende da habilidade e do julgamento do entrevistador, podendo haver viés de seleção. Pode ser inadequado quando as categorias relevantes para a pesquisa são numerosas ou difíceis de identificar.
+    \item \textbf{Mecânica de Seleção}: O pesquisador define quotas baseadas em proporções conhecidas (ex: 52\% mulheres e 48\% homens). Os entrevistadores têm liberdade para escolher os participantes, desde que preencham essas quotas.
+    \item \textbf{Vantagem Logística}: É muito comum em pesquisas de opinião e mercado (marketing), pois permite rapidez na coleta mantendo uma aparência de equilíbrio demográfico.
+    \item \textbf{Limitação}: Diferente da Amostragem Estratificada, a seleção dentro da quota não é aleatória. Isso significa que, embora a amostra "pareça" com a população em termos de gênero, ela pode estar viciada em termos de comportamento ou opinião.
 \end{itemize}
 
-A amostragem por quotas é amplamente utilizada em pesquisas de mercado, pesquisas sociais e políticas, onde a rapidez e a flexibilidade na coleta de dados são fatores importantes.
+
+\textbf{Exemplo na Gestão Pública (AQP):} \vskip0.3cm
+
+Uma Prefeitura deseja realizar uma pesquisa de satisfação sobre o transporte coletivo urbano. Para que o resultado minimamente espelhe a realidade demográfica da cidade (sabidamente composta por 55\% de mulheres e 30\% de idosos), os entrevistadores são enviados aos terminais de integração com a meta de entrevistar exatamente 550 mulheres e 300 idosos, de um total de 1.000 pessoas. \vskip0.3cm
+
+\textit{Nota técnica (AQP):} \vskip0.3cm
+
+Diferente da amostragem estratificada, o entrevistador aborda as pessoas que julga serem mais receptivas no terminal até preencher sua "quota", o que agiliza o levantamento de dados para decisões rápidas da gestão municipal.
+
+\subsection{Amostragem em Bola de Neve (\textit{Snowball Sampling})}
+
+Uma técnica adicional importante em estudos sociais e de saúde é a amostragem em bola de neve. Nela, os participantes iniciais (chamados de "sementes") indicam novos participantes de sua rede de contatos.
+
+\begin{itemize}
+    \item \textbf{Indicação Sucessiva}: É utilizada para populações de difícil acesso ou "escondidas", como portadores de doenças raras, usuários de drogas ou populações marginalizadas.
+    \item \textbf{Crescimento Exponencial}: A amostra cresce à medida que os contatos são compartilhados, permitindo alcançar indivíduos que não seriam encontrados por métodos tradicionais.
+\end{itemize}
+
+
+
+\textbf{Exemplo na Gestão Pública (Snowball):}  \vskip0.3cm
+A Secretaria de Assistência Social precisa mapear as necessidades de populações em situação de rua que não frequentam os abrigos municipais. O assistente social identifica dois indivíduos que aceitam colaborar e, após a entrevista, solicita que eles apresentem outros membros de seu círculo de convivência que também vivem em áreas informais. \vskip0.3cm
+
+
+\textit{Nota técnica (Snowball):}  \vskip0.3cm
+
+Esta é a única forma de a gestão pública alcançar populações "invisíveis" aos cadastros oficiais, permitindo a criação de políticas públicas baseadas na rede de confiança desses grupos.
+
+%------------------------------------------------------------------------------------------------%

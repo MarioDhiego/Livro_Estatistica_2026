@@ -547,75 +547,135 @@ respectivos Cabeçalhos;
 \item [e)] O conteúdo do rodapé só deve ser apresentado na página de conclusão.
 \end{itemize}
 
+%---------------------------------------------------------------------------------------------%
 \newpage
-\section{Arrendondamento e Decimais}
+\section{Comunicação de Dados (Arredondamento)}
 
-Muitos usuários que não têm familiaridade com estatística encontram dificuldades para diferenciar números quando há variação em três ou mais dígitos decimais. Para facilitar a interpretação dos dados, uma solução eficaz é arredondar os valores apresentados em tabelas. Isso simplifica a leitura e a comparação entre os números.\vskip0.3cm 
+Na gestão pública moderna, a eficácia de um relatório técnico não é medida pela quantidade de casas decimais, mas pela velocidade com que o gestor compreende a informação. Segundo autores de visualização de dados como \textbf{Edward Tufte (2001)}, o excesso de dígitos gera "ruído visual", dificultando a identificação imediata de padrões e tendências orçamentárias.
 
-Além disso, o arredondamento é particularmente útil quando os dados não exigem um alto grau de precisão, como em casos onde pequenos detalhes não afetam significativamente a análise ou as conclusões. Ao fazer isso, você melhora a acessibilidade das informações e garante que os usuários possam interpretar os dados com mais facilidade e confiança.\vskip0.3cm
+\subsection{A Regra da Simplicidade}
 
-É importante ter cautela ao arredondar seus dados para não comprometer a qualidade da informação. Embora o arredondamento possa facilitar a análise e a apresentação, ele também pode levar à perda de detalhes cruciais. O ideal é encontrar um equilíbrio, mantendo a precisão necessária sem sacrificar a clareza. Em casos de dados sensíveis ou de alta precisão, é recomendável manter o maior número de casas decimais possível, ajustando o arredondamento apenas na apresentação final, se necessário.
+O arredondamento deve ser aplicado para transformar dados brutos em informações inteligíveis. Em um orçamento municipal de milhões de reais, apresentar os centavos pode ocultar a visão estratégica do todo. O princípio fundamental é: \textbf{calcule com precisão, mas apresente com clareza}.
 
 %----------------------------------------------------------------------------------
-\begin{table}
-    \centering
-    \begin{tabular}{r|r}
-    \hline \hline
-  \fcolorbox{green}{white}{Bom Exemplo}  &\fcolorbox{red}{white}{Mau Exemplo}\\
-    \hline
-      5 760 000              &   5760000\\
-      2 680 000              &   2680000\\
-      1 390 000              &   1390000\\
-    \hline \hline
-    \end{tabular}
-    \caption{Exemplo de Tabela com Tipo de Arrendondamento por Espaço}
-    \label{tab:my_label}
+\begin{table}[h]
+\centering
+\begin{tabular}{r|r}
+\hline \hline
+\fcolorbox{green}{white}{\textbf{Foco na Gestão}} & \fcolorbox{red}{white}{\textbf{Foco no Detalhe Irrelevante}}\\
+\hline
+R\$ 15.420.000 & R\$ 15.420.342,89 \\
+R\$ 8.750.000  & R\$ 8.750.121,12  \\
+R\$ 2.100.000  & R\$ 2.099.890,45  \\
+\hline \hline
+\end{tabular}
+\caption{Exemplo de arredondamento para relatórios executivos.}
 \end{table}
 %----------------------------------------------------------------------------------
 
-No exemplo acima, os números arredondados à esquerda são mais fáceis de entender e memorizar do que os números exatos à direita. O uso de um espaço como separador de milhar também é ilustrado neste exemplo.\vskip0.3cm
+
+
+Ao arredondar para a unidade significativa mais próxima (milhares ou milhões), o gestor consegue comparar valores de forma imediata. Enquanto o detalhamento exato é necessário em anexos contábeis e folhas de pagamento, no corpo dos relatórios de decisão, a clareza deve prevalecer.
+\vskip0.3cm
+
+\subsection{Princípios de Alinhamento e Magnitude}
+
+A comparação entre indicadores exige rigor visual. A mente humana percebe grandezas pelo comprimento do número e pelo posicionamento dos seus algarismos. Se os decimais não estiverem alinhados pela vírgula, a percepção de hierarquia numérica é comprometida. \newpage
+
+%----------------------------------------------------------------------------------
+\begin{table}[h]
+\centering
+\begin{tabular}{r|r}
+\hline \hline
+\fcolorbox{green}{white}{\textbf{Leitura Rápida}} & \fcolorbox{red}{white}{\textbf{Leitura Lenta}}\\
+\hline
+15,4\%  & 15,4\%  \\
+ 8,0\%  & 8\%     \\
+102,3\% & 102,3\% \\
+\hline \hline
+\end{tabular}
+\caption{Alinhamento decimal para indicadores de desempenho.}
+\end{table}
+%----------------------------------------------------------------------------------
+
+Enquanto textos são lidos da esquerda para a direita, números são lidos por magnitude. Portanto, em tabelas técnicas, valores numéricos devem ser sempre \textbf{alinhados à direita}. Isso garante que unidades fiquem sob unidades e dezenas sob dezenas, permitindo uma análise comparativa natural.
+
+%----------------------------------------------------------------------------------
+\begin{table}[h]
+\centering
+\begin{tabular}{r|l}
+\hline \hline
+\fcolorbox{green}{white}{\textbf{Padrão Profissional}} & \fcolorbox{red}{white}{\textbf{Padrão Amador}}\\
+\hline
+      185,4  & 185,4  \\
+    5 291,2  & 5291,2 \\
+      231,0  & 231,0  \\
+\hline \hline
+\end{tabular}
+\caption{Impacto do alinhamento (Direita vs. Esquerda).}
+\label{tab:alinhamento_erro}
+\end{table}
+
+\subsection{O Uso do Zero como Elemento de Precisão}
+
+Um equívoco comum em planilhas de gestão é omitir o zero em números "redondos". Na estatística aplicada, o zero à direita da vírgula não é um vazio, mas um \textbf{indicador de precisão}. Se um conjunto de dados utiliza uma casa decimal, o valor "10" deve ser grafado como "10,0" para manter a integridade visual e técnica da série.
+
+%----------------------------------------------------------------------------------
+\begin{table}[h]
+\centering
+\begin{tabular}{r|r}
+\hline \hline
+\fcolorbox{green}{white}{\textbf{Padronizado (Zero Ativo)}} & \fcolorbox{red}{white}{\textbf{Irregular (Zero Omitido)}}\\
+\hline
+12,50  & 12,5  \\
+ 8,00  & 8     \\
+104,20 & 104,2 \\
+ 0,30  & ,3    \\
+\hline \hline
+\end{tabular}
+\caption{Uso do zero para manutenção da precisão visual.}
+\end{table}
+%----------------------------------------------------------------------------------
 
 \newpage
-Para facilitar a leitura de números com diferentes quantidades de casas decimais, é importante alinhá-los pelo separador decimal (a vírgula, no caso do Brasil), em vez de simplesmente alinhá-los à direita. \vskip0.3cm
+\textbf{O Zero à Esquerda:} O uso do zero antes da vírgula em valores menores que 1 (ex: 0,30) é indispensável. A omissão (excrever apenas ",30") aumenta drasticamente o risco de erros de leitura em documentos impressos ou telas de baixa resolução, onde a vírgula pode ser confundida com uma imperfeição no papel.
 
-Isso torna a comparação entre os valores mais fácil e rápida. Veja o exemplo abaixo, onde os valores à esquerda estão alinhados pela vírgula e, portanto, mais fáceis de ler em comparação com os da direita. Além disso, é recomendável exibir o mesmo número de casas decimais para todos os valores.
+\subsection{Simplificação em Grandes Magnitudes}
+
+Para a gestão orçamentária, o uso de zeros deve ser estratégico. Em vez de saturar uma tabela com "R\$ 1.000.000,00", prefira simplificar a unidade de medida no cabeçalho ou na legenda da tabela, reduzindo a carga cognitiva do leitor.
 
 %----------------------------------------------------------------------------------
-\begin{table}
-    \centering
-    \begin{tabular}{r|r}
-    \hline \hline
-\fcolorbox{green}{white}{Bom Exemplo}  &\fcolorbox{red}{white}{Mau Exemplo}\\
-    \hline
-        63,2                 &   63,2\\
-      1053,0                 &   1053\\
-       458,3                 &   458,3\\
-    \hline \hline
-    \end{tabular}
-    \caption{Exemplo de Tabela com Tipo de Alinhamento pela Vírgula.}
-    \label{tab:my_label2}
+\begin{table}[h]
+\centering
+\begin{tabular}{l|r}
+\hline \hline
+\textbf{Secretaria} & \textbf{Valor (em R\$ milhões)} \\
+\hline
+Educação   & 15,0 \\
+Saúde      & 12,5 \\
+Urbanismo  & 8,0  \\
+\hline \hline
+\end{tabular}
+\caption{Simplificação de magnitudes para leitura executiva.}
 \end{table}
+
+
+
+
 %----------------------------------------------------------------------------------
 
 
-Os valores numéricos devem ser justificados à direita. Usando outro exemplo, observe como é difícil ler os valores quando os números estão justificados na margem esquerda conforme mostrado abaixo.
 
 
-%----------------------------------------------------------------------------------
-\begin{table}
-    \centering
-    \begin{tabular}{r|l}
-    \hline \hline
- \fcolorbox{green}{white}{Bom Exemplo}  &\fcolorbox{red}{white}{Mau Exemplo}\\
-    \hline
-        185,4                &   185,4\\
-      5291,2                 &   52912\\
-       231,0                 &   231,0\\
-    \hline \hline
-    \end{tabular}
-    \caption{Exemplo de Tabela com Tipo de Justificado à Esquerda.}
-    \label{tab:my_label3}
-\end{table}
+
+
+
+
+
+
+
+
+
 %----------------------------------------------------------------------------------
 
 
@@ -865,7 +925,7 @@ De forma geral, os dados podem ser classificados como:
   \item \textbf{Dados Tabelados Agrupados em Classes}: os valores da variável não aparecem individualmente, mas agrupados em classes.
 \end{itemize}
 
-
+\newpage
 \subsection{Tabela Primitiva e Rol}
 
 Tabela primitiva é um termo utilizado em estatística para se referir a uma tabela simples que apresenta os dados brutos ou não processados de uma pesquisa ou experimento.\vskip0.3cm
@@ -1014,6 +1074,7 @@ Fonte: DETRAN-PA, 2022.
 
 Procedendo desta forma perde-se a informação detalhada das estaturas, mas se ganha em simplicidade, pois a análise dos dados fica simplificada. Examinando a tabela acima, podemos facilmente verificar que a maioria dos alunos tem estaturas entre 154 e 166 cm e que uma minoria é menor que 154 cm ou maior que 170. Esta análise não é imediata da tabela em que todos os valores são listados. Por outro lado, se desejarmos saber quantos alunos tem 150 cm de altura, esta informação não estará disponível, pois somamos os alunos de 150, 151, 152 e 153 cm numa única classe da distribuição de freqüência. Assim, é neessário um conhecimento mais detalhado de como construir uma distribuíção de frequência.
 
+\newpage
 \subsection{Elementos Básicos da Distribuição de Frequência}
 
 \begin{enumerate}
@@ -1161,7 +1222,7 @@ Fonte: DETRAN-PA, 2024.
 \end{table}
 
 
-Os dados, como apresentado acima, são chamados brutos, pois ainda não foram submetidos a nenhum tipo de tratamento. Inicialmente, os dados devem ser colocados em ordem crescente (rol):
+Os dados, como apresentado acima, são chamados brutos, pois ainda não foram submetidos a nenhum tipo de tratamento. Inicialmente, os dados devem ser colocados em ordem crescente (rol): \vskip0.3cm
 
 
 \begin{table}[!htb]
@@ -1182,8 +1243,9 @@ Os dados, como apresentado acima, são chamados brutos, pois ainda não foram su
 Fonte: DETRAN-PA, 2024.
 \end{table}
 
-Pode-se observar, agora, que das 25 observações o menor valor é $x_{minimo = 0,55}$ e o maior é $x_{maximo= 1,10}$. Para os dados acima, pode-se calcular a amplitude total $AT = x_{maximo}-x_{minimo}=1,10-0,52=0,58$. \vskip0.3cm
+Pode-se observar, agora, que das 25 observações o menor valor é $x_{minimo = 0,55}$ e o maior é $x_{maximo= 1,10}$. Para os dados acima, pode-se calcular a amplitude total $AT = x_{maximo}-x_{minimo}=1,10-0,52=0,58$. 
 
+\newpage
 Observe que esse exemplo contém um numero pequeno de observação (n=25), quando há um grande número de dados observados o processo de ordenação é trabalhoso e a listagem final pouco representará. Nesses casos, pode-se simplificar o processo agrupando os dados em certo número de classes, cujos limites serão denominados limite inferior e limite superior. A quantidade de classes e a amplitude destas devem ser obtidas observando as seguintes normas:
 
 \begin{itemize}
@@ -1203,6 +1265,8 @@ Para o exemplo, $k=\sqrt{25}=5$ ou $k=1-3,22 \ log(25)\cong 5,5$. Dividindo a am
 
 Quando os valores observados são números inteiros, os limites das classes também devem ser números inteiros. Para isso, aconselha-se escolher o número mais próximo de AT que resulte h em um número inteiro.\vskip0.3cm
 
+
+\newpage
 Agora, utilizando esse valor pode-se obter os limites inferiores e superiores das classes:
 
 \begin{itemize}
