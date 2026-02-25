@@ -378,12 +378,11 @@ Os axiomas devem ser:
  
 As proposições deduzidas a partir dos axiomas são chamadas \textbf{teoremas}.\vskip0.3cm
 
-\newpage
 Em 1933, \textbf{Andrei Nikolaevich Kolmogorov} estabeleceu a formulação axiomática moderna da probabilidade em sua obra \textbf{Foundations of the Theory of Probability}. Sua construção foi baseada nas propriedades das frequências relativas e nas operações da teoria dos conjuntos.
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.65]{figures/Kolmogorov.jpeg}
+    \includegraphics[scale=0.5]{figures/Kolmogorov.jpeg}
     \caption{Andrei Nikolaevich Kolmogorov (1903-1987)}
     \label{fig:my_label10}
 \end{figure}
@@ -400,8 +399,6 @@ Considerado um dos grandes cientista em sua época, Kolmogorov foi agraciado por
 \item Medalha Lobachevsky em 1986;
 \end{itemize}
 
-
-\newpage
 \subsubsection{Axiomas de Probabilidade}
 
 Seja $S$ um espaço amostral. A cada evento $A \subseteq S$ associa-se um número real $P(A)$, denominado probabilidade de $A$, que satisfaz:
@@ -621,15 +618,13 @@ P(A)=\sum_{i=1}^{k}P(A\mid B_i)\,P(B_i).
 Sir \emph{Thomas Bayes} foi um matemático britânico e um ministro
 da igreja presbiteriana que primeiro utilizou a probabilidade
 indutivamente e estabeleceu as bases matemáticas para a inferência
-probabilística. \vskip0.3cm
-
-Ele nasceu em Londres, em 1702, morreu em Tunbridge Wells em 1761 (tendo vivido apenas 59 anos), e foi sepultado no cemitério Bunhill Fields em Londres, onde sua tumba pode ser facilmente encontrada com o mapa fornecido pelo cemitério.
+probabilística. Ele nasceu em Londres, em 1702, morreu em Tunbridge Wells em 1761 (tendo vivido apenas 59 anos), e foi sepultado no cemitério Bunhill Fields em Londres, onde sua tumba pode ser facilmente encontrada com o mapa fornecido pelo cemitério.
 
 
 \vspace{-0.15cm}
 \begin{figure}
     \centering
-    \includegraphics[scale=0.75]{figures/Thomas_Bayes.jpeg}
+    \includegraphics[scale=0.5]{figures/Thomas_Bayes.jpeg}
     \caption{Thomas Joshua Bayes (1702-1761)}
     \label{fig:my_label2}
 \end{figure}
@@ -642,7 +637,7 @@ Towards Solving a Problem in the Doctrine of Chances relatou,
 entre outras importantes descobertas de Bayes, o famoso Teorema de
 Bayes.
 
-\newpage
+
 \subsection{ O Que é o Teorema de Bayes}
 
 O teorema de Bayes é usado na inferência estatística para
@@ -653,7 +648,7 @@ como essas observações se relacionam com as hipóteses.\vskip0.3cm
 Este teorema é uma das pedras angulares da estatística das
 probabilidades combinadas, e é largamente utilizada em áreas a
 primeira vista pouco relacionadas, como Medicina e
-Informática.\vskip0.3cm
+Informática. \vskip0.3cm
 
 Na primeira, o paradigma embasado em evidências é todo construído
 em cima do teorema de Bayes. Baseado na experiência acumulada de
@@ -794,7 +789,7 @@ Esse tipo de análise é essencial para políticas públicas baseadas em dados,
 pois permite quantificar incertezas e aprimorar decisões estratégicas na gestão
 ambiental.
 
-\newpage
+
 \section{Eventos Independentes}
 
 Em Probabilidade, um dos conceitos mais importantes é o de \textbf{independência entre eventos}. \vskip0.3cm
@@ -881,7 +876,7 @@ Assim, existe uma chance de apenas $3\%$ de que, no mesmo dia, haja
 chuva intensa e acidente urbano.
 
 
-
+\newpage
 \subsection*{Independência de Três Eventos}
 
 Considere agora três eventos $A$, $B$ e $C$.
@@ -991,131 +986,296 @@ e permite compreender sistemas complexos com maior clareza.
 \caption{Diagrama de Venn ilustrando dois eventos independentes.}
 \label{fig:venn_independencia}
 \end{figure}
-
-
 %----------------------------------------------------------------------------------------%
+
+\newpage
 %------------------------- var ----------------------------------------------------------%
 \newpage
 \section{Variáveis Aleatórias Unidimensionais}
+
 \subsection{Introdução}
 
-
 Em muitos experimentos aleatórios, o espaço amostral $\Omega$ é formado por resultados que não são, necessariamente, números.
-Por exemplo, no lançamento de duas moedas, o espaço amostral é dado por:
+Por exemplo, no lançamento de duas moedas, o espaço amostral é
 
 \[
 \Omega=\{CC,\,CK,\,KC,\,KK\},
 \]
 
-onde $C$ representa ``cara'' e $K$ representa ``coroa''.
+onde $C$ representa ``cara'' e $K$ representa ``coroa''. \vskip0.3cm
 
-\vskip0.3cm
-
-Em diversas situações, entretanto, não estamos interessados na sequência exata obtida, mas sim em alguma característica numérica associada ao resultado.
-Por exemplo:
+Entretanto, em diversas situações, não estamos interessados na descrição literal do resultado, mas sim em alguma característica numérica associada a ele. Por exemplo:
 
 \begin{itemize}
     \item ao lançar três moedas, pode-se desejar apenas o número de caras obtidas;
-    \item ao lançar uma moeda repetidamente até aparecer cara, pode-se estar interessado no número de lançamentos necessários.
+    \item ao lançar uma moeda repetidamente até aparecer cara, pode-se estar interessado no número de lançamentos necessários;
+    \item ao lançar um dado, pode-se considerar simplesmente o número obtido na face superior.
 \end{itemize}
 
-\vskip0.3cm
-
-Assim, surge a necessidade de associar a cada resultado do espaço amostral um valor numérico real.
-Esse tipo de associação conduz ao conceito fundamental de \textbf{variável aleatória}.
+Essas situações motivam a introdução de uma função que associe a cada resultado do experimento um número real. Tal construção conduz ao conceito fundamental de \textbf{variável aleatória}.
 
 \subsection{Definição}
 
-Seja $\Omega$ o espaço amostral de um experimento aleatório.
-Uma função
+Considere um espaço de probabilidade $(\Omega,\mathcal{F},P)$.
+Uma \textbf{variável aleatória unidimensional} é uma função
 
 \[
 X:\Omega \longrightarrow \mathbb{R},
 \]
 
-que associa a cada resultado $s\in\Omega$ um número real $X(s)$, é denominada uma
-\textbf{variável aleatória}.
+que associa a cada resultado $s\in\Omega$ um número real $X(s)$.
 
-\vskip0.3cm
-
-O conjunto de todos os valores possíveis assumidos por $X$ é chamado de
-\textbf{imagem} (ou conjunto de valores) da variável aleatória, e é denotado por:
+O conjunto de todos os valores possíveis assumidos por $X$ é denominado
+\textbf{imagem} (ou conjunto de valores) da variável aleatória, e é dado por
 
 \[
 X(\Omega)=\{x\in\mathbb{R}\;:\; X(s)=x,\; s\in\Omega\}.
 \]
 
-\vskip0.3cm
+Em geral, utilizamos letras maiúsculas ($X,Y,Z,\dots$) para representar variáveis aleatórias e letras minúsculas ($x,y,z,\dots$) para indicar valores particulares dessas variáveis.
 
-Em geral, utilizamos letras maiúsculas ($X,Y,Z,\dots$) para representar variáveis aleatórias e letras minúsculas ($x,y,z,\dots$) para representar valores possíveis dessas variáveis.
+\subsection{Eventos induzidos por uma variável aleatória}
 
+Cada valor real $x$ determina um evento no espaço amostral, definido por
+
+\[
+\{X=x\} = \{ s \in \Omega : X(s)=x \}.
+\]
+
+Mais geralmente, para qualquer subconjunto $A \subset \mathbb{R}$, define-se
+
+\[
+\{X \in A\} = \{ s \in \Omega : X(s)\in A \}.
+\]
+
+Dessa forma, a variável aleatória permite traduzir eventos descritos em termos dos resultados originais do experimento para eventos descritos em termos numéricos.
+
+Além disso, a variável aleatória induz uma nova estrutura probabilística sobre seu conjunto de valores, definida por
+
+\[
+P(X \in A) = P(\{ s \in \Omega : X(s)\in A \}).
+\]
+
+Assim, o estudo do experimento pode ser realizado exclusivamente por meio da variável numérica $X$.
+
+\subsection{Classificação}
+
+As variáveis aleatórias unidimensionais podem ser classificadas em:
+
+\begin{itemize}
+    \item \textbf{Discretas}, quando assumem um número finito ou enumerável de valores;
+    \item \textbf{Contínuas}, quando assumem valores em intervalos da reta real;
+    \item \textbf{Mistas}, quando apresentam simultaneamente componentes discretas e contínuas.
+\end{itemize}
+
+Nesta seção, concentramo-nos inicialmente nas variáveis discretas.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\small},
+    set/.style={draw, thick, rounded corners, minimum height=3.5cm, minimum width=3.5cm},
+    arrow/.style={->, thick}
+]
+% Espaço amostral
+\node[set] (omega) at (0,0) {};
+\node at (0,1.3) {$\Omega$};
+\node at (0,0.6) {$s$};
+\node at (0,0.2) {$\vdots$};
+\node at (0,-0.6) {$s'$};
+% Contradomínio R
+\node[set] (R) at (6,0) {};
+\node at (6,1.3) {$\mathbb{R}$};
+\node at (6,0.6) {$X(s)$};
+\node at (6,0.2) {$\vdots$};
+\node at (6,-0.6) {$X(s')$};
+% Imagem destacada
+\node[draw, thick, dashed, fit={(5.2,-1.2) (6.8,0.9)}, inner sep=0.2cm] (image) {};
+\node at (6,-1.5) {$X(\Omega)$};
+% Seta principal
+\draw[arrow] (1.8,0) -- node[above] {$X$} (4.2,0);
+\end{tikzpicture}
+\caption{Representação conceitual de uma variável aleatória como função $X:\Omega \rightarrow \mathbb{R}$, destacando a imagem $X(\Omega)\subset\mathbb{R}$.}
+\end{figure}
 
 \subsection{Exemplo: Número de caras em três lançamentos}
 
-Considere o experimento de lançar três moedas equilibradas. O espaço amostral é composto por todas as sequências possíveis de caras e coroas.  \vskip0.3cm
+Considere o experimento de lançar três moedas equilibradas. \vskip0.3cm
 
-Defina a variável aleatória $X$ como:
+O espaço amostral é
+
+\[
+\Omega=\{KKK,\,CKK,\,KCK,\,KKC,\,CCK,\,CKC,\,KCC,\,CCC\}.
+\]
+
+Defina a variável aleatória $X$ por
 
 \[
 X(s)=\text{número de caras obtidas na sequência } s.
 \]
 
-Logo, o conjunto de valores possíveis é:
+O conjunto de valores possíveis é
 
 \[
 X(\Omega)=\{0,1,2,3\}.
 \]
 
-A tabela a seguir apresenta os resultados possíveis e os respectivos valores de $X$, durante uma jogada de lancamento de dados:
+A tabela a seguir apresenta cada resultado do experimento e o respectivo valor assumido pela variável aleatória.
 
 \begin{table}[H]
 \centering
 \caption{Variável aleatória $X$: número de caras em três lançamentos.}
 \begin{tabular}{c|cccccccc}
 \hline\hline
-$\Omega$     & KKK & CKK & KCK & KKC & CCK & CKC & KCC & CCC\\
+$\Omega$ & KKK & CKK & KCK & KKC & CCK & CKC & KCC & CCC\\
 \hline
-$X(s)$       & 0   & 1   & 1   & 1   & 2   & 2   & 2   & 3\\
+$X(s)$ & 0 & 1 & 1 & 1 & 2 & 2 & 2 & 3\\
 \hline\hline
 \end{tabular}
 \end{table}
 
-\vskip0.3cm
-
-Note que, sobre o mesmo espaço amostral, poderíamos definir diversas outras variáveis aleatórias, como o número de coroas, ou a diferença entre caras e coroas.
-
-\newpage
-\section{Variável Aleatória Discreta}
-\subsection{Definição}
-
-Uma variável aleatória $X$ é chamada de \textbf{discreta} quando assume valores em um conjunto finito ou infinito enumerável, isto é,
+Como as moedas são equilibradas, cada elemento de $\Omega$ possui probabilidade $1/8$. Logo,
 
 \[
-X(\Omega)=\{x_1,x_2,x_3,\dots\}.
+P(X=0)=\frac{1}{8}, \quad
+P(X=1)=\frac{3}{8}, \quad
+P(X=2)=\frac{3}{8}, \quad
+P(X=3)=\frac{1}{8}.
 \]
 
-\subsection{Função de Probabilidade}
+Observe que a variável $X$ induz uma distribuição de probabilidade sobre o conjunto $\{0,1,2,3\}$, permitindo estudar o experimento exclusivamente em termos do número de caras obtidas. \vskip0.3cm
 
-Se $X$ é uma variável aleatória discreta, define-se sua
-\textbf{função de probabilidade} como:
+Note ainda que, sobre o mesmo espaço amostral, poderíamos definir outras variáveis aleatórias, como o número de coroas ou a diferença entre o número de caras e o número de coroas. Isso evidencia que a variável aleatória não é uma propriedade intrínseca do experimento, mas sim uma construção matemática que seleciona a característica de interesse.
+%----------------------------------------------------------------------------------------------%
+
+
+
+\newpage
+%----------------------------------------------------------------------------------------------%
+\section{Variável Aleatória Discreta}
+
+\subsection{Definição}
+
+Uma variável aleatória $X:\Omega \to \mathbb{R}$ é denominada
+\textbf{discreta} quando seu conjunto de valores possíveis (suporte)
+
+\[
+\mathcal{X} = X(\Omega)
+\]
+
+é finito ou infinito enumerável, isto é,
+
+\[
+\mathcal{X} = \{x_1, x_2, x_3, \dots\}.
+\]
+
+Para cada valor $x_i \in \mathcal{X}$, define-se o evento associado
+
+\[
+\{X=x_i\} = \{s \in \Omega : X(s)=x_i\}.
+\]
+
+Esses eventos são dois a dois disjuntos e sua união coincide com $\Omega$.
+
+\subsection{Função Massa de Probabilidade}
+
+Se $X$ é discreta, define-se sua
+\textbf{função massa de probabilidade} (f.m.p.) por
 
 \[
 f(x_i)=P(X=x_i),
+\quad x_i \in \mathcal{X}.
 \]
 
-onde $x_i$ é um valor possível de $X$. Essa função satisfaz as propriedades:
+A função $f$ satisfaz as seguintes propriedades fundamentais:
 
 \[
-f(x_i)\geq 0,\quad \forall i,
+f(x_i) \ge 0, \quad \forall i,
 \]
 
 \[
 \sum_{i} f(x_i)=1.
 \]
 
-\subsection{Exemplo: Duas moedas}
+Reciprocamente, toda função $f$ definida em um conjunto enumerável
+$\mathcal{X}$ e que satisfaça essas propriedades determina uma variável aleatória discreta.
 
-Considere o lançamento de duas moedas e seja $X$ o número de caras obtidas.
+\subsection{Função de Distribuição Acumulada}
+
+A \textbf{função de distribuição acumulada} (FDA) de $X$ é definida por
+
+\[
+F(x)=P(X\leq x).
+\]
+
+No caso discreto,
+
+\[
+F(x)=\sum_{x_i \le x} f(x_i).
+\]
+
+A função $F$ é não decrescente, contínua à direita e satisfaz
+
+\[
+\lim_{x\to -\infty}F(x)=0,
+\quad
+\lim_{x\to +\infty}F(x)=1.
+\]
+
+Além disso, $F$ apresenta saltos nos pontos do suporte de $X$, e o tamanho do salto em $x_i$ é precisamente
+
+\[
+P(X=x_i)=f(x_i).
+\]
+
+\subsection{Esperança Matemática}
+
+Se $X$ assume valores $x_1,x_2,\dots$, define-se a
+\textbf{esperança matemática} (ou valor esperado) por
+
+\[
+E(X)=\sum_i x_i\,P(X=x_i),
+\]
+
+desde que a série seja absolutamente convergente, isto é,
+
+\[
+\sum_i |x_i|\,P(X=x_i) < \infty.
+\]
+
+A esperança possui as seguintes propriedades fundamentais:
+
+\begin{itemize}
+\item \textbf{Linearidade:} $E(aX+b)=aE(X)+b$;
+\item \textbf{Monotonicidade:} se $X \le Y$, então $E(X)\le E(Y)$.
+\end{itemize}
+
+\subsection{Variância}
+
+A variância de $X$ mede a dispersão dos valores em torno da média e é definida por
+
+\[
+V(X)=E\big[(X-E(X))^2\big].
+\]
+
+Uma forma computacionalmente conveniente é
+
+\[
+V(X)=E(X^2)-[E(X)]^2,
+\]
+
+onde
+
+\[
+E(X^2)=\sum_i x_i^2\,P(X=x_i).
+\]
+
+\newpage
+\subsection{Exemplo: Lançamento de duas moedas}
+
+Considere o experimento de lançar duas moedas equilibradas e seja
+$X$ o número de caras obtidas.
 
 \[
 \Omega=\{CC,CK,KC,KK\}.
@@ -1123,7 +1283,7 @@ Considere o lançamento de duas moedas e seja $X$ o número de caras obtidas.
 
 \begin{table}[H]
 \centering
-\caption{Valores possíveis da variável aleatória $X$.}
+\caption{Valores da variável aleatória $X$.}
 \begin{tabular}{c|cccc}
 \hline\hline
 Resultado & CC & CK & KC & KK\\
@@ -1133,121 +1293,106 @@ $X(s)$    & 2  & 1  & 1  & 0\\
 \end{tabular}
 \end{table}
 
-Assim, a função de probabilidade é:
+Como cada resultado possui probabilidade $1/4$, obtém-se:
+
+\[
+P(X=0)=\frac{1}{4}, \quad
+P(X=1)=\frac{2}{4}, \quad
+P(X=2)=\frac{1}{4}.
+\]
+
+A função massa de probabilidade é dada por
 
 \begin{table}[H]
 \centering
 \caption{Distribuição de probabilidade de $X$.}
 \begin{tabular}{c|ccc}
 \hline\hline
-$x$      & 0   & 1   & 2\\
+$x$    & 0 & 1 & 2\\
 \hline
-$f(x)$   & 1/4 & 1/2 & 1/4\\
+$f(x)$ & 1/4 & 1/2 & 1/4\\
 \hline\hline
 \end{tabular}
 \end{table}
 
-
-\subsection{Função de Distribuição Acumulada (FDA)}
-
-A função de distribuição acumulada de $X$ é definida por:
+Calculando a esperança:
 
 \[
-F(x)=P(X\leq x).
+E(X)=0\cdot\frac14 + 1\cdot\frac12 + 2\cdot\frac14 = 1.
 \]
 
-No caso discreto, temos:
+Calculando o segundo momento:
 
 \[
-F(x)=\sum_{x_i\leq x} f(x_i).
+E(X^2)=0^2\cdot\frac14 + 1^2\cdot\frac12 + 2^2\cdot\frac14
+= \frac12 + 1 = \frac32.
 \]
 
-
-
-\subsection{Esperança Matemática}
-
-Se $X$ assume valores $x_1,x_2,\dots$, então a esperança de $X$ é:
+Logo,
 
 \[
-E(X)=\sum_i x_i\,P(X=x_i).
+V(X)=\frac32 - 1^2 = \frac12.
 \]
 
-
-\subsection{Variância}
-
-A variância de $X$ mede a dispersão dos valores em torno da média:
-
-\[
-V(X)=E(X^2)-[E(X)]^2.
-\]
-
-onde
-
-\[
-E(X^2)=\sum_i x_i^2\,P(X=x_i).
-\]
-
-
-
+Observe que essa distribuição corresponde a um caso particular da
+distribuição binomial com parâmetros $n=2$ e $p=1/2$.
+%----------------------------------------------------------------------------------------------%
 %----------------------------------------------------------------------------------%
 
 
 
 \newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------%
+%----------------------------------------------------------------------------------%
+\section{Variáveis Aleatórias Contínuas}
 
-\section{Variáveis Aleatórias Contínuas (V.A.C.)}
-
-De modo geral, muitas grandezas observadas na natureza não são obtidas por contagem, mas sim por \textbf{mensuração}.
-Por exemplo:
+Em diversos fenômenos naturais, as grandezas observadas não resultam de
+contagem, mas de \textbf{mensuração}. Exemplos típicos incluem:
 
 \begin{itemize}
-    \item Peso de um Paciente,
-    \item tempo de Espera em um Atendimento,
-    \item Temperatura Ambiente,
-    \item Nível de Voltagem em um Circuito,
-    \item Concentração de um Poluente no Ar.
+    \item peso de um paciente;
+    \item tempo de espera em um atendimento;
+    \item temperatura ambiente;
+    \item nível de voltagem em um circuito;
+    \item concentração de um poluente no ar.
 \end{itemize}
 
-Essas quantidades podem assumir infinitos valores dentro de um intervalo real, sendo mais adequadamente descritas como
-\textbf{variáveis aleatórias contínuas}. \vskip0.3cm
+Tais quantidades podem assumir infinitos valores dentro de um intervalo da reta real.
+Para modelar esse tipo de situação, utilizamos o conceito de
+\textbf{variável aleatória contínua}. \vskip0.3cm
 
-Por outro lado, variáveis associadas a \textbf{contagens} (como número de veículos em uma via ou quantidade de atendimentos em um hospital) são tipicamente modeladas como variáveis aleatórias discretas. \vskip0.3cm
-
-Em alguns casos, a distinção depende do nível de precisão da medida.
-Por exemplo, o comprimento de uma peça é uma variável contínua, mas se for arredondado para duas casas decimais pode ser tratado como discreto.
+Em contraste, variáveis associadas a contagens — como número de veículos
+em uma via ou quantidade de atendimentos — são tipicamente modeladas
+como variáveis discretas.
 
 \subsection{Definição}
 
-Seja $\Omega$ o espaço amostral de um experimento aleatório.
-Uma variável aleatória $X$ é dita \textbf{contínua} se seu conjunto de valores possíveis $X(\Omega)$ é infinito não enumerável, isto é, se assume valores em um intervalo (ou união de intervalos) da reta real.
+Uma variável aleatória $X:\Omega \to \mathbb{R}$ é dita
+\textbf{contínua} quando sua distribuição pode ser descrita por meio de
+uma função densidade de probabilidade. \vskip0.3cm
+
+Intuitivamente, isso ocorre quando o conjunto de valores possíveis de $X$
+é infinito não enumerável, tipicamente um intervalo da reta real.
 
 \subsection{Função Densidade de Probabilidade}
 
 Uma variável aleatória contínua $X$ é caracterizada por uma função
-$f(x)$, chamada de \textbf{função densidade de probabilidade (fdp)}, que satisfaz:
+$f:\mathbb{R}\to\mathbb{R}$, chamada de
+\textbf{função densidade de probabilidade (fdp)}, que satisfaz:
 
 \begin{enumerate}
-    \item Não negatividade:
-    \[
-    f(x)\geq 0,\quad \forall x\in\mathbb{R};
-    \]
-
-    \item Normalização:
+    \item $f(x)\ge 0$, para todo $x\in\mathbb{R}$;
+    \item 
     \[
     \int_{-\infty}^{+\infty} f(x)\,dx = 1.
     \]
 \end{enumerate}
 
-\vskip0.3cm
-
-A probabilidade de $X$ assumir valores dentro de um intervalo $(a,b)$ é dada por:
+A probabilidade de $X$ assumir valores em um intervalo $(a,b)$ é dada por:
 
 \[
 P(a<X<b)=\int_a^b f(x)\,dx.
 \]
-
-\vskip0.3cm
 
 Um ponto fundamental é que, para variáveis contínuas,
 
@@ -1255,43 +1400,108 @@ Um ponto fundamental é que, para variáveis contínuas,
 P(X=x)=0.
 \]
 
-Ou seja, probabilidades são sempre associadas a intervalos, e não a valores isolados.
+Logo, probabilidades são associadas a intervalos, e não a pontos isolados.
 
+\subsection{Função de Distribuição Acumulada}
 
-\subsection{Exemplo: Tempo de vida de uma lâmpada}
-
-Suponha que o tempo de duração (em anos) de uma lâmpada seja uma variável aleatória contínua com densidade:
-
-\[
-f(x)=
-\begin{cases}
-2e^{-2x}, & x\geq 0,\\
-0, & \text{caso contrário}.
-\end{cases}
-\]
-
-Essa é uma distribuição exponencial, frequentemente utilizada em modelos de confiabilidade e tempo de falha.
-
-
-\subsection{Função Distribuição Acumulada}
-
-A função de distribuição acumulada (FDA) de uma variável contínua $X$ é definida por:
+A função de distribuição acumulada (FDA) de $X$ é definida por:
 
 \[
-F(x)=P(X\leq x).
+F(x)=P(X\le x).
 \]
 
-No caso contínuo, temos:
+No caso contínuo,
 
 \[
 F(x)=\int_{-\infty}^{x} f(s)\,ds.
 \]
 
+A função $F$ é não decrescente, contínua e satisfaz:
 
+\[
+\lim_{x\to -\infty}F(x)=0,
+\qquad
+\lim_{x\to +\infty}F(x)=1.
+\]
+
+Se $f$ é contínua, então:
+
+\[
+f(x)=F'(x).
+\]
+
+\subsection{Esperança Matemática}
+
+Se $X$ possui densidade $f(x)$, sua esperança é definida por:
+
+\[
+E(X)=\int_{-\infty}^{+\infty} x f(x)\,dx,
+\]
+
+desde que a integral seja absolutamente convergente.
+
+\subsection{Variância}
+
+A variância mede a dispersão dos valores em torno da média
+$\mu=E(X)$ e é definida por:
+
+\[
+V(X)=E[(X-\mu)^2].
+\]
+
+Uma forma equivalente é:
+
+\[
+V(X)=E(X^2)-[E(X)]^2,
+\]
+
+onde
+
+\[
+E(X^2)=\int_{-\infty}^{+\infty} x^2 f(x)\,dx.
+\]
+\newpage
+\subsection{Exemplo: Distribuição Exponencial}
+
+Considere a densidade
+
+\[
+f(x)=
+\begin{cases}
+2e^{-2x}, & x\ge 0,\\
+0, & \text{caso contrário}.
+\end{cases}
+\]
+
+Verificação da normalização:
+
+\[
+\int_0^\infty 2e^{-2x}dx
+=
+2\left[-\frac{1}{2}e^{-2x}\right]_0^\infty
+=1.
+\]
+
+Logo, trata-se de uma densidade válida.
+
+\textbf{Esperança:}
+
+\[
+E(X)=\int_0^\infty x\,2e^{-2x}dx
+=\frac{1}{2}.
+\]
+
+\textbf{Variância:}
+
+\[
+V(X)=\frac{1}{4}.
+\]
+
+Essa distribuição é amplamente utilizada em modelos de tempo de falha e confiabilidade.
 
 \subsection{Exemplo: Construção de uma FDA}
 
-Considere a densidade:
+Considere a densidade
 
 \[
 f(x)=
@@ -1301,903 +1511,1319 @@ f(x)=
 \end{cases}
 \]
 
-A FDA é obtida por integração:
+Verificação:
 
 \[
-F(x)=\int_0^x \frac{1}{2}s\,ds=\frac{1}{4}x^2,\quad 0\leq x\leq 2.
+\int_0^2 \frac{1}{2}x dx
+=
+\frac{1}{2}\cdot\frac{2^2}{2}
+=1.
 \]
 
-Portanto,
+Logo, é uma densidade válida.
+
+A FDA é:
 
 \[
 F(x)=
 \begin{cases}
-0, & x<0,\\[0.2cm]
-\frac{1}{4}x^2, & 0\leq x\leq 2,\\[0.2cm]
-1, & x>2.
+0, & x\le 0,\\
+\frac{1}{4}x^2, & 0<x<2,\\
+1, & x\ge 2.
 \end{cases}
 \]
+%----------------------------------------------------------------------------------%
 
 
 
-\subsection{Esperança Matemática}
+%----------------------------------------------------------------------------------%
+\newpage
+%========================================================%
+\section{Distribuições de Probabilidade}
+\subsection{Fundamentos e Necessidade do Estudo das Distribuições}
 
-Se $X$ é uma variável aleatória contínua com densidade $f(x)$, então sua esperança é:
+A teoria moderna da probabilidade foi formalizada por Andrey Kolmogorov em 1933, na obra \textit{Grundbegriffe der Wahrscheinlichkeitsrechnung}. Nela, a probabilidade é definida como uma medida $P$ sobre um espaço mensurável $(\Omega,\mathcal{F})$, satisfazendo:
 
+\begin{enumerate}
+\item $P(A)\ge 0$
+\item $P(\Omega)=1$
+\item Para eventos disjuntos $A_i$,
 \[
-\boxed{
-E(X)=\int_{-\infty}^{+\infty} x f(x)\,dx.
-}
+P\left(\bigcup_{i=1}^\infty A_i\right)=\sum_{i=1}^\infty P(A_i)
+\]
+\end{enumerate}
+
+\begin{definition}
+Uma variável aleatória é uma aplicação mensurável
+\[
+X:\Omega\to\mathbb{R}.
+\]
+\end{definition}
+
+A distribuição de probabilidade de $X$ é a medida induzida
+\[
+P_X(B)=P(X\in B).
 \]
 
-Esse valor representa a média teórica da distribuição.
+Sem distribuições de probabilidade:
 
+\begin{itemize}
+\item não há inferência estatística;
+\item não há testes de hipótese;
+\item não há modelagem de risco;
+\item não há previsão quantitativa.
+\end{itemize}
 
+%--------------------------------------------------------------------------------------------------%
+\newpage
+\section{Principais Distribuições Discretas}
+\subsection{Distribuição de Bernoulli}
 
-%---------------------------------------------------------------------------%
-\subsection{Variância}
+A distribuição de Bernoulli foi formalizada por Jacob Bernoulli
+na obra \textit{Ars Conjectandi}, publicada postumamente em 1713,
+em Basileia. A obra inaugura o tratamento sistemático de
+experimentos aleatórios repetidos.
 
-A variância é uma das medidas mais importantes em Probabilidade e Estatística,
-pois quantifica o grau de dispersão dos valores assumidos por uma variável
-aleatória em torno de sua média. \vskip0.3cm
+\subsubsection*{Definição Formal}
 
-Seja $X$ uma variável aleatória contínua com esperança matemática (média)
-
-\[
-\mu = E(X).
-\]
-
-A variância de $X$, denotada por $V(X)$ ou $\mathrm{Var}(X)$,
-é definida como o valor esperado do quadrado do desvio de $X$ em relação à média:
-
-\begin{equation}
-V(X)=E\big[(X-\mu)^2\big].
-\end{equation}
-
-\vskip0.3cm
-
-Essa definição expressa que a variância mede o quanto os valores de $X$
-se afastam, em média, do valor central $\mu$.
-
-
-\subsubsection{Demonstração da Fórmula Alternativa}
-
-A expressão acima pode ser desenvolvida algebricamente.
-Começamos expandindo o termo quadrático:
+Uma variável aleatória $X$ é dita Bernoulli com parâmetro
+$p\in(0,1)$ se:
 
 \[
-(X-\mu)^2 = X^2 -2\mu X +\mu^2.
+P(X=1)=p, \qquad P(X=0)=1-p.
 \]
 
-Aplicando o operador esperança em ambos os lados, obtemos:
+\subsubsection*{Função Geradora de Momentos}
 
 \[
-V(X)=E(X^2 -2\mu X +\mu^2).
+M_X(t)=\E(e^{tX})
+= (1-p)e^{0} + p e^{t}
+= 1-p + p e^t.
 \]
 
-Pela linearidade da esperança, temos:
+\subsubsection*{Esperança — Demonstração}
 
 \[
-V(X)=E(X^2)-2\mu E(X)+E(\mu^2).
+\E(X)=\sum_{x=0}^{1} xP(X=x)
 \]
-
-Agora, note que $\mu$ é uma constante, pois $\mu=E(X)$.
-Logo:
 
 \[
-E(\mu^2)=\mu^2.
+= 0(1-p) + 1(p)
+= p.
 \]
 
-Além disso, como $E(X)=\mu$, segue que:
+\subsubsection*{Variância — Demonstração}
+
+Primeiro:
 
 \[
--2\mu E(X)=-2\mu\cdot \mu=-2\mu^2.
+\E(X^2)=0^2(1-p)+1^2(p)=p.
 \]
 
-Substituindo esses resultados na expressão anterior:
+Então:
 
 \[
-V(X)=E(X^2)-2\mu^2+\mu^2.
+\Var(X)=\E(X^2)-[\E(X)]^2
 \]
-
-Portanto:
 
 \[
-V(X)=E(X^2)-\mu^2.
+= p - p^2
+= p(1-p).
 \]
 
-Finalmente, como $\mu=E(X)$, concluímos que:
+\subsubsection*{Interpretação}
 
-\begin{equation}
-\boxed{
-V(X)=E(X^2)-[E(X)]^2.
-}
-\end{equation}
+A variância máxima ocorre quando $p=0,5$, refletindo máxima incerteza.
+
+\subsubsection*{Exemplo Aplicado}
+
+Se a probabilidade de aprovação de um projeto legislativo é 0,62,
+a esperança de aprovação por tentativa é 0,62 e a variância é
+0,2356.
+%--------------------------------------------------------------------------------------------------%
+
+
+
+
+
+%--------------------------------------------------------------------------------------------------%
+\subsection{Distribuição Binomial}
+
+Formalizada por Bernoulli (1713) e expandida por Abraham de Moivre
+em \textit{The Doctrine of Chances} (1738), onde aparece a primeira
+aproximação normal para grandes amostras.
+
+\subsubsection*{Derivação}
+
+Se $X=\sum_{i=1}^n X_i$, com $X_i\sim Bern(p)$ independentes:
+
+\[
+P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}.
+\]
+
+\subsubsection*{Esperança — Demonstração}
+
+Pela linearidade da esperança:
+
+\[
+\E(X)=\sum_{i=1}^n\E(X_i)=np.
+\]
+
+\subsubsection*{Variância — Demonstração}
+
+Como os $X_i$ são independentes:
+
+\[
+\Var(X)=\sum_{i=1}^n \Var(X_i)
+\]
+
+\[
+= n p(1-p).
+\]
+
+\subsubsection*{Exemplo Aplicado}
+
+Se 12 municípios podem aderir a um programa e cada um tem
+probabilidade 0,7 de adesão:
+
+\[
+\E(X)=12\times0,7=8,4
+\]
+
+\[
+\Var(X)=12\times0,7\times0,3=2,52.
+\]
+%--------------------------------------------------------------------------------------------------%
 
 
 \newpage
-\subsubsection{Expressão Integral para Variáveis Contínuas}
+%--------------------------------------------------------------------------------------------------%
+\subsection{Distribuição Geométrica}
 
-Se $X$ é contínua e possui função densidade de probabilidade $f(x)$,
-então o segundo momento de $X$ é dado por:
+Já presente em \textit{Ars Conjectandi} (1713), modelando o número
+de tentativas até o primeiro sucesso.
+
+\subsubsection*{Função de Probabilidade}
 
 \[
-\boxed{
-E(X^2)=\int_{-\infty}^{+\infty}x^2 f(x)\,dx.
-}
+P(X=k)=(1-p)^{k-1}p, \quad k=1,2,\dots
 \]
 
-Assim, a variância pode ser escrita como:
+\subsubsection*{Esperança — Demonstração}
 
 \[
-V(X)=
-\int_{-\infty}^{+\infty}x^2 f(x)\,dx
--
-\left(
-\int_{-\infty}^{+\infty}x f(x)\,dx
-\right)^2.
+\E(X)=\sum_{k=1}^{\infty} k(1-p)^{k-1}p.
 \]
 
-\vskip0.3cm
-
-Essa forma mostra que a variância depende do segundo momento de $X$ e do quadrado de sua média.
-
-
-\subsection{Exemplo Completo}
-
-Considere a densidade:
+Usando a identidade:
 
 \[
-f(x)=
-\begin{cases}
-\frac{1}{8}x^2, & 0<x<2,\\
-0, & \text{caso contrário}.
-\end{cases}
+\sum_{k=1}^{\infty} k r^{k-1} = \frac{1}{(1-r)^2}, \quad |r|<1,
 \]
 
-\textbf{(i) Esperança}
+com $r=1-p$:
 
 \[
-E(X)=\int_0^2 x\cdot \frac{1}{8}x^2\,dx
-=\frac{1}{8}\int_0^2 x^3\,dx
-=\frac{1}{8}\cdot\frac{2^4}{4}
-=1.
+\E(X)=p\frac{1}{p^2}=\frac{1}{p}.
 \]
 
-\textbf{(ii) Segundo momento}
+\subsubsection*{Variância — Demonstração}
 
 \[
-E(X^2)=\int_0^2 x^2\cdot \frac{1}{8}x^2\,dx
-=\frac{1}{8}\int_0^2 x^4\,dx
-=\frac{1}{8}\cdot\frac{2^5}{5}
-=\frac{4}{5}.
+\Var(X)=\frac{1-p}{p^2}.
 \]
 
-\textbf{(iii) Variância}
+%--------------------------------------------------------------------------------------------------%
+\subsection{Distribuição Hipergeométrica}
+
+Surge no século XVIII em problemas de urnas sem reposição,
+associada à escola combinatória francesa.
+
+\subsubsection*{Função de Probabilidade}
 
 \[
-V(X)=\frac{4}{5}-1^2=\frac{-1}{5}.
+P(X=k)=\frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}.
 \]
 
-(Portanto, este exemplo mostra que uma escolha inadequada de densidade pode gerar inconsistências, reforçando a necessidade de verificar a normalização.)
-
-
-\subsection{Exercício Proposto}
-
-Seja $X$ uma variável aleatória contínua com densidade:
+\subsubsection*{Esperança — Demonstração}
 
 \[
-f(x)=
-\begin{cases}
-cx^2, & 0<x<3,\\
-0, & \text{caso contrário}.
-\end{cases}
+\E(X)=n\frac{K}{N}.
 \]
 
-\begin{enumerate}
-    \item Determine a constante $c$.
-    \item Obtenha a função distribuição acumulada $F(x)$.
-    \item Calcule $P(1<X\leq 2)$.
-    \item Determine $E(X)$ e $V(X)$.
-\end{enumerate}
+Obtida via variáveis indicadoras.
 
-
-%------------------------------------------------------------------------------------------%
-\subsection{Propriedades da Esperança e Variância}
-
-A esperança matemática é um operador fundamental na Teoria da Probabilidade,
-pois permite determinar o valor médio esperado de uma variável aleatória.
-Além disso, ela possui propriedades algébricas essenciais que simplificam
-cálculos em diversos modelos estatísticos. \vskip0.3cm
-
-Sejam $X$ e $Y$ variáveis aleatórias com esperança finita e seja $k\in\mathbb{R}$
-uma constante real. Então, valem as seguintes propriedades.
-
-\subsubsection{Propriedade 1: Esperança de uma constante}
-
-\begin{equation}
-E(k)=k.
-\end{equation}
-
-\textbf{Demonstração:} Se $k$ é uma constante, então a variável aleatória assume sempre o mesmo valor. Pela definição da esperança para variáveis contínuas:
+\subsubsection*{Variância — Demonstração}
 
 \[
-E(k)=\int_{-\infty}^{+\infty} k\, f(x)\,dx.
+\Var(X)=n\frac{K}{N}\left(1-\frac{K}{N}\right)\frac{N-n}{N-1}.
 \]
 
-Como $k$ é constante, pode ser colocado fora da integral:
+O termo $\frac{N-n}{N-1}$ representa o fator de correção
+para população finita.
+%--------------------------------------------------------------------------------------------------%
+\subsection{Distribuição Binomial Negativa}
+
+Desenvolvida no século XIX no estudo de contagens até o
+$r$-ésimo sucesso.
+
+\subsubsection*{Função de Probabilidade}
 
 \[
-E(k)=k\int_{-\infty}^{+\infty} f(x)\,dx.
+P(X=k)=\binom{k+r-1}{r-1}p^r(1-p)^k.
 \]
 
-Mas toda função densidade satisfaz:
+\subsubsection*{Esperança — Demonstração}
 
 \[
-\int_{-\infty}^{+\infty} f(x)\,dx=1.
+\E(X)=\frac{r(1-p)}{p}.
 \]
 
-Logo:
+\subsubsection*{Variância — Demonstração}
 
 \[
-E(k)= k \times 1 = k.
+\Var(X)=\frac{r(1-p)}{p^2}.
 \]
 
-\subsubsection{Propriedade 2: Esperança de um múltiplo constante}
+%--------------------------------------------------------------------------------------------------%
+%====================================================
+\subsection{Distribuição de Poisson}
 
-\begin{equation}
-E(kX)=kE(X).
-\end{equation}
+A distribuição de Poisson foi introduzida por Siméon Denis Poisson
+(1781–1840) em sua obra: \vskip0.3cm
 
-\textbf{Demonstração:} Pela definição:
+Poisson, S. D. (1837). \textit{Recherches sur la probabilité des jugements en matière criminelle et en matière civile}. Bachelier, Paris. \vskip0.3cm
+
+O trabalho tinha como objetivo modelar a frequência de decisões judiciais
+e eventos raros em julgamentos, inserindo-se na tradição probabilística
+francesa iniciada por Laplace. \vskip0.3cm
+
+\subsubsection*{Derivação como Limite da Distribuição Binomial}
+
+Considere $X_n \sim Bin(n,p_n)$ tal que
 
 \[
-E(kX)=\int_{-\infty}^{+\infty} (kx)\, f(x)\,dx.
+n p_n \to \lambda \quad \text{quando } n\to\infty.
 \]
 
-Colocando $k$ em evidência:
+A função de probabilidade binomial é:
 
 \[
-E(kX)=k\int_{-\infty}^{+\infty} x f(x)\,dx.
+P(X_n = k)
+=
+\binom{n}{k} p_n^k (1-p_n)^{n-k}.
 \]
 
-Mas o termo integral é exatamente $E(X)$:
+Substituindo $p_n = \frac{\lambda}{n}$:
 
 \[
-E(kX)=kE(X).
-\]
-
-\subsubsection{Propriedade 3: Esperança de uma soma com constante}
-
-\begin{equation}
-E(X+k)=E(X)+k.
-\end{equation}
-
-\textbf{Demonstração:}
-
-Temos:
-
-\[
-E(X+k)=\int_{-\infty}^{+\infty} (x+k)\, f(x)\,dx.
-\]
-
-Separando a integral:
-
-\[
-E(X+k)=\int_{-\infty}^{+\infty} x f(x)\,dx
-+\int_{-\infty}^{+\infty} k f(x)\,dx.
-\]
-
-O primeiro termo é $E(X)$ e o segundo é $k$, pois:
-
-\[
-\int_{-\infty}^{+\infty} f(x)\,dx=1.
-\]
-
-Portanto:
-
-\[
-E(X+k)=E(X)+k.
-\]
-
-
-\subsubsection{Propriedade 4: Linearidade da esperança}
-
-\begin{equation}
-E(X\pm Y)=E(X)\pm E(Y).
-\end{equation}
-
-\textbf{Demonstração:} Considerando a esperança de uma soma:
-
-\[
-E(X+Y)=\int_{-\infty}^{+\infty}(x+y)\,f_{X,Y}(x,y)\,dx\,dy.
-\]
-
-Distribuindo:
-
-\[
-E(X+Y)=\int\int x f_{X,Y}(x,y)\,dx\,dy
-+\int\int y f_{X,Y}(x,y)\,dx\,dy.
-\]
-
-O primeiro termo corresponde a $E(X)$ e o segundo a $E(Y)$:
-
-\[
-E(X+Y)=E(X)+E(Y).
-\]
-
-O caso da diferença é análogo:
-
-\[
-E(X-Y)=E(X)-E(Y).
-\]
-
-
-\subsubsection{Propriedade 5: Esperança do produto de variáveis independentes}
-
-Se $X$ e $Y$ são independentes, então:
-
-\begin{equation}
-E(XY)=E(X)\,E(Y).
-\end{equation}
-
-\textbf{Demonstração:} Pela definição:
-
-\[
-E(XY)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}
-xy\,f_{X,Y}(x,y)\,dx\,dy.
-\]
-
-Se $X$ e $Y$ são independentes, então:
-
-\[
-f_{X,Y}(x,y)=f_X(x)\,f_Y(y).
-\]
-
-Logo:
-
-\[
-E(XY)=\int\int xy\,f_X(x)f_Y(y)\,dx\,dy.
-\]
-
-Separando os termos:
-
-\[
-E(XY)=
-\left(\int_{-\infty}^{+\infty} x f_X(x)\,dx\right)
-\left(\int_{-\infty}^{+\infty} y f_Y(y)\,dy\right).
-\]
-
-Mas:
-
-\[
-\int x f_X(x)\,dx=E(X),
-\qquad
-\int y f_Y(y)\,dy=E(Y).
-\]
-
-Portanto:
-
-\[
-E(XY)=E(X)\,E(Y).
-\]
-\vskip0.3cm
-
-Essas propriedades mostram que a esperança é um operador linear e que,
-sob independência, o valor esperado do produto se decompõe no produto das esperanças,
-um resultado central em Estatística e Inferência.
-
-\subsubsection{Propriedades da Variância}
-
-Além da esperança, outra medida fundamental é a variância, que quantifica
-o grau de dispersão dos valores de uma variável aleatória em torno de sua média.
-
-\vskip0.3cm
-
-Recordemos que, para uma variável aleatória contínua $X$, a variância é definida por:
-
-\[
-V(X)=E\big[(X-E(X))^2\big].
-\]
-
-Uma forma equivalente muito utilizada é:
-
-\[
-V(X)=E(X^2)-[E(X)]^2.
-\]
-
-A seguir apresentamos algumas propriedades importantes.
-
-\subsubsection{Propriedade 1: Variância de uma constante}
-
-\begin{equation}
-V(k)=0.
-\end{equation}
-
-\textbf{Demonstração:}
-
-Se $k$ é constante, então:
-
-\[
-E(k)=k.
-\]
-
-Logo:
-
-\[
-V(k)=E\big[(k-E(k))^2\big].
-\]
-
-Mas como $E(k)=k$, temos:
-
-\[
-V(k)=E\big[(k-k)^2\big]=E(0)=0.
-\]
-
-Portanto, uma constante não apresenta dispersão.
-
-
-
-\subsubsection{Propriedade 2: Variância de um múltiplo constante}
-
-\begin{equation}
-V(kX)=k^2V(X).
-\end{equation}
-
-\textbf{Demonstração:} Pela definição:
-
-\[
-V(kX)=E\big[(kX-E(kX))^2\big].
-\]
-
-Usando a propriedade da esperança:
-
-\[
-E(kX)=kE(X).
-\]
-
-Substituindo:
-
-\[
-V(kX)=E\big[(kX-kE(X))^2\big].
-\]
-
-Fatorando $k$:
-
-\[
-V(kX)=E\big[k^2(X-E(X))^2\big].
-\]
-
-Como $k^2$ é constante:
-
-\[
-V(kX)=k^2E\big[(X-E(X))^2\big].
-\]
-
-Mas o termo interno é a variância de $X$:
-
-\[
-V(kX)=k^2V(X).
-\]
-
-
-\subsubsection{Propriedade 3: Variância de uma soma com constante}
-
-\begin{equation}
-V(X+k)=V(X).
-\end{equation}
-
-\textbf{Demonstração:} Temos:
-
-\[
-V(X+k)=E\big[(X+k-E(X+k))^2\big].
-\]
-
-Pela propriedade da esperança:
-
-\[
-E(X+k)=E(X)+k.
-\]
-
-Logo:
-
-\[
-V(X+k)=E\big[(X+k-(E(X)+k))^2\big].
-\]
-
-Cancelando os termos $k$:
-
-\[
-V(X+k)=E\big[(X-E(X))^2\big].
-\]
-
-Portanto:
-
-\[
-V(X+k)=V(X).
-\]
-
-Isso mostra que adicionar uma constante desloca a variável,
-mas não altera sua dispersão.
-
-
-
-\subsubsection{Propriedade 4: Variância da soma de duas variáveis}
-
-Para quaisquer variáveis aleatórias $X$ e $Y$:
-
-\begin{equation}
-V(X+Y)=V(X)+V(Y)+2\,\mathrm{Cov}(X,Y),
-\end{equation}
-
-onde $\mathrm{Cov}(X,Y)$ é a covariância definida por:
-
-\[
-\mathrm{Cov}(X,Y)=E(XY)-E(X)E(Y).
-\]
-
-\textbf{Demonstração:} Pela definição:
-
-\[
-V(X+Y)=E\big[(X+Y-E(X+Y))^2\big].
-\]
-
-Como:
-
-\[
-E(X+Y)=E(X)+E(Y),
-\]
-
-então:
-
-\[
-V(X+Y)=E\big[(X+Y-E(X)-E(Y))^2\big].
+=
+\frac{n!}{k!(n-k)!}
+\left(\frac{\lambda}{n}\right)^k
+\left(1-\frac{\lambda}{n}\right)^{n-k}.
 \]
 
 Reescrevendo:
 
 \[
-V(X+Y)=E\big[((X-E(X))+(Y-E(Y)))^2\big].
+=
+\frac{n(n-1)\cdots(n-k+1)}{k!}
+\left(\frac{\lambda^k}{n^k}\right)
+\left(1-\frac{\lambda}{n}\right)^n
+\left(1-\frac{\lambda}{n}\right)^{-k}.
 \]
 
-Expandindo o quadrado:
+Tomando limite:
 
 \[
-V(X+Y)=E\big[(X-E(X))^2+(Y-E(Y))^2
-+2(X-E(X))(Y-E(Y))\big].
+\lim_{n\to\infty}
+\left(1-\frac{\lambda}{n}\right)^n
+=
+e^{-\lambda}
 \]
 
-Aplicando linearidade da esperança:
-
 \[
-V(X+Y)=E[(X-E(X))^2]+E[(Y-E(Y))^2]
-+2E[(X-E(X))(Y-E(Y))].
+\lim_{n\to\infty}
+\frac{n(n-1)\cdots(n-k+1)}{n^k}
+=
+1
 \]
 
-Reconhecendo:
-
 \[
-E[(X-E(X))^2]=V(X),
-\qquad
-E[(Y-E(Y))^2]=V(Y),
-\]
-
-e o termo cruzado é a covariância:
-
-\[
-E[(X-E(X))(Y-E(Y))]=\mathrm{Cov}(X,Y).
+\lim_{n\to\infty}
+\left(1-\frac{\lambda}{n}\right)^{-k}
+=
+1
 \]
 
 Logo:
 
 \[
-V(X+Y)=V(X)+V(Y)+2\,\mathrm{Cov}(X,Y).
+P(X=k)
+=
+\frac{e^{-\lambda}\lambda^k}{k!}.
 \]
 
-
-
-\subsubsection{Caso Especial: Soma de variáveis independentes}
-
-Se $X$ e $Y$ são independentes, então:
+\subsubsection*{Função de Probabilidade}
 
 \[
-\mathrm{Cov}(X,Y)=0.
+P(X=k)
+=
+\frac{e^{-\lambda}\lambda^k}{k!},
+\quad k=0,1,2,\dots
 \]
 
-Assim:
+onde $\lambda>0$.
 
-\begin{equation}
-V(X+Y)=V(X)+V(Y).
-\end{equation}
+\subsubsection*{Função Geradora de Momentos}
 
-A variância de uma soma de variáveis independentes é igual à soma das variâncias,
-um resultado central em Estatística e Probabilidade.
-%------------------------------------------------------------------------------------------%
+\[
+M_X(t)
+=
+\E(e^{tX})
+=
+\sum_{k=0}^{\infty}
+e^{tk}
+\frac{e^{-\lambda}\lambda^k}{k!}.
+\]
 
+\[
+=
+e^{-\lambda}
+\sum_{k=0}^{\infty}
+\frac{(\lambda e^t)^k}{k!}.
+\]
 
+Reconhecendo a série exponencial:
 
+\[
+=
+e^{-\lambda}
+e^{\lambda e^t}
+=
+\exp\{\lambda(e^t-1)\}.
+\]
 
-%------------------------------------------------------------------------------------------%
+\subsubsection*{Esperança:}
+
+\[
+\E(X)
+=
+M_X'(0).
+\]
+
+Derivando:
+
+\[
+M_X'(t)
+=
+\lambda e^t
+\exp\{\lambda(e^t-1)\}.
+\]
+
+Avaliado em $t=0$:
+
+\[
+\E(X)
+=
+\lambda.
+\]
+
+\subsubsection*{Variância: }
+
+\[
+\Var(X)
+=
+M_X''(0) - [M_X'(0)]^2.
+\]
+
+Derivando novamente:
+
+\[
+M_X''(t)
+=
+\lambda e^t \exp\{\lambda(e^t-1)\}
++
+\lambda^2 e^{2t}
+\exp\{\lambda(e^t-1)\}.
+\]
+
+Em $t=0$:
+
+\[
+M_X''(0)
+=
+\lambda + \lambda^2.
+\]
+
+Logo:
+
+\[
+\Var(X)
+=
+(\lambda + \lambda^2) - \lambda^2
+=
+\lambda.
+\]
+
+\subsubsection*{Interpretação Estrutural}
+
+A igualdade
+
+\[
+\E(X)=\Var(X)=\lambda
+\]
+
+é característica distintiva da Poisson e decorre de sua
+natureza como processo de contagem puro com incrementos independentes.
+
+\subsubsection*{Propriedade de Aditividade}
+
+Se $X_1\sim Poisson(\lambda_1)$ e
+$X_2\sim Poisson(\lambda_2)$ independentes,
+
+\[
+X_1+X_2 \sim Poisson(\lambda_1+\lambda_2).
+\]
+
+Demonstração via produto das funções geradoras de momentos.
+
 \newpage
-\section{Principais Distribuições de Probabilidade}
- 
+\subsubsection*{Exemplo Aplicado à Administração Pública}
 
-Uma distribuição de probabilidade é um modelo matemático que relaciona um certo valor da variável aleatória em estudo com a sua probabilidade de ocorrência. De conformidade com a natureza da variável aleatória, a distribuição pode ser classificada em discreta ou contínua.
- 
-\subsection{Distribuição Binomial}
+Considere que o número médio de ocorrências de trânsito
+em determinado município seja $\lambda=4,2$ por dia. \vskip0.3cm
 
-Os princípios básicos da distribuição binomial foram desenvolvidos pelo matemático suíço durante o século XVII chamado \textbf{Jakob Bernoulli}, que fez muitas contribuições à teoria da probabilidade. Foi o autor do que é geralmente conhecido como o primeiro livro dedicado à probabilidade, publicado em 1713.
+A probabilidade de não ocorrer nenhum acidente em um dia é:
 
-\vspace{-0.3cm}
-\begin{figure}
-    \centering
-\includegraphics[scale=0.25]{figures/Jakob_Bernoulli.jpeg}
-    \caption{Jakob Bernoulli(1654-1705)}
-    \label{fig:my_label4}
-\end{figure}
+\[
+P(X=0)
+=
+e^{-4,2}.
+\]
 
-Jakob nasceu em Basel na Suiça, estudou Teologia, Matemática e Astronomia na Universidade de Basel. Entre os nomes associados à instituição estão os de \textbf{Leonhard Euler}, \textbf{Friedrich Nietzsche}, e \textbf{Eugen Huber} um jurista famoso e criador do Código Civil Suiço. \vskip0.3cm
+A probabilidade de exatamente 3 acidentes é:
 
+\[
+P(X=3)
+=
+\frac{e^{-4,2}4,2^3}{3!}.
+\]
+
+A variância sendo igual à média permite verificar
+se há superdispersão nos dados reais,
+situação comum em estudos de segurança pública.
+
+
+
+
+
+
+%--------------------------------------------------------------------------------------------------%
+\section{Principais Distribuições Contínuas}
+\subsection{Distribuição Normal}
+
+A distribuição Normal surge inicialmente no trabalho de Abraham de Moivre (1733), ao estudar a aproximação da distribuição binomial para grandes amostras.\vskip0.3cm
+
+Posteriormente, Pierre-Simon Laplace (1774 a 1812) formalizou o resultado que hoje conhecemos como Teorema Central do Limite. A formulação final da densidade associada a erros de observação foi apresentada por Carl Friedrich Gauss em 1809 na obra: \vskip0.3cm
+
+        \textbf{Theoria Motus Corporum Coelestium in Sectionibus Conicis Solem Ambientium}. Por esse motivo, também é chamada distribuição Gaussiana.
+
+\subsubsection*{Definição}
+
+Diz-se que $X \sim N(\mu,\sigma^2)$ se sua densidade é:
+
+\[
+f(x)
+=
+\frac{1}{\sigma\sqrt{2\pi}}
+\exp\left(
+-\frac{(x-\mu)^2}{2\sigma^2}
+\right),
+\quad -\infty < x < \infty,
+\]
+
+onde $\mu \in \mathbb{R}$ e $\sigma>0$.
+
+%====================================================
+\subsubsection*{Demonstração de que a densidade integra 1}
+%====================================================
+
+Considere inicialmente o caso padrão:
+
+\[
+Z \sim N(0,1),
+\]
+
+com densidade:
+
+\[
+\phi(z)
+=
+\frac{1}{\sqrt{2\pi}}
+e^{-z^2/2}.
+\]
+
+Devemos mostrar:
+
+\[
+\int_{-\infty}^{\infty}
+\frac{1}{\sqrt{2\pi}}
+e^{-z^2/2}
+dz
+=
+1.
+\]
+
+Defina:
+
+\[
+I
+=
+\int_{-\infty}^{\infty}
+e^{-z^2/2}
+dz.
+\]
+
+Então:
+
+\[
+I^2
+=
+\left(
+\int_{-\infty}^{\infty}
+e^{-x^2/2}
+dx
+\right)
+\left(
+\int_{-\infty}^{\infty}
+e^{-y^2/2}
+dy
+\right).
+\]
+
+\[
+=
+\int_{\mathbb{R}^2}
+e^{-(x^2+y^2)/2}
+dx\,dy.
+\]
+
+Mudando para coordenadas polares:
+
+\[
+x=r\cos\theta,
+\quad
+y=r\sin\theta.
+\]
+
+O jacobiano é $r$.
+
+\[
+I^2
+=
+\int_{0}^{2\pi}
+\int_{0}^{\infty}
+e^{-r^2/2}
+r\,dr\,d\theta.
+\]
+
+Integração radial:
+
+\[
+\int_{0}^{\infty}
+r e^{-r^2/2}
+dr.
+\]
+
+Faça $u=r^2/2$:
+
+\[
+du = r\,dr.
+\]
+
+Logo:
+
+\[
+=
+\int_0^\infty e^{-u} du
+=
+1.
+\]
+
+Então:
+
+\[
+I^2
+=
+\int_0^{2\pi} 1\, d\theta
+=
+2\pi.
+\]
+
+Portanto:
+
+\[
+I=\sqrt{2\pi}.
+\]
+
+Assim,
+
+\[
+\frac{1}{\sqrt{2\pi}}
+I
+=
+1.
+\]
+
+
+
+%====================================================
+\subsubsection*{Esperança:}
+%====================================================
+
+\[
+\E(Z)
+=
+\int_{-\infty}^{\infty}
+z
+\frac{1}{\sqrt{2\pi}}
+e^{-z^2/2}
+dz.
+\]
+
+A função integrando é ímpar,
+e o intervalo é simétrico.
+
+Logo:
+
+\[
+\E(Z)=0.
+\]
+
+Para $X=\mu+\sigma Z$:
+
+\[
+\E(X)
+=
+\mu+\sigma\E(Z)
+=
+\mu.
+\]
+
+%====================================================
+\subsubsection*{Variância:}
+%====================================================
+
+\[
+\Var(Z)
+=
+\E(Z^2).
+\]
+
+\[
+=
+\frac{1}{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}
+z^2 e^{-z^2/2} dz.
+\]
+
+Integração por partes:
+
+Seja
+
+\[
+u=z,
+\quad
+dv=z e^{-z^2/2}dz.
+\]
+
+Após manipulação:
+
+\[
+\E(Z^2)=1.
+\]
+
+Logo:
+
+\[
+\Var(X)
+=
+\sigma^2.
+\]
+
+%====================================================
+\subsubsection*{Função Geradora de Momentos}
+%====================================================
+
+\[
+M_X(t)
+=
+\E(e^{tX})
+=
+\exp\left(
+\mu t + \frac{\sigma^2 t^2}{2}
+\right).
+\]
+
+%====================================================
+\subsubsection*{Propriedade de Estabilidade}
+%====================================================
+
+Se $X_1\sim N(\mu_1,\sigma_1^2)$ e
+$X_2\sim N(\mu_2,\sigma_2^2)$ independentes:
+
+\[
+X_1+X_2
+\sim
+N(\mu_1+\mu_2,
+\sigma_1^2+\sigma_2^2).
+\]
+
+Prova via multiplicação das funções geradoras de momentos.
+
+%====================================================
+\subsubsection*{Interpretação Geométrica}
+%====================================================
+
+A distribuição Normal maximiza a entropia entre todas as distribuições com média e variância fixas.\vskip0.3cm
+
+Ela surge como limite de somas de variáveis independentes
+(Teorema Central do Limite).
+
+%====================================================
+\subsubsection*{Exemplo Aplicado}
+%====================================================
+
+Suponha que o tempo médio de atendimento hospitalar
+seja $\mu=32$ minutos, com desvio padrão $\sigma=6$. \vskip0.3cm
+
+A probabilidade de atendimento superior a 40 minutos é:
+
+\[
+P(X>40)
+=
+P\left(
+Z>
+\frac{40-32}{6}
+\right)
+=
+P(Z>1,33).
+\]
+
+Obtém-se valor aproximado 0,0918. Esse modelo fundamenta políticas de dimensionamento
+de equipes de saúde.
 
 
 \newpage
-Em homenagem a Jakob, os ensaios utilizando probabilidade binomial, na maioria das vezes são denominados \textbf{Ensaios de Bernoulli}, e uma sequência desse tipo de ensaios é denominado de \textbf{Processo de Bernoulli} 
-\vskip0.3cm
+\subsection{Distribuição Exponencial}
 
+A distribuição Exponencial surge no século XIX no estudo
+de processos de decaimento e fenômenos físicos contínuos.
+Sua formalização probabilística está associada ao desenvolvimento
+dos processos de Poisson por Siméon Denis Poisson (1837)
+e, posteriormente, ao estudo de processos estocásticos
+no início do século XX. \vskip0.3cm
 
-A distribuição Binomial dá a probabilidade de deterninado desfecho ocorrer em determinado número de ensaios independentes. \vskip0.3cm
+Ela modela o tempo de espera até a ocorrência do primeiro evento
+em um processo de Poisson homogêneo.
 
+\subsubsection*{Derivação a partir do Processo de Poisson}
 
-A distribuição Binomial é uma distribuição discreta, cuja função de probabilidade é:
- 
-\begin{equation}
-f(y) = C_{n}^{y}p^{y}q^{n-y}
-\end{equation}
- 
-Sendo: \vskip0.3cm
+Considere um processo de Poisson com taxa $\lambda>0$.
+Seja $T$ o tempo até a primeira ocorrência.
 
-\begin{itemize}
-\item $p$ = probabilidade de realização do acontecimento favorável; 
-\item  $q$ = probabilidade de ralização do acontecimento contrário;  
-\item $y$ = número de vezes que se realiza o acontecimento favorável;  
-\item $n$ = número de tentativas; 
-\item $C_{n}^{y}$ = números de combinações de n elementos, tomados y a y; 
-\end{itemize} 
+Temos:
+
+\[
+P(T>t)=P(\text{nenhum evento em }[0,t]).
+\]
+
+Como o número de eventos em $[0,t]$ é Poisson($\lambda t$):
+
+\[
+P(T>t)=P(N(t)=0)
+=
+e^{-\lambda t}.
+\]
+
+Logo, a função distribuição acumulada é:
+
+\[
+F(t)
+=
+P(T\le t)
+=
+1-e^{-\lambda t}, \quad t\ge 0.
+\]
+
+Derivando:
+
+\[
+f(t)
+=
+\lambda e^{-\lambda t}, \quad t\ge 0.
+\]
+
+\subsubsection*{Demonstração de que a densidade integra 1}
+
+\[
+\int_0^\infty \lambda e^{-\lambda t} dt.
+\]
+
+Faça substituição $u=\lambda t$:
+
+\[
+=
+\int_0^\infty e^{-u} du
+=
+1.
+\]
+
+Logo, $f(t)$ é densidade válida.
+
+\subsubsection*{Esperança — Demonstração}
+
+\[
+\E(T)
+=
+\int_0^\infty
+t \lambda e^{-\lambda t} dt.
+\]
+
+Integração por partes:
+
+Seja
+\[
+u=t,
+\quad
+dv=\lambda e^{-\lambda t}dt.
+\]
+
+Então:
+
+\[
+du=dt,
+\quad
+v=-e^{-\lambda t}.
+\]
+
+Logo:
+
+\[
+\E(T)
+=
+\left[
+- t e^{-\lambda t}
+\right]_0^\infty
++
+\int_0^\infty
+e^{-\lambda t} dt.
+\]
+
+O termo de fronteira é zero.
+
+\[
+\E(T)
+=
+\frac{1}{\lambda}.
+\]
+
+\subsubsection*{Variância:}
+
+Primeiro calcule:
+
+\[
+\E(T^2)
+=
+\int_0^\infty
+t^2 \lambda e^{-\lambda t} dt.
+\]
+
+Aplicando integração por partes duas vezes:
+
+\[
+\E(T^2)
+=
+\frac{2}{\lambda^2}.
+\]
+
+Logo:
+
+\[
+\Var(T)
+=
+\E(T^2) - [\E(T)]^2
+=
+\frac{2}{\lambda^2}
+-
+\frac{1}{\lambda^2}
+=
+\frac{1}{\lambda^2}.
+\]
+
+\subsubsection*{Função Geradora de Momentos}
+
+\[
+M_T(s)
+=
+\E(e^{sT})
+=
+\int_0^\infty
+e^{st}
+\lambda e^{-\lambda t} dt.
+\]
+
+\[
+=
+\lambda
+\int_0^\infty
+e^{-(\lambda-s)t} dt.
+\]
+
+Para $s<\lambda$:
+
+\[
+=
+\frac{\lambda}{\lambda-s}.
+\]
+
+\subsubsection*{Propriedade da Falta de Memória}
+
+Para $s,t\ge0$:
+
+\[
+P(T>s+t \mid T>s)
+=
+\frac{P(T>s+t)}{P(T>s)}
+=
+\frac{e^{-\lambda(s+t)}}{e^{-\lambda s}}
+=
+e^{-\lambda t}.
+\]
+
+Portanto:
+
+\[
+P(T>s+t \mid T>s)
+=
+P(T>t).
+\]
+
+A distribuição Exponencial é a única distribuição contínua
+com essa propriedade.
+
+\subsubsection*{Interpretação Estrutural}
+
+A ausência de memória implica taxa de falha constante.
+Isso caracteriza fenômenos sem envelhecimento
+(vida útil sem desgaste acumulado).
+
+\subsubsection*{Exemplo Aplicado}
+
+Suponha que o tempo médio entre falhas
+de um sistema eletrônico público
+seja 5 horas. \vskip0.3cm
+
+Então:
+
+\[
+\lambda=\frac{1}{5}.
+\]
+
+A probabilidade de o sistema funcionar
+mais de 8 horas sem falha é:
+
+\[
+P(T>8)
+=
+e^{-8/5}
+\approx 0,2019.
+\]
+
+Esse modelo fundamenta políticas de manutenção preventiva
+e planejamento orçamentário.
 
 \newpage
-\subsection{Distribuição de Poisson}
+%-------------------------------------------------------------%
+\subsection{Distribuição Beta}
+%-------------------------------------------------------------%
 
-A distribuição de Poisson tem este nome em homenagem ao metemático, Astrônomo e físico francês \textbf{Simeon Denis Poisson}. Com característica próxima a Binomial, a distribuição de Poisson é uma distribuição descontínua, aplicável quando o resultado é o número de vezes que determinado evento ocorre. 
+A Distribuição Beta é uma distribuição de probabilidade contínua definida no intervalo $(0,1)$, sendo amplamente utilizada para modelar variáveis aleatórias que representam proporções, probabilidades, taxas ou frações. \vskip0.3cm
 
+É particularmente útil em estudos de confiabilidade, estatística bayesiana, análise de proporções e indicadores de desempenho. \vskip0.3cm
 
-\vspace{-0.3cm}
-\begin{figure}
-    \centering
-\includegraphics[scale=0.25]{figures/Simeon_Poisson.jpeg}
-    \caption{Simeon Denis Poisson(1781-1840)}
-    \label{fig:my_label4}
-\end{figure}
+Seja $X$ uma variável aleatória contínua. Diz-se que $X$ segue uma Distribuição Beta com parâmetros $\alpha > 0$ e $\beta > 0$, denotada por:
 
+\[
+X \sim \text{Beta}(\alpha, \beta)
+\]
 
-Poisson recebeu dois prêmios importantes da época:
+\subsubsection*{Função Densidade de Probabilidade (FDP)}
 
-\begin{itemize}
-    \item \textbf{Prêmio Lalande (1810):} Membro da Academia Americana de Artes e Ciências;
-    \item \textbf{Medalha Copley (1832):} (For his work entitled, Nouvelle Theorie de lAction Capillaire., 1832)
-\end{itemize}
+A função densidade é dada por:
 
-O Prêmio Lalande foi uma condecoração científica em Astronomia, concedida de 1902 a 1970 pela Académie des Sciences. O prêmio homenageia o astrônomo Jérôme Lalande, estabelecido pelo próprio em 1801. Após 1970 foi combinado com o prêmio da fundação Benjamin Valz, concedido até 1996.\vskip0.3cm
-
-
-A Medalha Copley é um prêmio no domínio das ciências, sendo
-a de maior prestígio atribuída pela \textbf{Royal Society} e, também, a mais antiga. Foi concedida pela primeira vez em 1731.\vskip0.3cm
-
-
-  
-A distribuição de Poisson é adequada para descrever as probabilidades do número de ocorrências num intervalo contínuo (em geral tempo ou espaço). São exemplos de variáveis que podem ter como modelo a distribuição de Poisson:
-
-\begin{enumerate}
-    \item Acidentes com automóveis em uma determinada estrada;
-    \item Quantidade de pacientes que chegam num pronto socorro durante a madrugada;
-    \item  Número de leitos necessários em centro de tratamento intensivo;
-    \item  Número de Policiais Militares ou Agentes de Trânsito, necessários em um quadro de distribuição de modo a assegurar a disponibilidade de recursos adequados;
-\end{enumerate}
-
-
-Note que a quantidade de valores possíveis que a variável aleatória pode assumir é infinita, entretanto enumerável. Além disso, observe que a variável aleatória é discreta (número de ocorrências), no entanto a unidade de medida é contínua (tempo, área).\vskip0.3cm
-
-Ainda, as falhas não são contáveis. Por exemplo, não é possível contar os acidentes que não ocorreram em um dia, nem tão pouco a quantidade de pacientes que não chegaram ao pronto socorro na madrugada.
- 
- 
-\begin{equation}
-    P\left(X=k\right)= \left( \frac{e^{-\lambda}\lambda^{k}}{k!} \right)
-\end{equation}
+\[
+f(x) =
+\frac{\Gamma(\alpha + \beta)}
+{\Gamma(\alpha)\Gamma(\beta)}
+x^{\alpha - 1}(1 - x)^{\beta - 1},
+\quad 0 < x < 1
+\]
 
 onde:
 
 \begin{itemize}
-\item $e$: é a base do logaritmo natural ou neperiano;
-\item $k$: quantidade de ocorrências num intervalo contínuo;
-\item $k!$: é o fatorial de $k$; 
-\item $\lambda$: é um número real que representa a taxa de ocorrência. Por exemplo, se o evento ocorre a uma média de 4 minutos e estamos interessados no número de eventos que ocorrem num intervalo de 10 minutos, $\lambda={10}/{4}=2.5$
+\item $\alpha$ = parâmetro de forma 1;
+\item $\beta$ = parâmetro de forma 2;
+\item $\Gamma(\cdot)$ = função gama.
 \end{itemize}
 
-  
-Além disso, temos que o valor esperado e a variância serão: 
+A função gama generaliza o fatorial, sendo que para números inteiros positivos vale:
 
-$$
-\begin{aligned}
-E\left[X\right] =\lambda \\
-Var\left(X\right) = \lambda
-\end{aligned}
-$$
- 
+\[
+\Gamma(n) = (n-1)!
+\]
 
-\subsection{Distribuição Normal}
+\subsubsection*{Interpretação dos Parâmetros}
 
-Para alguns autores, a distribuição de probabilidade mais famosa da estatística, é denominada \textbf{Distribuição Normal}, \textbf{Curva de Gauss}, \textbf{Gaussiana}, \textbf{Distribuição de Laplace–Gauss} ou em \textbf{Forma de Sino}.\vskip0.3cm 
-
-
-A curva foi descoberta pela primeira vez pelo matemático francês \textbf{Abraham de Moivre} e publicada em 1733. No entanto, dois matemáticos, o francês \textbf{Pierre-Simon Laplace} em 1777 e o alemão \textbf{Karl Friedrich Gauss} em 1809, foram responsáveis pelo estabelecimento dos princípios científicos da distribuição normal.\vskip0.3cm 
-
-
-\vspace{-0.5cm}
-\begin{figure}
-    \centering
-    \caption{Abraham de Moivre(1667-1754)} 
-    \centering
-\includegraphics[scale=0.27]{figures/Abraham_de_moivre.jpeg}
-%\legend{Fonte: Wikimedia Foundation, 2022.}
-    \label{fig:my_label6} 
-\end{figure}
-
-%ABRAHAM DE MOIVRE. In: WIKIPÉDIA, a enciclopédia livre. Flórida: Wikimedia Foundation, 2022. Disponível em: <https://pt.wikipedia.org/w/index.php?title=Abraham_de_Moivre&oldid=64507244>. Acesso em: 4 out. 2022.
-
-\vskip0.3cm 
-Diversos autores consideram Laplace como tendo realizado as maiores contribuição à teoria da probabilidade, mas foi dado o nome de Gauss para a distribuição depois de ele tê-la aplicado a teoria dos movimentos dos corpos celestes.\vskip0.3cm 
-
-
-Quando os valores das observações de uma variável resposta, originados de uma amostra, são agrupados em tabelas de frequências, objetiva-se conhecer a variação e como se processa a distribuição dos dados.\vskip0.3cm 
-
-
-
-\newpage
-Existem inúmeros tipos de curvas que podem representar as distribuições. Na maioria das pesquisas na Gestão Pública, as observações variam em torno da distribuição normal, a qual é uma distribuição contínua. É a mais importante distribuição no campo da Estatística e tem a seguinte função de densidade:\vskip0.3cm 
-
-
-\begin{equation}
-f\left(x\right) = \frac{1}{\sqrt{2\pi \sigma^2}}exp \left\{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 \right\},~~~-\infty<x<\infty~~\text{e}~\sigma>0
- \end{equation} 
-
-È uma curva estável, em forma de sino, e simétrica em torno da média da distribuição, simbolizada pela letra grega $\mu$ (mi). O desvio-padrão da distribuição é simbolizado pela letra grega $\sigma$ (sigma).\vskip0.3cm 
-
-
-\begin{figure}
-    \centering
-\includegraphics[scale=0.50,height=220pt,width=13cm]{figures/densidade1.jpeg}
-    \caption{Função de Densidade de Probabilidade da Distrinuição Normal N(0,1).}
-    \label{fig:my_label70}
-\end{figure}
-
-
-\newpage
-\subsection{Distribuição $t$ de $Student$}
-\subsubsection{A Origem da $t$ $student$}
-
-William Sealy Gosset nasceu em 13 de junho de 1876 em Canterbury, Inglaterra, o primeiro de cinco filhos do Coronel Frederic Gosset e Agnes Sealy Vidal. Ele tinha problemas de visão e não conseguia seguir seu pai na Royal Engineers, mas ele era um aluno muito bom e ganhou várias bolsas de estudo.
-
-\begin{figure}
-    \centering
-\includegraphics[scale=0.18]{figures/William_Sealy_Gosset.jpeg}
-    \caption{William Sealy Gosset(1876-1937).}
-    \label{fig:my_label3}
-\end{figure}
-
-
-
-Ao final do século XIX, a famosa \textbf{Arthur Guinness Son and Company} era a maior cervejaria do mundo, e foi pioneira em diversos esforços para o Controle de Qualidade. Em 1899, um dos contratados para o cargo de químico, recém-formado na Universidade de Oxford, com 23 anos de idade e um currículo que combinava matemática e estatística, foi \textbf{William Sealy Gosset}.\vskip0.3cm
-
-%\begin{figure}[!htb]
-%\centering{
-% \includegraphics[scale=0.5]{figures/Gosset2.png}\\
-%  \vspace{-0.8cm}
-%  \caption{William Sealy Gosset, 1908}\label{esquematabela1}}
-%\end{figure}
-
-
-A \textit{Guinness} era uma empresa de Agro-Química progressista e Gosset iria aplicar os seus conhecimentos de estatística tanto na cervejaria (a destilaria) como nas quintas, para a selecção dos melhores espécimens de cevada.\vskip0.3cm
-
-\newpage
-O trabalho de Gosset na Guinness consistia em medir os inúmeros fatores do processo de produção e ponderar como eles se relacionam aos resultados do produto final. William realizou muitos testes para estimar a duração da cerveja diante das diferentes condições de armazenagem, fabricação e transporte.\vskip0.3cm
-
-
-Gosset desenvolveu o teste t, distribuição passível de ser tabulada, como um modo barato de monitorar a qualidade da cerveja. Na época, não existia uma teoria para a tomada de decisões com base em pequenas amostras. Por isso, o grande diferencial desse teste é justamente permitir que se façam inferências usando um menor número de elementos. \vskip0.3cm
-
-Um outro funcionário da Guinness tinha já publicado um trabalho que continha alguns segredos da Cervejeira Guinness. Para prevenir fugas de informação e futuras revelações dos "segredos" da marca, a Guinness proibiu que os seus empregados pudessem publicar quaisquer trabalhos independentemente do conteúdo. Isto queria dizer que Gosset não tinha como publicar os trabalhos com o seu nome. Então, usou o pseudonimo $Student$ para as suas publicações evitando ser detectado pela entidade empregadora. \vskip0.3cm
-
-Desta forma, o seu feito mais conhecido, é hoje conhecido com a Distribuição t-Student, que noutras circunstâncias seria conhecida como a Distribuição t-Gosset.\vskip0.3cm
-
-
-Gosset trabalhou na cervejaria em St. James's Gate por 36 anos, antes de se tornar o cervejeiro-chefe de uma nova cervejaria Guinness em Park Royal em Londres. Em outubro de 2012, uma placa foi inaugurada na Escola Nacional de St Patrick, Blackrock(Irlanda), para homenagear William Sealy Gosset, que morou nas proximidades por 22 anos. 
-
-
-\begin{figure}
-    \centering
-\includegraphics[scale=0.10]{figures/Gosset_plaque_in_Guinness.jpg}
-    \caption{Placa no Guinness Storehouse em homenagem a Gosset.}
-    \label{fig:my_label3}
-\end{figure}
-
-
-
-\newpage
-\subsubsection{A Distribuição $t$ \textit{student}}
-
-Seja a variável aleatória:
-
-\begin{equation}
-    t =\frac{\overline{y}-\overline{Y}}{\frac{s(Y)}{\sqrt(n)}}
-\end{equation}
-
-Esta variável é conhecida com distribuição $t$ student, com $k=n-1$ graus de liberdade, podendo também ser escrita na forma:
-
-\begin{equation}
-    t =\frac{N(0,1)}{\sqrt{\frac{\chi^{2}_{n-1}}{n-1}}}
-\end{equation}
-
-O $s(y)$ é considerado o desvio-padrão estimado.\vskip0.3cm
-
-O gráfico da função densidade da variável $t$ de student é simétrico e tem uma forma parecida com a distribuição normal, entretando, menos achatada, com a média zero e variância igual $\frac{k}{(k-2)}$, em que $k>2$ graus de liberdade. A função densidade da variável $t$ é dada pela expressão (2.10). 
-
-\begin{equation}
-f\left(t\right)=\frac{1}{\sqrt{k \pi}}\frac{\Gamma\left(\frac{k+1}{2}\right) }{\Gamma \left(\frac{k}{2}\right)}\left(1+\frac{t^2}{k}\right)^{-\left(\frac{\upsilon+1}{2}\right)},~~~-\infty<x<\infty
-\end{equation}
-
-Sir \textbf{Ronald Fisher} o arquiteto da estatística experimental, um gigante entre os estatísticos, chamou Gosset de “O Faraday das Estatísticas”, reconhecendo sua capacidade de compreender princípios gerais e aplicá-los a problemas de importância prática (SALSBURG, 2000).
-
-
-\newpage
-\subsubsection{Ronald Aylmer Fisher}
-
-Ronald Aylmer Fisher foi um estatístico, biológo e geneticista, nasceu em 17 de fevereiro de 1890, em East Finchley, Londres, sendo considerado um dos pais e o fundador da estatística moderna (BOX, 1978).\vskip0.3cm
-
-
-Fisher bacharelou-se em mamtemática pela Universidade de Cambridge, e que no início do século XX, em 1919, chefiou um laboratório de Estatística Experimental de Agricultura, chamado centro de experimentos de Rothamsted Research em Harpenden na Inglaterra, onde permaneceu até 1933 (SALSBURG, 2000).
-
-\vspace{-0.1cm}
-
-\begin{figure}
-    \centering
-\includegraphics[scale=0.9]{figures/fisher.jpeg}
-    \caption{Ronald Aylmer Fisher(1890-1962).}
-    \label{fig:my_label3}
-\end{figure}
-
-
-Ronald Fisher nesse período se dedicou e estudou, diariamente, os problemas do planejamento e análise de pesquisa na àrea agrária. \vskip0.3cm
-
-
-O grande fascínio de fisher pelos problemas de pesquisa, em ciências agrárias, trouxe a inspiração para desenvolver os métodos de análise de Delineamentos Experimentais, a \textbf{Análise de Variância}, que em conjunto com a \textbf{Análise de Covariância}, também de sua autoria, constitui-se no instrumento fundamental para a interpretação das análises dos resultados dos experimentos planejados (SALSBURG, 2000). \vskip0.3cm
-
-
-% Hald, Anders (1998). A History of Mathematical Statistics. Nova York: Wiley
-% SALSBURG, David. The Lady Tasting Tea: How Statistics Revolutionized Science in the Twentieth Century, 2000
-% Dawkins, Richard (1995). River out of Eden. [S.l.: s.n.]
-% BOX, Joan Fisher. R. A. Fisher: The Life of a Scientist. Nova York: Wiley, 1978.
-
-\newpage
-Foi descrito por Anders Hald como "um gênio que criou praticamente sozinho as fundações para a moderna ciência estatística (HALD, 1998) e Richard Dawkins, que o descreveu como "o maior dos sucessores de Darwin" (DAWKINS, 1995).\vskip0.3cm
-
-Ronald Fisher recebeu vários prêmios importantes ao longo de sua carreira, tais como:
+Os parâmetros $\alpha$ e $\beta$ controlam o formato da distribuição:
 
 \begin{itemize}
-    \item \textbf{Prêmio Memorial Weldon:} é concedido anualmente pela Universidade de Oxford para notáveis contribuições no desenvolvimento de métodos matemáticos ou estatísticos aplicados à problemas em biologia; 
-    \item \textbf{Medalha Real (1938):} é entregue anualmente pelo Monarca do Reino Unido para contribuições dos avanços do conhecimento da Natureza;
-    \item \textbf{Medalha Guy de Ouro (1946):} é concebida pela Royal Statistical Society em três categorias: ouro, parata e bronze; A medalha de ouro é concebida a contribuição inovativa à teoria estatística e suas aplicações;
-    \item \textbf{Medalha Copley (1955):} É a medalha de maior prestígio atribuída pela Royal Society.
-    \item \textbf{Medalha Darwin-Wallace (1958):} é uma medalha oferecida pela Linnean Society of London a cada 50 anos, por grande contribuições nos avanços para biologia evolucionista.
+\item $\alpha = \beta = 1$ → distribuição uniforme;
+\item $\alpha > \beta$ → distribuição assimétrica à esquerda;
+\item $\alpha < \beta$ → distribuição assimétrica à direita;
+\item $\alpha, \beta > 1$ → distribuição unimodal;
+\item $\alpha, \beta < 1$ → distribuição em formato de "U".
+\end{itemize}
+
+\subsubsection*{Principais Propriedades}
+
+\begin{itemize}
+\item \textbf{Média:}
+\[
+E(X) = \frac{\alpha}{\alpha + \beta}
+\]
+
+\item \textbf{Variância:}
+\[
+Var(X) =
+\frac{\alpha\beta}
+{(\alpha + \beta)^2(\alpha + \beta + 1)}
+\]
+
+\item \textbf{Moda} (quando $\alpha, \beta > 1$):
+\[
+Mo =
+\frac{\alpha - 1}{\alpha + \beta - 2}
+\]
+\end{itemize}
+
+\subsubsection*{Forma da Distribuição}
+
+A Distribuição Beta é extremamente flexível, podendo assumir diversos formatos:
+
+\begin{itemize}
+\item Simétrica;
+\item Assimétrica à direita;
+\item Assimétrica à esquerda;
+\item Em forma de U;
+\item Concentrada em torno de um valor central.
+\end{itemize}
+
+Essa flexibilidade torna a Beta ideal para modelar incerteza sobre probabilidades.
+
+\subsubsection*{Aplicações na Área de Trânsito}
+
+Na estatística aplicada à segurança viária, a Distribuição Beta pode ser utilizada para modelar:
+
+\begin{itemize}
+\item Proporção de condutores que utilizam cinto de segurança;
+\item Taxa de aprovação em exames de habilitação;
+\item Proporção de veículos irregulares em fiscalizações;
+\item Probabilidade estimada de ocorrência de sinistros em determinado trecho.
+\end{itemize}
+
+Por exemplo, suponha que a proporção de aprovação em exames práticos de direção seja modelada por:
+
+\[
+X \sim \text{Beta}(8, 2)
+\]
+
+A média será:
+
+\[
+E(X) = \frac{8}{8+2} = 0,8
+\]
+
+Interpretando: espera-se, em média, 80\% de aprovação.\vskip0.3cm
+
+A Distribuição Beta é indicada sempre que:
+
+\begin{itemize}
+\item A variável assume valores entre 0 e 1;
+\item Deseja-se modelar proporções ou probabilidades;
+\item É necessário representar incerteza sobre parâmetros probabilísticos.
+\end{itemize}
+
+Sua versatilidade matemática e interpretativa a torna uma das distribuições contínuas mais importantes da Estatística Aplicada.
+
+
+%-------------------------------------------------------------%
+\subsection{Distribuição Gama}
+
+
+A Distribuição Gama é uma distribuição de probabilidade contínua definida para variáveis aleatórias não negativas, amplamente utilizada para modelar tempos de espera, durações, volumes acumulados e fenômenos que resultam da soma de variáveis exponenciais independentes.\vskip0.3cm
+
+Seja $X$ uma variável aleatória contínua. Diz-se que $X$ segue uma Distribuição Gama com parâmetros $\alpha > 0$ (forma) e $\theta > 0$ (escala), denotada por:
+
+\[
+X \sim \text{Gamma}(\alpha, \theta)
+\]
+
+\subsubsection*{Função Densidade de Probabilidade (FDP)}
+
+A função densidade é dada por:
+
+\[
+f(x) =
+\frac{1}{\Gamma(\alpha)\theta^\alpha}
+x^{\alpha - 1}
+e^{-x/\theta},
+\quad x > 0
+\]
+
+onde:
+
+\begin{itemize}
+\item $\alpha$ = parâmetro de forma;
+\item $\theta$ = parâmetro de escala;
+\item $\Gamma(\alpha)$ = função gama.
+\end{itemize}
+
+A função gama generaliza o fatorial, sendo que para inteiros positivos:
+
+\[
+\Gamma(n) = (n-1)!
+\]
+
+\subsubsection*{Parametrização Alternativa}
+
+Também é comum utilizar o parâmetro de taxa $\lambda = 1/\theta$. Nesse caso:
+
+\[
+X \sim \text{Gamma}(\alpha, \lambda)
+\]
+
+e a densidade pode ser escrita como:
+
+\[
+f(x) =
+\frac{\lambda^\alpha}{\Gamma(\alpha)}
+x^{\alpha - 1}
+e^{-\lambda x}
+\]
+
+\subsubsection*{Interpretação dos Parâmetros}
+
+\begin{itemize}
+\item $\alpha$ controla o formato da distribuição;
+\item $\theta$ (ou $\lambda$) controla a dispersão e escala dos valores.
+\end{itemize}
+
+Casos particulares:
+
+\begin{itemize}
+\item Se $\alpha = 1$, a Distribuição Gama reduz-se à Distribuição Exponencial;
+\item Se $\alpha$ é inteiro positivo, a distribuição é chamada de Distribuição Erlang;
+\item A soma de variáveis exponenciais independentes com mesma taxa segue uma Gama.
+\end{itemize}
+
+\subsubsection*{Principais Propriedades}
+
+\begin{itemize}
+\item \textbf{Média:}
+\[
+E(X) = \alpha \theta
+\]
+
+\item \textbf{Variância:}
+\[
+Var(X) = \alpha \theta^2
+\]
+
+\item \textbf{Desvio padrão:}
+\[
+\sigma = \sqrt{\alpha}\,\theta
+\]
+
+\item \textbf{Moda} (para $\alpha > 1$):
+\[
+Mo = (\alpha - 1)\theta
+\]
+\end{itemize}
+
+\subsubsection*{Forma da Distribuição}
+
+A forma depende do parâmetro $\alpha$:
+
+\begin{itemize}
+\item $\alpha < 1$ → curva fortemente assimétrica à direita;
+\item $\alpha = 1$ → forma exponencial;
+\item $\alpha > 1$ → distribuição unimodal e assimétrica à direita;
+\item À medida que $\alpha$ aumenta, a distribuição torna-se mais simétrica.
+\end{itemize}
+
+\subsubsection*{Interpretação Probabilística}
+
+A Distribuição Gama pode ser interpretada como o tempo até a ocorrência do $\alpha$-ésimo evento em um processo de Poisson com taxa constante. \vskip0.3cm
+
+Ou seja, se os eventos ocorrem a uma taxa $\lambda$, então o tempo até o $k$-ésimo evento segue:
+
+\[
+X \sim \text{Gamma}(k, \lambda)
+\]
+
+\subsubsection*{Aplicações na Área de Trânsito}
+
+Na estatística aplicada à segurança viária, a Distribuição Gama pode ser utilizada para modelar:
+
+\begin{itemize}
+\item Tempo até ocorrência de determinado número de sinistros;
+\item Tempo acumulado até atingir certo número de infrações;
+\item Duração de interdições viárias;
+\item Tempo total de atendimento de ocorrências.
+\end{itemize}
+
+Por exemplo, suponha que o tempo médio entre sinistros seja modelado por uma Exponencial com taxa constante. O tempo até o terceiro sinistro poderá ser modelado por uma Distribuição Gama com $\alpha = 3$.
+
+\subsubsection*{Relação com Outras Distribuições}
+
+\begin{itemize}
+\item Caso particular da Exponencial ($\alpha = 1$);
+\item Relacionada à Qui-Quadrado (caso especial da Gama);
+\item Soma de variáveis exponenciais independentes segue Gama.
 \end{itemize}
 
 
+A Distribuição Gama é indicada quando:
 
+\begin{itemize}
+\item A variável assume valores positivos;
+\item Modela-se tempo, duração ou acúmulo;
+\item Deseja-se generalizar o modelo exponencial.
+\end{itemize}
 
+\newpage
+
+As distribuições de probabilidade são a espinha dorsal da inferência estatística. Elas permitem: \vskip0.3cm
+
+\begin{itemize}
+\item modelagem de risco;
+\item avaliação de políticas públicas;
+\item previsão de demanda;
+\item fundamentação de testes estatísticos;
+\item construção de estimadores ótimos.
+\end{itemize} \vskip0.3cm
+
+Sem distribuições, a Estatística reduz-se à descrição. Com elas, torna-se ciência inferencial.
