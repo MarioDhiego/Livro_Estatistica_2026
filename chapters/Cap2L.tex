@@ -169,14 +169,30 @@ O \textbf{espaço amostral}, denotado por $S$ ou $\Omega$, é o conjunto de todo
 os resultados possíveis de um experimento aleatório.
 \vskip0.3cm
 
-Por exemplo, ao lançar dois dados, o espaço amostral contém $36$ pares ordenados:
+Por exemplo, ao lançar dois dados, o espaço amostral contém $36$ pares ordenados, que podem ser organizados na seguinte estrutura:
 
-\[
-\Omega = \{(i,j)\mid i=1,\dots,6,\ j=1,\dots,6\}.
-\]
+\begin{table}[H]
+\centering
+\caption{Representação do espaço amostral $\Omega$ para o lançamento de dois dados.}
+\label{tab:espaco_amostral}
+\renewcommand{\arraystretch}{1.5} % Aumenta a altura das linhas para as fórmulas
+\setlength{\tabcolsep}{8pt}      % Aumenta o espaçamento entre colunas
+\begin{tabular}{|c|c|ccccc|}
+\hline \hline
+\rowcolor{gray!20} \textbf{Dado1 \textbackslash \ Dado2} & \textbf{Face1} & \textbf{Face2} & \textbf{Face3} & \textbf{Face4} & \textbf{Face5} & \textbf{Face6} \\ 
+\hline \hline
+\textbf{1} & (1,1) & (1,2) & (1,3) & (1,4) & (1,5) & (1,6) \\
+\textbf{2} & (2,1) & (2,2) & (2,3) & (2,4) & (2,5) & (2,6) \\
+\textbf{3} & (3,1) & (3,2) & (3,3) & (3,4) & (3,5) & (3,6) \\
+\textbf{4} & (4,1) & (4,2) & (4,3) & (4,4) & (4,5) & (4,6) \\
+\textbf{5} & (5,1) & (5,2) & (5,3) & (5,4) & (5,5) & (5,6) \\
+\textbf{6} & (6,1) & (6,2) & (6,3) & (6,4) & (6,5) & (6,6) \\ 
+\hline \hline
+\end{tabular}
+\end{table}
 
 
-
+\newpage
 \subsection{Espaço Amostral Discreto}
 
 Quando os resultados possíveis são finitos ou enumeráveis, dizemos que o espaço
@@ -186,101 +202,216 @@ amostral é \textbf{discreto}:
 \Omega = \{w_1,w_2,w_3,\dots\}.
 \]
 
+Um baralho padrão possui 52 cartas, divididas em quatro naipes: Ouros ($\diamondsuit$), Espadas ($\spadesuit$), Copas ($\heartsuit$) e Paus ($\clubsuit$). O espaço amostral $\Omega$ pode ser visualizado na tabela abaixo:
 
+\begin{table}[H]
+\centering
+\caption{Espaço amostral de um baralho completo ($n=52$).}
+\label{tab:baralho}
+\renewcommand{\arraystretch}{1.4}
+\resizebox{\textwidth}{!}{ % Garante que a tabela caiba na largura da página
+\begin{tabular}{|c|ccccccccccccc|}
+\hline \hline
+\rowcolor{gray!15} \textbf{Naipe} & \textbf{A} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{J} & \textbf{Q} & \textbf{K} \\ \hline \hline
+\color{red}$(\heartsuit)$ & \color{red}A$(\heartsuit)$ & \color{red}2$(\heartsuit)$ & \color{red}3$(\heartsuit)$ & \color{red}4$(\heartsuit)$ & \color{red}5$(\heartsuit)$ & \color{red}6$(\heartsuit)$ & \color{red}7$(\heartsuit)$ & \color{red}8$(\heartsuit)$ & \color{red}9$(\heartsuit)$ & \color{red}10$(\heartsuit)$ & \color{red}J$(\heartsuit)$ & \color{red}Q$(\heartsuit)$ & \color{red}K$(\heartsuit)$ \\
+$(\spadesuit)$ & A$(\spadesuit)$ & 2$(\spadesuit)$ & 3$(\spadesuit)$ & 4$(\spadesuit)$ & 5$(\spadesuit)$ & 6$(\spadesuit)$ & 7$(\spadesuit)$ & 8$(\spadesuit)$ & 9$(\spadesuit)$ & 10$(\spadesuit)$ & J$(\spadesuit)$ & Q$(\spadesuit)$ & K$(\spadesuit)$ \\
+\color{red}$(\diamondsuit)$ & \color{red}A$(\diamondsuit)$ & \color{red}2$(\diamondsuit)$ & \color{red}3$(\diamondsuit)$ & \color{red}4$(\diamondsuit)$ & \color{red}5$(\diamondsuit)$ & \color{red}6$(\diamondsuit)$ & \color{red}7$(\diamondsuit)$ & \color{red}8$(\diamondsuit)$ & \color{red}9$(\diamondsuit)$ & \color{red}10$(\diamondsuit)$ & \color{red}J$(\diamondsuit)$ & \color{red}Q$(\diamondsuit)$ & \color{red}K$(\diamondsuit)$ \\
+$(\clubsuit)$ & A$(\clubsuit)$ & 2$(\clubsuit)$ & 3$(\clubsuit)$ & 4$(\clubsuit)$ & 5$(\clubsuit)$ & 6$(\clubsuit)$ & 7$(\clubsuit)$ & 8$(\clubsuit)$ & 9$(\clubsuit)$ & 10$(\clubsuit)$ & J$\clubsuit)$ & Q$(\clubsuit)$ & K$(\clubsuit)$ \\ \hline \hline
+\end{tabular}
+}
+\end{table}
+
+A partir desse espaço amostral $\Omega$, podemos definir diversos eventos (subconjuntos). Por exemplo:
+
+\begin{itemize}
+\item \textbf{Evento A:} A carta selecionada é um Ás.
+$$ A = \{A(\heartsuit), A(\spadesuit), A(\diamondsuit), A(\clubsuit)\} \implies n(A) = 4. $$
+\item \textbf{Evento B:} A carta selecionada é de um naipe vermelho.
+$$ B = \{x \in \Omega \mid x \text{ é } \heartsuit \text{ ou } \diamondsuit\} \implies n(B) = 26. $$
+\end{itemize}
+
+%A probabilidade de um evento $E$ ocorrer em um espaço amostral equiprovável é dada pela razão entre o número de resultados favoráveis e o número total de resultados possíveis:\begin{equation}P(E) = \frac{n(E)}{n(\Omega)}\end{equation}
+%---------------------------------------------------------------------------------------------------------%
+
+
+
+\newpage
+%---------------------------------------------------------------------------------------------------------%
 \subsection{Espaço Amostral Contínuo}
 
-Quando os resultados possíveis são não enumeráveis, geralmente associados a
-mensurações (tempo, peso, altura), o espaço amostral é \textbf{contínuo}.
+Seja $\Omega$ o espaço amostral. Dizemos que ele é contínuo se puder ser representado por um intervalo ou uma união de intervalos na reta real:
+\[ \Omega = \{ x \in \mathbb{R} \mid a \leq x \leq b \} \]
+
+Ou, em contextos multidimensionais (como uma área), um subconjunto de $\mathbb{R}^n$. No caso contínuo, a probabilidade não é calculada para pontos isolados, mas sim para intervalos, correspondendo à área sob a função densidade de probabilidade (fdp).
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    declare function={normalpdf(\x,\mu,\sigma)=
+    (1/(\sigma*sqrt(2*pi)))*exp(-((\x-\mu)^2)/(2*\sigma^2));}
+]
+    % Eixos
+    \draw[->] (-3,0) -- (3.5,0) node[right] {$x$};
+    \draw[->] (0,0) -- (0,1.5) node[above] {$f(x)$};
+    % Área sombreada (Probabilidade entre a e b)
+    \fill[blue!20] (0.5,0) -- plot[domain=0.5:1.8, samples=100] (\x, {3.5*normalpdf(\x,0,1)}) -- (1.8,0) -- cycle;
+    % Curva da Distribuição
+    \draw[thick, blue!80!black] plot[domain=-2.8:2.8, samples=100] (\x, {3.5*normalpdf(\x,0,1)});
+    % Rótulos e Linhas auxiliares
+    \draw[dashed, gray] (0.5,0) -- (0.5, {3.5*normalpdf(0.5,0,1)});
+    \draw[dashed, gray] (1.8,0) -- (1.8, {3.5*normalpdf(1.8,0,1)});
+    \node[below] at (0.5,0) {$a$};
+    \node[below] at (1.8,0) {$b$};
+    \node[blue!80!black] at (1.15, 0.4) {$P(a \leq X \leq b)$};
+\end{tikzpicture}
+\caption{Representação de probabilidade em um espaço amostral contínuo como a área sob a curva $f(x)$.}
+\end{figure}
 
 
+Exemplos de espaços amostrais contínuos são fundamentais para medir eficiência e variáveis de estado na gestão pública:
+
+\begin{itemize}
+    \item \textbf{Tempo de espera:} O tempo que um cidadão aguarda em uma fila de atendimento em uma repartição pública ($\Omega = [0, \infty)$);
+    \item \textbf{Mensuração física:} O peso exato de um lote de insumos ou a resistência de materiais em obras de infraestrutura;
+    \item \textbf{Indicadores Econômicos:} A variação da taxa de inflação ou do Produto Interno Bruto (PIB) em um determinado período.
+\end{itemize}
+
+
+
+\newpage
 \section{Eventos}
 
-Um \textbf{evento} é qualquer subconjunto do espaço amostral $\Omega$. \vskip0.3cm
+A compreensão de fenômenos aleatórios exige a formalização do conceito de \textbf{evento}. De acordo com (Meyer, 2012), um evento é qualquer subconjunto do espaço amostral $\Omega$ ao qual se deseja atribuir uma probabilidade. Em termos da teoria dos conjuntos, se $\Omega$ é o universo de possibilidades, um evento $A$ é tal que $A \subseteq \Omega$. \vskip0.3cm
 
-Os eventos podem ser simples ou compostos e são representados por letras maiúsculas.
+Como destaca (Ross, 2010), a distinção entre resultados individuais e eventos é fundamental: enquanto um resultado é um ponto isolado no espaço amostral, um evento pode ser composto por um único resultado (chamado de \textbf{evento elementar} ou simples) ou por uma coleção deles (\textbf{evento composto}). \vskip0.3cm
+
+Na prática da gestão pública, por exemplo, ao analisarmos o tempo de resposta de um serviço ao cidadão ($\Omega$), o interesse do gestor raramente recai sobre o milissegundo exato da conclusão do processo, mas sim sobre o \textit{evento} de o processo ser finalizado dentro do prazo legal de 30 dias ($A = \{t \in \Omega \mid t \leq 30\}$).
+
+
+
 
 \subsection{Operações com Eventos}
 
 Sejam $A$ e $B$ eventos em $\Omega$:
 
 \begin{enumerate}
-    \item União:
-    \[
-    A \cup B
-    \]
-    ocorre se $A$ ou $B$ ocorrer (ou ambos).
+    \item \textbf{União ($A \cup B$):} Ocorre se $A$ ocorre, ou $B$ ocorre, ou ambos ocorrem. Representa a totalidade dos elementos nos dois conjuntos.
+    
+    \begin{center}
+    \begin{tikzpicture}[fill opacity=0.4]
+        \draw (0,0) rectangle (4,2.5);
+        \node at (3.7,2.2) {$\Omega$};
+        \fill[blue] (1.5,1.2) circle (0.8);
+        \fill[blue] (2.5,1.2) circle (0.8);
+        \draw (1.5,1.2) circle (0.8) node[left, opacity=1] {$A$};
+        \draw (2.5,1.2) circle (0.8) node[right, opacity=1] {$B$};
+    \end{tikzpicture}
+    \end{center}
 
-    \item Interseção:
-    \[
-    A \cap B
-    \]
-    ocorre se $A$ e $B$ ocorrerem simultaneamente.
+    \item \textbf{Interseção ($A \cap B$):} Ocorre se $A$ e $B$ ocorrerem simultaneamente. Representa apenas a região comum.
+    
+    \begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) rectangle (4,2.5);
+        \node at (3.7,2.2) {$\Omega$};
+        \begin{scope}
+            \clip (1.5,1.2) circle (0.8);
+            \fill[blue!60] (2.5,1.2) circle (0.8);
+        \end{scope}
+        \draw (1.5,1.2) circle (0.8) node[left] {$A$};
+        \draw (2.5,1.2) circle (0.8) node[right] {$B$};
+    \end{tikzpicture}
+    \end{center}
 
-    \item Complementar:
-    \[
-    A^c
-    \]
-    ocorre se $A$ não ocorrer.
+\newpage
+    \item \textbf{Complementar ($A^c$):} Ocorre se $A$ não ocorrer. Representa tudo o que está no espaço amostral, exceto o próprio $A$.
+    
+    \begin{center}
+    \begin{tikzpicture}
+        \fill[blue!20] (0,0) rectangle (4,2.5);
+        \fill[white] (2,1.25) circle (0.8);
+        \draw (0,0) rectangle (4,2.5);
+        \draw (2,1.25) circle (0.8) node {$A$};
+        \node at (3.7,2.2) {$\Omega$};
+        \node at (0.5,0.5) {$A^c$};
+    \end{tikzpicture}
+    \end{center}
 
-    \item Diferença:
-    \[
-    A - B
-    \]
-    representa os resultados que estão em $A$, mas não em $B$.
+    \item \textbf{Diferença ($A - B$):} Resultados que pertencem a $A$, mas que não pertencem a $B$.
+    
+    \begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) rectangle (4,2.5);
+        \node at (3.7,2.2) {$\Omega$};
+        \begin{scope}
+            \clip (0,0) rectangle (4,2.5) (2.5,1.2) circle (0.8);
+            \fill[blue!40] (1.5,1.2) circle (0.8);
+        \end{scope}
+        \draw (1.5,1.2) circle (0.8) node[left] {$A$};
+        \draw (2.5,1.2) circle (0.8) node[right] {$B$};
+    \end{tikzpicture}
+    \end{center}
 
-    \item Eventos mutuamente exclusivos:
-    \[
-    A \cap B = \varnothing.
-    \]
-\end{enumerate}
-
-\subsection{Propriedades das Operações}
-
-\begin{enumerate}
-    \item Comutatividade:
-    \[
-    A \cup B = B \cup A,
-    \qquad
-    A \cap B = B \cap A.
-    \]
-
-    \item Associatividade:
-    \[
-    A \cup (B \cup C) = (A \cup B)\cup C,
-    \]
-    \[
-    A \cap (B \cap C) = (A \cap B)\cap C.
-    \]
-
-    \item Distributividade:
-    \[
-    A \cup (B \cap C) = (A \cup B)\cap (A \cup C),
-    \]
-    \[
-    A \cap (B \cup C) = (A \cap B)\cup (A \cap C).
-    \]
-
-    \item Leis de De Morgan:
-    \[
-    (A \cup B)^c = A^c \cap B^c,
-    \qquad
-    (A \cap B)^c = A^c \cup B^c.
-    \]
-
-    \item Propriedades gerais:
-    \[
-    A \cup \varnothing = A,
-    \qquad
-    A \cap \varnothing = \varnothing,
-    \]
-    \[
-    (A^c)^c = A,
-    \qquad
-    A \cup A^c = \Omega.
-    \]
+    \item \textbf{Eventos Mutuamente Exclusivos ($A \cap B = \varnothing$):} Eventos que não possuem elementos em comum; a ocorrência de um impede a do outro.
+    
+    \begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) rectangle (4,2.5);
+        \node at (3.7,2.2) {$\Omega$};
+        \draw (1.1,1.25) circle (0.7) node {$A$};
+        \draw (2.9,1.25) circle (0.7) node {$B$};
+    \end{tikzpicture}
+    \end{center}
 \end{enumerate}
 %----------------------------------------------------------------------------------%
 
+\newpage
+\subsection{Propriedades das Operações}
+
+As propriedades a seguir formam a álgebra de eventos e permitem simplificar expressões probabilísticas complexas. Conforme aponta (Morettin, 2010), estas relações são análogas às propriedades da aritmética e da lógica proposicional.
+
+\begin{enumerate}
+    \item \textbf{Comutatividade:} A ordem dos eventos não altera o resultado da união ou interseção.
+    \[ A \cup B = B \cup A, \qquad A \cap B = B \cap A. \]
+
+    \item \textbf{Associatividade:} A forma como os eventos são agrupados não altera o resultado.
+    \[ A \cup (B \cup C) = (A \cup B) \cup C, \qquad A \cap (B \cap C) = (A \cap B) \cap C. \]
+
+    \item \textbf{Distributividade:} Esta propriedade é fundamental para decompor eventos compostos.
+    \[ A \cap (B \cup C) = (A \cap B) \cup (A \cap C). \]
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \begin{scope} % Lado Esquerdo: A \cap (B \cup C)
+            \draw (0,0) rectangle (4,3);
+            \node at (3.7,2.7) {\tiny $\Omega$};
+            \clip (1.5,1.8) circle (0.7); % Círculo A
+            \fill[blue!30] (2.5,1.8) circle (0.7); % Círculo B
+            \fill[blue!30] (2,1) circle (0.7); % Círculo C
+            \draw (1.5,1.8) circle (0.7) node[left] {\tiny $A$};
+            \draw (2.5,1.8) circle (0.7) node[right] {\tiny $B$};
+            \draw (2,1) circle (0.7) node[below] {\tiny $C$};
+        \end{scope}
+        \node at (4.5,1.5) {$\equiv$};
+        \begin{scope}[xshift=5.5cm] % Lado Direito: (A \cap B) \cup (A \cap C)
+            \draw (0,0) rectangle (4,3);
+            \node at (3.7,2.7) {\tiny $\Omega$};
+            \begin{scope} \clip (1.5,1.8) circle (0.7); \fill[blue!30] (2.5,1.8) circle (0.7); \end{scope}
+            \begin{scope} \clip (1.5,1.8) circle (0.7); \fill[blue!30] (2,1) circle (0.7); \end{scope}
+            \draw (1.5,1.8) circle (0.7) node[left] {\tiny $A$};
+            \draw (2.5,1.8) circle (0.7) node[right] {\tiny $B$};
+            \draw (2,1) circle (0.7) node[below] {\tiny $C$};
+        \end{scope}
+    \end{tikzpicture}
+    \end{center}
+
+    \item \textbf{Leis de De Morgan:} Estas leis estabelecem a relação entre o complementar e as operações de união e interseção.
+    \[ (A \cup B)^c = A^c \cap B^c, \qquad (A \cap B)^c = A^c \cup B^c. \]
+
+    \item \textbf{Propriedades Gerais:}
+    \[ A \cup \varnothing = A, \qquad A \cap \varnothing = \varnothing, \]
+    \[ (A^c)^c = A, \qquad A \cup A^c = \Omega. \]
+\end{enumerate}
 
 \newpage
 %----------------------------------------------------------------------------------%
@@ -672,17 +803,15 @@ pertencer a cada grupo já classificado.\vskip0.3cm
 %\newpage
 \subsection{Definição do Teorema}
 
-Seja $B_1,B_2,\dots,B_k$ uma partição do espaço amostral $S$ e seja $A$ um evento qualquer.
-Então, para cada $i$, vale:
+Seja $\{B_1, B_2, \dots, B_k\}$ uma partição do espaço amostral $S$ e seja $A$ um evento qualquer de $S$, tal que $P(A) > 0$. Então, para cada $i = 1, \dots, k$, a probabilidade de $B_i$ dado $A$ é:
 
 \begin{equation}\label{bayes}
-P(B_i\mid A)=
-\frac{P(A\mid B_i)\,P(B_i)}
-{\sum_{j=1}^{k}P(A\mid B_j)\,P(B_j)}.
+P(B_i \mid A) = \frac{P(A \mid B_i) P(B_i)}{P(A \mid B_1)P(B_1) + \dots + P(A \mid B_k)P(B_k)} = \frac{P(A \mid B_i) P(B_i)}{\sum_{j=1}^{k} P(A \mid B_j) P(B_j)}.
 \end{equation}
 
-Esse resultado é conhecido como \textbf{Teorema de Bayes} e constitui a base da chamada
-\textbf{Estatística Bayesiana}. È também denominado fórmula da probabilidade das causas (ou dos antededentes). Desde que os $B_{i}$ constituam uma partição do espaço amostral um, e somente um, dos eventos $B_{i}$ ocorrerá.
+\vskip0.3cm
+Esse resultado é conhecido como \textbf{Teorema de Bayes} e constitui a base da chamada \textbf{Estatística Bayesiana}. É também denominado \textit{fórmula da probabilidade das causas} (ou dos antecedentes). Como os $B_{i}$ constituem uma partição do espaço amostral, um, e somente um, dos eventos $B_{i}$ ocorrerá sob a condição de que $A$ tenha ocorrido.
+
 
 \newpage
 A ídéia expressa no Teorema da Bayes deu origem a uma nova, moderna e alternativa maneira de se pensar a Estatística, gerando a chamada \textbf{Estatística Bayesiana}. 
@@ -698,11 +827,129 @@ Esse tipo de representação é especialmente útil quando um experimento ocorre
 forma \textbf{sequencial}, isto é, quando o resultado de uma etapa influencia as
 probabilidades da etapa seguinte. Assim, árvores de probabilidade permitem
 organizar visualmente os possíveis caminhos de um experimento e calcular
-probabilidades de eventos compostos de maneira sistemática.
+probabilidades de eventos compostos de maneira sistemática. \vskip0.3cm
 
 
-\bigskip
 
+\subsubsection{Exemplo Prático: Controle de Qualidade em Fábricas de Ração} \vskip0.3cm
+
+Uma grande cooperativa agroindustrial distribui rações para animais de estimação produzidas em cinco unidades fabris distintas: $F_1, F_2, F_3, F_4$ e $F_5$. O setor de logística monitora rigorosamente o controle de qualidade, pois falhas no processamento podem comprometer a saúde dos animais e a imagem da marca. A tabela abaixo apresenta a participação de cada fábrica na produção total e o respectivo índice de lotes que apresentam inconformidades (defeitos):
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{l|c|c}
+\hline \hline
+\textbf{Fábricas} & \textbf{Participacao na Producao} & \textbf{Taxa de Defeito (D)} \\
+\hline \hline
+Fábrica 1 ($F_1$) & 30\% & 1\% \\
+Fábrica 2 ($F_2$) & 25\% & 2\% \\
+Fábrica 3 ($F_3$) & 20\% & 3\% \\
+Fábrica 4 ($F_4$) & 15\% & 4\% \\
+Fábrica 5 ($F_5$) & 10\% & 5\% \\
+\hline \hline
+\end{tabular}
+\end{table}
+
+
+Um inspetor de qualidade seleciona, ao acaso, um pacote de ração no centro de distribuição e constata que ele apresenta um defeito de vedação. Com base nos dados da cooperativa, a probabilidade de que esse pacote tenha sido fabricado pela unidade $F_5$ é:
+
+\newpage
+% No preâmbulo, certifique-se de ter:
+% \usepackage{tikz}
+% \usetikzlibrary{arrows.meta, shadows, positioning}
+
+% No seu preâmbulo, adicione:
+% \usepackage{tikz}
+% \usetikzlibrary{arrows.meta, shadows, positioning}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    thick,
+    % Estilo base para os nós das fábricas
+    factory/.style={draw, rectangle, rounded corners=4pt, minimum width=1.1cm, minimum height=0.7cm, font=\small\bfseries, drop shadow},
+    % Estilo para os círculos de resultado (D e D^c)
+    result/.style={circle, draw, minimum size=0.7cm, font=\scriptsize, drop shadow},
+    % Estilo para as setas
+    edge/.style={draw, -{Stealth[scale=1.1]}, line width=2pt}
+]
+
+% Nó Raiz (Espaço Amostral)
+\node[circle, draw, line width=1.5pt, inner sep=6pt, fill=white] (root) {$\Omega$};
+% --- FÁBRICA 1 (Azul) ---
+\node[factory, fill=blue!15, below left=2.5cm and 4.5cm of root] (f1) {$F_1$};
+\node[result, fill=red!10,  below left=1cm and 0.2cm of f1] (f1d) {$D$};
+\node[result, fill=gray!5,   below right=1cm and 0.2cm of f1] (f1c) {$D^c$};
+\path[edge, blue!70!black] (root) -- node[above left, pos=0.6, black] {0,30} (f1);
+\path[edge, blue!70!black] (f1) -- node[left, black] {0,01} (f1d);
+\path[edge, blue!70!black] (f1) -- node[right, black] {0,99} (f1c);
+% --- FÁBRICA 2 (Verde) ---
+\node[factory, fill=green!15, below left=2.5cm and 1.5cm of root] (f2) {$F_2$};
+\node[result, fill=red!10,   below left=1cm and 0.2cm of f2] (f2d) {$D$};
+\node[result, fill=gray!5,    below right=1cm and 0.2cm of f2] (f2c) {$D^c$};
+\path[edge, green!60!black] (root) -- node[left, pos=0.7, black] {0,25} (f2);
+\path[edge, green!60!black] (f2) -- node[left, black] {0,02} (f2d);
+\path[edge, green!60!black] (f2) -- node[right, black] {0,98} (f2c);
+% --- FÁBRICA 3 (Laranja) ---
+\node[factory, fill=orange!15, below=2.5cm of root] (f3) {$F_3$};
+\node[result, fill=red!10,    below left=1.2cm and 0.2cm of f3] (f3d) {$D$};
+\node[result, fill=gray!5,     below right=1.2cm and 0.2cm of f3] (f3c) {$D^c$};
+% Ajuste na linha para evitar o quadrado preto:
+\path[edge, orange!80!black] (root) -- node[pos=0.5, xshift=8pt, black] {0,20} (f3);
+\path[edge, orange!80!black] (f3) -- node[left, black] {0,03} (f3d);
+\path[edge, orange!80!black] (f3) -- node[right, black] {0,97} (f3c);
+
+% --- FÁBRICA 4 (Roxo) ---
+\node[factory, fill=purple!15, below right=2.5cm and 1.5cm of root] (f4) {$F_4$};
+\node[result, fill=red!10,    below left=1.2cm and 0.2cm of f4] (f4d) {$D$};
+\node[result, fill=gray!5,     below right=1.2cm and 0.2cm of f4] (f4c) {$D^c$};
+\path[edge, purple!70!black] (root) -- node[right, pos=0.7, black] {0,15} (f4);
+\path[edge, purple!70!black] (f4) -- node[left, black] {0,04} (f4d);
+\path[edge, purple!70!black] (f4) -- node[right, black] {0,96} (f4c);
+% --- FÁBRICA 5 (Ciano/Teal) ---
+\node[factory, fill=teal!15, below right=2.5cm and 4.5cm of root] (f5) {$F_5$};
+\node[result, fill=red!10,   below left=1.2cm and 0.2cm of f5] (f5d) {$D$};
+\node[result, fill=gray!5,    below right=1.2cm and 0.2cm of f5] (f5c) {$D^c$};
+\path[edge, teal!70!black] (root) -- node[above right, pos=0.6, black] {0,10} (f5);
+\path[edge, teal!70!black] (f5) -- node[left, black] {0,05} (f5d);
+\path[edge, teal!70!black] (f5) -- node[right, black] {0,90} (f5c);
+\end{tikzpicture}
+\caption{Diagrama de Árvore multicor com 5 unidades de produção e controle de falhas.}
+\end{figure}
+
+
+Para determinar qual fábrica tem maior probabilidade de ser a origem de um lote defeituoso, calculamos primeiro a probabilidade total de encontrar um defeito no estoque central, $P(D)$:
+
+
+$$\begin{aligned}
+P(D) &= (0,30 \cdot 0,01) + (0,25 \cdot 0,02) + (0,20 \cdot 0,03) + (0,15 \cdot 0,04) + (0,10 \cdot 0,05) \\
+P(D) &= 0,003 + 0,005 + 0,006 + 0,006 + 0,005 = \mathbf{0,025} \text{ (ou 2,5\%)}
+\end{aligned}$$
+
+Agora, aplicamos o \textbf{\textit{Teorema de Bayes}} para a Unidade $F_5$, que possui a maior taxa individual de erro, apesar de possuir a menor participação na produção:
+
+$$P(F_5 \mid D) = \frac{P(D \mid F_5) \cdot P(F_5)}{P(D)} = \frac{0,05 \cdot 0,10}{0,025} = \frac{0,005}{0,025} = \mathbf{0,20}$$
+
+
+Ao final do cálculo, observamos que a probabilidade de o defeito ter vindo da fábrica $F_5$ é de 20\%. Note que a probabilidade \textit{a priori} era de apenas 10\% (sua participação no mercado). A informação adicional ("o pacote é defeituoso") dobrou nossa estimativa de culpa para esta fábrica específica.
+
+
+
+
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------%
+
+
+
+%-------------------------------------------------------------------------------------------%
+\newpage
 \subsubsection{Estrutura Matemática}
 
 Considere dois eventos $A$ e $B$. A probabilidade de ocorrência conjunta desses
@@ -959,9 +1206,9 @@ mas o conjunto completo não seja. Assim, a independência é uma hipótese fort
 e permite compreender sistemas complexos com maior clareza.
 
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
-\begin{tikzpicture}[scale=1.0]
+\begin{tikzpicture}[scale=1]
 
 % Universo
 \draw (0,0) rectangle (6,4);
@@ -987,6 +1234,57 @@ e permite compreender sistemas complexos com maior clareza.
 \label{fig:venn_independencia}
 \end{figure}
 %----------------------------------------------------------------------------------------%
+
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=0.9]
+
+% Universo
+\draw (0,0) rectangle (7,5.5);
+\node at (6.7,5.2) {$\Omega$};
+
+% Conjuntos (Círculos)
+\draw[thick] (2.5,3.2) circle (1.5) node[left=1cm] {$A_1$};
+\draw[thick] (4.5,3.2) circle (1.5) node[right=1cm] {$A_2$};
+\draw[thick] (3.5,1.8) circle (1.5) node[below=1cm] {$A_3$};
+
+% Labels de Interseções (Opcional, para clareza)
+\node[scale=0.8] at (3.5,3.2) {$A_1 \cap A_2$};
+\node[scale=0.8] at (2.8,2.2) {$A_1 \cap A_3$};
+\node[scale=0.8] at (4.2,2.2) {$A_2 \cap A_3$};
+\node[scale=0.7] at (3.5,2.6) {$A_1 \cap A_2 \cap A_3$};
+
+% Legenda Matemática
+\node[below] at (3.5,-0.2) {$\displaystyle P\left(\bigcap_{i=1}^3 A_i\right) = \prod_{i=1}^3 P(A_i)$};
+
+\end{tikzpicture}
+\caption{Representação de independência mútua para $n=3$.}
+\label{fig:venn_3_eventos}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \newpage
 %------------------------- var ----------------------------------------------------------%
@@ -1154,8 +1452,7 @@ Note ainda que, sobre o mesmo espaço amostral, poderíamos definir outras vari�
 \newpage
 %----------------------------------------------------------------------------------------------%
 \section{Variável Aleatória Discreta}
-
-\subsection{Definição}
+\subsection*{Definição}
 
 Uma variável aleatória $X:\Omega \to \mathbb{R}$ é denominada
 \textbf{discreta} quando seu conjunto de valores possíveis (suporte)
@@ -1201,7 +1498,7 @@ f(x_i) \ge 0, \quad \forall i,
 Reciprocamente, toda função $f$ definida em um conjunto enumerável
 $\mathcal{X}$ e que satisfaça essas propriedades determina uma variável aleatória discreta.
 
-\subsection{Função de Distribuição Acumulada}
+\subsubsection{Função de Distribuição Acumulada}
 
 A \textbf{função de distribuição acumulada} (FDA) de $X$ é definida por
 
@@ -1337,13 +1634,11 @@ V(X)=\frac32 - 1^2 = \frac12.
 Observe que essa distribuição corresponde a um caso particular da
 distribuição binomial com parâmetros $n=2$ e $p=1/2$.
 %----------------------------------------------------------------------------------------------%
-%----------------------------------------------------------------------------------%
-
-
+%----------------------------------------------------------------------------------------------%
 
 \newpage
-%----------------------------------------------------------------------------------%
-%----------------------------------------------------------------------------------%
+%----------------------------------------------------------------------------------------------%
+%----------------------------------------------------------------------------------------------%
 \section{Variáveis Aleatórias Contínuas}
 
 Em diversos fenômenos naturais, as grandezas observadas não resultam de
@@ -1365,7 +1660,7 @@ Em contraste, variáveis associadas a contagens — como número de veículos
 em uma via ou quantidade de atendimentos — são tipicamente modeladas
 como variáveis discretas.
 
-\subsection{Definição}
+\subsection*{Definição}
 
 Uma variável aleatória $X:\Omega \to \mathbb{R}$ é dita
 \textbf{contínua} quando sua distribuição pode ser descrita por meio de
@@ -1440,7 +1735,7 @@ E(X)=\int_{-\infty}^{+\infty} x f(x)\,dx,
 
 desde que a integral seja absolutamente convergente.
 
-\subsection{Variância}
+\subsubsection{Variância}
 
 A variância mede a dispersão dos valores em torno da média
 $\mu=E(X)$ e é definida por:
@@ -1461,45 +1756,9 @@ onde
 E(X^2)=\int_{-\infty}^{+\infty} x^2 f(x)\,dx.
 \]
 \newpage
-\subsection{Exemplo: Distribuição Exponencial}
 
-Considere a densidade
 
-\[
-f(x)=
-\begin{cases}
-2e^{-2x}, & x\ge 0,\\
-0, & \text{caso contrário}.
-\end{cases}
-\]
-
-Verificação da normalização:
-
-\[
-\int_0^\infty 2e^{-2x}dx
-=
-2\left[-\frac{1}{2}e^{-2x}\right]_0^\infty
-=1.
-\]
-
-Logo, trata-se de uma densidade válida.
-
-\textbf{Esperança:}
-
-\[
-E(X)=\int_0^\infty x\,2e^{-2x}dx
-=\frac{1}{2}.
-\]
-
-\textbf{Variância:}
-
-\[
-V(X)=\frac{1}{4}.
-\]
-
-Essa distribuição é amplamente utilizada em modelos de tempo de falha e confiabilidade.
-
-\subsection{Exemplo: Construção de uma FDA}
+\subsection*{Exemplo: Construção de uma FDA}
 
 Considere a densidade
 
@@ -1538,9 +1797,10 @@ F(x)=
 
 %----------------------------------------------------------------------------------%
 \newpage
-%========================================================%
+
+
 \section{Distribuições de Probabilidade}
-\subsection{Fundamentos e Necessidade do Estudo das Distribuições}
+\subsection*{Fundamentos e Necessidade do Estudo das Distribuições}
 
 A teoria moderna da probabilidade foi formalizada por Andrey Kolmogorov em 1933, na obra \textit{Grundbegriffe der Wahrscheinlichkeitsrechnung}. Nela, a probabilidade é definida como uma medida $P$ sobre um espaço mensurável $(\Omega,\mathcal{F})$, satisfazendo:
 
@@ -1553,12 +1813,13 @@ P\left(\bigcup_{i=1}^\infty A_i\right)=\sum_{i=1}^\infty P(A_i)
 \]
 \end{enumerate}
 
-\begin{definition}
+
 Uma variável aleatória é uma aplicação mensurável
+
 \[
 X:\Omega\to\mathbb{R}.
 \]
-\end{definition}
+
 
 A distribuição de probabilidade de $X$ é a medida induzida
 \[
@@ -1577,114 +1838,151 @@ Sem distribuições de probabilidade:
 %--------------------------------------------------------------------------------------------------%
 \newpage
 \section{Principais Distribuições Discretas}
-\subsection{Distribuição de Bernoulli}
+\subsection{Processo de Bernoulli e Distribuição de Bernoulli}
 
-A distribuição de Bernoulli foi formalizada por Jacob Bernoulli
-na obra \textit{Ars Conjectandi}, publicada postumamente em 1713,
-em Basileia. A obra inaugura o tratamento sistemático de
-experimentos aleatórios repetidos.
+Os fundamentos das distribuições discretas associadas a eventos dicotômicos
+remontam ao matemático suíço \textbf{Jakob Bernoulli} (1654–1705), cuja obra
+\textit{Ars Conjectandi}, publicada postumamente em 1713, estabeleceu as bases
+da Teoria Clássica das Probabilidades e introduziu formalmente a Lei dos
+Grandes Números. \vskip0.3cm
+
+\vspace{-0.15cm}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.25]{figures/Jakob_Bernoulli.jpeg}
+    \caption{Jakob Bernoulli (1654–1705)}
+\end{figure}
+
+Bernoulli estudou experimentos aleatórios com dois resultados possíveis,
+como sucesso ou fracasso. Tais experimentos passaram a ser denominados
+\textbf{Ensaios de Bernoulli}. Uma sequência de ensaios independentes com
+probabilidade constante $p$ de sucesso constitui um
+\textbf{Processo de Bernoulli}.
 
 \subsubsection*{Definição Formal}
 
-Uma variável aleatória $X$ é dita Bernoulli com parâmetro
-$p\in(0,1)$ se:
+Uma variável aleatória $X$ segue uma distribuição de Bernoulli com parâmetro
+$p \in (0,1)$ se:
 
 \[
 P(X=1)=p, \qquad P(X=0)=1-p.
 \]
 
-\subsubsection*{Função Geradora de Momentos}
+Denotamos:
 
 \[
-M_X(t)=\E(e^{tX})
-= (1-p)e^{0} + p e^{t}
-= 1-p + p e^t.
+X \sim Bern(p).
 \]
 
-\subsubsection*{Esperança — Demonstração}
+\subsubsection*{Função de Probabilidade}
 
 \[
-\E(X)=\sum_{x=0}^{1} xP(X=x)
+f(x) = p^x (1-p)^{1-x}, \quad x \in \{0,1\}.
+\]
+
+\subsubsection*{Esperança}
+
+\[
+\E(X)=p.
+\]
+
+\subsubsection*{Variância}
+
+\[
+\Var(X)=p(1-p).
+\]
+
+\subsubsection*{Propriedades}
+
+\begin{itemize}
+\item Modelo fundamental para variáveis dicotômicas.
+\item Variância máxima quando $p=0,5$.
+\item Pertence à família exponencial.
+\item Constitui o bloco elementar da distribuição Binomial.
+\end{itemize}
+
+\subsubsection*{Exemplo Aplicado à Gestão Pública}
+
+Se a probabilidade de aprovação de um projeto legislativo é $p=0,62$:
+
+\[
+\E(X)=0,62
 \]
 
 \[
-= 0(1-p) + 1(p)
-= p.
+\Var(X)=0,62(0,38)=0,2356.
 \]
 
-\subsubsection*{Variância — Demonstração}
+Isso representa a incerteza associada a uma decisão institucional sob risco.
 
-Primeiro:
+%-------------------------------------------------------------
+
+\newpage
+\subsection{Distribuição Binomial}
+
+A distribuição Binomial surge naturalmente da repetição independente de
+ensaios de Bernoulli. \vskip0.3cm
+
+Sejam:
 
 \[
-\E(X^2)=0^2(1-p)+1^2(p)=p.
+X_1, X_2, \dots, X_n \sim Bern(p)
+\]
+
+independentes e identicamente distribuídos.
+
+Definimos:
+
+\[
+X = \sum_{i=1}^{n} X_i.
 \]
 
 Então:
 
 \[
-\Var(X)=\E(X^2)-[\E(X)]^2
+X \sim Bin(n,p).
 \]
+
+Historicamente, embora a ideia tenha origem em Bernoulli (1713), a formulação
+analítica detalhada e a aproximação normal foram desenvolvidas por
+\textbf{Abraham de Moivre} em \textit{The Doctrine of Chances} (1738).
+
+\subsubsubsection{Função de Probabilidade}
 
 \[
-= p - p^2
-= p(1-p).
+P(X=k)=\binom{n}{k}p^k(1-p)^{n-k},
+\quad k=0,1,\dots,n.
 \]
 
-\subsubsection*{Interpretação}
+\subsubsection*{Esperança}
 
-A variância máxima ocorre quando $p=0,5$, refletindo máxima incerteza.
-
-\subsubsection*{Exemplo Aplicado}
-
-Se a probabilidade de aprovação de um projeto legislativo é 0,62,
-a esperança de aprovação por tentativa é 0,62 e a variância é
-0,2356.
-%--------------------------------------------------------------------------------------------------%
-
-
-
-
-
-%--------------------------------------------------------------------------------------------------%
-\subsection{Distribuição Binomial}
-
-Formalizada por Bernoulli (1713) e expandida por Abraham de Moivre
-em \textit{The Doctrine of Chances} (1738), onde aparece a primeira
-aproximação normal para grandes amostras.
-
-\subsubsection*{Derivação}
-
-Se $X=\sum_{i=1}^n X_i$, com $X_i\sim Bern(p)$ independentes:
+Pela linearidade:
 
 \[
-P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}.
+\E(X)=np.
 \]
 
-\subsubsection*{Esperança — Demonstração}
+\subsubsection*{Variância}
 
-Pela linearidade da esperança:
+Como as variáveis são independentes:
 
 \[
-\E(X)=\sum_{i=1}^n\E(X_i)=np.
+\Var(X)=np(1-p).
 \]
 
-\subsubsection*{Variância — Demonstração}
+\subsubsection*{Propriedades}
 
-Como os $X_i$ são independentes:
+\begin{itemize}
+\item Modelo para contagem de sucessos em $n$ ensaios independentes.
+\item Assimétrica quando $p \neq 0,5$.
+\item Aproxima-se da Normal quando $np(1-p)$ é grande.
+\item Converge para Poisson quando $n \to \infty$, $p \to 0$, com $np=\lambda$.
+\end{itemize}
 
-\[
-\Var(X)=\sum_{i=1}^n \Var(X_i)
-\]
+\subsubsection*{Exemplo Aplicado à Gestão Pública}
 
-\[
-= n p(1-p).
-\]
-
-\subsubsection*{Exemplo Aplicado}
-
-Se 12 municípios podem aderir a um programa e cada um tem
-probabilidade 0,7 de adesão:
+Suponha que 12 municípios possam aderir a um programa estadual,
+cada um com probabilidade $0,7$ de adesão independente.
 
 \[
 \E(X)=12\times0,7=8,4
@@ -1693,6 +1991,18 @@ probabilidade 0,7 de adesão:
 \[
 \Var(X)=12\times0,7\times0,3=2,52.
 \]
+
+Desvio-padrão:
+
+\[
+\sqrt{2,52}\approx1,59.
+\]
+
+Interpretação administrativa: \vskip0.3cm
+
+Espera-se, em média, aproximadamente 8 municípios aderentes,
+com variação típica de cerca de 1 a 2 municípios.
+Isso permite planejamento orçamentário probabilístico.
 %--------------------------------------------------------------------------------------------------%
 
 
@@ -1700,105 +2010,152 @@ probabilidade 0,7 de adesão:
 %--------------------------------------------------------------------------------------------------%
 \subsection{Distribuição Geométrica}
 
-Já presente em \textit{Ars Conjectandi} (1713), modelando o número
-de tentativas até o primeiro sucesso.
+A distribuição geométrica encontra suas raízes formais na obra seminal \textit{Ars Conjectandi}, publicada postumamente em 1713 por Jacob Ber\-nou\-lli. Nesta obra, Ber\-nou\-lli lançou as bases para o estudo de ensaios independentes, onde o interesse recai sobre o número de tentativas necessárias até a ocorrência do primeiro "sucesso" em um processo estocástico de Bernoulli. No contexto da administração pública moderna, esta distribuição é fundamental para modelar o tempo de espera ou a resiliência institucional diante de processos que exigem múltiplas iterações até a conformidade.
 
-\subsubsection*{Função de Probabilidade}
+\subsubsubsection{Função de Probabilidade}
 
-\[
-P(X=k)=(1-p)^{k-1}p, \quad k=1,2,\dots
-\]
+Seja um experimento composto por ensaios de Bernoulli independentes, cada um com probabilidade de sucesso $p$ ($0 < p < 1$). A variável aleatória $X$, que representa o número de tentativas até o primeiro sucesso, segue uma distribuição geométrica. Sua função de probabilidade é definida por:$$P(X=k)=(1-p)^{k-1}p, \quad k=1,2,\dots$$Nesta expressão, $(1-p)^{k-1}$ quantifica a probabilidade de ocorrerem $k-1$ falhas consecutivas antes do êxito final na $k$-ésima tentativa.
 
-\subsubsection*{Esperança — Demonstração}
 
-\[
-\E(X)=\sum_{k=1}^{\infty} k(1-p)^{k-1}p.
-\]
+\subsubsubsection{Esperança Matemática}
 
-Usando a identidade:
+A Esperança Matemática, ou valor esperado, representa a média de tentativas a longo prazo. Sua dedução fundamenta-se na série:$$E(X)=\sum_{k=1}^{\infty} k(1-p)^{k-1}p$$Utilizando a identidade de séries de potências para $|r|<1$:$$\sum_{k=1}^{\infty} k r^{k-1} = \frac{d}{dr} \sum_{k=0}^{\infty} r^k = \frac{d}{dr} \left( \frac{1}{1-r} \right) = \frac{1}{(1-r)^2}$$Fazendo $r=1-p$, obtemos:$$E(X)=p \cdot \frac{1}{[1-(1-p)]^2} = p \cdot \frac{1}{p^2} = \frac{1}{p}$$\textbf{Interpretação:} O valor esperado é o inverso da probabilidade de sucesso. Se uma política pública de fiscalização tem 10\% de chance de detectar uma irregularidade ($p=0,1$), espera-se que sejam necessárias 10 fiscalizações para o primeiro flagrante.
 
-\[
-\sum_{k=1}^{\infty} k r^{k-1} = \frac{1}{(1-r)^2}, \quad |r|<1,
-\]
 
-com $r=1-p$:
+\subsubsubsection{Variância e Dispersão}
 
-\[
-\E(X)=p\frac{1}{p^2}=\frac{1}{p}.
-\]
+A variância quantifica a incerteza associada ao número de tentativas:$$Var(X)=\frac{1-p}{p^2}$$Demonstra-se que a variabilidade aumenta drasticamente quando a probabilidade de sucesso $p$ é pequena, o que impõe desafios ao planejamento de cronogramas administrativos que dependem de resultados binários.
 
-\subsubsection*{Variância — Demonstração}
+\subsubsection*{Aplicação na Gestão Pública: Auditoria e Conformidade}
 
-\[
-\Var(X)=\frac{1-p}{p^2}.
-\]
+Considere um processo de auditoria interna em uma secretaria estadual, onde a probabilidade de um processo administrativo ser selecionado e apresentar inconformidade grave é de $p=0,05$ (5\%). O gestor deseja saber quantas auditorias, em média, devem ser realizadas até que a primeira falha crítica seja detectada para fins de calibração do sistema de controle. \vskip0.3cm
 
+Análise Estatística: Valor Esperado: $E(X) = 1/0,05 = 20$ auditorias.Variância: $Var(X) = (1-0,05)/0,05^2 = 0,95/0,0025 = 380$.Desvio Padrão: $\sigma \approx 19,49$.\textbf{Análise Crítica para o Gestor:}Embora a média seja de 20 tentativas, o alto desvio padrão (quase igual à média) é uma característica intrínseca da distribuição geométrica. Isso indica que a primeira inconformidade pode aparecer muito cedo ou exigir um esforço de auditoria significativamente maior do que o planejado. Para uma decisão baseada em evidências, o gestor deve considerar que confiar apenas na média pode subestimar o risco operacional.
+
+
+
+\newpage
 %--------------------------------------------------------------------------------------------------%
 \subsection{Distribuição Hipergeométrica}
 
-Surge no século XVIII em problemas de urnas sem reposição,
-associada à escola combinatória francesa.
+A gênese da distribuição hipergeométrica remonta ao século XVIII, consolidando-se a partir dos problemas de "extração de urnas sem reposição" que caracterizavam a escola combinatória francesa. Diferente da distribuição Binomial, onde a probabilidade de sucesso permanece constante, a hipergeométrica modela cenários onde a probabilidade se altera a cada ensaio, sendo a ferramenta analítica por excelência para o estudo de populações finitas onde a amostragem é realizada sem reposição.
 
-\subsubsection*{Função de Probabilidade}
+\subsubsection{Função de Probabilidade}
 
-\[
-P(X=k)=\frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}.
-\]
+Considere uma população finita de tamanho $N$ que contém $K$ elementos com uma característica de interesse (sucessos). Se extrairmos uma amostra de tamanho $n$ sem reposição, a variável aleatória $X$, que representa o número de sucessos na amostra, segue uma distribuição hipergeométrica com função de probabilidade dada por:$$P(X=k)=\frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}$$Onde $\binom{N}{n}$ representa o número total de combinações possíveis da amostra, enquanto o numerador calcula as combinações favoráveis de obter exatamente $k$ sucessos e $n-k$ falhas.
 
-\subsubsection*{Esperança — Demonstração}
+\subsubsubsection{Esperança Matemática}
 
-\[
-\E(X)=n\frac{K}{N}.
-\]
+O valor esperado da distribuição hipergeométrica é expresso por:$$E(X)=n\frac{K}{N}$$Esta identidade demonstra que a média da hipergeométrica é análoga à da Binomial ($np$), onde a proporção populacional $p = K/N$ determina o centro da distribuição. Matematicamente, este resultado é obtido de forma elegante através do uso de variáveis indicadoras, considerando a dependência entre os ensaios sucessivos. \vskip0.3cm
 
-Obtida via variáveis indicadoras.
+\subsubsubsection{Variância}
 
-\subsubsection*{Variância — Demonstração}
+A variância da distribuição hipergeométrica é definida como:$$Var(X)=n\frac{K}{N}\left(1-\frac{K}{N}\right)\left(\frac{N-n}{N-1}\right)$$O termo $\frac{N-n}{N-1}$ é tecnicamente conhecido como o \textbf{fator de correção para população finita}.Este fator reduz a variabilidade da estimativa à medida que a amostra $n$ se aproxima do tamanho total da população $N$. \vskip0.3cm
 
-\[
-\Var(X)=n\frac{K}{N}\left(1-\frac{K}{N}\right)\frac{N-n}{N-1}.
-\]
+Em termos práticos, se o tamanho da população for muito superior ao da amostra ($N \gg n$), o fator tende a 1, e a distribuição hipergeométrica converge para a Binomial. \vskip0.3cm
 
-O termo $\frac{N-n}{N-1}$ representa o fator de correção
-para população finita.
+\subsubsection*{Aplicação na Gestão Pública: Auditoria de Processos}
+
+Imagine um gestor de uma Secretaria de Fazenda que precisa auditar uma remessa de $N = 100$ processos de isenção fiscal, dos quais suspeita-se que $K = 10$ contenham erros de documentação.  \vskip0.3cm
+
+Se o gestor selecionar aleatoriamente $n = 5$ processos sem reposição, a probabilidade de encontrar pelo menos um processo com erro pode ser calculada via distribuição hipergeométrica. \vskip0.3cm
+
+%\textbf{Análise Crítica para a Tomada de Decisão:} \vskip0.3cm
+
+Neste cenário, a aplicação do fator de correção é indispensável. Como a amostragem sem reposição em uma população pequena ($N=100$) reduz a incerteza mais rapidamente do que em populações infinitas, o gestor obtém uma estimativa mais precisa do risco de conformidade. Decisões baseadas em evidências dependem deste rigor: subestimar a precisão devido ao uso de modelos inadequados (como a Binomial em populações finitas) pode levar a auditorias excessivamente onerosas ou à aceitação inadvertida de riscos institucionais.
+%--------------------------------------------------------------------------------------------------%
+
+
+
+\newpage
 %--------------------------------------------------------------------------------------------------%
 \subsection{Distribuição Binomial Negativa}
 
-Desenvolvida no século XIX no estudo de contagens até o
-$r$-ésimo sucesso.
+A distribuição binomial negativa, também conhecida em contextos específicos como distribuição de Pascal, consolidou-se no século XIX como uma extensão fundamental dos ensaios de Bernoulli. Enquanto a distribuição geométrica se restringe ao tempo de espera até o primeiro sucesso, a binomial negativa modela o número de tentativas (ou falhas) necessárias para atingir o $r$-ésimo sucesso. Historicamente, sua aplicação evoluiu de jogos de azar para a modelagem de fenômenos sociais complexos, revelando-se superior à distribuição de Poisson em situações de superdispersão — onde a variância dos dados excede a média, uma característica comum em indicadores de gestão pública.
 
-\subsubsection*{Função de Probabilidade}
+\subsubsubsection{Função de Probabilidade}
 
-\[
-P(X=k)=\binom{k+r-1}{r-1}p^r(1-p)^k.
-\]
+Seja $X$ a variável aleatória que representa o número de falhas observadas até a ocorrência do $r$-ésimo sucesso em ensaios independentes com probabilidade de sucesso $p$. A função de probabilidade é expressa por:$$P(X=k)=\binom{k+r-1}{r-1}p^r(1-p)^k, \quad k=0, 1, 2, \dots$$Nesta formulação, o coeficiente binomial $\binom{k+r-1}{r-1}$ contabiliza as diferentes sequências possíveis em que o $r$-ésimo sucesso ocorre exatamente na $(k+r)$-ésima tentativa, precedido por exatamente $r-1$ sucessos e $k$ falhas.[Image suggestion: Gráfico da função de probabilidade comparando diferentes valores de r e p, ilustrando o impacto na assimetria da distribuição]
 
-\subsubsection*{Esperança — Demonstração}
+\subsubsubsection{Propriedades e Comportamento Assintótico}
 
-\[
-\E(X)=\frac{r(1-p)}{p}.
-\]
+A fundamentação analítica desta distribuição permite extrair indicadores centrais para o diagnóstico e monitoramento institucional:
+\textbf{Esperança Matemática (Média):}
 
-\subsubsection*{Variância — Demonstração}
+$$\E(X)=\frac{r(1-p)}{p}$$
 
-\[
-\Var(X)=\frac{r(1-p)}{p^2}.
-\]
+Representa o número médio de eventos indesejados (falhas) que o gestor deve prever antes de consolidar o objetivo de $r$ sucessos.
+
+\textbf{Variância:}
+
+$$\Var(X)=\frac{r(1-p)}{p^2}$$Diferente da distribuição de Poisson, na binomial negativa a variância é sempre superior à média ($\Var(X) = \E(X)/p$), o que a torna a escolha técnica ideal para modelar dados com alta volatilidade, como a ocorrência de sinistros ou a demanda por serviços de emergência.
+
+\subsubsection*{Aplicação na Gestão Pública}
+
+No âmbito da governança orientada por dados, esta distribuição é uma ferramenta poderosa para o planejamento de processos de contratação pública. \vskip0.3cm
+
+\textbf{Cenário de Gestão:}  \vskip0.3cm
+
+Uma secretaria estadual precisa contratar $r=3$ empresas especializadas para um projeto de saneamento. Dados históricos indicam que a probabilidade de um edital de licitação resultar em uma contratação válida (sucesso) é de $p=0,60$ (60\%), devido a possíveis impugnações ou propostas inabilitadas. \vskip0.3cm
+
+
+\textbf{Análise Estatística para Decisão:} \vskip0.3cm
+
+O gestor utiliza o modelo para prever o esforço administrativo necessário: \vskip0.3cm
+
+\begin{enumerate}
+    \item Média de Falhas Esperadas: $\E(X) = \frac{3(1-0,60)}{0,60} = 2$ editais desertos ou fracassados.
+    \item Total de Processos Planejados: O planejamento deve prever recursos para processar, em média, $E(X) + r = 5$ editais. 
+\end{enumerate}
+
+\textbf{Interpretação para o Gestor:} \vskip0.3cm
+
+A análise estatística revela que, para garantir a continuidade do projeto com 3 contratos firmados, a administração deve estar preparada para lidar com a frustração de dois processos licitatórios. Esta previsão, baseada em evidências estatísticas, permite uma estimativa orçamentária e de cronograma muito mais resiliente, evitando o colapso do cronograma de obras por excesso de otimismo administrativo.
+
 
 %--------------------------------------------------------------------------------------------------%
-%====================================================
+
+\newpage
 \subsection{Distribuição de Poisson}
 
-A distribuição de Poisson foi introduzida por Siméon Denis Poisson
-(1781–1840) em sua obra: \vskip0.3cm
+A distribuição de Poisson tem este nome em homenagem ao metemático, Astrônomo e físico francês Simeon Denis Poisson. Com característica próxima a Binomial, a distribuição de Poisson é uma distribuição descontínua, aplicável quando o resultado é o número de vezes que determinado evento ocorre. \vskip0.3cm
 
-Poisson, S. D. (1837). \textit{Recherches sur la probabilité des jugements en matière criminelle et en matière civile}. Bachelier, Paris. \vskip0.3cm
+\vspace{-0.15cm}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.25]{figures/Simeon_Poisson.jpeg}
+    \caption{Simeon Denis Poisson (1781-1840)}
+    \label{fig:my_label2}
+\end{figure}\textbf{}
+
+
+Sua obra foi entilutada de: Poisson, S. D. (1837). \textit{Recherches sur la probabilité des jugements en matière criminelle et en matière civile}. Bachelier, Paris. \vskip0.3cm
 
 O trabalho tinha como objetivo modelar a frequência de decisões judiciais
 e eventos raros em julgamentos, inserindo-se na tradição probabilística
 francesa iniciada por Laplace. \vskip0.3cm
 
-\subsubsection*{Derivação como Limite da Distribuição Binomial}
+
+Poisson recebeu dois prêmios importantes da época:
+
+
+\begin{itemize}
+    \item Prêmio Lalande (1810): Membro da Academia Americana de Artes e Ciências;
+    \item Medalha Copley (1832): (For his work entitled, Nouvelle Theorie de lAction Capillaire., 1832)
+\end{itemize}
+
+O Prêmio Lalande foi uma condecoração científica em Astronomia, concedida
+de 1902 a 1970 pela Académie des Sciences. O prêmio homenageia o astrônomo
+Jérôme Lalande, estabelecido pelo próprio em 1801. Após 1970 foi combinado com
+o prêmio da fundação Benjamin Valz, concedido até 1996. \vskip0.3cm
+
+A Medalha Copley é um prêmio no domínio das ciências, sendo a de maior
+prestígio atribuída pela Royal Society e, também, a mais antiga. Foi concedida
+pela primeira vez em 1731. \vskip0.3cm
+
+
+
+\subsubsection{Derivação como Limite da Distribuição Binomial}
 
 Considere $X_n \sim Bin(n,p_n)$ tal que
 
@@ -1864,7 +2221,7 @@ P(X=k)
 \frac{e^{-\lambda}\lambda^k}{k!}.
 \]
 
-\subsubsection*{Função de Probabilidade}
+\subsubsection{Função de Probabilidade}
 
 \[
 P(X=k)
@@ -1875,7 +2232,7 @@ P(X=k)
 
 onde $\lambda>0$.
 
-\subsubsection*{Função Geradora de Momentos}
+\subsubsection{Função Geradora de Momentos}
 
 \[
 M_X(t)
@@ -1904,7 +2261,7 @@ e^{\lambda e^t}
 \exp\{\lambda(e^t-1)\}.
 \]
 
-\subsubsection*{Esperança:}
+\subsubsection{Esperança:}
 
 \[
 \E(X)
@@ -1929,7 +2286,7 @@ Avaliado em $t=0$:
 \lambda.
 \]
 
-\subsubsection*{Variância: }
+\subsubsection{Variância:}
 
 \[
 \Var(X)
@@ -1966,7 +2323,7 @@ Logo:
 \lambda.
 \]
 
-\subsubsection*{Interpretação Estrutural}
+\subsubsection{Interpretação Estrutural}
 
 A igualdade
 
@@ -1977,7 +2334,7 @@ A igualdade
 é característica distintiva da Poisson e decorre de sua
 natureza como processo de contagem puro com incrementos independentes.
 
-\subsubsection*{Propriedade de Aditividade}
+\subsubsection{Propriedade de Aditividade}
 
 Se $X_1\sim Poisson(\lambda_1)$ e
 $X_2\sim Poisson(\lambda_2)$ independentes,
@@ -1988,7 +2345,7 @@ X_1+X_2 \sim Poisson(\lambda_1+\lambda_2).
 
 Demonstração via produto das funções geradoras de momentos.
 
-\newpage
+
 \subsubsection*{Exemplo Aplicado à Administração Pública}
 
 Considere que o número médio de ocorrências de trânsito
@@ -2013,23 +2370,72 @@ P(X=3)
 A variância sendo igual à média permite verificar
 se há superdispersão nos dados reais,
 situação comum em estudos de segurança pública.
+%--------------------------------------------------------------------------------------------------%
 
+\newpage
+\subsubsection{Síntese das Distribuições Discretas e Critérios de Seleção}
 
+A escolha do modelo probabilístico adequado é o passo fundamental para a integridade da inferência estatística. O Quadro 2.4 sintetiza as distribuições discutidas, oferecendo um guia rápido para a aplicação em contextos administrativos.
 
+\begin{table}[H]
+\centering\caption{Quadro Comparativo de Distribuições de Probabilidade Discretas}
+\label{tab:resumo_discretas}
+\small
+\begin{tabularx}{\textwidth}{l|l|l|p{4.5cm}|c}
+\hline \hline
+\textbf{Distribuição}     & \textbf{Evento de Interesse} & \textbf{Aplicação}         & \textbf{Pa\-râ\-me\-tros}   \\ 
+\hline \hline
+\textbf{Bernoulli}        & Sucesso único                & Experimento Binário        & $(p)$                 \\
+\textbf{Binomial}         & $k$ sucessos em $n$ ensaios  & Contagem de Eventos        & $(n, p)$             \\
+\textbf{Geométrica}      & Tempo até 1º sucesso          & Resiliência                & $(p)$                \\
+\textbf{Hipergeométrica} & $k$ sucessos em $n$ ensaios   & Populações Finitas         & $(N, K, n)$          \\
+\textbf{Binomial Neg.}   & Tentativas até $r$ sucessos   & Superdispersão Dados       & $(r, p)$             \\
+\textbf{Poisson}         & Ocorrências no tempo          & Fluxo de chegada           & $(\lambda)$          \\
+\hline \hline
+\end{tabularx}
+\end{table}
+
+A análise comparativa das distribuições discretas evidencia que cada modelo probabilístico está associado a uma estrutura específica de experimento e a hipóteses bem definidas sobre o mecanismo gerador dos dados. A escolha adequada da distribuição depende da natureza do fenômeno observado, da independência entre ensaios e da constância (ou não) da probabilidade de ocorrência dos eventos (CASELLA, BERGER, 2019). \vskip0.3cm
+
+Assim, compreender as diferenças estruturais entre essas distribuições é fundamental para a correta modelagem estatística e para a construção de inferências consistentes, sobretudo em aplicações empíricas na gestão pública e na análise de eventos discretos (HOGG et al., 2019).
 
 
 
 %--------------------------------------------------------------------------------------------------%
+
+
+
+
+
+\newpage
+%--------------------------------------------------------------------------------------------------%
 \section{Principais Distribuições Contínuas}
 \subsection{Distribuição Normal}
 
+Para alguns autores, a distribuição de probabilidade mais famosa da estatística,
+é denominada Distribuição Normal, Curva de Gauss, Gaussiana, Distribuição
+de Laplace–Gauss ou em Forma de Sino. \vskip0.3cm
+
 A distribuição Normal surge inicialmente no trabalho de Abraham de Moivre (1733), ao estudar a aproximação da distribuição binomial para grandes amostras.\vskip0.3cm
+
+\vspace{-0.15cm}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.25]{figures/Abraham_de_moivre.jpeg}
+    \caption{Abraham de Moivre (1667-1754)}
+    \label{fig:my_label2}
+\end{figure}\textbf{}
+
 
 Posteriormente, Pierre-Simon Laplace (1774 a 1812) formalizou o resultado que hoje conhecemos como Teorema Central do Limite. A formulação final da densidade associada a erros de observação foi apresentada por Carl Friedrich Gauss em 1809 na obra: \vskip0.3cm
 
-        \textbf{Theoria Motus Corporum Coelestium in Sectionibus Conicis Solem Ambientium}. Por esse motivo, também é chamada distribuição Gaussiana.
+        \textbf{Theoria Motus Corporum Coelestium in Sectionibus Conicis Solem Ambientium}. Por esse motivo, também é chamada distribuição Gaussiana. \vskip0.3cm
 
-\subsubsection*{Definição}
+Diversos autores consideram Laplace como tendo realizado as maiores contribuição à teoria da probabilidade, mas foi dado o nome de Gauss para a distribuição depois de ele tê-la aplicado a teoria dos movimentos dos corpos celestes.
+
+
+\newpage
+\subsubsection{Definição Formal}
 
 Diz-se que $X \sim N(\mu,\sigma^2)$ se sua densidade é:
 
@@ -2046,7 +2452,7 @@ f(x)
 onde $\mu \in \mathbb{R}$ e $\sigma>0$.
 
 %====================================================
-\subsubsection*{Demonstração de que a densidade integra 1}
+\subsubsection{Demonstração de que a densidade integra 1}
 %====================================================
 
 Considere inicialmente o caso padrão:
@@ -2179,7 +2585,7 @@ I
 
 
 %====================================================
-\subsubsection*{Esperança:}
+\subsubsection{Esperança:}
 %====================================================
 
 \[
@@ -2212,7 +2618,7 @@ Para $X=\mu+\sigma Z$:
 \]
 
 %====================================================
-\subsubsection*{Variância:}
+\subsubsection{Variância:}
 %====================================================
 
 \[
@@ -2253,7 +2659,7 @@ Logo:
 \]
 
 %====================================================
-\subsubsection*{Função Geradora de Momentos}
+\subsubsection{Função Geradora de Momentos}
 %====================================================
 
 \[
@@ -2266,9 +2672,8 @@ M_X(t)
 \right).
 \]
 
-%====================================================
-\subsubsection*{Propriedade de Estabilidade}
-%====================================================
+
+\subsubsection{Propriedade de Estabilidade}
 
 Se $X_1\sim N(\mu_1,\sigma_1^2)$ e
 $X_2\sim N(\mu_2,\sigma_2^2)$ independentes:
@@ -2283,7 +2688,7 @@ N(\mu_1+\mu_2,
 Prova via multiplicação das funções geradoras de momentos.
 
 %====================================================
-\subsubsection*{Interpretação Geométrica}
+\subsubsection{Interpretação Geométrica}
 %====================================================
 
 A distribuição Normal maximiza a entropia entre todas as distribuições com média e variância fixas.\vskip0.3cm
@@ -2314,7 +2719,6 @@ P(Z>1,33).
 Obtém-se valor aproximado 0,0918. Esse modelo fundamenta políticas de dimensionamento
 de equipes de saúde.
 
-
 \newpage
 \subsection{Distribuição Exponencial}
 
@@ -2328,7 +2732,7 @@ no início do século XX. \vskip0.3cm
 Ela modela o tempo de espera até a ocorrência do primeiro evento
 em um processo de Poisson homogêneo.
 
-\subsubsection*{Derivação a partir do Processo de Poisson}
+\subsubsection{Derivação a partir do Processo de Poisson}
 
 Considere um processo de Poisson com taxa $\lambda>0$.
 Seja $T$ o tempo até a primeira ocorrência.
@@ -2365,7 +2769,7 @@ f(t)
 \lambda e^{-\lambda t}, \quad t\ge 0.
 \]
 
-\subsubsection*{Demonstração de que a densidade integra 1}
+\subsubsection{Demonstração de que a densidade integra 1}
 
 \[
 \int_0^\infty \lambda e^{-\lambda t} dt.
@@ -2382,7 +2786,7 @@ Faça substituição $u=\lambda t$:
 
 Logo, $f(t)$ é densidade válida.
 
-\subsubsection*{Esperança — Demonstração}
+\subsubsection{Esperança}
 
 \[
 \E(T)
@@ -2429,7 +2833,7 @@ O termo de fronteira é zero.
 \frac{1}{\lambda}.
 \]
 
-\subsubsection*{Variância:}
+\subsubsection{Variância}
 
 Primeiro calcule:
 
@@ -2462,7 +2866,7 @@ Logo:
 \frac{1}{\lambda^2}.
 \]
 
-\subsubsection*{Função Geradora de Momentos}
+\subsubsection{Função Geradora de Momentos}
 
 \[
 M_T(s)
@@ -2487,8 +2891,8 @@ Para $s<\lambda$:
 =
 \frac{\lambda}{\lambda-s}.
 \]
-
-\subsubsection*{Propriedade da Falta de Memória}
+\newpage
+\subsubsection{Propriedade da Falta de Memória}
 
 Para $s,t\ge0$:
 
@@ -2544,14 +2948,28 @@ e^{-8/5}
 Esse modelo fundamenta políticas de manutenção preventiva
 e planejamento orçamentário.
 
+
 \newpage
 %-------------------------------------------------------------%
 \subsection{Distribuição Beta}
-%-------------------------------------------------------------%
+\subsubsection{Origem e Evolução Histórica}
 
-A Distribuição Beta é uma distribuição de probabilidade contínua definida no intervalo $(0,1)$, sendo amplamente utilizada para modelar variáveis aleatórias que representam proporções, probabilidades, taxas ou frações. \vskip0.3cm
+A Distribuição Beta consolidou-se no corpo teórico da Estatística moderna por meio dos trabalhos fundamentais de \textbf{Karl Pearson (1857–1936)}, no final do século XIX, como parte de seu sistema de curvas de frequência, especificamente a denominada "Curva de Pearson Tipo I". Embora as propriedades analíticas da função Beta já tivessem sido estudadas anteriormente por Leonhard Euler e Adrien-Marie Legendre no contexto do cálculo integral e da teoria das funções especiais, foi Pearson quem a formalizou explicitamente como modelo probabilístico adequado para variáveis contínuas restritas a intervalos finitos (PEARSON, 1895). 
 
-É particularmente útil em estudos de confiabilidade, estatística bayesiana, análise de proporções e indicadores de desempenho. \vskip0.3cm
+%\vspace{-0.15cm}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{figures/Karl_Pearson_2.jpg}
+    \caption{Karl Pearson (1857-1936)}
+    \label{fig:my_label2}
+\end{figure}\textbf{}
+
+Posteriormente, a distribuição foi refinada sob a ótica da inferência bayesiana, tornando-se a distribuição \textit{priori} conjugada padrão para o parâmetro de sucesso em ensaios de Bernoulli, uma evolução consolidada por autores como Raiffa e Schlaifer (1961) na análise de decisão estatística. Esta característica a torna indispensável na gestão pública contemporânea para a atualização de crenças e probabilidades à medida que novas evidências de monitoramento são coletadas.\vskip0.3cm
+
+\subsubsection{Definição e Fundamentação Matemática} 
+
+A Distribuição Beta é uma distribuição de probabilidade contínua definida no intervalo $(0,1)$, sendo amplamente utilizada para modelar variáveis que representam proporções, probabilidades, taxas ou frações. Sua versatilidade matemática permite representar uma vasta gama de comportamentos de incerteza em indicadores de desempenho e estudos de confiabilidade institucional. \vskip0.3cm
+
 
 Seja $X$ uma variável aleatória contínua. Diz-se que $X$ segue uma Distribuição Beta com parâmetros $\alpha > 0$ e $\beta > 0$, denotada por:
 
@@ -2559,7 +2977,7 @@ Seja $X$ uma variável aleatória contínua. Diz-se que $X$ segue uma Distribui�
 X \sim \text{Beta}(\alpha, \beta)
 \]
 
-\subsubsection*{Função Densidade de Probabilidade (FDP)}
+\subsubsection{Função Densidade de Probabilidade (FDP)}
 
 A função densidade é dada por:
 
@@ -2585,7 +3003,7 @@ A função gama generaliza o fatorial, sendo que para números inteiros positivo
 \Gamma(n) = (n-1)!
 \]
 
-\subsubsection*{Interpretação dos Parâmetros}
+\subsubsection{Interpretação dos Parâmetros}
 
 Os parâmetros $\alpha$ e $\beta$ controlam o formato da distribuição:
 
@@ -2597,7 +3015,7 @@ Os parâmetros $\alpha$ e $\beta$ controlam o formato da distribuição:
 \item $\alpha, \beta < 1$ → distribuição em formato de "U".
 \end{itemize}
 
-\subsubsection*{Principais Propriedades}
+\subsubsection{Principais Propriedades}
 
 \begin{itemize}
 \item \textbf{Média:}
@@ -2619,7 +3037,7 @@ Mo =
 \]
 \end{itemize}
 
-\subsubsection*{Forma da Distribuição}
+\subsubsection{Forma da Distribuição}
 
 A Distribuição Beta é extremamente flexível, podendo assumir diversos formatos:
 
@@ -2666,157 +3084,166 @@ A Distribuição Beta é indicada sempre que:
 \item É necessário representar incerteza sobre parâmetros probabilísticos.
 \end{itemize}
 
-Sua versatilidade matemática e interpretativa a torna uma das distribuições contínuas mais importantes da Estatística Aplicada.
+Sua versatilidade matemática e interpretativa a torna uma das distribuições contínuas mais importantes da Estatística Aplicada, especialmente em modelagem de desempenho e avaliação de políticas públicas.
+%-------------------------------------------------------------%
 
 
+\newpage
 %-------------------------------------------------------------%
 \subsection{Distribuição Gama}
+\subsubsection{Origem e Fundamentação}
+
+A Distribuição Gama tem sua gênese nos estudos analíticos da função Gama desenvolvidos por Leonhard Euler (1707--1783) no século XVIII. Originalmente concebida como uma solução para a interpolação do fatorial para números não inteiros, a função foi posteriormente incorporada ao corpo formal da Teoria das Probabilidades no século XIX. Sua consolidação como modelo estatístico fundamental ocorreu paralelamente ao desenvolvimento da teoria dos processos estocásticos, especificamente vinculada ao processo de Poisson. \vskip0.3cm
+
+\vspace{-0.25cm}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.45]{figures/Leonhard_Euler_2.jpg}
+    \caption{Leonhard Euler (1707-1783)}
+    \label{fig:my_label2}
+\end{figure}\textbf{}
 
 
-A Distribuição Gama é uma distribuição de probabilidade contínua definida para variáveis aleatórias não negativas, amplamente utilizada para modelar tempos de espera, durações, volumes acumulados e fenômenos que resultam da soma de variáveis exponenciais independentes.\vskip0.3cm
+A função definida por Euler é expressa pela integral imprópria:
 
-Seja $X$ uma variável aleatória contínua. Diz-se que $X$ segue uma Distribuição Gama com parâmetros $\alpha > 0$ (forma) e $\theta > 0$ (escala), denotada por:
+$$\Gamma(\alpha)= \int_0^\infty x^{\alpha-1}e^{-x}dx, \quad \alpha>0$$
 
-\[
-X \sim \text{Gamma}(\alpha, \theta)
-\]
+A Distribuição Gama é uma distribuição de probabilidade contínua definida para variáveis aleatórias não negativas. Na gestão pública e engenharia de tráfego, é amplamente utilizada para modelar tempos de espera, durações de eventos, volumes acumulados e fenômenos que resultam da soma de variáveis exponenciais independentes. \vskip0.3cm
 
-\subsubsection*{Função Densidade de Probabilidade (FDP)}
+\newpage
+Seja $X$ uma variável aleatória contínua. Diz-se que $X$ segue uma Distribuição Gama com parâmetros de forma $\alpha > 0$ e de escala $\theta > 0$, denotada por $X \sim \text{Gamma}(\alpha, \theta)$. \vskip0.3cm
 
-A função densidade é dada por:
 
-\[
-f(x) =
-\frac{1}{\Gamma(\alpha)\theta^\alpha}
-x^{\alpha - 1}
-e^{-x/\theta},
-\quad x > 0
-\]
+\subsubsection{Função Densidade de Probabilidade (FDP)}A função densidade de probabilidade é formalmente dada por:$$f(x) = \frac{1}{\Gamma(\alpha)\theta^\alpha} x^{\alpha - 1} e^{-x/\theta}, \quad x > 0$$
 
 onde:
 
-\begin{itemize}
-\item $\alpha$ = parâmetro de forma;
-\item $\theta$ = parâmetro de escala;
-\item $\Gamma(\alpha)$ = função gama.
-\end{itemize}
-
-A função gama generaliza o fatorial, sendo que para inteiros positivos:
-
-\[
-\Gamma(n) = (n-1)!
-\]
-
-\subsubsection*{Parametrização Alternativa}
-
-Também é comum utilizar o parâmetro de taxa $\lambda = 1/\theta$. Nesse caso:
-
-\[
-X \sim \text{Gamma}(\alpha, \lambda)
-\]
-
-e a densidade pode ser escrita como:
-
-\[
-f(x) =
-\frac{\lambda^\alpha}{\Gamma(\alpha)}
-x^{\alpha - 1}
-e^{-\lambda x}
-\]
-
-\subsubsection*{Interpretação dos Parâmetros}
 
 \begin{itemize}
-\item $\alpha$ controla o formato da distribuição;
-\item $\theta$ (ou $\lambda$) controla a dispersão e escala dos valores.
-\end{itemize}
-
-Casos particulares:
-
-\begin{itemize}
-\item Se $\alpha = 1$, a Distribuição Gama reduz-se à Distribuição Exponencial;
-\item Se $\alpha$ é inteiro positivo, a distribuição é chamada de Distribuição Erlang;
-\item A soma de variáveis exponenciais independentes com mesma taxa segue uma Gama.
-\end{itemize}
-
-\subsubsection*{Principais Propriedades}
-
-\begin{itemize}
-\item \textbf{Média:}
-\[
-E(X) = \alpha \theta
-\]
-
-\item \textbf{Variância:}
-\[
-Var(X) = \alpha \theta^2
-\]
-
-\item \textbf{Desvio padrão:}
-\[
-\sigma = \sqrt{\alpha}\,\theta
-\]
-
-\item \textbf{Moda} (para $\alpha > 1$):
-\[
-Mo = (\alpha - 1)\theta
-\]
-\end{itemize}
-
-\subsubsection*{Forma da Distribuição}
-
-A forma depende do parâmetro $\alpha$:
-
-\begin{itemize}
-\item $\alpha < 1$ → curva fortemente assimétrica à direita;
-\item $\alpha = 1$ → forma exponencial;
-\item $\alpha > 1$ → distribuição unimodal e assimétrica à direita;
-\item À medida que $\alpha$ aumenta, a distribuição torna-se mais simétrica.
-\end{itemize}
-
-\subsubsection*{Interpretação Probabilística}
-
-A Distribuição Gama pode ser interpretada como o tempo até a ocorrência do $\alpha$-ésimo evento em um processo de Poisson com taxa constante. \vskip0.3cm
-
-Ou seja, se os eventos ocorrem a uma taxa $\lambda$, então o tempo até o $k$-ésimo evento segue:
-
-\[
-X \sim \text{Gamma}(k, \lambda)
-\]
-
-\subsubsection*{Aplicações na Área de Trânsito}
-
-Na estatística aplicada à segurança viária, a Distribuição Gama pode ser utilizada para modelar:
-
-\begin{itemize}
-\item Tempo até ocorrência de determinado número de sinistros;
-\item Tempo acumulado até atingir certo número de infrações;
-\item Duração de interdições viárias;
-\item Tempo total de atendimento de ocorrências.
-\end{itemize}
-
-Por exemplo, suponha que o tempo médio entre sinistros seja modelado por uma Exponencial com taxa constante. O tempo até o terceiro sinistro poderá ser modelado por uma Distribuição Gama com $\alpha = 3$.
-
-\subsubsection*{Relação com Outras Distribuições}
-
-\begin{itemize}
-\item Caso particular da Exponencial ($\alpha = 1$);
-\item Relacionada à Qui-Quadrado (caso especial da Gama);
-\item Soma de variáveis exponenciais independentes segue Gama.
+\item \textbf{$\alpha$:} representa o parâmetro de forma, determinando a curvatura da distribuição;
+\item \textbf{$\theta$:} representa o parâmetro de escala, esticando ou comprimindo a distribuição no eixo das abscissas;
+\item \textbf{$\Gamma(\alpha)$} é a função gama, que atua como constante de normalização.
 \end{itemize}
 
 
-A Distribuição Gama é indicada quando:
+Para valores inteiros positivos, a função gama simplifica-se para a relação fatorial $\Gamma(n) = (n-1)!$.
+
+
+\subsubsection{Parametrização Alternativa e Casos Particulares}
+
+É frequente o uso do parâmetro de taxa $\lambda = 1/\theta$. Nesta forma, $X \sim \text{Gamma}(\alpha, \lambda)$ e a densidade é reescrita como:
+
+$$f(x) = \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha - 1} e^{-\lambda x}$$
+
+
+A flexibilidade desta distribuição permite que ela assuma formas de outros modelos clássicos conforme os valores de $\alpha$:
 
 \begin{itemize}
-\item A variável assume valores positivos;
-\item Modela-se tempo, duração ou acúmulo;
-\item Deseja-se generalizar o modelo exponencial.
+\item \textbf{Distribuição Exponencial:} Ocorre quando $\alpha = 1$.
+\item \textbf{Distribuição Erlang:} Ocorre quando $\alpha$ é um inteiro positivo, representando o tempo de espera até o $n$-ésimo evento de Poisson.
+\item \textbf{Distribuição Qui-Quadrado:} Um caso especial da Gama amplamente utilizado em testes de aderência e independência.
 \end{itemize}
 
 \newpage
+\subsubsection{Propriedades Analíticas e Morfologia}As medidas de tendência central e dispersão da Distribuição Gama são fundamentais para o diagnóstico de processos administrativos:
 
-As distribuições de probabilidade são a espinha dorsal da inferência estatística. Elas permitem: \vskip0.3cm
+\begin{itemize}
+\item \textbf{Média (Esperança):} $E(X) = \alpha \theta$.
+\item \textbf{Variância:} $Var(X) = \alpha \theta^2$.
+\item \textbf{Moda (para $\alpha > 1$):} $Mo = (\alpha - 1)\theta$.
+\end{itemize}
+
+A morfologia da curva é sensível ao parâmetro de forma $\alpha$:
+
+\begin{itemize}
+\item \textbf{$\alpha < 1$:} A curva é estritamente decrescente e fortemente assimétrica à direita.
+\item \textbf{$\alpha = 1$:} A distribuição assume a forma decrescente característica do modelo exponencial.
+\item \textbf{$\alpha > 1$:} A distribuição torna-se unimodal, apresentando um pico centralizado.
+\item À medida que $\alpha$ tende ao infinito, a distribuição aproxima-se da Normal por força do Teorema Central do Limite.
+\end{itemize}
+
+\subsubsection{Aplicações na Gestão Pública e Segurança Viária}
+
+No âmbito das Decisões Baseadas em Evidências, a Distribuição Gama permite modelar processos complexos de tempo e acúmulo:
+
+\begin{itemize}
+\item \textbf{Segurança Viária:} Modelagem do tempo acumulado até a ocorrência de um número específico de sinistros em trechos críticos.
+\item \textbf{Fluxo Administrativo:} Duração total de interdições viárias para obras ou atendimento de ocorrências graves.
+\item \textbf{Monitoramento de Infrações:} Tempo total acumulado para que um condutor atinja o limite de pontuação para suspensão da CNH.
+\end{itemize}
+
+Exemplo Prático: Se o tempo médio entre sinistros em um cruzamento segue uma distribuição Exponencial, o tempo total até o terceiro evento será modelado por uma Distribuição Gama com parâmetro de forma $\alpha = 3$. Esta informação permite ao gestor público planejar ciclos de manutenção e fiscalização de forma preditiva, não apenas reativa.
+
+
+
+
+
+
+
+
+
+%-----------------------------------------------------------------------------------%
+\newpage
+\subsection{Distribuição \textit{t} de Student}
+
+A história da estatística moderna possui um capítulo singular escrito nos laboratórios de controle de qualidade da indústria. William Sealy Gosset, nascido em 13 de junho de 1876 em Canterbury, Inglaterra, personificou a transição da teoria matemática para a aplicação empírica rigorosa. Primeiro de cinco filhos do Coronel Frederic Gosset e Agnes Sealy Vidal, William enfrentou limitações visuais que o impediram de seguir a carreira militar paterna na \textit{Royal Engineers}. Contudo, sua excelência acadêmica garantiu-lhe bolsas de estudo fundamentais para sua formação.
+
+\vspace{-0.15cm}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.16]{figures/William_Sealy_Gosset.jpeg}
+    \caption{William Sealy Gosset (1876-1937)}
+\end{figure}
+
+Ao final do século XIX, a cervejaria Arthur Guinness Son and Company con\-so\-li\-da\-va-se como a maior do mundo, destacando-se como pioneira institucional na aplicação de métodos quantitativos para o controle de qualidade e a padronização de seus insumos. Em 1899, a empresa recrutou William Sealy Gosset, um químico de 23 anos recém-formado pela Universidade de Oxford, cujo perfil acadêmico integrava matemática e estatística de forma inovadora para as demandas industriais da época. \vskip0.3cm
+
+Gosset percebeu precocemente que as técnicas para grandes amostras, fundamentadas na distribuição normal e amplamente difundidas por Karl Pearson, eram inadequadas para os experimentos agrícolas com cevada, onde o tamanho da amostra ($n$) era frequentemente reduzido. Diante das restrições de sigilo comercial impostas pela Guinness, ele publicou suas descobertas em 1908 no artigo original (\textit{The Probable Error of a Mean}) sob o pseu\-dô\-ni\-mo "\textit{Student}", introduzindo a distribuição t, que se tornaria um dos pilares da inferência estatística moderna e da tomada de decisão baseada em evidências.
+
+\subsubsection{Fundamentação Matemática e Derivação}
+
+A distribuição \textit{t} de Student surge como a solução fundamental para situações em que a variância populacional ($\sigma^2$) é desconhecida e deve ser estimada a partir de uma amostra finita. Seja uma sucessão de variáveis aleatórias independentes e identicamente distribuídas (i.i.d.):$$X_1, X_2, \dots, X_n \sim \mathcal{N}(\mu, \sigma^2)$$Definimos a média amostral ($\bar{X}$) e a variância amostral ($S^2$) como:$$\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i \quad \text{e} \quad S^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i - \bar{X})^2$$A estatística $T$, que fundamenta a inferência, é expressa por:$$T = \frac{\bar{X} - \mu}{S/\sqrt{n}} \sim t_{\nu}$$onde $\nu = n - 1$ representa os graus de liberdade, conceito que reflete o número de observações independentes disponíveis para estimar a variância.
+
+\subsubsection{Construção Formal da Estatística}
+
+A elegância da distribuição $t$ reside na sua construção como uma razão de variáveis aleatórias independentes:Uma variável Normal padrão: $Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \sim \mathcal{N}(0,1)$.Uma variável Qui-quadrado padronizada: $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{\nu}$.Formalmente, define-se $T$ como:$$T = \frac{Z}{\sqrt{\frac{\chi^2_{\nu}}{\nu}}}$$Esta estrutura demonstra que, ao contrário da Normal, a distribuição $t$ incorpora a incerteza adicional proveniente da estimação de $S$.
+
+
+\subsubsection{Função Densidade de Probabilidade (FDP)}
+
+A complexidade analítica da FDP da distribuição $t$ reflete sua robustez:$$f(t) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\sqrt{\nu\pi}\,\Gamma\left(\frac{\nu}{2}\right)} \left(1+\frac{t^2}{\nu}\right)^{-\frac{\nu+1}{2}}$$onde $\Gamma(\cdot)$ é a função Gama, estendendo o conceito de fatorial para números reais e complexos.
+
+
+\subsubsection{Propriedades Estatísticas e Convergência} \vskip0.3cm
+
+\textbf{Moments da Distribuição:}  \vskip0.3cm
+
+Esperança Matemática: $E(T) = 0$ para $\nu > 1$, garantindo simetria central.Variância: $Var(T) = \frac{\nu}{\nu - 2}$ para $\nu > 2$. Observação de Convergência:À medida que o tamanho da amostra cresce, a incerteza sobre o desvio padrão diminui:$$\lim_{\nu \to \infty} Var(T) = 1$$Este limite matemático prova que a distribuição $t$ converge para a Normal Padrão conforme os graus de liberdade tendem ao infinito, justificando o uso da Normal para amostras grandes ($n > 30$).
+
+\subsubsection*{Intervalo de Confiança}
+
+Para a gestão pública, o Intervalo de Confiança (IC) representa a margem de segurança para a tomada de decisão:+1$$IC(\mu, 1-\alpha) = \left[ \bar{X} - t_{\alpha/2, \nu} \frac{S}{\sqrt{n}} \, ; \, \bar{X} + t_{\alpha/2, \nu} \frac{S}{\sqrt{n}} \right]$$
+
+
+\subsubsection*{Aplicação Prática: Gestão de Atendimento no DETRAN}
+
+No contexto da eficiência administrativa, consideremos a avaliação do tempo médio de atendimento em uma unidade do DETRAN. Com uma amostra de $n=12$ atendimentos, obtivemos $\bar{X} = 38$ minutos e $S = 6$ minutos. \vskip0.3cm
+
+Teste de Hipóteses: 
+
+\begin{itemize}
+    \item $H_0: \mu = 35$ (O tempo médio segue o padrão estabelecido). 
+    \item $H_1: \mu \neq 35$ (O tempo médio diverge do padrão). 
+\end{itemize}
+
+Cálculo da Estatística de Teste:$$T_{calc} = \frac{38 - 35}{6/\sqrt{12}} \approx 1.732$$Decisão Estatística: Para um nível de significância $\alpha=0.05$ e $\nu = 11$, o valor crítico tabelado é $t_{0.025,11} = 2.201$. \vskip0.3cm
+
+Como $|1.732| < 2.201$, a evidência amostral não é suficiente para rejeitar a hipótese nula ao nível de 5. Sob a ótica da gestão baseada em evidências, embora a média amostral seja superior ao padrão (38 vs 35), a variabilidade e o tamanho reduzido da amostra não permitem afirmar que há um atraso sistemático. 
+%-----------------------------------------------------------------------------------%
+
+
+\newpage
+%-----------------------------------------------------------------------------------%
+Assim, as distribuições de probabilidade são a espinha dorsal da inferência estatística. Elas permitem: 
 
 \begin{itemize}
 \item modelagem de risco;

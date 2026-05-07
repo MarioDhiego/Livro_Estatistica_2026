@@ -7,6 +7,8 @@
 \ReplacePackage{scrpage2}{scrlayer-scrpage}
 
 \documentclass[
+  english, 
+  portuguese,
   output=book,
   colorlinks=false,
   linkcolor=black,
@@ -15,18 +17,30 @@
   biblatexoptions={style=langsci-unified, citestyle=authoryear-comp}
 ]{langscibook}
 
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                 PACOTES                      %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Idioma
 \usepackage[T1]{fontenc}
-\usepackage[portuguese]{babel}
+\usepackage{babel}
 
 % Matemática
-\usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amsthm}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb} % Para as fórmulas de Bayes
+\usepackage{tikz}             % Para os diagramas
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows.meta, shadows, positioning}
+\usepackage{hanging}          % Para a ficha catalográfica
+\usepackage{float}            % Para usar o [H] nas figuras
+
 
 % Figuras e gráficos
 \usepackage{graphicx}
@@ -65,6 +79,12 @@
 \input{localcommands.tex}
 \addbibresource{localbibliography.bib}
 
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%             FRONTMATTER                      %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -89,7 +109,8 @@
 \small
 
 \begin{center}
-Dados Internacionais de Catalogação na Publicação (CIP)
+Dados Internacionais de Catalogação na Publicação (CIP) \\
+(Câmara Brasileira do Livro, SP, Brasil)
 \end{center}
 
 \vspace{0.5cm}
@@ -111,7 +132,7 @@ Edição do Autor, 2026.
 \hspace*{1.2em}290 p. : il. ; 23 cm.
 
 \hspace*{1.2em}Inclui referências bibliográficas e índice.
-\hspace*{1.2em}ISBN 978-xx-xxxx-xxxx-x
+\hspace*{1.2em}ISBN: 978-65-01-96433-1
 
 \hspace*{1.2em}1. Estatística.
 2. Administração pública.
@@ -125,8 +146,8 @@ III. Título.
 CDD 519.5
 
 \vspace{0.5em}
-Ficha catalográfica elaborada por  
-Vera Rebelo Brasil – CRB-xx/xxxx
+Elaborada por  
+Vera Conceição Rebelo Brasil – CRB-02/0627
 
 \end{minipage}
 }
