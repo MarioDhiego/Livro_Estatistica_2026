@@ -177,16 +177,16 @@ Por exemplo, ao lançar dois dados, o espaço amostral contém $36$ pares ordena
 \label{tab:espaco_amostral}
 \renewcommand{\arraystretch}{1.5} % Aumenta a altura das linhas para as fórmulas
 \setlength{\tabcolsep}{8pt}      % Aumenta o espaçamento entre colunas
-\begin{tabular}{|c|c|ccccc|}
+\begin{tabular}{|c|c|c|c|c|c|c|}
 \hline \hline
 \rowcolor{gray!20} \textbf{Dado1 \textbackslash \ Dado2} & \textbf{Face1} & \textbf{Face2} & \textbf{Face3} & \textbf{Face4} & \textbf{Face5} & \textbf{Face6} \\ 
 \hline \hline
-\textbf{1} & (1,1) & (1,2) & (1,3) & (1,4) & (1,5) & (1,6) \\
-\textbf{2} & (2,1) & (2,2) & (2,3) & (2,4) & (2,5) & (2,6) \\
-\textbf{3} & (3,1) & (3,2) & (3,3) & (3,4) & (3,5) & (3,6) \\
-\textbf{4} & (4,1) & (4,2) & (4,3) & (4,4) & (4,5) & (4,6) \\
-\textbf{5} & (5,1) & (5,2) & (5,3) & (5,4) & (5,5) & (5,6) \\
-\textbf{6} & (6,1) & (6,2) & (6,3) & (6,4) & (6,5) & (6,6) \\ 
+\rowcolor{blue!15} \textbf{1} & (1,1) & (1,2) & (1,3) & (1,4) & (1,5) & (1,6) \\
+\rowcolor{blue!15} \textbf{2} & (2,1) & (2,2) & (2,3) & (2,4) & (2,5) & (2,6) \\
+\rowcolor{blue!15} \textbf{3} & (3,1) & (3,2) & (3,3) & (3,4) & (3,5) & (3,6) \\
+\rowcolor{blue!15} \textbf{4} & (4,1) & (4,2) & (4,3) & (4,4) & (4,5) & (4,6) \\
+\rowcolor{blue!15} \textbf{5} & (5,1) & (5,2) & (5,3) & (5,4) & (5,5) & (5,6) \\
+\rowcolor{blue!15} \textbf{6} & (6,1) & (6,2) & (6,3) & (6,4) & (6,5) & (6,6) \\ 
 \hline \hline
 \end{tabular}
 \end{table}
@@ -210,7 +210,7 @@ Um baralho padrão possui 52 cartas, divididas em quatro naipes: Ouros ($\diamon
 \label{tab:baralho}
 \renewcommand{\arraystretch}{1.4}
 \resizebox{\textwidth}{!}{ % Garante que a tabela caiba na largura da página
-\begin{tabular}{|c|ccccccccccccc|}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline \hline
 \rowcolor{gray!15} \textbf{Naipe} & \textbf{A} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{J} & \textbf{Q} & \textbf{K} \\ \hline \hline
 \color{red}$(\heartsuit)$ & \color{red}A$(\heartsuit)$ & \color{red}2$(\heartsuit)$ & \color{red}3$(\heartsuit)$ & \color{red}4$(\heartsuit)$ & \color{red}5$(\heartsuit)$ & \color{red}6$(\heartsuit)$ & \color{red}7$(\heartsuit)$ & \color{red}8$(\heartsuit)$ & \color{red}9$(\heartsuit)$ & \color{red}10$(\heartsuit)$ & \color{red}J$(\heartsuit)$ & \color{red}Q$(\heartsuit)$ & \color{red}K$(\heartsuit)$ \\
@@ -296,7 +296,6 @@ Sejam $A$ e $B$ eventos em $\Omega$:
 
 \begin{enumerate}
     \item \textbf{União ($A \cup B$):} Ocorre se $A$ ocorre, ou $B$ ocorre, ou ambos ocorrem. Representa a totalidade dos elementos nos dois conjuntos.
-    
     \begin{center}
     \begin{tikzpicture}[fill opacity=0.4]
         \draw (0,0) rectangle (4,2.5);
@@ -307,9 +306,7 @@ Sejam $A$ e $B$ eventos em $\Omega$:
         \draw (2.5,1.2) circle (0.8) node[right, opacity=1] {$B$};
     \end{tikzpicture}
     \end{center}
-
     \item \textbf{Interseção ($A \cap B$):} Ocorre se $A$ e $B$ ocorrerem simultaneamente. Representa apenas a região comum.
-    
     \begin{center}
     \begin{tikzpicture}
         \draw (0,0) rectangle (4,2.5);
@@ -322,10 +319,8 @@ Sejam $A$ e $B$ eventos em $\Omega$:
         \draw (2.5,1.2) circle (0.8) node[right] {$B$};
     \end{tikzpicture}
     \end{center}
-
 \newpage
     \item \textbf{Complementar ($A^c$):} Ocorre se $A$ não ocorrer. Representa tudo o que está no espaço amostral, exceto o próprio $A$.
-    
     \begin{center}
     \begin{tikzpicture}
         \fill[blue!20] (0,0) rectangle (4,2.5);
@@ -336,9 +331,7 @@ Sejam $A$ e $B$ eventos em $\Omega$:
         \node at (0.5,0.5) {$A^c$};
     \end{tikzpicture}
     \end{center}
-
     \item \textbf{Diferença ($A - B$):} Resultados que pertencem a $A$, mas que não pertencem a $B$.
-    
     \begin{center}
     \begin{tikzpicture}
         \draw (0,0) rectangle (4,2.5);
@@ -351,9 +344,7 @@ Sejam $A$ e $B$ eventos em $\Omega$:
         \draw (2.5,1.2) circle (0.8) node[right] {$B$};
     \end{tikzpicture}
     \end{center}
-
     \item \textbf{Eventos Mutuamente Exclusivos ($A \cap B = \varnothing$):} Eventos que não possuem elementos em comum; a ocorrência de um impede a do outro.
-    
     \begin{center}
     \begin{tikzpicture}
         \draw (0,0) rectangle (4,2.5);
