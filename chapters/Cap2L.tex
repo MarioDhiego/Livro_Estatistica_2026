@@ -372,7 +372,7 @@ As propriedades a seguir formam a álgebra de eventos e permitem simplificar exp
     \[ A \cap (B \cup C) = (A \cap B) \cup (A \cap C). \]
     
     \begin{center}
-    \begin{tikzpicture}[scale=0.8]
+    \begin{tikzpicture}[scale=0.95]
         \begin{scope} % Lado Esquerdo: A \cap (B \cup C)
             \draw (0,0) rectangle (4,3);
             \node at (3.7,2.7) {\tiny $\Omega$};
@@ -1206,8 +1206,8 @@ e permite compreender sistemas complexos com maior clareza.
 \node at (5.7,3.7) {$\Omega$};
 
 % Conjuntos A e B
-\draw[thick] (2.2,2) circle (1.3);
-\draw[thick] (3.8,2) circle (1.3);
+\draw[thick] (2.2,2) circle (1.2);
+\draw[thick] (3.8,2) circle (1.2);
 
 % Labels
 \node at (1.5,2) {$A$};
@@ -1236,15 +1236,15 @@ e permite compreender sistemas complexos com maior clareza.
 \node at (6.7,5.2) {$\Omega$};
 
 % Conjuntos (Círculos)
-\draw[thick] (2.5,3.2) circle (1.5) node[left=1cm] {$A_1$};
-\draw[thick] (4.5,3.2) circle (1.5) node[right=1cm] {$A_2$};
-\draw[thick] (3.5,1.8) circle (1.5) node[below=1cm] {$A_3$};
+\draw[thick] (2.5,3.2) circle (1.9) node[left=1cm] {$A_1$};
+\draw[thick] (4.5,3.2) circle (1.9) node[right=1cm] {$A_2$};
+\draw[thick] (3.5,1.8) circle (1.9) node[below=1cm] {$A_3$};
 
 % Labels de Interseções (Opcional, para clareza)
-\node[scale=0.8] at (3.5,3.2) {$A_1 \cap A_2$};
-\node[scale=0.8] at (2.8,2.2) {$A_1 \cap A_3$};
-\node[scale=0.8] at (4.2,2.2) {$A_2 \cap A_3$};
-\node[scale=0.7] at (3.5,2.6) {$A_1 \cap A_2 \cap A_3$};
+\node[scale=0.95] at (3.5,3.2) {$A_1 \cap A_2$};
+\node[scale=0.95] at (2.8,2.2) {$A_1 \cap A_3$};
+\node[scale=0.95] at (4.2,2.2) {$A_2 \cap A_3$};
+\node[scale=0.85] at (3.5,2.6) {$A_1 \cap A_2 \cap A_3$};
 
 % Legenda Matemática
 \node[below] at (3.5,-0.2) {$\displaystyle P\left(\bigcap_{i=1}^3 A_i\right) = \prod_{i=1}^3 P(A_i)$};
@@ -2378,7 +2378,7 @@ A escolha do modelo probabilístico adequado é o passo fundamental para a integ
 \hline \hline
 \textbf{Bernoulli}        & Sucesso único                & Experimento Binário        & $(p)$                 \\
 \textbf{Binomial}         & $k$ sucessos em $n$ ensaios  & Contagem de Eventos        & $(n, p)$             \\
-\textbf{Geométrica}      & Tempo até 1º sucesso          & Resiliência                & $(p)$                \\
+\textbf{Geométrica}      & Tempo até 1\textordmasculine{} sucesso          & Resiliência                & $(p)$                \\
 \textbf{Hipergeométrica} & $k$ sucessos em $n$ ensaios   & Populações Finitas         & $(N, K, n)$          \\
 \textbf{Binomial Neg.}   & Tentativas até $r$ sucessos   & Superdispersão Dados       & $(r, p)$             \\
 \textbf{Poisson}         & Ocorrências no tempo          & Fluxo de chegada           & $(\lambda)$          \\

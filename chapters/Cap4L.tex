@@ -27,7 +27,10 @@ De modo geral, a finalidade primordial de uma tabela é resumir e organizar info
 
 \section{Elementos Básicos na Construção Tabular}
 
-Para que uma série ou tabela estatística seja considerada adequada às normas de exposição, é necessário respeitar certos elementos e regras comuns a todas as tabelas. No Brasil, a apresentação tabular é regida pelas Normas de Apresentação Tabular do IBGE (1993) e pela NBR 14724 (ABNT, 2014).\vskip0.3cm
+
+Para que uma tabela estatística seja considerada adequada às normas de apresentação, é necessário observar princípios relacionados à organização estrutural, clareza, padronização e legibilidade das informações. No contexto brasileiro, a apresentação tabular é regulamentada pelas Normas de Apresentação Tabular do IBGE (1993) e pela ABNT NBR 14724 (ABNT, 2024), que estabelecem os elementos obrigatórios para a construção de tabelas em trabalhos científicos. \vskip0.3cm
+
+Além dos aspectos normativos, autores como Tufte (2001), Cleveland (1994), Few (2012) e Knaflic (2015) destacam que uma representação tabular eficiente deve facilitar a leitura, reduzir a carga cognitiva do leitor e favorecer a correta interpretação dos dados. \vskip0.3cm
 
 Os elementos básicos que constituem uma tabela são:
 
@@ -108,41 +111,37 @@ Segue um exemplo com dados reais referentes a População Estimada Total do Esta
 
 
 \begin{table}[!htb]
-    \centering
-    {
-    \caption{\textbf{Título: O Que} (População Estimada Total) \textbf{De Onde} (do Estado do Pará e Regiões de Integração), \textbf{Quando} (2021).}
-    \label{amostras estratificada}
-    \vspace{0.1cm}
-\begin{tabular}{l|c}
-  \hline\hline
-  \textbf{(Cabeçalho)}: Estado/Região de Integração   & População Estimada Total \\
-  \hline
-\textbf{(Coluna Indicadora):}     & \textbf{(Coluna Numerica:)}   \\
-\hline
-       Pará                       &  8.8811.659   \\
-   Araguaia                       &   583.777    \\
-   Baixo Amazonas                 &   750.258    \\
-   Carajás                        &   707.165    \\
-   Guajará                        & 2.269.233    \\ 
-   Guamá                          & 706.880      \\
-   Lago de Tucuruí                & 436.351      \\
-   Marajó                         & 610.972      \\
-   Rio Caeté                      & 532.257      \\
-   Rio Capim                      & 711.361      \\
-   Tapajós**                      & 257.035      \\
-   Tocantins                      & 856.496      \\
-   Xingu                          & 389.874      \\
-   \hline\hline
-\end{tabular}}
-\\
-\hspace{-7cm}
-\textbf{Fonte}: MS/DATASUS, 2022. \\
-\hspace{-6.9cm}
-\textbf{Elaboração}: FAPESPA, 2023. \\
-\hspace{-1.3cm}
-\textbf{Nota}: (**) População Judicial de Jacareacanga: 41.487 Habitantes.
-\end{table}
+\centering
+\caption{\textbf{Título:} População Estimada Total do Estado do Pará e das Regiões de Integração (2024).}
+\label{tab:populacao_ri_2024}
 
+\begin{tabular}{l|r}
+\hline\hline
+\textbf{Estado/Região de Integração} &
+\textbf{População Estimada Total} \\
+\hline
+Pará                 & 8.664.306 \\
+Araguaia             &   476.448 \\
+Baixo Amazonas       &   840.015 \\
+Carajás              &   831.512 \\
+Guajará              & 2.115.846 \\
+Guamá                &   701.081 \\
+Lago de Tucuruí      &   339.397 \\
+Marajó               &   630.633 \\
+Rio Caeté            &   521.239 \\
+Rio Capim            &   653.032 \\
+Tapajós              &   268.410 \\
+Tocantins            &   866.692 \\
+Xingu                &   420.001 \\
+\hline\hline
+\end{tabular}
+
+\vspace{0.2cm}
+
+\raggedright
+\textbf{Fonte:} IBGE. Estimativas Populacionais 2024.\\
+\textbf{Elaboração:} FAPESPA, 2024.
+\end{table}
 
 \newpage
 \section{Quadros Estatístico}
@@ -156,7 +155,7 @@ Diferenciam-se das tabelas por apresentarem um teor esquemático e descritivo, e
     \caption{Equema geral sobre a construção básica de um Quadro conforme as normas do IBGE de 1993}
     \begin{tabular}{|c|l|}
     \hline\hline
-    Cabeçalho  & Coluna indicadora   \\    
+    \textbf{Cabeçalho}  & \textbf{Coluna indicadora}   \\    
     \hline\hline
      Linha 1      &              \\
      Linha 2      &              \\
@@ -274,8 +273,6 @@ duplo.
 \item O cabeçalho deve ser centralizado na coluna, com a letra inicial da primeira palavra maiúscula. O uso de outras letras maiúsculas deve respeitar as regras gramaticais do idioma. É facultativo grafar o cabeçalho em negrito, desde que seja mantida uniformidade em todas as tabelas.
 \item A indicação de número no cabeçalho deve ser feita pela letra N, em maiúscula, já convencionado na literatura internacional. A indicação do número relativo deve ser feita pelo seu respectivo símbolo.
 \end{enumerate}
-
-
 
 
 \newpage
@@ -501,6 +498,18 @@ duplo.
 \hspace{-7.5cm}
 \textbf{Elaboração}: FAPESPA, 2020.
 \end{table}
+
+
+
+
+
+
+
+
+
+
+
+
 
 \newpage
 Toda tabela que ultrapassar as dimensões da página no sentido vertical, conforme exemplo da Tabela 4.3, deve obedecer as seguinte regras:
