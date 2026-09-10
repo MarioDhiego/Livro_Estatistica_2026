@@ -1,0 +1,161 @@
+\chapter{NÚMEROS-ÍNDICES}
+\section{Introdução}
+
+A administração pública produz, coleta e utiliza continuamente informações referentes a preços, quantidades, despesas, receitas, salários, produção, consumo, arrecadação, investimentos, população, serviços prestados e resultados de políticas públicas. Entretanto, a simples observação dos valores absolutos nem sempre permite compreender adequadamente a magnitude das mudanças ocorridas ao longo do tempo. \vskip0.3cm
+
+Considere, por exemplo, que determinada secretaria tenha executado R\$ 100 milhões em despesas correntes em um ano e R\$ 120 milhões no ano seguinte. A diferença nominal de R\$ 20 milhões representa crescimento de 20\%. Essa informação, entretanto, não permite concluir, isoladamente, que houve expansão real da capacidade de atuação do governo. Parte desse aumento pode ter ocorrido em razão da elevação generalizada dos preços dos bens e serviços adquiridos pelo setor público. \vskip0.3cm
+
+Essa distinção entre variação nominal e variação real constitui uma das principais razões para a utilização dos números-índices. \vskip0.3cm
+
+Um número-índice é uma medida estatística destinada a representar, de forma sintética, a variação relativa de uma variável ou de um conjunto de variáveis entre duas situações, geralmente dois períodos de tempo. Em sua forma mais convencional, estabelece-se um período de referência, denominado período-base, ao qual se atribui o valor 100. \vskip0.3cm
+
+Assim, se um índice passa de 100 para 115, interpreta-se que ocorreu uma variação de 15\% em relação ao período-base. Se passa de 100 para 92, houve redução de 8\%. 
+
+\newpage
+Os números-índices são particularmente importantes quando:
+
+\begin{itemize}
+    \item várias variáveis precisam ser sintetizadas em uma única medida;
+    \item as variáveis possuem unidades de medida diferentes;
+    \item deseja-se acompanhar a evolução de preços;
+    \item pretende-se medir mudanças de quantidade ou volume;
+    \item é necessário comparar valores monetários entre períodos;
+    \item deseja-se separar efeitos nominais de efeitos reais;
+    \item pretende-se construir indicadores econômicos ou administrativos;
+    \item necessita-se acompanhar custos de programas e políticas públicas;
+    \item é necessário realizar deflacionamento de séries monetárias;
+    \item pretende-se comparar a evolução de diferentes municípios, regiões ou períodos.
+\end{itemize}
+
+Na Administração Pública, os números-índices podem ser utilizados, por exemplo, para acompanhar a evolução do custo de uma cesta de medicamentos, dos materiais utilizados em escolas, dos custos de obras públicas, das despesas de manutenção de veículos oficiais, da arrecadação tributária, da massa salarial, do volume de serviços públicos ou do custo de execução de determinado programa governamental.\vskip0.3cm
+
+A construção de um índice, contudo, não é uma operação meramente aritmética. A escolha da fórmula, das ponderações, do período-base, da cesta de bens ou serviços, das fontes de dados e do tratamento das mudanças de composição interfere diretamente no resultado. Por essa razão, a teoria dos números-índices constitui um campo específico da estatística econômica.
+
+\section{Origem histórica dos Números-Índices}
+
+A necessidade de comparar valores econômicos entre diferentes períodos é anterior à existência da teoria moderna dos números-índices. \vskip0.3cm
+
+Em sociedades nas quais moedas, preços e salários sofriam alterações importantes, tornou-se necessário responder a uma questão aparentemente simples: Quanto representa uma determinada quantidade de dinheiro em uma época quando comparada com outra época? \vskip0.3cm
+
+\newpage
+Uma das primeiras contribuições conhecidas encontra-se no trabalho de William Fleetwood, publicado em 1707. Fleetwood procurou comparar valores monetários de diferentes períodos para avaliar o poder de compra de uma quantia em momentos distintos. Embora seu procedimento não corresponda ainda a um índice de preços moderno, representa importante antecedente histórico. \vskip0.3cm
+
+Em 1738, o economista francês Charles Dutot apresentou, em Réflexions politiques sur les finances et le commerce, um procedimento que a literatura moderna reconhece como o primeiro índice de preços propriamente dito. Seu método comparava a soma dos preços de um conjunto de mercadorias entre dois períodos. \vskip0.3cm
+
+Se ($p_i^0$) representa o preço do produto (i) no período-base e ($p_i^1$) o preço no período corrente, o índice de Dutot pode ser representado por:
+
+$$
+P_D=
+\frac{\sum_{i=1}^{n}p_i^1}
+{\sum_{i=1}^{n}p_i^0}.
+$$
+
+Quando expresso com base 100:
+
+$$
+I_D=
+\frac{\sum_{i=1}^{n}p_i^1}
+{\sum_{i=1}^{n}p_i^0}
+\times100.
+$$
+
+Posteriormente, em 1764, Gian Rinaldo Carli propôs uma fórmula baseada na média dos relativos de preços:
+
+$$
+P_C=
+\frac{1}{n}
+\sum_{i=1}^{n}
+\frac{p_i^1}{p_i^0}.
+$$
+
+O desenvolvimento histórico prosseguiu com contribuições de diversos autores. William Stanley Jevons desenvolveu o uso da média geométrica dos relativos de preços; Étienne Laspeyres, em 1871, propôs o índice baseado nas quantidades do período-base; Hermann Paasche, em 1874, desenvolveu o correspondente baseado nas quantidades do período corrente. \vskip0.3cm
+
+A expressão técnica index number tornou-se corrente na estatística econômica no século XIX. Uma das primeiras ocorrências documentadas do termo encontra-se em William Stanley Jevons, em 1875, em Money and the Mechanism of Exchange. Há, entretanto, evidências históricas de utilização anterior da palavra index para representar comparações do nível de preços, inclusive em 1837. Portanto, é metodologicamente mais seguro afirmar que o conceito é anterior à consolidação da terminologia moderna e que “index number” se estabeleceu como termo técnico no século XIX, em vez de atribuir sua criação a uma única pessoa. \vskip0.3cm
+
+\newpage
+No início do século XX, a teoria ganhou maior sistematização. Correa Moylan Walsh e Francis Ysidro Edgeworth contribuíram para o debate sobre a construção de índices, enquanto Irving Fisher realizou uma ampla investigação comparativa das fórmulas existentes. \vskip0.3cm
+
+Em 1922, Fisher publicou The Making of Index Numbers: A Study of Their Varieties, Tests and Reliability, obra que se tornou um dos marcos fundamentais da teoria dos números-índices. \vskip0.3cm
+
+A contribuição de Fisher não consistiu apenas na proposição de uma fórmula. O autor avaliou diferentes índices segundo propriedades desejáveis, dando grande importância aos chamados testes de números-índices. Entre eles encontram-se os testes de reversão temporal, reversão dos fatores e dimensionalidade. \vskip0.3cm
+
+A evolução posterior incorporou abordagens estatísticas, econômicas, axiomáticas e de teoria do custo de vida. Entre as formulações modernas encontram-se os índices de Tornqvist, Divisia e os índices superlativos associados à teoria econômica.
+
+
+\section{Conceitos Fundamentais}
+
+Considere (n) produtos ou componentes.\vskip0.3cm
+
+Defina:
+
+\begin{itemize}
+    \item $p_i^0 = \text{preço do item }i\text{ no período-base}$
+    \item $p_i^1 = \text{preço do item }i\text{ no período corrente}$
+    \item $q_i^0 = \text{quantidade do item }i\text{ no período-base}$
+    \item $q_i^1 = \text{quantidade do item }i\text{ no período corrente}$
+\end{itemize}
+
+O valor monetário associado ao item (i) em determinado período é:
+
+$$
+v_i^t=p_i^tq_i^t.
+$$
+
+O valor agregado no período (t) é:
+
+$$
+V^t=\sum_{i=1}^{n}p_i^tq_i^t.
+$$
+
+Essa decomposição permite distinguir três fenômenos:
+
+\begin{itemize}
+    \item mudança de preços;
+    \item mudança de quantidades;
+    \item mudança do valor total.
+\end{itemize}
+
+Essa distinção é fundamental para a análise econômica e administrativa.
+
+\newpage
+\section{Relativo Simples}
+
+O caso mais simples ocorre quando se deseja comparar uma única variável.\vskip0.3cm
+
+O relativo de preços é:
+
+$$
+R_{p,i}=
+\frac{p_i^1}{p_i^0}.
+$$
+
+Expresso como índice:
+
+$$
+I_{p,i}=
+\frac{p_i^1}{p_i^0}\times100.
+$$
+
+A variação percentual correspondente é:
+
+$$
+\Delta p_i=
+\left(
+\frac{p_i^1}{p_i^0}-1
+\right)\times100.
+$$
+
+Por exemplo, se o preço médio de determinado medicamento passou de R\$ 50,00 para R\$ 60,00:
+
+$$
+I_p=
+\frac{60}{50}\times100=120.
+$$
+
+Logo:
+
+$$
+\Delta p=(120-100)=20%.
+$$
+
+O preço aumentou 20\%.
