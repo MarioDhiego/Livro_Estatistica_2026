@@ -31,16 +31,17 @@ Na Administração Pública, os números-índices podem ser utilizados, por exem
 
 A construção de um índice, contudo, não é uma operação meramente aritmética. A escolha da fórmula, das ponderações, do período-base, da cesta de bens ou serviços, das fontes de dados e do tratamento das mudanças de composição interfere diretamente no resultado. Por essa razão, a teoria dos números-índices constitui um campo específico da estatística econômica.
 
+\newpage
 \section{Origem histórica dos Números-Índices}
 
 A necessidade de comparar valores econômicos entre diferentes períodos é anterior à existência da teoria moderna dos números-índices. \vskip0.3cm
 
 Em sociedades nas quais moedas, preços e salários sofriam alterações importantes, tornou-se necessário responder a uma questão aparentemente simples: Quanto representa uma determinada quantidade de dinheiro em uma época quando comparada com outra época? \vskip0.3cm
 
-\newpage
+
 Uma das primeiras contribuições conhecidas encontra-se no trabalho de William Fleetwood, publicado em 1707. Fleetwood procurou comparar valores monetários de diferentes períodos para avaliar o poder de compra de uma quantia em momentos distintos. Embora seu procedimento não corresponda ainda a um índice de preços moderno, representa importante antecedente histórico. \vskip0.3cm
 
-Em 1738, o economista francês Charles Dutot apresentou, em Réflexions politiques sur les finances et le commerce, um procedimento que a literatura moderna reconhece como o primeiro índice de preços propriamente dito. Seu método comparava a soma dos preços de um conjunto de mercadorias entre dois períodos. \vskip0.3cm
+Em 1738, o economista francês \textbf{Charles Dutot} apresentou, em Réflexions politiques sur les finances et le commerce, um procedimento que a literatura moderna reconhece como o primeiro índice de preços propriamente dito. Seu método comparava a soma dos preços de um conjunto de mercadorias entre dois períodos. \vskip0.3cm
 
 Se ($p_i^0$) representa o preço do produto (i) no período-base e ($p_i^1$) o preço no período corrente, o índice de Dutot pode ser representado por:
 
@@ -72,7 +73,7 @@ O desenvolvimento histórico prosseguiu com contribuições de diversos autores.
 
 A expressão técnica index number tornou-se corrente na estatística econômica no século XIX. Uma das primeiras ocorrências documentadas do termo encontra-se em William Stanley Jevons, em 1875, em Money and the Mechanism of Exchange. Há, entretanto, evidências históricas de utilização anterior da palavra index para representar comparações do nível de preços, inclusive em 1837. Portanto, é metodologicamente mais seguro afirmar que o conceito é anterior à consolidação da terminologia moderna e que “index number” se estabeleceu como termo técnico no século XIX, em vez de atribuir sua criação a uma única pessoa. \vskip0.3cm
 
-\newpage
+
 No início do século XX, a teoria ganhou maior sistematização. Correa Moylan Walsh e Francis Ysidro Edgeworth contribuíram para o debate sobre a construção de índices, enquanto Irving Fisher realizou uma ampla investigação comparativa das fórmulas existentes. \vskip0.3cm
 
 Em 1922, Fisher publicou The Making of Index Numbers: A Study of Their Varieties, Tests and Reliability, obra que se tornou um dos marcos fundamentais da teoria dos números-índices. \vskip0.3cm
@@ -117,7 +118,7 @@ Essa decomposição permite distinguir três fenômenos:
 
 Essa distinção é fundamental para a análise econômica e administrativa.
 
-\newpage
+
 \section{Relativo Simples}
 
 O caso mais simples ocorre quando se deseja comparar uma única variável.\vskip0.3cm
@@ -159,3 +160,194 @@ $$
 $$
 
 O preço aumentou 20\%.
+
+
+\newpage
+\section{Índice Simples de Quantidade}
+
+O mesmo raciocínio pode ser aplicado à quantidade:
+
+$$
+I_q=
+\frac{q^1}{q^0}\times100.
+$$
+
+Se uma secretaria realizou 80.000 atendimentos em 2024 e 92.000 em 2025:
+
+$$
+I_q=
+\frac{92.000}{80.000}\times100
+=115.
+$$
+
+Portanto, o volume de atendimentos aumentou 15\%.
+
+
+
+
+\section{Índice Simples de Valor}
+
+Quando se compara diretamente o valor monetário:
+
+$$
+I_v=
+\frac{V^1}{V^0}\times100.
+$$
+
+Como:
+
+$$
+V^0=p^0q^0
+$$
+
+e
+
+$$
+V^1=p^1q^1,
+$$
+
+temos:
+
+$$
+I_v=
+\frac{p^1q^1}{p^0q^0}\times100.
+$$
+
+Esse índice apresenta a variação conjunta de preço e quantidade.
+
+
+\section{Índices Agregativos}
+
+Quando existem vários produtos, torna-se necessário combinar as informações.
+
+O índice agregativo simples de preços é:
+
+$$
+P_A=
+\frac{\sum_{i=1}^{n}p_i^1}
+{\sum_{i=1}^{n}p_i^0}\times100.
+$$
+
+Esse procedimento corresponde ao índice de \textbf{Dutot}.\vskip0.3cm
+
+Embora simples, ele apresenta uma limitação importante: os preços são somados sem considerar a importância econômica relativa de cada produto. \vskip0.3cm
+
+Um medicamento de R\$ 5,00 recebe, nesse cálculo, o mesmo peso implícito que um equipamento de R\$ 5.000,00. \vskip0.3cm
+
+Por essa razão, os índices ponderados são particularmente importantes para aplicações governamentais.
+
+
+
+\section{Índice de Laspeyres}
+
+
+O índice de preços de Laspeyres utiliza as quantidades do período-base como ponderações:
+
+$$
+P_L=
+\frac{\sum_{i=1}^{n}p_i^1q_i^0}
+{\sum_{i=1}^{n}p_i^0q_i^0}
+\times100.
+$$
+
+A interpretação é:
+
+Quanto custaria, no período atual, a mesma cesta de bens e serviços adquirida no período-base, comparativamente ao custo dessa cesta no período-base?
+
+O denominador representa o custo da cesta-base:
+
+$$
+C_0=
+\sum_{i=1}^{n}p_i^0q_i^0.
+$$
+
+O numerador representa o custo dessa mesma cesta aos preços atuais:
+
+$$
+C_1=
+\sum_{i=1}^{n}p_i^1q_i^0.
+$$
+
+Assim:
+
+$$
+P_L=
+\frac{C_1}{C_0}\times100.
+$$
+
+
+
+
+\section{Índice de Paasche}
+
+O índice de Paasche utiliza as quantidades do período corrente:
+
+$$
+P_P=
+\frac{\sum_{i=1}^{n}p_i^1q_i^1}
+{\sum_{i=1}^{n}p_i^0q_i^1}
+\times100.
+$$
+
+Sua interpretação é:
+
+Quanto custa atualmente a cesta efetivamente adquirida no período corrente, comparativamente ao que essa mesma cesta teria custado no período-base?
+
+O numerador corresponde ao valor corrente:
+
+$$
+V^1=
+\sum_{i=1}^{n}p_i^1q_i^1.
+$$
+
+O denominador corresponde ao valor da cesta corrente reavaliada aos preços do período-base:
+
+$$
+V^{0|1}=
+\sum_{i=1}^{n}p_i^0q_i^1.
+$$
+
+Portanto:
+
+$$
+P_P=
+\frac{V^1}{V^{0|1}}\times100.
+$$
+
+Laspeyres e Paasche diferem fundamentalmente pela estrutura de ponderação: Laspeyres mantém as quantidades do período-base, enquanto Paasche utiliza as quantidades do período corrente.
+
+
+\newpage
+\section{Índice de Fisher}
+
+Irving Fisher propôs a média geométrica dos índices de Laspeyres e Paasche:
+
+$$
+P_F=
+\sqrt{P_LP_P}.
+$$
+
+Quando os índices são calculados sem multiplicação por 100:
+
+$$
+P_F=
+\sqrt{
+\left(
+\frac{\sum p_i^1q_i^0}
+{\sum p_i^0q_i^0}
+\right)
+\left(
+\frac{\sum p_i^1q_i^1}
+{\sum p_i^0q_i^1}
+\right)
+}.
+$$
+
+Com base 100:
+
+$$
+I_F=
+\sqrt{I_LI_P}.
+$$
+
+O índice de Fisher é frequentemente chamado de índice ideal de Fisher, especialmente no contexto da abordagem axiomática, porque apresenta propriedades desejáveis e combina as duas estruturas de ponderação.
