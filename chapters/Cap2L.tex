@@ -547,6 +547,310 @@ Como consequências diretas desses axiomas, obtêm-se:
 \item Se $A\subseteq B$, então $P(A)\leq P(B)$.
 \end{enumerate}
 
+
+\subsection{Exemplos: \textbf{Diagrama de Venn}}
+
+Na gestão pública e em estudos populacionais, frequentemente dispomos de dados agregados sobre múltiplas características que se sobrepõem (como acesso a diferentes serviços públicos, meios de transporte ou veículos de comunicação). Para evitar a dupla contagem ao calcular probabilidades clássicas, utilizamos o \textbf{Diagrama de Venn} aliado ao \textbf{Princípio da Inclusão-Exclusão}.
+
+\begin{quote}
+\textbf{Exemplo Aplicado I:} \\
+Uma pesquisa de comunicação institucional realizada em um município com $50.000$ habitantes investigou o alcance de três jornais locais ($A$, $B$ e $C$). Os dados consolidados revelaram que:
+\begin{itemize}
+    \item $15.000$ habitantes leem o jornal $A$;
+    \item $10.000$ habitantes leem o jornal $B$;
+    \item $8.000$ habitantes leem o jornal $C$;
+    \item $6.000$ habitantes leem os jornais $A$ e $B$;
+    \item $4.000$ habitantes leem os jornais $A$ e $C$;
+    \item $3.000$ habitantes leem os jornais $B$ e $C$;
+    \item $1.000$ habitantes leem os três jornais ($A$, $B$ e $C$).
+\end{itemize}
+Selecionando-se um habitante ao acaso nesse município, determine a probabilidade de que:
+\begin{enumerate}
+    \item[a)] Ele leia pelo menos um dos três jornais;
+    \item[b)] Ele leia apenas um jornal.
+\end{enumerate}
+\end{quote}
+
+\subsubsection*{Resolução e Montagem dos Resultados}
+
+Para preencher corretamente o Diagrama de Venn sem duplicidades, devemos iniciar a contagem sempre pela \textbf{interseção central} (os três conjuntos simultaneamente) e avançar de dentro para fora, subtraindo as sobreposições:
+
+\begin{enumerate}
+    \item \textbf{Leitores dos três jornais ($A \cap B \cap C$):}
+    \[
+    n(A \cap B \cap C) = 1.000
+    \]
+
+    \item \textbf{Leitores de exatamente dois jornais:}
+    \begin{align*}
+    \text{Apenas } A \text{ e } B &= 6.000 - 1.000 = 5.000 \\
+    \text{Apenas } A \text{ e } C &= 4.000 - 1.000 = 3.000 \\
+    \text{Apenas } B \text{ e } C &= 3.000 - 1.000 = 2.000
+    \end{align*}
+
+    \item \textbf{Leitores de exatamente um jornal:}
+    \begin{align*}
+    \text{Apenas } A &= 15.000 - (5.000 + 3.000 + 1.000) = 6.000 \\
+    \text{Apenas } B &= 10.000 - (5.000 + 2.000 + 1.000) = 2.000 \\
+    \text{Apenas } C &= 8.000 - (3.000 + 2.000 + 1.000) = 2.000
+    \end{align*}
+
+    \item \textbf{Não leitores de nenhum dos três jornais $(A \cup B \cup C)^c$:}
+    \[
+    \text{Nenhum jornal} = 50.000 - (6.000 + 2.000 + 2.000 + 5.000 + 3.000 + 2.000 + 1.000) = 29.000
+    \]
+\end{enumerate}
+
+A distribuição completa do espaço amostral ($\Omega = 50.000$) está representada na Figura~\ref{fig:venn_jornais}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[scale=1.0, every node/.style={font=\small}]
+        % Espaço Amostral (Retângulo)
+        \draw[thick] (-4.4,-3.6) rectangle (4.4,3.4);
+        \node at (4.0, 3.0) {\large $\Omega$};
+        \node[anchor=west] at (-4.1, 3.0) {\footnotesize TOTAL: $50.000$};
+        % Definição dos círculos com preenchimento suave (padrão do livro)
+        \begin{scope}[fill opacity=0.18]
+            \fill[blue!70] (-1.2, 0.7) circle (1.85);
+            \fill[red!70]  ( 1.2, 0.7) circle (1.85);
+            \fill[green!60!black] ( 0.0,-1.1) circle (1.85);
+        \end{scope}
+        % Contornos dos círculos
+        \draw[thick] (-1.2, 0.7) circle (1.85);
+        \draw[thick] ( 1.2, 0.7) circle (1.85);
+        \draw[thick] ( 0.0,-1.1) circle (1.85);
+        % Rótulos dos conjuntos
+        \node[font=\bfseries] at (-3.1, 2.3) {\textbf{Jornal} $A$};
+        \node[font=\bfseries] at ( 3.1, 2.3) {\textbf{Jornal} $B$};
+        \node[font=\bfseries] at ( 0.0,-3.25) {\textbf{Jornal} $C$};
+        % Valores exclusivos (apenas 1)
+        \node at (-1.75, 0.95) {$6.000$};
+        \node at ( 1.75, 0.95) {$2.000$};
+        \node at ( 0.00,-1.95) {$2.000$};
+        % Valores das interseções duplas (apenas 2)
+        \node at ( 0.00, 1.15) {$5.000$};
+        \node at (-0.95,-0.45) {$3.000$};
+        \node at ( 0.95,-0.45) {$2.000$};
+        % Interseção tripla (centro)
+        \node[font=\bfseries] at ( 0.00, 0.12) {$1.000$};
+        % Complementar (fora dos círculos)
+        \node[anchor=east] at (4.1, -3.2) {\footnotesize NENHUM: $29.000$};
+    \end{tikzpicture}
+    \caption{Diagrama de Venn representando a distribuição dos leitores dos jornais $A$, $B$ e $C$ no município ($\Omega = 50.000$).}
+    \label{fig:venn_jornais}
+\end{figure}
+
+
+\newpage
+%\subsubsection*{Cálculo das Probabilidades}
+
+Pela definição clássica de probabilidade, $P(E) = \frac{n(E)}{n(\Omega)}$, temos:
+
+\begin{enumerate}
+    \item[a)] \textbf{Probabilidade de ler pelo menos um jornal ($A \cup B \cup C$):}
+    
+    Somando todas as regiões internas aos três círculos, obtemos:
+    \[
+    n(A \cup B \cup C) = (6.000 + 2.000 + 2.000) + (5.000 + 3.000 + 2.000) + 1.000 = 21.000
+    \]
+    Logo:
+    \[
+    P(A \cup B \cup C) = \frac{21.000}{50.000} = \frac{21}{50} = 0,42 \quad (\text{ou } 42\%)
+    \]
+    \textit{Nota:} O mesmo resultado pode ser obtido diretamente pela fórmula da união de três eventos:
+    \[
+    P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(A \cap C) - P(B \cap C) + P(A \cap B \cap C)
+    \]
+
+    \item[b)] \textbf{Probabilidade de ler apenas um jornal:}
+    
+    Somando apenas as regiões exclusivas de cada conjunto:
+    \[
+    n(\text{apenas um}) = 6.000 + 2.000 + 2.000 = 10.000
+    \]
+    Logo:
+    \[
+    P(\text{apenas um}) = \frac{10.000}{50.000} = \frac{1}{5} = 0,20 \quad (\text{ou } 20\%)
+    \]
+\end{enumerate}
+
+
+
+\begin{quote}
+\textbf{Exemplo Aplicado II:} \\
+Em um colégio da rede pública com $1.000$ alunos matriculados, realizou-se um levantamento sobre a participação dos estudantes em grupos de reforço escolar nas disciplinas de Matemática ($M$), Física ($F$) e Química ($Q$). Os dados obtidos foram:
+\begin{itemize}
+    \item $200$ alunos estudam Matemática;
+    \item $180$ alunos estudam Física;
+    \item $200$ alunos estudam Química;
+    \item $20$ alunos estudam Matemática, Física e Química;
+    \item $50$ alunos estudam Matemática e Física;
+    \item $50$ alunos estudam Física e Química;
+    \item $70$ alunos estudam \textbf{somente} Química.
+\end{itemize}
+Escolhendo-se um aluno desse colégio ao acaso, qual é a probabilidade de que:
+\begin{enumerate}
+    \item[a)] ele estude \textbf{só Matemática};
+    \item[b)] ele estude \textbf{só Física};
+    \item[c)] ele estude \textbf{Matemática e Química}?
+\end{enumerate}
+\end{quote}
+
+\subsubsection*{Resolução e Montagem dos Resultados}
+
+Diferentemente do exemplo anterior, neste problema não conhecemos inicialmente o total da interseção entre Matemática e Química ($M \cap Q$), mas dispomos do número exclusivo de alunos que estudam \textbf{somente Química} ($70$). Procedemos de dentro para fora:
+
+\begin{enumerate}
+    \item \textbf{Estudam as três disciplinas ($M \cap F \cap Q$):}
+    \[
+    n(M \cap F \cap Q) = 20
+    \]
+
+    \item \textbf{Interseções de exatamente duas disciplinas (já conhecidas):}
+    \begin{align*}
+    \text{Apenas Matemática e Física} &= 50 - 20 = 30 \\
+    \text{Apenas Física e Química} &= 50 - 20 = 30
+    \end{align*}
+
+    \item \textbf{Determinação da interseção apenas Matemática e Química:} \\
+    Como o conjunto Química possui $200$ alunos ao todo, subtraímos as parcelas já conhecidas para encontrar a região exclusiva entre Matemática e Química:
+    \[
+    \text{Apenas Matemática e Química} = 200 - (70 + 30 + 20) = 80
+    \]
+    Logo, o total de alunos que estudam Matemática e Química (incluindo os que também estudam Física) é:
+    \[
+    n(M \cap Q) = 80 + 20 = 100
+    \]
+
+    \item \textbf{Estudam apenas uma disciplina:}
+    \begin{align*}
+    \text{Somente Física} &= 180 - (30 + 30 + 20) = 100 \\
+    \text{Somente Matemática} &= 200 - (30 + 80 + 20) = 70 \\
+    \text{Somente Química} &= 70 \quad (\text{informado no enunciado})
+    \end{align*}
+
+    \item \textbf{Não estudam nenhuma das três disciplinas $(M \cup F \cup Q)^c$:}
+    \[
+    n(M \cup F \cup Q) = (70 + 100 + 70) + (30 + 30 + 80) + 20 = 400
+    \]
+    \[
+    \text{Nenhuma disciplina} = 1.000 - 400 = 600
+    \]
+\end{enumerate}
+
+A Figura~\ref{fig:venn_colegio} sintetiza a distribuição dos $1.000$ alunos no espaço amostral.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[scale=1.3, every node/.style={font=\small}]
+        % Espaço Amostral (Retângulo)
+        \draw[thick] (-4.4,-3.6) rectangle (4.4,3.4);
+        \node at (4.0, 3.0) {\large $\Omega$};
+        \node[anchor=west] at (-4.1, 3.0) {\footnotesize TOTAL: $1.000$ alunos};
+
+        % Círculos com preenchimento suave
+        \begin{scope}[fill opacity=0.18]
+            \fill[blue!70] (-1.2, 0.7) circle (1.85);
+            \fill[red!70]  ( 1.2, 0.7) circle (1.85);
+            \fill[green!60!black] ( 0.0,-1.1) circle (1.85);
+        \end{scope}
+
+        % Contornos dos círculos
+        \draw[thick] (-1.2, 0.7) circle (1.85);
+        \draw[thick] ( 1.2, 0.7) circle (1.85);
+        \draw[thick] ( 0.0,-1.1) circle (1.85);
+
+        % Rótulos dos conjuntos
+        \node[font=\bfseries] at (-3.2, 2.3) {Matemática($M$)};
+        \node[font=\bfseries] at ( 3.2, 2.3) {Física($F$)};
+        \node[font=\bfseries] at ( 0.00,-3.25) {Química($Q$)};
+
+        % Valores exclusivos (apenas 1)
+        \node at (-1.75, 0.95) {$70$};
+        \node at ( 1.75, 0.95) {$100$};
+        \node at ( 0.00,-1.95) {$70$};
+
+        % Valores das interseções duplas (apenas 2)
+        \node at ( 0.00, 1.15) {$30$};
+        \node at (-0.95,-0.45) {$80$};
+        \node at ( 0.95,-0.45) {$30$};
+
+        % Interseção tripla (centro)
+        \node[font=\bfseries] at ( 0.00, 0.12) {$20$};
+
+        % Complementar (fora dos círculos)
+        \node[anchor=east] at (4.1, -3.2) {\footnotesize NENHUMA: $600$};
+    \end{tikzpicture}
+    \caption{Diagrama de Venn representando a distribuição dos alunos nas disciplinas de Matemática ($M$), Física ($F$) e Química ($Q$) ($\Omega = 1.000$).}
+    \label{fig:venn_colegio}
+\end{figure}
+
+
+\newpage
+\subsubsection*{Cálculo das Probabilidades}
+
+\begin{enumerate}
+    \item[a)] \textbf{Probabilidade de estudar só Matemática:}
+    \[
+    P(\text{só } M) = \frac{70}{1.000} = 0,07 \quad (\text{ou } 7\%)
+    \]
+
+    \item[b)] \textbf{Probabilidade de estudar só Física:}
+    \[
+    P(\text{só } F) = \frac{100}{1.000} = 0,10 \quad (\text{ou } 10\%)
+    \]
+
+    \item[c)] \textbf{Probabilidade de estudar Matemática e Química ($M \cap Q$):}
+    \[
+    P(M \cap Q) = \frac{80 + 20}{1.000} = \frac{100}{1.000} = 0,10 \quad (\text{ou } 10\%)
+    \]
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%------------------------------------------------------------------------------------%
+
+
+
+
+
+
+
 %------------------------------------------------------------------------------------%
 \section{Probabilidade Condicional}
 
@@ -806,8 +1110,129 @@ Esse resultado é conhecido como \textbf{Teorema de Bayes} e constitui a base da
 
 \newpage
 A ídéia expressa no Teorema da Bayes deu origem a uma nova, moderna e alternativa maneira de se pensar a Estatística, gerando a chamada \textbf{Estatística Bayesiana}. 
+%--------------------------------------------------------------------------------------------------------%
 
 
+\subsubsection*{Exemplo Clássico: Modelo de Urnas (Probabilidade Total e Teorema de Bayes)}
+
+\begin{quote}
+\textbf{Problema das Duas Urnas:} \\
+Considere duas urnas idênticas contendo esferas de mesmas dimensões e massas, diferenciadas apenas pela cor:
+\begin{itemize}
+    \item \textbf{Urna I ($U_1$):} contém $4$ bolas brancas e $6$ bolas pretas (total de $10$ bolas);
+    \item \textbf{Urna II ($U_2$):} contém $7$ bolas brancas e $3$ bolas pretas (total de $10$ bolas).
+\end{itemize}
+Uma urna é escolhida ao acaso (com igual probabilidade) e, dela, retira-se aleatoriamente uma única bola.
+\begin{enumerate}
+    \item[a)] Qual é a probabilidade de que a bola retirada seja \textbf{branca}?
+    \item[b)] Sabendo-se que a bola retirada é \textbf{branca}, qual é a probabilidade de que ela tenha sido extraída da \textbf{Urna I}?
+\end{enumerate}
+\end{quote}
+
+%\subsubsection*{Resolução e Montagem do Modelo}
+
+Definimos os seguintes eventos no espaço amostral $\Omega$:
+\begin{itemize}
+    \item $U_1$: selecionar a Urna I, com $P(U_1) = \frac{1}{2} = 0,50$;
+    \item $U_2$: selecionar a Urna II, com $P(U_2) = \frac{1}{2} = 0,50$;
+    \item $B$: retirar uma bola branca.
+\end{itemize}
+
+Como $\{U_1, U_2\}$ forma uma partição do espaço amostral ($U_1 \cap U_2 = \emptyset$ e $U_1 \cup U_2 = \Omega$), as probabilidades condicionais de retirar uma bola branca em cada urna são:
+\[
+P(B \mid U_1) = \frac{4}{10} = 0,40 \qquad \text{e} \qquad P(B \mid U_2) = \frac{7}{10} = 0,70.
+\]
+
+A estrutura física do experimento e os respectivos caminhos probabilísticos estão ilustrados na Figura~\ref{fig:urnas_bayes}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[scale=1.0, every node/.style={font=\small}]
+        % --- URNA I ---
+        \draw[thick, rounded corners=4pt, fill=blue!5] (-4.5, 0.2) rectangle (-2.1, 2.4);
+        \draw[white, line width=2pt] (-4.45, 2.4) -- (-2.15, 2.4); % abertura superior
+        \node[font=\bfseries] at (-3.3, 2.75) {URNA I ($U_1$)};
+        \node at (-3.3, -0.15) {\footnotesize $4$ Brancas, $6$ Pretas};
+        
+        % Bolas Urna I (4 brancas, 6 pretas)
+        \foreach \x/\y in {-4.1/0.6, -3.55/0.6, -3.0/0.6, -2.45/0.6}
+            \draw[fill=white, draw=black, thick] (\x,\y) circle (0.18);
+        \foreach \x/\y in {-4.1/1.15, -3.55/1.15, -3.0/1.15, -2.45/1.15, -3.8/1.7, -2.8/1.7}
+            \draw[fill=black!80, draw=black] (\x,\y) circle (0.18);
+
+        % --- URNA II ---
+        \draw[thick, rounded corners=4pt, fill=red!5] (2.1, 0.2) rectangle (4.5, 2.4);
+        \draw[white, line width=2pt] (2.15, 2.4) -- (4.45, 2.4); % abertura superior
+        \node[font=\bfseries] at (3.3, 2.75) {URNA II ($U_2$)};
+        \node at (3.3, -0.15) {\footnotesize $7$ Brancas, $3$ Pretas};
+
+        % Bolas Urna II (7 brancas, 3 pretas)
+        \foreach \x/\y in {2.5/0.6, 3.05/0.6, 3.6/0.6, 4.15/0.6, 2.5/1.15, 3.05/1.15, 3.6/1.15}
+            \draw[fill=white, draw=black, thick] (\x,\y) circle (0.18);
+        \foreach \x/\y in {4.15/1.15, 2.8/1.7, 3.8/1.7}
+            \draw[fill=black!80, draw=black] (\x,\y) circle (0.18);
+
+        % --- ÁRVORE DE DECISÃO ABAIXO ---
+        \node[draw, circle, thick, inner sep=2pt] (omega) at (0, -1.2) {$\Omega$};
+        \node[draw, rounded corners=2pt, fill=blue!10] (u1) at (-2.2, -2.5) {$Urna_1$};
+        \node[draw, rounded corners=2pt, fill=red!10]  (u2) at ( 2.2, -2.5) {$Urna_2$};
+
+        \draw[->, thick] (omega) -- node[above left] {$0,50$} (u1);
+        \draw[->, thick] (omega) -- node[above right] {$0,50$} (u2);
+
+        % Ramos Urna I
+        \node[draw, circle, fill=white, inner sep=1.5pt] (b1) at (-3.2, -3.9) {$B$};
+        \node[draw, circle, fill=black!15, inner sep=1pt] (p1) at (-1.2, -3.9) {$B^c$};
+        \draw[->, thick] (u1) -- node[left] {\footnotesize $0,40$} (b1);
+        \draw[->, thick] (u1) -- node[right] {\footnotesize $0,60$} (p1);
+
+        % Ramos Urna II
+        \node[draw, circle, fill=white, inner sep=1.5pt] (b2) at (1.2, -3.9) {$B$};
+        \node[draw, circle, fill=black!15, inner sep=1pt] (p2) at (3.2, -3.9) {$B^c$};
+        \draw[->, thick] (u2) -- node[left] {\footnotesize $0,70$} (b2);
+        \draw[->, thick] (u2) -- node[right] {\footnotesize $0,30$} (p2);
+    \end{tikzpicture}
+    \caption{Representação esquemática das urnas $U_1$ e $U_2$ e árvore de probabilidades associada ao sorteio.}
+    \label{fig:urnas_bayes}
+\end{figure}
+
+\begin{enumerate}
+    \item[a)] \textbf{Probabilidade de a bola retirada ser branca (Teorema da Probabilidade Total):}
+    
+    Aplicando a Equação~(2.6), somamos as probabilidades dos dois caminhos possíveis que levam ao evento $B$:
+    \begin{align*}
+    P(B) &= P(B \mid U_1)P(U_1) + P(B \mid U_2)P(U_2) \\
+         &= (0,40 \cdot 0,50) + (0,70 \cdot 0,50) \\
+         &= 0,20 + 0,35 = 0,55 \quad (\text{ou } 55\%).
+    \end{align*}
+
+    \item[b)] \textbf{Probabilidade de a bola branca ter vindo da Urna I (Teorema de Bayes):}
+    
+    Dado que o evento $B$ ocorreu, atualizamos a probabilidade da causa $U_1$ utilizando a Equação~(2.7):
+    \[
+    P(U_1 \mid B) = \frac{P(B \mid U_1)P(U_1)}{P(B)} = \frac{0,40 \cdot 0,50}{0,55} = \frac{0,20}{0,55} = \frac{4}{11} \approx 0,3636 \quad (\text{ou } 36,36\%).
+    \]
+\end{enumerate}
+
+\textbf{Interpretação:} Antes de observar a cor da bola, cada urna tinha $50\%$ de chance de ter sido escolhida. Como a Urna II possui maior proporção de bolas brancas ($70\%$ contra $40\%$), o fato de termos observado uma bola branca reduz a probabilidade de a extração ter ocorrido na Urna I de $50\%$ para aproximadamente $36,36\%$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+%--------------------------------------------------------------------------------------------------------%
 \subsection{Árvores de Probabilidades}
 
 A construção de uma \textbf{árvore de probabilidades}, também chamada de
@@ -1381,7 +1806,7 @@ Nesta seção, concentramo-nos inicialmente nas variáveis discretas.
 \node at (6,-0.6) {$X(s')$};
 % Imagem destacada
 \node[draw, thick, dashed, fit={(5.2,-1.2) (6.8,0.9)}, inner sep=0.2cm] (image) {};
-\node at (6,-1.5) {$X(\Omega)$};
+\node at (6,-1.6) {$X(\Omega)$};
 % Seta principal
 \draw[arrow] (1.8,0) -- node[above] {$X$} (4.2,0);
 \end{tikzpicture}
@@ -2029,36 +2454,142 @@ Análise Estatística: Valor Esperado: $E(X) = 1/0,05 = 20$ auditorias.Variânci
 %--------------------------------------------------------------------------------------------------%
 \subsection{Distribuição Hipergeométrica}
 
-A gênese da distribuição hipergeométrica remonta ao século XVIII, consolidando-se a partir dos problemas de "extração de urnas sem reposição" que caracterizavam a escola combinatória francesa. Diferente da distribuição Binomial, onde a probabilidade de sucesso permanece constante, a hipergeométrica modela cenários onde a probabilidade se altera a cada ensaio, sendo a ferramenta analítica por excelência para o estudo de populações finitas onde a amostragem é realizada sem reposição.
+
+A gênese da distribuição hipergeométrica remonta ao século XVIII, consolidando-se a partir dos problemas de ``extração de urnas sem reposição'' que caracterizavam a escola combinatória francesa. Diferente da distribuição Binomial, onde a probabilidade de sucesso permanece constante, a hipergeométrica modela cenários onde a probabilidade se altera a cada ensaio, sendo a ferramenta analítica por excelência para o estudo de populações finitas onde a amostragem é realizada sem reposição.
 
 \subsubsection{Função de Probabilidade}
 
-Considere uma população finita de tamanho $N$ que contém $K$ elementos com uma característica de interesse (sucessos). Se extrairmos uma amostra de tamanho $n$ sem reposição, a variável aleatória $X$, que representa o número de sucessos na amostra, segue uma distribuição hipergeométrica com função de probabilidade dada por:$$P(X=k)=\frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}$$Onde $\binom{N}{n}$ representa o número total de combinações possíveis da amostra, enquanto o numerador calcula as combinações favoráveis de obter exatamente $k$ sucessos e $n-k$ falhas.
+Considere uma população finita de tamanho $N$ que contém $K$ elementos com uma característica de interesse (sucessos). Se extrairmos uma amostra de tamanho $n$ sem reposição, a variável aleatória $X$, que representa o número de sucessos na amostra, segue uma distribuição hipergeométrica com função de probabilidade dada por:
+\[
+P(X=k)=\frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}
+\]
+Onde $\binom{N}{n}$ representa o número total de combinações possíveis da amostra, enquanto o numerador calcula as combinações favoráveis de obter exatamente $k$ sucessos e $n-k$ falhas.
 
 \subsubsubsection{Esperança Matemática}
 
-O valor esperado da distribuição hipergeométrica é expresso por:$$E(X)=n\frac{K}{N}$$Esta identidade demonstra que a média da hipergeométrica é análoga à da Binomial ($np$), onde a proporção populacional $p = K/N$ determina o centro da distribuição. Matematicamente, este resultado é obtido de forma elegante através do uso de variáveis indicadoras, considerando a dependência entre os ensaios sucessivos. \vskip0.3cm
+O valor esperado da distribuição hipergeométrica é expresso por:
+\[
+E(X)=n\frac{K}{N}
+\]
+Esta identidade demonstra que a média da hipergeométrica é análoga à da Binomial ($np$), onde a proporção populacional $p = K/N$ determina o centro da distribuição. Matematicamente, este resultado é obtido de forma elegante através do uso de variáveis indicadoras, considerando a dependência entre os ensaios sucessivos. \vskip0.3cm
 
 \subsubsubsection{Variância}
 
-A variância da distribuição hipergeométrica é definida como:$$Var(X)=n\frac{K}{N}\left(1-\frac{K}{N}\right)\left(\frac{N-n}{N-1}\right)$$O termo $\frac{N-n}{N-1}$ é tecnicamente conhecido como o \textbf{fator de correção para população finita}.Este fator reduz a variabilidade da estimativa à medida que a amostra $n$ se aproxima do tamanho total da população $N$. \vskip0.3cm
+A variância da distribuição hipergeométrica é definida como:
+\[
+Var(X)=n\frac{K}{N}\left(1-\frac{K}{N}\right)\left(\frac{N-n}{N-1}\right)
+\]
+O termo $\frac{N-n}{N-1}$ é tecnicamente conhecido como o \textbf{fator de correção para população finita}. Este fator reduz a variabilidade da estimativa à medida que a amostra $n$ se aproxima do tamanho total da população $N$. \vskip0.3cm
 
-Em termos práticos, se o tamanho da população for muito superior ao da amostra ($N \gg n$), o fator tende a 1, e a distribuição hipergeométrica converge para a Binomial. \vskip0.3cm
+Em termos práticos, se o tamanho da população for muito superior ao da amostra ($N \gg n$), o fator tende a $1$, e a distribuição hipergeométrica converge para a Binomial. \vskip0.3cm
+
+\subsubsection*{Extração em Urna sem Reposição}
+
+\begin{quote}
+\textbf{Exemplo Prático de Hipergeométrica:} \\
+Uma urna contém $12$ esferas idênticas ao tato, sendo $5$ azuis (consideradas ``sucesso'') e $7$ brancas (consideradas ``fracasso''). Retiram-se, ao acaso e \textbf{sem reposição}, $4$ esferas dessa urna. Seja $X$ a variável aleatória que representa o número de esferas azuis extraídas. Determine:
+\begin{enumerate}
+    \item[a)] a probabilidade de se obter exatamente $2$ esferas azuis, isto é, $P(X = 2)$;
+    \item[b)] a probabilidade de se obter pelo menos $3$ esferas azuis, isto é, $P(X \ge 3)$;
+    \item[c)] o valor esperado $E(X)$ e a variância $Var(X)$ do número de esferas azuis extraídas.
+\end{enumerate}
+\end{quote}
+
+\textbf{Identificação dos Parâmetros:}
+\begin{itemize}
+    \item Tamanho da população: $N = 12$ esferas;
+    \item Total de sucessos na população: $K = 5$ esferas azuis (logo, $N - K = 7$ esferas brancas);
+    \item Tamanho da amostra extraída sem reposição: $n = 4$ esferas.
+\end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[scale=1.0, every node/.style={font=\small}]
+        % Desenho da Urna
+        \draw[thick, rounded corners=4pt, fill=blue!4] (-2.2, 0.0) rectangle (2.2, 2.3);
+        \draw[white, line width=2pt] (-2.15, 2.3) -- (2.15, 2.3);
+        \node[font=\bfseries] at (0, 2.65) {Urna ($N = 12$)};
+
+        % 5 Bolas Azuis (Sucesso K=5)
+        \foreach \x/\y in {-1.6/0.5, -0.8/0.5, 0.0/0.5, 0.8/0.5, 1.6/0.5}
+            \draw[fill=blue!65, draw=black] (\x,\y) circle (0.20);
+
+        % 7 Bolas Brancas (Fracasso N-K=7)
+        \foreach \x/\y in {-1.6/1.15, -0.8/1.15, 0.0/1.15, 0.8/1.15, 1.6/1.15, -0.4/1.75, 0.4/1.75}
+            \draw[fill=white, draw=black, thick] (\x,\y) circle (0.20);
+
+        % Seta de extração
+        \draw[->, very thick, >=stealth] (2.6, 1.15) -- node[above] {\footnotesize Amostra ($n=4$)} node[below] {\footnotesize sem reposição} (4.6, 1.15);
+
+        % Amostra extraída ilustrativa
+        \draw[dashed, rounded corners=4pt] (4.9, 0.4) rectangle (7.5, 1.9);
+        \node[font=\bfseries] at (6.2, 2.2) {Amostra ($X$)};
+        \draw[fill=blue!65, draw=black] (5.5, 1.15) circle (0.18);
+        \draw[fill=blue!65, draw=black] (6.0, 1.15) circle (0.18);
+        \draw[fill=white, draw=black, thick] (6.5, 1.15) circle (0.18);
+        \draw[fill=white, draw=black, thick] (7.0, 1.15) circle (0.18);
+        \node at (6.2, 0.1) {\footnotesize Ex.: $k=2$ azuis};
+    \end{tikzpicture}
+    \caption{Esquema de amostragem hipergeométrica ($N=12, K=5, n=4$) sem reposição.}
+    \label{fig:urna_hipergeometrica}
+\end{figure}
+
+
+\newpage
+\textbf{Cálculos:}
+\begin{enumerate}
+    \item[a)] \textbf{Probabilidade de exatamente $2$ esferas azuis ($k = 2$):}
+    \[
+    P(X = 2) = \frac{\binom{5}{2}\binom{12-5}{4-2}}{\binom{12}{4}} = \frac{\binom{5}{2}\binom{7}{2}}{\binom{12}{4}}
+    \]
+    Calculando cada combinação:
+    \[
+    \binom{5}{2} = \frac{5!}{2!\,3!} = 10, \qquad \binom{7}{2} = \frac{7!}{2!\,5!} = 21, \qquad \binom{12}{4} = \frac{12!}{4!\,8!} = 495.
+    \]
+    Substituindo na expressão:
+    \[
+    P(X = 2) = \frac{10 \cdot 21}{495} = \frac{210}{495} = \frac{14}{33} \approx 0,4242 \quad (\text{ou } 42,42\%).
+    \]
+
+    \item[b)] \textbf{Probabilidade de pelo menos $3$ esferas azuis ($X \ge 3$):} \\
+    Como a amostra possui $n = 4$ esferas, o evento $X \ge 3$ corresponde à união disjunta $\{X = 3\} \cup \{X = 4\}$:
+    \[
+    P(X \ge 3) = P(X = 3) + P(X = 4) = \frac{\binom{5}{3}\binom{7}{1}}{\binom{12}{4}} + \frac{\binom{5}{4}\binom{7}{0}}{\binom{12}{4}}
+    \]
+    \[
+    P(X \ge 3) = \frac{10 \cdot 7}{495} + \frac{5 \cdot 1}{495} = \frac{70 + 5}{495} = \frac{75}{495} = \frac{5}{33} \approx 0,1515 \quad (\text{ou } 15,15\%).
+    \]
+
+    \item[c)] \textbf{Esperança Matemática e Variância:}
+    \[
+    E(X) = n\frac{K}{N} = 4 \cdot \frac{5}{12} = \frac{20}{12} = \frac{5}{3} \approx 1,67 \text{ esferas azuis.}
+    \]
+    \[
+    Var(X) = 4 \cdot \frac{5}{12} \cdot \left(1 - \frac{5}{12}\right) \cdot \left(\frac{12 - 4}{12 - 1}\right) = \frac{5}{3} \cdot \frac{7}{12} \cdot \frac{8}{11} = \frac{280}{396} = \frac{70}{99} \approx 0,7071.
+    \]
+\end{enumerate}
 
 \subsubsection*{Aplicação na Gestão Pública: Auditoria de Processos}
 
-Imagine um gestor de uma Secretaria de Fazenda que precisa auditar uma remessa de $N = 100$ processos de isenção fiscal, dos quais suspeita-se que $K = 10$ contenham erros de documentação.  \vskip0.3cm
+Imagine um gestor de uma Secretaria de Fazenda que precisa auditar uma remessa de $N = 100$ processos de isenção fiscal, dos quais suspeita-se que $K = 10$ contenham erros de documentação. \vskip0.3cm
 
-Se o gestor selecionar aleatoriamente $n = 5$ processos sem reposição, a probabilidade de encontrar pelo menos um processo com erro pode ser calculada via distribuição hipergeométrica. \vskip0.3cm
+Se o gestor selecionar aleatoriamente $n = 5$ processos sem reposição, a probabilidade de encontrar pelo menos um processo com erro ($P(X \ge 1) = 1 - P(X = 0)$) pode ser calculada via distribuição hipergeométrica:
+\[
+P(X \ge 1) = 1 - \frac{\binom{10}{0}\binom{90}{5}}{\binom{100}{5}} \approx 1 - 0,5838 = 0,4162 \quad (\text{ou } 41,62\%).
+\]
 
-%\textbf{Análise Crítica para a Tomada de Decisão:} \vskip0.3cm
+Neste cenário, a aplicação do fator de correção é indispensável. Como a amostragem sem reposição em uma população pequena ($N=100$) reduz a incerteza mais rapidamente do que em populações infinitas, o gestor obtém uma estimativa mais precisa do risco de conformidade. 
 
-Neste cenário, a aplicação do fator de correção é indispensável. Como a amostragem sem reposição em uma população pequena ($N=100$) reduz a incerteza mais rapidamente do que em populações infinitas, o gestor obtém uma estimativa mais precisa do risco de conformidade. Decisões baseadas em evidências dependem deste rigor: subestimar a precisão devido ao uso de modelos inadequados (como a Binomial em populações finitas) pode levar a auditorias excessivamente onerosas ou à aceitação inadvertida de riscos institucionais.
+Decisões baseadas em evidências dependem deste rigor: subestimar a precisão devido ao uso de modelos inadequados (como a Binomial em populações finitas) pode levar a auditorias excessivamente onerosas ou à aceitação inadvertida de riscos institucionais.
 %--------------------------------------------------------------------------------------------------%
 
 
 
-\newpage
+%--------------------------------------------------------------------------------------------------%
+
+
+
+
 %--------------------------------------------------------------------------------------------------%
 \subsection{Distribuição Binomial Negativa}
 
